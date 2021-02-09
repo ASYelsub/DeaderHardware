@@ -62,7 +62,7 @@ public class PlayerMover : MonoBehaviour
     float yRot;
     Vector3 tankXZ;
 
-    void tankMovement()
+    public void tankMovement()
     {
         body.localRotation = Quaternion.Euler(0,0,0);
 
