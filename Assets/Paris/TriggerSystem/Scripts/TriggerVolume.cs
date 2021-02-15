@@ -3,11 +3,13 @@ using UnityEngine;
 public class TriggerVolume : MonoBehaviour
 {
     public bool OtherTarget;
+    public bool ExecuteOnAwake;
 
     public GameObject triggerTarget;
     private GameObject _triggerTarget;
 
     public GameObject[] triggerObjects;
+    private ITriggerable[] _triggerableArray;
 
     void Start()
     {
@@ -18,20 +20,29 @@ public class TriggerVolume : MonoBehaviour
 
         //Make Invisible
         GetComponent<MeshRenderer>().enabled = false;
+
+        //Configure Triggerable Array
+        _triggerableArray = new ITriggerable[triggerObjects.Length];
+
+        int i = 0; 
+        foreach (GameObject n in triggerObjects) {
+            if (n.GetComponent<ITriggerable>() == null) return;
+            _triggerableArray[i] = n.GetComponent<ITriggerable>();
+            i++;
+        }
+
+        //Execute On Awake?
+        if (ExecuteOnAwake) OnTriggerEnter(this.GetComponent<Collider>());
     }
 
     public void OnTriggerEnter(Collider other) {
 
-        if (other.gameObject != _triggerTarget) return;
+        if (!ExecuteOnAwake && other.gameObject != _triggerTarget) return;
 
-        Debug.Log("Executing Trigger Functions");
+        Debug.Log("Executing Trigger Functions...");
 
-        foreach (GameObject n in triggerObjects) {
-
-            if (n.GetComponent<ITriggerable>() == null) return;
-
-            n.GetComponent<ITriggerable>().ExecuteTriggerFunction();
-
+        foreach (ITriggerable n in _triggerableArray) {
+            n.ExecuteTriggerFunction();
         }
     }
 
@@ -39,6 +50,7 @@ public class TriggerVolume : MonoBehaviour
         foreach (GameObject n in triggerObjects) {
             if (n == null) return;
             Debug.DrawLine(transform.position, n.transform.position, Color.red);
+ 
         }
     }
 }
