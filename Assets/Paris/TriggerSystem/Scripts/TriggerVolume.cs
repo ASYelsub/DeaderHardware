@@ -39,7 +39,6 @@ public class TriggerVolume : MonoBehaviour
         foreach (GameObject n in triggerObjects) {
             if (n == null) return;
             Debug.DrawLine(transform.position, n.transform.position, Color.red);
-
         }
     }
 }
