@@ -2,21 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorScript : SceneChangeManager
+public class DoorScript : SceneChangeManager,ITriggerable,IInteractable
 {
     public int SceneToLoad;
+    public bool interactable; //determines whether this is a door in scene, or if this is just an object to teleport a player when interacting with a trigger (such as going down a hallway or around a corner, or off screen or something.
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Return)) //whatever combination of proximity and input we use
+        foreach (MeshRenderer mesh in GetComponentsInChildren<MeshRenderer>())
         {
-            TravelToScene();
+            mesh.enabled = interactable;
+        }
+        foreach (Collider coll in GetComponentsInChildren<Collider>())
+        {
+            coll.enabled = interactable;
         }
     }
 
-    public void TravelToScene()
+    public void ExecuteInteraction()
     {
         ChangeScene(SceneToLoad);
+    }
+
+    public void ExecuteTriggerFunction()
+    {
+        if (!interactable)
+        {
+            ChangeScene(SceneToLoad);
+        }
     }
 }
