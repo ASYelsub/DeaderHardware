@@ -14,6 +14,9 @@ public class PlayerMover : MonoBehaviour
     public Transform CamTransform;
 
     public float walkSpeed;
+    public float maxWalkSpeed;
+    public float accel;
+    public float deccel;
     public float grav;
 
     bool grounded;
@@ -29,9 +32,7 @@ public class PlayerMover : MonoBehaviour
         CC = GetComponent<CharacterController>();
         lookLerp = transform.position+transform.forward;
         
-        //vv SET THIS TO THE CAMERA PREFAB LATER vv
         CamTransform = Camera.main.transform;
-
     }
 
     bool moveRelative;
@@ -39,8 +40,6 @@ public class PlayerMover : MonoBehaviour
 
     void Update()
     {
-        
-
         if (moveRelative)
         {
             relativeMovement();
@@ -64,16 +63,27 @@ public class PlayerMover : MonoBehaviour
 
     public void tankMovement()
     {
+        if (Input.GetAxisRaw("Vertical") != 0)
+        {
+            walkSpeed += accel * Time.deltaTime;
+        }
+        else
+        {
+            walkSpeed -= deccel * Time.deltaTime;
+        }
+
+        walkSpeed = Mathf.Clamp(walkSpeed, 0,maxWalkSpeed);
+
         body.localRotation = Quaternion.Euler(0,0,0);
 
         yRot += Input.GetAxisRaw("Horizontal") * Time.deltaTime * rotSpeed;
         transform.rotation = Quaternion.Euler(0,yRot,0);
 
-        tankXZ = transform.forward * Input.GetAxis("Vertical") * walkSpeed;
+        tankXZ = transform.forward * Input.GetAxisRaw("Vertical") * walkSpeed;
 
         moveDirection = new Vector3(tankXZ.x, moveDirection.y, tankXZ.z);
 
-        if (!grounded) { moveDirection.y -= grav; }
+        if (!grounded) { moveDirection.y -= grav*Time.deltaTime; }
         else { moveDirection.y = 0f; }
 
         CC.Move(moveDirection * Time.deltaTime);
@@ -94,7 +104,19 @@ public class PlayerMover : MonoBehaviour
 
     void relativeMovement()
     {
-        moveDirection = new Vector3(Input.GetAxis("Horizontal"), moveDirection.y, Input.GetAxis("Vertical")); //grab WASD / ARROW values  
+
+
+        moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), moveDirection.y, Input.GetAxisRaw("Vertical")); //grab WASD / ARROW values  
+
+        if (new Vector3(moveDirection.x, 0, moveDirection.z).magnitude > 0)
+        {
+            walkSpeed += accel * Time.deltaTime;
+        }
+        else
+        {
+            walkSpeed -= deccel * Time.deltaTime;
+        }
+        walkSpeed = Mathf.Clamp(walkSpeed, 0, maxWalkSpeed);
 
         moveDirection.x *= walkSpeed;
         moveDirection.z *= walkSpeed; // set the speed of walking (not falling) axis
@@ -115,7 +137,7 @@ public class PlayerMover : MonoBehaviour
             fDir.Normalize(); //normalize to keep speed constant in efent of tilted camera
         }
 
-        if (!grounded) { moveDirection.y -= grav; }
+        if (!grounded) { moveDirection.y -= grav*Time.deltaTime; }
         else { moveDirection.y = 0f; }
         uDir = Vector3.up;
 
@@ -123,7 +145,7 @@ public class PlayerMover : MonoBehaviour
 
         if (new Vector3(moveDirection.x, 0, moveDirection.z).magnitude > 0)
         {
-            lookLerp = Vector3.Lerp(lookLerp, body.position + new Vector3(moveDirection.x, 0, moveDirection.z), Time.deltaTime * 15);
+            lookLerp = body.position + new Vector3(moveDirection.x, 0, moveDirection.z);
             body.LookAt(lookLerp);
         }
 
