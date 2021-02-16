@@ -13,7 +13,14 @@ public class TriggerSystem_CameraStatic : MonoBehaviour,ITriggerable
         Debug.DrawLine(transform.position, ShotObject.transform.position, Color.green);
     }
 
+    public void SetShot() {
+        Transform camTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        ShotObject.transform.position = camTransform.position;
+        ShotObject.transform.rotation = camTransform.rotation;
+    }
+
     public void ExecuteTriggerFunction() {
+        Debug.Log("EXECUTED: STATIC CAMERA");
         ServicesLocator.CameraManager.setShotStatic(ShotObject, track, this.gameObject);
     }
 }
