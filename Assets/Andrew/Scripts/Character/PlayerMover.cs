@@ -23,7 +23,6 @@ public class PlayerMover : MonoBehaviour
 
     public Transform body;
     Vector3 lookLerp;
-
     Vector3 spawnPos;
 
     void Start()
