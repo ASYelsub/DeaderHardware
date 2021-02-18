@@ -19,7 +19,7 @@ public class PlayerMover : MonoBehaviour
     public float deccel;
     public float grav;
 
-    bool grounded;
+    public bool grounded;
 
     public Transform body;
     Vector3 lookLerp;
@@ -89,7 +89,7 @@ public class PlayerMover : MonoBehaviour
 
         if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit))
         {
-            grounded = hit.distance < 1.25f;
+            grounded = hit.distance < 1.25f && !hit.collider.isTrigger;
             if (hit.distance < 1.25f && !hit.collider.isTrigger)
             {
                 transform.position = new Vector3(transform.position.x, hit.point.y + 1f, transform.position.z);
@@ -152,7 +152,7 @@ public class PlayerMover : MonoBehaviour
 
         if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit))
         {
-            grounded = hit.distance < 1.25f;
+            grounded = hit.distance < 1.25f && !hit.collider.isTrigger;
             if (hit.distance < 1.25f && !hit.collider.isTrigger)
             {
                 transform.position = new Vector3(transform.position.x, hit.point.y + 1f, transform.position.z);
