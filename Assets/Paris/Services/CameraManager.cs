@@ -32,7 +32,6 @@ public class CameraManager: MonoBehaviour
             _mainCamera.transform.rotation = Quaternion.Slerp(_mainCamera.transform.rotation, _desiredRotation, Time.deltaTime);
         }
 
-
     }
 
     void constructForwardVectorForTarget() {

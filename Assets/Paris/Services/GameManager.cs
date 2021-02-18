@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
         ServicesLocator.CameraManager.Update();
 
+
+
     }
 
 }
