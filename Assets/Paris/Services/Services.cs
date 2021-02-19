@@ -6,5 +6,6 @@ public static class ServicesLocator {
 
     public static CameraManager CameraManager;
     public static GameManager GameManager;
+    //public static DialogueManager DialogueManager;
 
 }
