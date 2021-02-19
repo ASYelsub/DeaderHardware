@@ -1,0 +1,7 @@
+This is the first line of dialogue.
+~~
+Here is the second.
+~~
+The third line of dialogue is a much longer than the first and the second and contains valuable information.
+~~
+4 
