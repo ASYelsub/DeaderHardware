@@ -7,21 +7,22 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public TriggerSystem_Dialogue dialogue; // REMOVE LATER
-    public string delimiter = "~";
 
     private string[] lines;
-    private bool isPrinting;
+    private bool dialogueUp;
+    private bool isTyping;
     private int lineNum = 0;
     
     public void Update()
     {
-        Debug.Log(isPrinting + " LineNum: " + lineNum);
+        Debug.Log(dialogueUp + " LineNum: " + lineNum);
         
-        if (isPrinting && Input.GetKeyDown(KeyCode.Space)) {
+        if (dialogueUp && Input.GetKeyDown(KeyCode.Space)) {
             Debug.Log("SPACE");
             if (lineNum >= lines.Length) {
                 Cleanup();
             } else {
+                StopCoroutine("DisplayText");
                 ClearText();
                 StartCoroutine("DisplayText", lines[lineNum]);
             }
@@ -31,13 +32,10 @@ public class DialogueManager : MonoBehaviour
     public void SplitFile (TriggerSystem_Dialogue d)
     {
         dialogue = d;
-        isPrinting = true;
+        dialogueUp = true;
 
-            // The code doesn't want to compile with a delimiter longer than 
-            // one character
-        lines = dialogue.file.text.Split('~');
-        foreach (string s in lines) s.Trim();
-        //lines = dialogue.file.text.Split(new string[] { delimiter }, System.StringSplitOptions.RemoveEmptyEntries);
+        lines = dialogue.file.text.Split('\n');
+        
         Debug.Log("Lines to print: " + lines.Length);
 
         StartCoroutine("DisplayText", lines[lineNum]);
@@ -45,6 +43,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator DisplayText (string current) 
     {
+        isTyping = true;
         lineNum++;
 
         foreach (char c in current) {
@@ -52,6 +51,7 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
         
+        isTyping = false;
         yield return null;
     }
 
@@ -62,7 +62,7 @@ public class DialogueManager : MonoBehaviour
         dialogue = null;
         lines = null;
         lineNum = 0;
-        isPrinting = false;
+        dialogueUp = false;
     }
 
     private void ClearText() => dialogue.textBox.text = "";
