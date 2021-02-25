@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,21 +9,21 @@ public class DialogueManager : MonoBehaviour
     public TriggerSystem_Dialogue dialogue; // REMOVE LATER
 
     private string[] lines;
-    private bool isPrinting;
+    private bool dialogueUp;
+    private bool isTyping;
     private int lineNum = 0;
-
-    void Awake() {
-        //lines = new List<string>();
-    }
     
     public void Update()
     {
-        Debug.Log(isPrinting + " LineNum: " + lineNum);
-        if (isPrinting && Input.GetKeyDown(KeyCode.Space)) {
+        Debug.Log(dialogueUp + " LineNum: " + lineNum);
+        
+        if (dialogueUp && Input.GetKeyDown(KeyCode.Space)) {
             Debug.Log("SPACE");
             if (lineNum >= lines.Length) {
-                ClearDialogue();
+                Cleanup();
             } else {
+                StopCoroutine("DisplayText");
+                ClearText();
                 StartCoroutine("DisplayText", lines[lineNum]);
             }
         }
@@ -31,18 +32,18 @@ public class DialogueManager : MonoBehaviour
     public void SplitFile (TriggerSystem_Dialogue d)
     {
         dialogue = d;
-        isPrinting = true;
+        dialogueUp = true;
 
-            // The code doesn't want to compile with a delimiter longer than 
-            // one character
-        lines = dialogue.file.text.Split('~');
-
+        lines = dialogue.file.text.Split('\n');
+        
+        Debug.Log("Lines to print: " + lines.Length);
 
         StartCoroutine("DisplayText", lines[lineNum]);
     }
 
     private IEnumerator DisplayText (string current) 
     {
+        isTyping = true;
         lineNum++;
 
         foreach (char c in current) {
@@ -50,15 +51,19 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
         
+        isTyping = false;
         yield return null;
     }
 
-    private void ClearDialogue() 
+    private void Cleanup() 
     {
         Object.Destroy(dialogue.gameObject);
+        dialogue.textBox.text = "";
         dialogue = null;
         lines = null;
         lineNum = 0;
-        isPrinting = false;
-    } 
+        dialogueUp = false;
+    }
+
+    private void ClearText() => dialogue.textBox.text = "";
 }
