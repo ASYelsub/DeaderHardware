@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
         //Initalize Services
         ServicesLocator.GameManager = this;
         ServicesLocator.CameraManager = new CameraManager();
+        //ServicesLocator.DialogueManager = new DialogueManager();
 
         ServicesLocator.Initialization();
 
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     void Update() {
 
         ServicesLocator.CameraManager.Update();
+        //ServicesLocator.DialogueManager.Update();
 
 
 
