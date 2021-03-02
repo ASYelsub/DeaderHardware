@@ -13,156 +13,65 @@ public class PlayerMover : MonoBehaviour
 
     public Transform CamTransform;
 
-    public float walkSpeed;
-    public float maxWalkSpeed;
-    public float accel;
-    public float deccel;
-    public float grav;
+    public float walkSpeed = 0;
+    public float maxWalkSpeed = 6;
+    public float accel = 10;
+    public float deccel = 10;
+    public float grav = 40;
 
     public bool grounded;
 
-    public Transform body;
-    Vector3 lookLerp;
-    Vector3 spawnPos;
+    float tankRotation;
+    public float rotationSpeed = 90;
+
+    public float playerHeight = 1;
+    public float rampSnapThreshold = .1f;
+
+    public Vector3 lastGroundedPos;
 
     void Start()
     {
-        spawnPos = transform.position;
         CC = GetComponent<CharacterController>();
-        lookLerp = transform.position+transform.forward;
-        
         CamTransform = Camera.main.transform;
+        tankRotation = transform.rotation.eulerAngles.y;
     }
 
-    bool moveRelative;
-    public float rotSpeed;
-
-    void Update()
+    public void Update()
     {
-        if (moveRelative)
+        tankRotation += Input.GetAxisRaw("Horizontal") * rotationSpeed * Time.deltaTime;
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, tankRotation, transform.rotation.eulerAngles.z);
+
+        moveDirection = new Vector3(transform.forward.x, moveDirection.y, transform.forward.z);
+
+        Physics.Raycast(transform.position, -transform.up, out RaycastHit hit);
+        grounded = CC.isGrounded || (hit.collider != null && hit.distance < playerHeight + rampSnapThreshold && !hit.collider.isTrigger);
+
+        if (grounded)
         {
-            relativeMovement();
+            lastGroundedPos = transform.position;
+            moveDirection.y = -.01f;
         }
         else
         {
-            tankMovement();
+            moveDirection.y -= grav * Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            moveRelative = !moveRelative;
-            CC.enabled = false;
-            transform.position = spawnPos;
-            CC.enabled = true;
-        }
-    }
+        walkSpeed += Input.GetAxisRaw("Vertical") * accel * Time.deltaTime;
+        if (Input.GetAxisRaw("Vertical") == 0) { walkSpeed -= (walkSpeed - 0)*deccel * Time.deltaTime; }
 
-    float yRot;
-    Vector3 tankXZ;
+        walkSpeed = Mathf.Clamp(walkSpeed, -maxWalkSpeed, maxWalkSpeed);
 
-    public void tankMovement()
-    {
-        if (Input.GetAxisRaw("Vertical") != 0)
-        {
-            walkSpeed += accel * Time.deltaTime;
-        }
-        else
-        {
-            walkSpeed -= deccel * Time.deltaTime;
-        }
-
-        walkSpeed = Mathf.Clamp(walkSpeed, 0,maxWalkSpeed);
-
-        body.localRotation = Quaternion.Euler(0,0,0);
-
-        yRot += Input.GetAxisRaw("Horizontal") * Time.deltaTime * rotSpeed;
-        transform.rotation = Quaternion.Euler(0,yRot,0);
-
-        tankXZ = transform.forward * Input.GetAxisRaw("Vertical") * walkSpeed;
-
-        moveDirection = new Vector3(tankXZ.x, moveDirection.y, tankXZ.z);
-
-        if (!grounded) { moveDirection.y -= grav*Time.deltaTime; }
-        else { moveDirection.y = 0f; }
+        moveDirection.x *= walkSpeed;
+        moveDirection.z *= walkSpeed;
 
         CC.Move(moveDirection * Time.deltaTime);
 
-        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit))
-        {
-            grounded = hit.distance < 1.25f && !hit.collider.isTrigger;
-            if (hit.distance < 1.25f && !hit.collider.isTrigger)
-            {
-                transform.position = new Vector3(transform.position.x, hit.point.y + 1f, transform.position.z);
-            }
-        }
-        else
-        {
-            grounded = false;
-        }
+        if (hit.collider !=null && hit.distance < playerHeight + rampSnapThreshold && !hit.collider.isTrigger) { new Vector3(transform.position.x, hit.point.y + playerHeight, transform.position.z); }
     }
 
-    void relativeMovement()
+    public void FallRespawn()
     {
-
-
-        moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), moveDirection.y, Input.GetAxisRaw("Vertical")); //grab WASD / ARROW values  
-
-        if (new Vector3(moveDirection.x, 0, moveDirection.z).magnitude > 0)
-        {
-            walkSpeed += accel * Time.deltaTime;
-        }
-        else
-        {
-            walkSpeed -= deccel * Time.deltaTime;
-        }
-        walkSpeed = Mathf.Clamp(walkSpeed, 0, maxWalkSpeed);
-
-        moveDirection.x *= walkSpeed;
-        moveDirection.z *= walkSpeed; // set the speed of walking (not falling) axis
-
-        if (Input.GetAxisRaw("Horizontal") == 0) //only change relative moveDirection values when you take your hands off the keyboard. this is to prevent weird movement with camera switches.
-        {
-            moveDirection.x = 0;
-            rDir = CamTransform.right;
-            rDir.y = 0;
-            rDir.Normalize();
-        }
-
-        if (Input.GetAxisRaw("Vertical") == 0) //only change relative moveDirection values when you take your hands off the keyboard. this is to prevent weird movement with camera switches.
-        {
-            moveDirection.z = 0;
-            fDir = CamTransform.forward;
-            fDir.y = 0;//set the y value to 0, so the player doesnt fly up in the event of a tilted camera
-            fDir.Normalize(); //normalize to keep speed constant in efent of tilted camera
-        }
-
-        if (!grounded) { moveDirection.y -= grav*Time.deltaTime; }
-        else { moveDirection.y = 0f; }
-        uDir = Vector3.up;
-
-        moveDirection = (moveDirection.x * rDir) + (moveDirection.y * uDir) + (moveDirection.z * fDir); //make movement relative to camera orietation
-
-        if (new Vector3(moveDirection.x, 0, moveDirection.z).magnitude > 0)
-        {
-            lookLerp = body.position + new Vector3(moveDirection.x, 0, moveDirection.z);
-            body.LookAt(lookLerp);
-        }
-
-        CC.Move(moveDirection * Time.deltaTime); // move the character controller
-
-        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit))
-        {
-            grounded = hit.distance < 1.25f && !hit.collider.isTrigger;
-            if (hit.distance < 1.25f && !hit.collider.isTrigger)
-            {
-                transform.position = new Vector3(transform.position.x, hit.point.y + 1f, transform.position.z);
-            }
-        }
-        else
-        {
-            grounded = false;
-        }
+        transform.position = lastGroundedPos;
     }
-
 
 }

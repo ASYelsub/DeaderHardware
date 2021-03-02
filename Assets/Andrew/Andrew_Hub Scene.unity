@@ -410,6 +410,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.04881047
       objectReference: {fileID: 0}
+    - target: {fileID: 1139831784371599553, guid: 1dd5fa5fce9b4954aafb38e313712331, type: 3}
+      propertyPath: track
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1139831784685433257, guid: 1dd5fa5fce9b4954aafb38e313712331, type: 3}
       propertyPath: m_LocalScale.x
       value: 10.0845
@@ -631,14 +635,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDirection: {x: 0, y: 0, z: 0}
   CamTransform: {fileID: 0}
-  walkSpeed: 6
+  walkSpeed: 0
   maxWalkSpeed: 6
-  accel: 2
-  deccel: 0
+  accel: 10
+  deccel: 10
   grav: 20
   grounded: 0
-  body: {fileID: 1079725683}
-  rotSpeed: 180
+  rotationSpeed: 90
+  playerHeight: 1
+  rampSnapThreshold: 0.1
+  lastGroundedPos: {x: 0, y: 0, z: 0}
 --- !u!136 &582129940
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6563,18 +6569,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb77ff8b73baf7b4ca756f3fdce2f1ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1721358497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1721358495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d36588fade1c02e46876fd7a17083c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1814400844
