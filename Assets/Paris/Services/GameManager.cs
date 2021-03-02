@@ -9,9 +9,13 @@ public class GameManager : MonoBehaviour
         //Initalize Services
         ServicesLocator.GameManager = this;
         ServicesLocator.CameraManager = new CameraManager();
+        ServicesLocator.Music = new MusicManager();
+        ServicesLocator.SceneChanger = new SceneChangeManager();
         //ServicesLocator.DialogueManager = new DialogueManager();
 
         ServicesLocator.Initialization();
+
+        ServicesLocator.Music.changeTrack(0);
 
     }
 
@@ -19,9 +23,6 @@ public class GameManager : MonoBehaviour
 
         ServicesLocator.CameraManager.Update();
         //ServicesLocator.DialogueManager.Update();
-
-
-
     }
 
 }

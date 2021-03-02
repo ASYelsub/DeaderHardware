@@ -7,7 +7,7 @@ public class PlayerInteractor : MonoBehaviour
     Transform body;
     void Start()
     {
-        body = GetComponent<PlayerMover>().body;
+        body = transform;
     }
 
     public float radius;

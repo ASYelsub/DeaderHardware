@@ -4,28 +4,18 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    private void Awake()
-    {
-        MoveToManagerObj();
-    }
-
-    void MoveToManagerObj()
-    {
-        if (!GameObject.Find("Managers"))
-        {
-            GameObject g = new GameObject("Managers");
-            DontDestroyOnLoad(g);
-        }
-        DontDestroyOnLoad(this.gameObject);
-        transform.parent = GameObject.Find("Managers").transform;
-    }
-
     public AudioSource AS;
 
-    void Start()
+    public void Initialize()
     {
         AS = GetComponent<AudioSource>();
-        DeleteOtherManager();
+        initializeTracks();
+        //DeleteOtherManager();
+    }
+
+    void initializeTracks()
+    {
+        tracks = (AudioClip[]) Resources.LoadAll("Music",typeof(AudioClip)); //loads all tracks from folder Assets\Resources\Music
     }
 
     void DeleteOtherManager()
@@ -44,6 +34,7 @@ public class MusicManager : MonoBehaviour
 
     public void changeTrack(int trackID)
     {
+        AS.Stop();
         if (!tracks[trackID]) { print("Track doesn't exist!"); return; }
         AS.clip = tracks[trackID];
         AS.Play();
