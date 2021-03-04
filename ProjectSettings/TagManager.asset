@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
+  - GameCamera
+  - T1
+  - T2
+  - T3
+  - T4
   layers:
   - Default
   - TransparentFX
@@ -12,8 +17,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Obstacles
+  - Characters
   - 
   - 
   - 
