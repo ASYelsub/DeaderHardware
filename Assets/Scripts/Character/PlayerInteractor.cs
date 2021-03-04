@@ -23,14 +23,18 @@ public class PlayerInteractor : MonoBehaviour
             Collider nearestCollider = null;
             foreach (Collider item in nearbyColliders)
             {
-                if (item.GetComponent<IInteractable>() == null) { return; }
+                //if (item.GetComponent<IInteractable>() == null) { return; }
                 //find the closest one
-                if (Vector3.Distance(item.ClosestPoint(transform.position), transform.position + body.forward) < dist)
+                //if (Vector3.Distance(item.ClosestPoint(transform.position), transform.position + body.forward) < dist)
+                //{
+                //    dist = Vector3.Distance(item.ClosestPoint(transform.position), transform.position + body.forward);
+                //    nearestCollider = item;
+                //}
+                //nearestCollider.GetComponentInChildren<IInteractable>().ExecuteInteraction();
+                if (item.GetComponent<IInteractable>() != null)
                 {
-                    dist = Vector3.Distance(item.ClosestPoint(transform.position), transform.position + body.forward);
-                    nearestCollider = item;
+                    item.GetComponentInChildren<IInteractable>().ExecuteInteraction();
                 }
-                nearestCollider.GetComponentInChildren<IInteractable>().ExecuteInteraction();
             }
         }
     }
