@@ -14,26 +14,16 @@ public class ItemMenu : MonoBehaviour
 
     private SettingsMenu sm;
 
+    [SerializeField]private GameObject boxPrefab;
+    private ItemBox[] itemBoxes;
 
-
-    private class ItemBox
-    {
-        Item currentItem;
-        bool isFilled;
-    }
-
-    private class Item
-    {
-        bool isCollected;
-        ItemBox currentItemBox;
-    }
+  
 
     private void Start()
     {
         menuOn = false;
         menuIsMoving = false;
-        ToggleMenu();
-        menuObject.SetActive(false);
+        menuObject.SetActive(menuOn);
     }
 
     private void Update()
