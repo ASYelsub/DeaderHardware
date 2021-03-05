@@ -32,6 +32,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -56,11 +60,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _LightRamp:
+        m_Texture: {fileID: 2800000, guid: d90a297bad691f844b21ca1fce2cffbd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -100,6 +112,7 @@ Material:
     - Vector1_CF184A9E: 0.5
     - _AlphaClip: 0
     - _BaseMapUVScale: 1
+    - _Blackout: 0.5
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -108,24 +121,30 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DitherBrightness: 0.067
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _FresnelBias: 0.57
+    - _FresnelPower: 3.01
+    - _FresnelScale: 1.81
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _HighlightIntensity: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _RimStrength: 0.29
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _WireframeShader_Diameter: 1
+    - _WireframeShader_Diameter: 0
     - _WireframeShader_Smoothness: 0
-    - _WireframeShader_Thickness: 0.06
+    - _WireframeShader_Thickness: 0.05
     - _Wireframe_ColorEmissionStrength: 0
     - _Wireframe_DistanceFadeEnd: 10
     - _Wireframe_DistanceFadeStart: 5
@@ -135,8 +154,11 @@ Material:
     - Color_DF059B30: {r: 1, g: 1, b: 1, a: 1}
     - Color_E904F11F: {r: 1, g: 0, b: 0, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _ColorBlack: {r: 0, g: 1, b: 0.1658607, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Tint: {r: 1, g: 1, b: 1, a: 0}
     - _Wireframe_Color: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

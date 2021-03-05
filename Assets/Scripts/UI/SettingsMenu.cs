@@ -27,12 +27,9 @@ public class SettingsMenu : MonoBehaviour
     private int vol;
 
     [Header("Raycast Stuff")]
-    Vector2 mousePos;
     [SerializeField] private Camera cam;
-    bool shootRay;
     public Ray buttonRay;
     Vector3 point;
-    Vector3 worldPos;
 
     [Header("Theme")]
     private Theme currentTheme;
@@ -138,11 +135,12 @@ public class SettingsMenu : MonoBehaviour
     }
     private void ChangeTheme(int t)
     {
-        if (!themeTagMoving)
+        if (!themeTagMoving && themes[t].selected != true)
         {
             StartCoroutine(MoveThemeOff());
             for (int i = 0; i < themes.Length; i++)
             {
+                
                 if (i == t)
                 {
                     themes[i].selected = true;
@@ -221,7 +219,7 @@ public class SettingsMenu : MonoBehaviour
             {ChangeTheme(1);}
             if (hit.collider.tag == "T3")
             {ChangeTheme(2);}
-            if (hit.collider.tag == "T5")
+            if (hit.collider.tag == "T4")
             {ChangeTheme(3);}
             if(hit.collider.tag == "V6")
             {SetMusicVolume(4);}
@@ -246,7 +244,6 @@ public class SettingsMenu : MonoBehaviour
             if (hit.collider.tag == "V13")
             {SetMusicVolume(9);}
         }
-        shootRay = false;
     }
 
     void SetMusicVolume(int i)
