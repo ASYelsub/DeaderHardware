@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Finn_Hub.unity
     guid: 00031fc35703f6a4b8d92b3c8fec100e
+  - enabled: 1
+    path: Assets/Scenes/Finn_Level2.unity
+    guid: ebd2e54382ea28b4f867d99d1539f563
   m_configObjects: {}
