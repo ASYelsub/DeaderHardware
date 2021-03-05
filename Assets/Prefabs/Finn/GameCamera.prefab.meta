@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Plugins/Amazing Assets/Wireframe Shader/Installer/High Definition.unitypackage.meta
+guid: d3b0bb5f3298b474489402a000a8b356
+folderAsset: yes
+DefaultImporter:
+=======
 guid: 6026b707872a2bd408baf02056d5ad15
 PrefabImporter:
+>>>>>>> origin/Finn_Branch:Assets/Prefabs/Finn/GameCamera.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
