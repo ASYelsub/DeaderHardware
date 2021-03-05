@@ -22,6 +22,7 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private GameObject home;
     [SerializeField] private GameObject[] primaryCol;
     [SerializeField] private GameObject[] secondaryCol;
+    [SerializeField] private GameObject[] quitButton;
 
     [Header("Volume")]
     private int vol;
@@ -83,7 +84,7 @@ public class SettingsMenu : MonoBehaviour
 
     void Update(){
         if (!menuIsMoving){
-            if (Input.GetKeyDown(KeyCode.Escape)){
+            if (Input.GetKeyDown(KeyCode.P )|| Input.GetKey(KeyCode.Alpha1)){
                 TurnMenuOnOff(settingsActive);
             }
             if (settingsActive){
@@ -213,6 +214,10 @@ public class SettingsMenu : MonoBehaviour
         {
             //Debug.DrawRay(buttonRay.origin, buttonRay.direction*hit.distance, Color.magenta);
             //Debug.Log("Ray hit " + hit.collider.gameObject);
+            if (hit.collider.tag == "Quit")
+            {
+                Quit();
+            }
             if (hit.collider.tag == "T1")
             {ChangeTheme(0);}
             if (hit.collider.tag == "T2")
@@ -244,6 +249,12 @@ public class SettingsMenu : MonoBehaviour
             if (hit.collider.tag == "V13")
             {SetMusicVolume(9);}
         }
+    }
+    private void Quit()
+    {
+        Debug.Log("quit");
+        //Application.Quit();
+       
     }
 
     void SetMusicVolume(int i)
