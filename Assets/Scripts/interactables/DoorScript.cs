@@ -21,7 +21,7 @@ public class DoorScript : SceneChangeManager,ITriggerable,IInteractable
 
     public void ExecuteInteraction()
     {
-        ChangeScene(SceneToLoad);
+        ServicesLocator.SceneChanger.ChangeScene(SceneToLoad);
     }
 
     public void ExecuteTriggerFunction()
