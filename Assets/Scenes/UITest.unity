@@ -409,6 +409,22 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 97733834}
+    - target: {fileID: 8456111040493195297, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: allEditor.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040493195297, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: allEditor.Array.data[3].itemName
+      value: Awesome Sauce
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040493195297, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: allEditor.Array.data[3].collected
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040493195297, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: allEditor.Array.data[3].itemDecription
+      value: Sauce that is Awesome
+      objectReference: {fileID: 0}
     - target: {fileID: 8456111040493195298, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
       propertyPath: cam
       value: 

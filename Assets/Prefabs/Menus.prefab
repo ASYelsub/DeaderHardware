@@ -3278,7 +3278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8456111040017845385
 Transform:
   m_ObjectHideFlags: 0
@@ -5531,7 +5531,7 @@ GameObject:
   - component: {fileID: 8456111040493195297}
   - component: {fileID: 8456111040493195298}
   m_Layer: 0
-  m_Name: MenuManager
+  m_Name: Menus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5580,6 +5580,9 @@ MonoBehaviour:
   - collected: 1
     itemName: An Entire House
     itemDecription: Home is where the hearth is.
+  - collected: 0
+    itemName: Satire Iteself
+    itemDecription: Yeet haw
   tagParent: {fileID: 8456111039064777480}
   tagPrefab: {fileID: 3385070068329943763, guid: b2bdd12c9f789254bac315803b64f605, type: 3}
   rightDesc: {fileID: 8456111040710251033}
@@ -5657,6 +5660,7 @@ MonoBehaviour:
   - {fileID: 8456111039651873665}
   - {fileID: 8456111040760839336}
   - {fileID: 8456111040364025224}
+  quitButton: []
   cam: {fileID: 0}
   themes:
   - element: {fileID: 8456111040813084479}
