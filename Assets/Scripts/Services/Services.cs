@@ -8,6 +8,7 @@ public static class ServicesLocator {
     public static GameManager GameManager;
     public static SceneChangeManager SceneChanger;
     public static MusicManager Music;
+    public static ItemLibrary ItemLibrary;
     //public static DialogueManager DialogueManager;
 
 }

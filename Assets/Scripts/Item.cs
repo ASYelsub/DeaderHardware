@@ -2,22 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //Goes on an object in the world that can be picked up
-public class Item : MonoBehaviour
+public class Item
 {
-    [SerializeField]
-    string ID;
+    public int ID;
 
-    string name;
-    string UIDesc;
-    GameObject UIModel;
-    string hoverText;
-    bool isCollected;
-    bool isPlaced;
-    bool isBook;
-
-    public Item(string ID)
-    {
-
-    }
-
+    public string name;
+    public string UIDesc;
+    public GameObject UIModel;
+    public string hoverText;
+    public bool isCollected;
+    public bool isPlaced;
+    public bool isBook;
 }
