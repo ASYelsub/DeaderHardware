@@ -1,16 +1,27 @@
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class ItemLibrary
 {
     public List<Item> ItemList = new List<Item>();
 
-    public void Initialize(string ItemDictionary) {
+    public ItemLibrary(string ItemDictionary)
+    {
+        //Debug.Log(ItemDictionary);
+
 
         string[] lines = ItemDictionary.Split('\n');
 
-        for (int i = 1; i < lines.Length; i++) {
+        for (int i = 1; i < lines.Length-1; i++)
+        {
             ItemList.Add(CSVItemDictionaryToItemClass(lines[i]));
         }
+
+    }
+    public void Initialize(string ItemDictionary) {
+
+        
 
     }
 

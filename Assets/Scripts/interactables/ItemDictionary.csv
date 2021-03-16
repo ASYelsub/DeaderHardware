@@ -1,2 +1,3 @@
 ﻿ID,Name,Description,FloatText,IsBook
-1,TestItem,This is my test item,Pick up old crusty musty book?,FALSE
+0,TestItem,This is my test item,Pick up old crusty musty book?,FALSE
+1,TestItem2,SKLJGKLJDFG,Pick up old crusty musty book?,FALSE

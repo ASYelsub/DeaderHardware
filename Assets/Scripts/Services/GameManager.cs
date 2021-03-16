@@ -7,9 +7,9 @@ using UnityEngine.Rendering.Universal;
 public class GameManager : MonoBehaviour
 {
     public TextAsset ItemDictionary;
-    
+    private InvMenu invM;
     void Start() {
-
+        invM = FindObjectOfType<InvMenu>();
         Volume PPV = FindObjectOfType<Volume>();
         if (!PPV == null) {
             if (PPV.profile.TryGet<Bloom>(out var bloom)) {
@@ -20,17 +20,16 @@ public class GameManager : MonoBehaviour
         ServicesLocator.GameManager = this;
         ServicesLocator.CameraManager = new CameraManager();
         ServicesLocator.Music = new MusicManager();
-        ServicesLocator.SceneChanger = new SceneChangeManager();
+        ServicesLocator.SceneChanger = FindObjectOfType<SceneChangeManager>();
         //ServicesLocator.DialogueManager = new DialogueManager();
-        ServicesLocator.ItemLibrary = new ItemLibrary();
-
+        ServicesLocator.ItemLibrary = new ItemLibrary(ItemDictionary.text);
+        invM.DoInvMenu();
+          
         ServicesLocator.Initialization();
-        if (ItemDictionary != null) {
-            ServicesLocator.ItemLibrary.Initialize(ItemDictionary.text);
-        }
+       // ServicesLocator.ItemLibrary.Initialize(ItemDictionary.text);
 
         ServicesLocator.Music.changeTrack(0);
-
+        
     }
 
     void Update() {
