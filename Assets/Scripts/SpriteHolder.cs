@@ -16,6 +16,7 @@ public class SpriteHolder : MonoBehaviour
 
     public void SwitchShot(int x)
     {
+        Debug.Log("Switching from " + currentShot + " to " + x);
         for (int i = 0; i < shots[currentShot].sprites.Length; i++)
         {
             shots[currentShot].sprites[i].SetActive(false);
