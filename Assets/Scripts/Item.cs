@@ -13,4 +13,13 @@ public class Item
     public bool isCollected;
     public bool isPlaced;
     public bool isBook;
+    public bool isActive;
+
+    public Item()
+    {
+        isActive = false;
+        isCollected = false;
+        isPlaced = false;
+    }
+
 }
