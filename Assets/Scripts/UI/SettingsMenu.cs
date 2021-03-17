@@ -95,6 +95,8 @@ public class SettingsMenu : MonoBehaviour
                 }
             }
         }
+
+        ShowRay();
     }
 
     public void TurnMenuOnOff(bool currentMenuState){
@@ -206,14 +208,31 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 
+    void ShowRay()
+    {
+        if (isHitting)
+        {
+            Debug.DrawRay(buttonRay.origin, buttonRay.direction * globalHit.distance, Color.magenta);
+            Debug.Log("YES");
+            Debug.Log("Ray hit " + globalHit.collider.gameObject);
+        }
+    }
+     
+    bool isHitting = false;
+
+    RaycastHit globalHit;
     void ButtonRay()
     {
         buttonRay = cam.ScreenPointToRay(point);
         RaycastHit hit;
         if (Physics.Raycast(buttonRay, out hit))
         {
-            //Debug.DrawRay(buttonRay.origin, buttonRay.direction*hit.distance, Color.magenta);
-            //Debug.Log("Ray hit " + hit.collider.gameObject);
+            
+            Debug.DrawRay(buttonRay.origin, buttonRay.direction*hit.distance, Color.magenta);
+            globalHit = hit;
+            ShowRay();
+            isHitting = true;
+           
             if (hit.collider.tag == "Quit")
             {
                 Quit();
