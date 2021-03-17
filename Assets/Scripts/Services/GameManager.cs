@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public TextAsset ItemDictionary;
     private InvMenu invM;
+    public DialogueManager diaMan;
+
     void Start() {
         invM = FindObjectOfType<InvMenu>();
         Volume PPV = FindObjectOfType<Volume>();
@@ -21,8 +23,8 @@ public class GameManager : MonoBehaviour
         ServicesLocator.CameraManager = new CameraManager();
         ServicesLocator.Music = new MusicManager();
         ServicesLocator.SceneChanger = FindObjectOfType<SceneChangeManager>();
-        //ServicesLocator.DialogueManager = new DialogueManager();
         ServicesLocator.ItemLibrary = new ItemLibrary(ItemDictionary.text);
+        ServicesLocator.DialogueManager = diaMan;
         invM.DoInvMenu();
           
         ServicesLocator.Initialization();

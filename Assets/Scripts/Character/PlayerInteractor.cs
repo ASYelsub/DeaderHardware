@@ -17,7 +17,7 @@ public class PlayerInteractor : MonoBehaviour
     void Update()
     {
         nearbyColliders = Physics.OverlapSphere(transform.position,radius);
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Space) && ServicesLocator.DialogueManager.isShowing == false)
         {
             float dist = Mathf.Infinity;
             Collider nearestCollider = null;
