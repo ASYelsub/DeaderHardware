@@ -22,7 +22,6 @@ public class LibrarianParameterManager : MonoBehaviour
         {
             dis = Mathf.Min(dis, Vector3.Distance(player.position, librarians[i].transform.position));
         }
-        Debug.Log("dis = " + dis);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("LibRange", dis);
         dis = 1000;
     }
