@@ -7,8 +7,14 @@ using UnityEngine.Rendering.Universal;
 public class GameManager : MonoBehaviour
 {
     public TextAsset ItemDictionary;
+<<<<<<< HEAD
     [HideInInspector]
     public InvMenu invM;
+=======
+    private InvMenu invM;
+    public DialogueManager diaMan;
+
+>>>>>>> b7e74e7cb0c8082217cb5c712fd2f65c2e6a7757
     void Start() {
         invM = FindObjectOfType<InvMenu>();
         Volume PPV = FindObjectOfType<Volume>();
