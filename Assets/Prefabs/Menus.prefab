@@ -3278,7 +3278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8456111040017845385
 Transform:
   m_ObjectHideFlags: 0
@@ -5530,8 +5530,9 @@ GameObject:
   - component: {fileID: 8456111040493195299}
   - component: {fileID: 8456111040493195297}
   - component: {fileID: 8456111040493195298}
+  - component: {fileID: 4324129103282467225}
   m_Layer: 0
-  m_Name: MenuManager
+  m_Name: Menus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5560,7 +5561,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8456111040493195300}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 704b3c44bebaf476aac880e5cc07a341, type: 3}
   m_Name: 
@@ -5580,6 +5581,9 @@ MonoBehaviour:
   - collected: 1
     itemName: An Entire House
     itemDecription: Home is where the hearth is.
+  - collected: 0
+    itemName: Satire Iteself
+    itemDecription: Yeet haw
   tagParent: {fileID: 8456111039064777480}
   tagPrefab: {fileID: 3385070068329943763, guid: b2bdd12c9f789254bac315803b64f605, type: 3}
   rightDesc: {fileID: 8456111040710251033}
@@ -5657,6 +5661,7 @@ MonoBehaviour:
   - {fileID: 8456111039651873665}
   - {fileID: 8456111040760839336}
   - {fileID: 8456111040364025224}
+  quitButton: []
   cam: {fileID: 0}
   themes:
   - element: {fileID: 8456111040813084479}
@@ -5687,6 +5692,26 @@ MonoBehaviour:
     onPos: {x: 2.95, y: 0.11, z: 2.58}
     primaryMat: {fileID: 2100000, guid: 21f1e70258adff84aa2085b92c9ba119, type: 2}
     secondaryMat: {fileID: 2100000, guid: 049303b93c3b2cb4db20db3a703c1812, type: 2}
+--- !u!114 &4324129103282467225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8456111040493195300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae53cce272a7ee40938b7ac78ef46d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeMat: {fileID: 2100000, guid: 80b409cc6333753429df53e69969d8ad, type: 2}
+  inactiveMat: {fileID: 2100000, guid: fa3b76c80ab083844bca187d4b7a03df, type: 2}
+  menuObject: {fileID: 8456111040278996047}
+  menuTransform: {fileID: 8456111039064777479}
+  tagParent: {fileID: 8456111039064777480}
+  tagPrefab: {fileID: 8456111039793216908}
+  rightDesc: {fileID: 8456111040710251033}
+  tagSpacer: 1.014
 --- !u!1 &8456111040567830024
 GameObject:
   m_ObjectHideFlags: 0
@@ -8401,6 +8426,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2bdd12c9f789254bac315803b64f605, type: 3}
+--- !u!1 &8456111039793216908 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3385070068329943763, guid: b2bdd12c9f789254bac315803b64f605, type: 3}
+  m_PrefabInstance: {fileID: 6602289676210351967}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8456111039793216907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3385070068329943764, guid: b2bdd12c9f789254bac315803b64f605, type: 3}
