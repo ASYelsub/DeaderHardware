@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001D884ECF188 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000026011EA3928 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,3 +16,57 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::createSound                     : filename = FMOD\DeaderHardware_FMOD\Build\Desktop/Library.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000260111070E8 : node = 000002601DD3C0C0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000026009BC56D8.  list count = 0
+[LOG] SystemI::createSound                     : filename = FMOD\DeaderHardware_FMOD\Build\Desktop/Library.bank : mode 02010082
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000260111070E8
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD\DeaderHardware_FMOD\Build\Desktop/Library.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 0000026011107B08 : node = 000002601DD3C480
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1757504
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000026009BC56D8.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3520
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002601DD3C1D0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Susan_-_Drums', format=5, channels=2, frequency=48000, lengthbytes=1044064, lengthpcm=4211774, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.936768.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000260111070E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000026011107B08
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD\DeaderHardware_FMOD\Build\Desktop/Library.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1757504
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3520
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002601DD3C590
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Susan-Voice', format=5, channels=2, frequency=48000, lengthbytes=711872, lengthpcm=4210520, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988464.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000026011107B08
+[LOG] SoundI::release                          : Susan-Voice (00000260111090F8)
+[LOG] SoundI::release                          :     Susan-Voice (0000025F7FBA6EB8)
+[LOG] SoundI::release                          :     Susan-Voice (0000026011108F48)
+[LOG] SoundI::release                          : Susan_-_Drums (0000025F87D75598)
+[LOG] SoundI::release                          :     Susan_-_Drums (0000025F7FBA8BF8)
+[LOG] SoundI::release                          :     Susan_-_Drums (00000260111097B8)
+[LOG] SoundI::release                          : Susan-Voice (0000026011107B08)
+[LOG] SoundI::release                          :     Susan-Voice (0000025F7FBA7BB8)
+[LOG] SoundI::release                          :     Susan-Voice (00000260111119A8)
+[LOG] SoundI::release                          : Susan_-_Drums (00000260111070E8)
+[LOG] SoundI::release                          :     Susan_-_Drums (0000025F7FBA83D8)
+[LOG] SoundI::release                          :     Susan_-_Drums (000002601110E558)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
