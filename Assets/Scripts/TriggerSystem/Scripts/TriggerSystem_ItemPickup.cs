@@ -16,6 +16,7 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable {
 
         //Insert add inventory item here code
 
+        ServicesLocator.GameManager.invM.AddItem(myItem.ID);
         // ITEM REFERENCE: ServicesLocator.ItemLibrary.ItemList[id]
 
     }

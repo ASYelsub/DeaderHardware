@@ -139,8 +139,8 @@ public class InvMenu : MonoBehaviour
     {
         Debug.Log("this was called");
         //for testing without the trigger volume
-        AddItem(0);
-        AddItem(1);
+        //AddItem(0);
+        //AddItem(1);
         //AddItem(1);
         DisplayActive();
     }

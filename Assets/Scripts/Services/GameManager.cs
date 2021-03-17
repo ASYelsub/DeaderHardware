@@ -7,7 +7,8 @@ using UnityEngine.Rendering.Universal;
 public class GameManager : MonoBehaviour
 {
     public TextAsset ItemDictionary;
-    private InvMenu invM;
+    [HideInInspector]
+    public InvMenu invM;
     void Start() {
         invM = FindObjectOfType<InvMenu>();
         Volume PPV = FindObjectOfType<Volume>();
