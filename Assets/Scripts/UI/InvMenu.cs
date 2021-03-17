@@ -95,8 +95,6 @@ public class InvMenu : MonoBehaviour
 
         public void AssignItem(int ID)
         {
-          // this.tagText.text = "hello!";
-         // this.tagDesc = "description";
             this.isEmpty = false;
             this.tagText.text = ServicesLocator.ItemLibrary.ItemList[ID].name;
             this.tagDesc = ServicesLocator.ItemLibrary.ItemList[ID].UIDesc;
@@ -111,15 +109,25 @@ public class InvMenu : MonoBehaviour
     int itemCounter = 0;
 
     public void AddItem(int ID)
-    { 
-        itemTags[itemCounter].AssignItem(ID);
-        itemCounter++;
+    {
+        if(itemCounter < itemTags.Count)
+        {
+            itemTags[itemCounter].AssignItem(ID);
+            itemCounter++;
+        }
+        else
+        {
+            Debug.Log("yo");
+        }
+
+
+        DisplayActive();
     }
 
     public void Start()
     {
         itemList = new List<Item>();
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < visItem; i++)
         {
             itemTags.Add(new ItemTag(tagPrefab, tagParent));
             itemTags[i].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
@@ -128,7 +136,6 @@ public class InvMenu : MonoBehaviour
             // itemList.Add(ServicesLocator.ItemLibrary.ItemList[i]);
         }
         //activemax will become like, the amount of items in the ref
-        activemax = 5;
         menuOn = false;
         menuIsMoving = false;
         menuObject.SetActive(menuOn);
@@ -139,27 +146,56 @@ public class InvMenu : MonoBehaviour
     {
         Debug.Log("this was called");
         //for testing without the trigger volume
-        AddItem(0);
-        AddItem(1);
+     //   AddItem(0);
+      //  AddItem(1);
         //AddItem(1);
         DisplayActive();
     }
 
     void CycleActive(bool increase)
     {
-        if (increase){
-            if (activeItemInt == activemax-1)
-                activeItemInt = 0;
-            else
-                activeItemInt = activeItemInt + 1;
-        }
-        else{
-            if (activeItemInt == 0)
-                activeItemInt = activemax-1;
-            else
-                activeItemInt = activeItemInt - 1;
+        //not sure if it should be visItem-1 or itemCounter (which is the count of collected items)
+        if(itemCounter == 0)
+        {
 
         }
+        else if (visItem <= itemCounter)
+        {
+            if (increase)
+            {
+                if (activeItemInt == visItem - 1)
+                    activeItemInt = 0;
+                else
+                    activeItemInt = activeItemInt + 1;
+            }
+            else
+            {
+                if (activeItemInt == 0)
+                    activeItemInt = visItem - 1;
+                else
+                    activeItemInt = activeItemInt - 1;
+
+            }
+        }
+        else if(visItem > itemCounter)
+        {
+            if (increase)
+            {
+                if (activeItemInt == itemCounter - 1)
+                    activeItemInt = 0;
+                else
+                    activeItemInt = activeItemInt + 1;
+            }
+            else
+            {
+                if (activeItemInt == 0)
+                    activeItemInt = itemCounter - 1;
+                else
+                    activeItemInt = activeItemInt - 1;
+
+            }
+        }
+        
         DisplayActive();
     }
     void DisplayActive()
@@ -183,12 +219,17 @@ public class InvMenu : MonoBehaviour
         }
         if (menuOn)
         {
-           /* if (Input.GetMouseButtonDown(0))
+
+            if (Input.GetKeyDown(KeyCode.F) && itemCounter <= ServicesLocator.ItemLibrary.ItemList.Count)
             {
-                point = (new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-                point.z = -10;
-                ButtonRay();
-            }*/
+                AddItem(itemCounter);
+            }
+            /* if (Input.GetMouseButtonDown(0))
+             {
+                 point = (new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+                 point.z = -10;
+                 ButtonRay();
+             }*/
             if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
                 CycleActive(true);
