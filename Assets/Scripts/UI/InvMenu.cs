@@ -191,9 +191,21 @@ public class InvMenu : MonoBehaviour
                 CycleActive(false);
             }
 
+            //This removes an item from the inventory.
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                //This function needs to be changed to a currently nonexistant "CheckItem(activeItemInt)" function.
                 RemoveItem(activeItemInt);
+
+                //bool corresponds = CheckItem(activeItemint);
+
+                //if(corresponds == true){
+                //this.ToggleMenu();
+                // int l = 0;
+                //for(i=0; i<activeItemInt; i++){
+                //}
+                //dialoguemanager.splitfile()}
+                //RemoveItem(activeItemInt);
             }
         }
     }
@@ -270,7 +282,7 @@ public class InvMenu : MonoBehaviour
         int toReturn = itemTags[index].ID;
         if(topTrack != 0){
             Debug.Log("hello");
-            itemTags[index].RemoveTag();
+            
         }else if (itemCounter > 9){
             Debug.Log(1);
             itemTags[topTrack + visItem].visual.SetActive(true);
