@@ -34,7 +34,6 @@ public class ShotObjectHolder : MonoBehaviour
 [System.Serializable]
 public struct ShotObjects
 {
-    public MeshRenderer[] meshRends;
-    public SpriteRenderer[] spriteRends;
+    public GameObject[] Objs;
 }
  
