@@ -16,27 +16,30 @@ public class InvMenu : MonoBehaviour
 
     [SerializeField]
     private GameObject menuObject;
-    [SerializeField]
-    private Transform menuTransform;
 
     [SerializeField]
-    private List<Item> collectedItems = new List<Item>();
+    private List<Item> collectedItems = new List<Item>();//will be used for removing items from menu
     private List<ItemTag> itemTags = new List<ItemTag>();
     [SerializeField]
     private GameObject tagParent;
 
     [SerializeField]
     private GameObject tagPrefab;
-
+    [SerializeField]
+    private GameObject scroller;
+    [SerializeField]
+    private GameObject scrollPointPrefab;
+    [SerializeField]
+    private GameObject scrollPointParent;
     [Header("Right Panel")]
     [SerializeField]
     private GameObject rightDesc;
     private GameObject rightModel;
 
     public List<Item> itemList;
+    static int bookCounter = 0;
 
 
-    
     //tracks whichever item is "selected",
     //corresponds with the itemID
     int activeItemInt;
@@ -49,11 +52,28 @@ public class InvMenu : MonoBehaviour
     //for decreasing, i guess
     int topTrack = 0;
     
+    [Header("Spacers")]
     public float tagSpacer;
+    public float scrollSpacer;
+    public int scrollCount;
+    private int scrollSpot;
     
     //amount of items that have been picked up
     static int itemCounter = 0;
 
+    private List<ScrollPoint> scrollPoints;
+    public class ScrollPoint{
+        [HideInInspector] public Vector3 pos;
+        [HideInInspector] public GameObject visual;
+        public ScrollPoint(GameObject parent, GameObject prefab){
+            pos = prefab.GetComponent<Transform>().localPosition;
+            visual = Instantiate(prefab, parent.transform, false);
+        }
+        public void AddPos(Vector3 pos){
+            this.pos += pos;
+            this.visual.GetComponent<Transform>().localPosition = this.pos;
+        }
+    }
 
     public class ItemTag
     {
@@ -65,6 +85,8 @@ public class InvMenu : MonoBehaviour
         [HideInInspector] public string tagDesc;
         [HideInInspector]
         public Item tagItem;
+        [HideInInspector]
+        public int ID;
 
 
         //For when created without an item, empty, to take up space
@@ -89,8 +111,7 @@ public class InvMenu : MonoBehaviour
             this.tagPos = pos;
             this.visual.GetComponent<Transform>().localPosition = tagPos;
         }
-        public void AddPos(Vector3 pos)
-        {
+        public void AddPos(Vector3 pos){
             this.tagPos += pos;
             this.visual.GetComponent<Transform>().localPosition = tagPos;
         }
@@ -101,37 +122,36 @@ public class InvMenu : MonoBehaviour
             this.isEmpty = false;
             this.tagText.text = ServicesLocator.ItemLibrary.ItemList[ID].name;
             this.tagDesc = ServicesLocator.ItemLibrary.ItemList[ID].UIDesc;
+            this.ID = ID;
         }
-
-    }
-    static int bookCounter = 0;
-    public void SetBook(int ID)
-    {
-
-    }
-   
-    public void AddItem(int ID){
-        //check if the amount of items is less than the amount of items in the itemLibrary
-        if (itemCounter < ServicesLocator.ItemLibrary.ItemList.Count){
-            //check if amount of collected items is less than spanwed tags
-            if (itemCounter < visItem){
-                itemTags[itemCounter].AssignItem(ID);
-            }else{ //if it's more, create a new tag and assign the new item. 
-                itemTags.Add(new ItemTag(tagPrefab, tagParent));
-                itemTags[itemCounter].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
-                itemTags[itemCounter].AddPos(new Vector3(0, 0, itemCounter * tagSpacer));
-                itemTags[itemCounter].visual.SetActive(false);
-                itemTags[itemCounter].AssignItem(ID);
+        public void ClearTag()
+        {
+            if(this.isEmpty == false)
+            {
+                this.tagText.text = "";
+                this.tagDesc = "";
+                this.isEmpty = true;
             }
-            itemCounter++;
         }
-        DisplayActive();
+        public void RemoveTag() {
+            visual.SetActive(false);
+        }
+
     }
 
-    public void Start()
+    public class Book
     {
-        itemList = new List<Item>();
 
+    }
+
+    public void Start(){
+        scrollPoints = new List<ScrollPoint>();
+        for (int i = 0; i < scrollCount; i++)
+        {
+            scrollPoints.Add(new ScrollPoint(scrollPointParent,scrollPointPrefab));
+            scrollPoints[i].AddPos(new Vector3(0, 0, i * scrollSpacer));
+        }
+        itemList = new List<Item>();
         //create the tags with no items in them
         for (int i = 0; i < visItem; i++)
         {
@@ -145,12 +165,118 @@ public class InvMenu : MonoBehaviour
         menuObject.SetActive(menuOn);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ToggleMenu();
+        }
+        if (menuOn)
+        {
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                AddItem(itemCounter);
+            }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            {
+                CycleActive(true);
+            }
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            {
+                CycleActive(false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                RemoveItem(activeItemInt);
+            }
+        }
+    }
+
+    //?
     public void DoInvMenu()
     {
         Debug.Log("this was called");
         DisplayActive();
     }
 
+
+    //Object manipulation related
+    public void AddItem(int ID)
+    {
+        //check if the amount of items is less than the amount of items in the itemLibrary
+        if (itemCounter < ServicesLocator.ItemLibrary.ItemList.Count)
+        {
+            //check if amount of collected items is less than spanwed tags
+            if (itemCounter < visItem)
+            {
+                itemTags[itemCounter].AssignItem(ID);
+            }
+            else
+            { //if it's more, create a new tag and assign the new item. 
+                itemTags.Add(new ItemTag(tagPrefab, tagParent));
+                itemTags[itemCounter].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
+                itemTags[itemCounter].AddPos(new Vector3(0, 0, itemCounter * tagSpacer));
+                itemTags[itemCounter].visual.SetActive(false);
+                itemTags[itemCounter].AssignItem(ID);
+            }
+            itemCounter++;
+        }
+        DisplayActive();
+    }
+
+    public int RemoveItem(int index)
+    {
+        int toReturn = 0;
+        toReturn = itemTags[index].ID;
+        if (itemCounter > 9)
+        {
+            Debug.Log(1);
+            itemTags[index].RemoveTag();
+            for (int i = 0; i < itemTags.Count; i++)
+            {
+                if (i > index)
+                {
+                    itemTags[i].AddPos(new Vector3(0, 0, -tagSpacer));
+                }
+            }
+            itemTags.RemoveAt(index);
+        }
+        else
+        {
+            Debug.Log(2);
+            itemTags[index].ClearTag();
+            if (topTrack + 8 < itemTags.Count)
+            {
+                for (int i = 0; i < itemTags.Count; i++)
+                {
+                    if (i > index)
+                    {
+                        itemTags[i].AddPos(new Vector3(0, 0, -tagSpacer));
+                    }
+                }
+                itemTags.RemoveAt(index);
+                itemTags.Add(new ItemTag(tagPrefab,tagParent));
+                itemTags[itemTags.Count-1].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
+                itemTags[itemTags.Count-1].AddPos(new Vector3(0,0,tagSpacer * itemTags.Count-1));
+                itemTags[itemTags.Count - 1].visual.SetActive(true);
+            }
+        }
+
+        activeItemInt--;
+        itemCounter--;
+        DisplayActive();
+        return toReturn;
+    }
+    
+    public void SetBook(int ID)
+    {
+
+    }
+
+    //Display related
     void CycleActive(bool increase)
     {
         if (itemCounter == 0) { }//don't do anything!
@@ -232,6 +358,7 @@ public class InvMenu : MonoBehaviour
             }
         }
         DisplayActive();
+      //  CycleScroller(increase);
     }
     void DisplayActive()
     {
@@ -246,32 +373,23 @@ public class InvMenu : MonoBehaviour
         }
     }
     
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            ToggleMenu();
+    void CycleScroller(bool increase){
+        if (increase){
+            if (scrollSpot < scrollCount - 1){
+                scrollSpot++;
+            }else{
+                scrollSpot = 0;
+            }      
+        }else if(!increase){
+            if (scrollSpot > 0){
+                scrollSpot--;
+            }else{
+                scrollSpot = scrollCount - 1;
+            }
+                
         }
-        if (menuOn)
-        {
-
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                AddItem(itemCounter);
-            }
-
-            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            {
-                CycleActive(true);
-            }
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
-            {
-                CycleActive(false);
-            }
-        }
+        scroller.transform.localPosition = scrollPoints[scrollSpot].pos;
     }
-
-
 
     private void ToggleMenu()
     {
