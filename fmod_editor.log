@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000259F74FA788 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000259F74FD9C8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,12 +16,12 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SoundI::release                          : Susan-Voice (00000257C02100A8)
-[LOG] SoundI::release                          :     Susan-Voice (0000025A12047A68)
-[LOG] SoundI::release                          :     Susan-Voice (00000257C0212C88)
-[LOG] SoundI::release                          : Susan_-_Drums (00000257C0213A08)
-[LOG] SoundI::release                          :     Susan_-_Drums (0000025A120463A8)
-[LOG] SoundI::release                          :     Susan_-_Drums (00000257C0214428)
+[LOG] SoundI::release                          : Susan-Voice (0000025A0443A428)
+[LOG] SoundI::release                          :     Susan-Voice (00000259FA89B598)
+[LOG] SoundI::release                          :     Susan-Voice (0000025A03A6BE18)
+[LOG] SoundI::release                          : Susan_-_Drums (0000025A040E9368)
+[LOG] SoundI::release                          :     Susan_-_Drums (00000259FA89B258)
+[LOG] SoundI::release                          :     Susan_-_Drums (0000025A03A6C328)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

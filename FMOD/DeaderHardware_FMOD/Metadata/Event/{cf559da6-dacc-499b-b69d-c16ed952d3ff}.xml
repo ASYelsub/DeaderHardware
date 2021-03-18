@@ -37,6 +37,7 @@
 		</relationship>
 		<relationship name="banks">
 			<destination>{f7290ec3-dd0f-4e60-b692-ca1135eda91f}</destination>
+			<destination>{8b42cb44-be57-4963-a667-3577991b7cf8}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{eeccf326-be24-4d88-84f3-4d8a591adc66}">
@@ -235,6 +236,12 @@
 		</property>
 		<property name="maximumDistance">
 			<value>250</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="minimumExtent">
+			<value>360</value>
 		</property>
 	</object>
 	<object class="AutomationCurve" id="{db7dcfe1-6e21-4658-9efd-c8bf5d5a9089}">
