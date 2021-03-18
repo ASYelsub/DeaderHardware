@@ -3,21 +3,31 @@ using System.Collections.Generic;
 using System.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TriggerSystem_Dialogue dialogue; // REMOVE LATER
+    public static DialogueManager me;
 
     private string[] lines;
     private bool dialogueUp;
     private bool isTyping;
     private int lineNum = 0;
-    
+    public bool isShowing;
+    private bool playCore;
+
+    public TextMeshPro tm;
+
+    public void Start()
+    {
+        tm = GameObject.Find("GameCamera").GetComponentInChildren<TextMeshPro>();
+        tm.text = "";
+    }
+
     public void Update()
     {
-        Debug.Log(dialogueUp + " LineNum: " + lineNum);
         
-        if (dialogueUp && Input.GetKeyDown(KeyCode.Space)) {
+        if (dialogueUp && Input.GetKeyUp(KeyCode.Space)) {
             Debug.Log("SPACE");
             if (lineNum >= lines.Length) {
                 Cleanup();
@@ -29,25 +39,27 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void SplitFile (TriggerSystem_Dialogue d)
+    public void SplitFile (TextAsset d)
     {
-        dialogue = d;
+        isShowing = true;
         dialogueUp = true;
 
-        lines = dialogue.file.text.Split('\n');
+        lines = d.text.Split('\n');
         
         Debug.Log("Lines to print: " + lines.Length);
 
-        StartCoroutine("DisplayText", lines[lineNum]);
+        Debug.Log(lines[lineNum]);
+        //StartCoroutine("DisplayText", lines[lineNum]);
     }
 
-    private IEnumerator DisplayText (string current) 
+    public IEnumerator DisplayText (string current) 
     {
+        Debug.Log("Display Text is happening");
         isTyping = true;
         lineNum++;
 
         foreach (char c in current) {
-            dialogue.textBox.text += c;
+            tm.text += c;
             yield return null;
         }
         
@@ -57,13 +69,13 @@ public class DialogueManager : MonoBehaviour
 
     private void Cleanup() 
     {
-        Object.Destroy(dialogue.gameObject);
-        dialogue.textBox.text = "";
-        dialogue = null;
+        //Object.Destroy(dialogue.gameObject
+        isShowing = false;
+        tm.text = "";
         lines = null;
         lineNum = 0;
         dialogueUp = false;
     }
 
-    private void ClearText() => dialogue.textBox.text = "";
+    private void ClearText() => tm.text = "";
 }

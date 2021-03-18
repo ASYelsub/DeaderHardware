@@ -2,29 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable {
+public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractable {
 
     public int itemId;
 
     private string _itemPopup;
 
-    public InvMenu invMenu;
-
-    private void Start()
+    public void ExecuteInteraction()
     {
-        invMenu = FindObjectOfType<InvMenu>();
+        Item myItem = ServicesLocator.ItemLibrary.ItemList[itemId];
+
+        _itemPopup = myItem.hoverText;
+
+    // if (myItem.isBook == false)
+    //     ServicesLocator.GameManager.invM.AddItem(myItem.ID);
+    // else
+    //     ServicesLocator.GameManager.invM.SetBook(myItem.ID);
+        ServicesLocator.GameManager.invM.AddItem(myItem.ID);
+
     }
     public void ExecuteTriggerFunction() {
 
         Item myItem = ServicesLocator.ItemLibrary.ItemList[itemId];
 
         _itemPopup = myItem.hoverText;
-
-        invMenu.AddItem(itemId);
-        Debug.Log(ServicesLocator.ItemLibrary.ItemList[itemId].name + " added to inventory!");
-        //Insert add inventory item here code
-
-        // ITEM REFERENCE: ServicesLocator.ItemLibrary.ItemList[id]
-
     }
 }

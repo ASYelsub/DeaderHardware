@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,29 +8,32 @@ public class ItemLibrary
 
     public ItemLibrary(string ItemDictionary)
     {
-        //This might look weird but it works
-        //so... don't change it. :)
-        string[] lines = new string[1];
-        lines = ItemDictionary.Split('\n');
-        
-        for (int i = 1; i < lines.Length; i++)
+        //Debug.Log(ItemDictionary);
+
+
+        string[] lines = ItemDictionary.Split('\n');
+
+        for (int i = 1; i < lines.Length-1; i++)
         {
-            //Debug.Log(lines[i]);
             ItemList.Add(CSVItemDictionaryToItemClass(lines[i]));
         }
-    }
 
+    }
+    public void Initialize(string ItemDictionary) {
+
+        
+
+    }
 
     public Item CSVItemDictionaryToItemClass(string line) {
 
         Item itemEntry = new Item();
         string[] elements = line.Split(',');
-        
+
         //ID
         itemEntry.ID = int.Parse(elements[0]);
         //Name
         itemEntry.name = elements[1];
-        Debug.Log(itemEntry.name);
         //Description
         itemEntry.UIDesc = elements[2];
         //Float Text

@@ -9,6 +9,6 @@ public static class ServicesLocator {
     public static SceneChangeManager SceneChanger;
     public static MusicManager Music;
     public static ItemLibrary ItemLibrary;
-    //public static DialogueManager DialogueManager;
+    public static DialogueManager DialogueManager;
 
 }

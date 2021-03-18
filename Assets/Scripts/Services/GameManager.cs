@@ -8,12 +8,11 @@ public class GameManager : MonoBehaviour
 {
     public TextAsset ItemDictionary;
     [HideInInspector]
-    public ItemLibrary il;
-    
+    public InvMenu invM;
+    public DialogueManager diaMan;
+
     void Start() {
- 
-        //ItemDictionary = Resources.Load<TextAsset>("Text/ItemDat");
-        
+        invM = FindObjectOfType<InvMenu>();
         Volume PPV = FindObjectOfType<Volume>();
         if (!PPV == null) {
             if (PPV.profile.TryGet<Bloom>(out var bloom)) {
@@ -24,17 +23,16 @@ public class GameManager : MonoBehaviour
         ServicesLocator.GameManager = this;
         ServicesLocator.CameraManager = new CameraManager();
         ServicesLocator.Music = new MusicManager();
-        ServicesLocator.SceneChanger = new SceneChangeManager();
-        //ServicesLocator.DialogueManager = new DialogueManager();
-        il = new ItemLibrary(ItemDictionary.text);
-
+        ServicesLocator.SceneChanger = FindObjectOfType<SceneChangeManager>();
+        ServicesLocator.ItemLibrary = new ItemLibrary(ItemDictionary.text);
+        ServicesLocator.DialogueManager = diaMan;
+        invM.DoInvMenu();
+          
         ServicesLocator.Initialization();
-       // if (ItemDictionary != null) {
-         //   ServicesLocator.ItemLibrary.Initialize(ItemDictionary.text);
-        //}
+       // ServicesLocator.ItemLibrary.Initialize(ItemDictionary.text);
 
         ServicesLocator.Music.changeTrack(0);
-
+        
     }
 
     void Update() {

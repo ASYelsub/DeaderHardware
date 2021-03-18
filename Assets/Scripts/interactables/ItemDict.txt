@@ -1,0 +1,6 @@
+ID,Name,Description,FloatText,IsBook
+0,TestItem,This is my test item,Pick up old crusty musty book?,FALSE
+1,TestItem2,This is my second test item,Pick up old crusty musty book?,FALSE
+-camera stack
+-on the one that is a stacked camera have it output to the render texture
+-set culling mode to nothing
