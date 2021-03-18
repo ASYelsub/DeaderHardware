@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
+//make it so:
+//last part of removing code
+//scroll bar
+//display model???
 public class InvMenu : MonoBehaviour
 {
     [SerializeField]
@@ -35,7 +40,6 @@ public class InvMenu : MonoBehaviour
     private GameObject rightDesc;
     private GameObject rightModel;
 
-    public List<Item> itemList;
     static int bookCounter = 0;
 
 
@@ -97,6 +101,7 @@ public class InvMenu : MonoBehaviour
             tagText.text = "";
             visual.SetActive(false);
             isEmpty = true;
+            ID = -1; //correlates w duplicates
         }
         public void SetItem(string name)
         {
@@ -150,7 +155,7 @@ public class InvMenu : MonoBehaviour
             scrollPoints.Add(new ScrollPoint(scrollPointParent,scrollPointPrefab));
             scrollPoints[i].AddPos(new Vector3(0, 0, i * scrollSpacer));
         }
-        itemList = new List<Item>();
+        
         //create the tags with no items in them
         for (int i = 0; i < visItem; i++)
         {
@@ -186,9 +191,21 @@ public class InvMenu : MonoBehaviour
                 CycleActive(false);
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            //This removes an item from the inventory.
+            if (Input.GetKeyDown(KeyCode.Space))
             {
+                //This function needs to be changed to a currently nonexistant "CheckItem(activeItemInt)" function.
                 RemoveItem(activeItemInt);
+
+                //bool corresponds = CheckItem(activeItemint);
+
+                //if(corresponds == true){
+                //this.ToggleMenu();
+                // int l = 0;
+                //for(i=0; i<activeItemInt; i++){
+                //}
+                //dialoguemanager.splitfile()}
+                //RemoveItem(activeItemInt);
             }
         }
     }
@@ -200,50 +217,87 @@ public class InvMenu : MonoBehaviour
         DisplayActive();
     }
 
-
+    private int AddTest(int ID)
+    {
+        if (itemTags != null)
+        {
+            for (int i = 0; i < itemTags.Count; i++)
+            {
+                if (itemTags[i].ID == ID)
+                {
+                    ID++;
+                }
+            }
+        }
+        return ID;
+    }
+    private bool AddGame(int ID)
+    {
+        bool isCopy = false;
+        if (itemTags != null){
+            for (int i = 0; i < itemTags.Count; i++){
+                if(itemTags[i].ID == ID){
+                    isCopy = true;
+                }
+            }
+        }
+        return isCopy;
+    }
     //Object manipulation related
     public void AddItem(int ID)
     {
-        //check if the amount of items is less than the amount of items in the itemLibrary
-        if (itemCounter < ServicesLocator.ItemLibrary.ItemList.Count)
+        bool isCopy = false;
+
+        //comment out for actual game
+        ID = AddTest(ID);
+        //comment back in for actual game
+   //     isCopy = (AddGame(ID));
+        if (!isCopy)
         {
-            //check if amount of collected items is less than spanwed tags
-            if (itemCounter < visItem)
+            //check if the amount of items is less than the amount of items in the itemLibrary
+            if (itemCounter < ServicesLocator.ItemLibrary.ItemList.Count)
             {
-                itemTags[itemCounter].AssignItem(ID);
+                //check if amount of collected items is less than spanwed tags
+                if (itemCounter < visItem)
+                {
+                    itemTags[itemCounter].AssignItem(ID);
+                }
+                else
+                { //if it's more, create a new tag and assign the new item. 
+                    itemTags.Add(new ItemTag(tagPrefab, tagParent));
+                    itemTags[itemCounter].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
+                    itemTags[itemCounter].AddPos(new Vector3(0, 0, itemCounter * tagSpacer));
+                    itemTags[itemCounter].visual.SetActive(false);
+                    itemTags[itemCounter].AssignItem(ID);
+                }
+                itemCounter++;
             }
-            else
-            { //if it's more, create a new tag and assign the new item. 
-                itemTags.Add(new ItemTag(tagPrefab, tagParent));
-                itemTags[itemCounter].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
-                itemTags[itemCounter].AddPos(new Vector3(0, 0, itemCounter * tagSpacer));
-                itemTags[itemCounter].visual.SetActive(false);
-                itemTags[itemCounter].AssignItem(ID);
-            }
-            itemCounter++;
         }
+        
         DisplayActive();
     }
 
     public int RemoveItem(int index)
     {
-        int toReturn = 0;
-        toReturn = itemTags[index].ID;
-        if (itemCounter > 9)
-        {
+        int toReturn = itemTags[index].ID;
+        if(topTrack != 0){
+            Debug.Log("hello");
+            
+        }else if (itemCounter > 9){
             Debug.Log(1);
+            itemTags[topTrack + visItem].visual.SetActive(true);
             itemTags[index].RemoveTag();
+            itemTags.RemoveAt(index);
             for (int i = 0; i < itemTags.Count; i++)
             {
-                if (i > index)
+                if (i > index-1)
                 {
                     itemTags[i].AddPos(new Vector3(0, 0, -tagSpacer));
                 }
             }
-            itemTags.RemoveAt(index);
+          
         }
-        else
-        {
+        else{//if we are both at less than 9 items and 
             Debug.Log(2);
             itemTags[index].ClearTag();
             if (topTrack + 8 < itemTags.Count)
@@ -260,11 +314,12 @@ public class InvMenu : MonoBehaviour
                 itemTags[itemTags.Count-1].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
                 itemTags[itemTags.Count-1].AddPos(new Vector3(0,0,tagSpacer * itemTags.Count-1));
                 itemTags[itemTags.Count - 1].visual.SetActive(true);
+
             }
         }
-
-        activeItemInt--;
         itemCounter--;
+        if (activeItemInt == itemCounter)
+            activeItemInt--;
         DisplayActive();
         return toReturn;
     }
