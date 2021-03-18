@@ -47,7 +47,7 @@ public class InvMenu : MonoBehaviour
     //variable that changes when list is messed with
     int visItem2 = 9;
     //for decreasing, i guess
-    int visItem3 = 9;
+    int topTrack = 0;
     
     public float tagSpacer;
     
@@ -120,7 +120,7 @@ public class InvMenu : MonoBehaviour
                 itemTags.Add(new ItemTag(tagPrefab, tagParent));
                 itemTags[itemCounter].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
                 itemTags[itemCounter].AddPos(new Vector3(0, 0, itemCounter * tagSpacer));
-                itemTags[itemCounter].visual.SetActive(true); //set this to false
+                itemTags[itemCounter].visual.SetActive(false);
                 itemTags[itemCounter].AssignItem(ID);
             }
             itemCounter++;
@@ -154,9 +154,8 @@ public class InvMenu : MonoBehaviour
     void CycleActive(bool increase)
     {
         if (itemCounter == 0) { }//don't do anything!
-        //if increasing
-        else if (increase){
-            /*if (itemCounter <= visItem){//if visible items isn't filled up and going down
+        else if (increase){//if increasing
+            if (itemCounter <= visItem){//if visible items isn't filled up and going down
                 //if at bottom of collected items
                 if (activeItemInt == itemCounter - 1){
                     activeItemInt = 0;
@@ -175,6 +174,7 @@ public class InvMenu : MonoBehaviour
                         }
                         visItem2 = 9;
                         activeItemInt = 0;
+                        topTrack = 0;
                     }else{ //if visible items is filled and not at the bottom of collected items
                         itemTags[visItem2].visual.SetActive(true);
                         itemTags[visItem2 - visItem].visual.SetActive(false);
@@ -183,11 +183,12 @@ public class InvMenu : MonoBehaviour
                         }
                         visItem2++;
                         activeItemInt++;
+                        topTrack++;
                     }
                 }else{//if not at bottom of visible items
                     activeItemInt++;
                 }
-            }*/
+            }
         }else if (!increase){ //if decreasing
             if (itemCounter <= visItem) {//if visible items isn't filled up
                 if (activeItemInt == 0) { //if at top of collected items
@@ -195,28 +196,38 @@ public class InvMenu : MonoBehaviour
                 } else {//if not at bottom of collected items
                     activeItemInt--;
                 }
-            } else {//if collected items is more than visible items
-                if (activeItemInt == 0)//if at top of visible items
-                {
-                    if (visItem3 == 9)//if items are in original visItem configuration
-                    {
-                        Debug.Log("1");
+            }else{//if collected items is more than visible items
+                //vis
+                if (activeItemInt != topTrack){//if we're not at the top of whatever is being displayed//which is tracked by topTrack, which starts at 0
+                    activeItemInt--;//decrease activeItemInt
+                }else if (activeItemInt==topTrack){//else if we're at the top of whatever is being displayed
+                    if(topTrack == 0){//if activeItemInt is equal to 0
+                                      // Debug.Log("3");
+                        activeItemInt = itemTags.Count - 1;
+                        topTrack += itemTags.Count - visItem;
+                        visItem2 = topTrack + visItem;
+                        for (int i = 0; i < itemTags.Count; i++){ //set activeItemInt to itemtags.count
+                            itemTags[i].AddPos(new Vector3(0, 0, (itemTags.Count - visItem) * -tagSpacer));
+                           if(i >= topTrack){
+                               itemTags[i].visual.SetActive(true);
+                           }else{
+                               itemTags[i].visual.SetActive(false);
+                           }
+                        }
+                        
+                    }
+                    else if(topTrack > 0){ //else if activeItemInt is greater than 0
+                                                //move all the itemtags down by one
+                        activeItemInt--;
+                        topTrack--;
+                        visItem2--;
                         for (int i = 0; i < itemTags.Count; i++)
                         {
-                            itemTags[i].AddPos(new Vector3(0, 0, -tagSpacer));
+                            itemTags[i].AddPos(new Vector3(0, 0, tagSpacer));
                         }
-                        activeItemInt = itemTags.Count - 1;
-                        visItem3 = itemTags.Count - 1;
+                        itemTags[activeItemInt].visual.SetActive(true);
+                        itemTags[activeItemInt + 9].visual.SetActive(false);
                     }
-                    else //if not at the top of all items
-                    {
-                        Debug.Log("2");
-                        //move everything down 1
-                    }
-                }
-                else//if not at top of visible items
-                {
-                    activeItemInt--;
                 }
             }
         }
