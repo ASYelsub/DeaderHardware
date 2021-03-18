@@ -41,7 +41,6 @@ public class InvMenu : MonoBehaviour
     private GameObject rightDesc;
     private GameObject rightModel;
 
-    public List<Item> itemList;
     static int bookCounter = 0;
 
 
@@ -103,6 +102,7 @@ public class InvMenu : MonoBehaviour
             tagText.text = "";
             visual.SetActive(false);
             isEmpty = true;
+            ID = -1; //correlates w duplicates
         }
         public void SetItem(string name)
         {
@@ -156,7 +156,7 @@ public class InvMenu : MonoBehaviour
             scrollPoints.Add(new ScrollPoint(scrollPointParent,scrollPointPrefab));
             scrollPoints[i].AddPos(new Vector3(0, 0, i * scrollSpacer));
         }
-        itemList = new List<Item>();
+        
         //create the tags with no items in them
         for (int i = 0; i < visItem; i++)
         {
@@ -210,28 +210,36 @@ public class InvMenu : MonoBehaviour
     //Object manipulation related
     public void AddItem(int ID)
     {
-        for (int i = 0; i < itemList.Count; i++)
-        {
-
+        bool isCopy = false;
+        if (itemTags != null){
+            for (int i = 0; i < itemTags.Count; i++){
+                if(itemTags[i].ID == ID){
+                    isCopy = true;
+                }
+            }
         }
-        //check if the amount of items is less than the amount of items in the itemLibrary
-        if (itemCounter < ServicesLocator.ItemLibrary.ItemList.Count)
+        if (!isCopy)
         {
-            //check if amount of collected items is less than spanwed tags
-            if (itemCounter < visItem)
+            //check if the amount of items is less than the amount of items in the itemLibrary
+            if (itemCounter < ServicesLocator.ItemLibrary.ItemList.Count)
             {
-                itemTags[itemCounter].AssignItem(ID);
+                //check if amount of collected items is less than spanwed tags
+                if (itemCounter < visItem)
+                {
+                    itemTags[itemCounter].AssignItem(ID);
+                }
+                else
+                { //if it's more, create a new tag and assign the new item. 
+                    itemTags.Add(new ItemTag(tagPrefab, tagParent));
+                    itemTags[itemCounter].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
+                    itemTags[itemCounter].AddPos(new Vector3(0, 0, itemCounter * tagSpacer));
+                    itemTags[itemCounter].visual.SetActive(false);
+                    itemTags[itemCounter].AssignItem(ID);
+                }
+                itemCounter++;
             }
-            else
-            { //if it's more, create a new tag and assign the new item. 
-                itemTags.Add(new ItemTag(tagPrefab, tagParent));
-                itemTags[itemCounter].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
-                itemTags[itemCounter].AddPos(new Vector3(0, 0, itemCounter * tagSpacer));
-                itemTags[itemCounter].visual.SetActive(false);
-                itemTags[itemCounter].AssignItem(ID);
-            }
-            itemCounter++;
         }
+        
         DisplayActive();
     }
 
