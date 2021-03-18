@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable
+public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
 {
     public TextAsset file;
     public Text textBox;
     // public int lineLength;
 
-    public DialogueManager manager; // REMOVE LATER
+    public DialogueManager manager;
 
     // TODO:
     // * font
     // * line spacing
 
     void Start() {
-        textBox.text = ""; 
-        ExecuteTriggerFunction(); // REMOVE LATER
+        textBox.text = "";
+        //ExecuteTriggerFunction(); // REMOVE LATER
     } 
 
-    public void ExecuteTriggerFunction() { manager.SplitFile(this); }
+    public void ExecuteTriggerFunction() { //ServicesLocator.DialogueManager.SplitFile(this);
+    }
+
+    public void ExecuteInteraction() { ServicesLocator.DialogueManager.SplitFile(this); }
 }

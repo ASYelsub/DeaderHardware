@@ -64,6 +64,12 @@ public class PlayerMover : MonoBehaviour
         moveDirection.x *= walkSpeed;
         moveDirection.z *= walkSpeed;
 
+        if (ServicesLocator.DialogueManager.isShowing)
+        {
+            moveDirection.x = 0;
+            moveDirection.z = 0;
+        }
+
         CC.Move(moveDirection * Time.deltaTime);
 
         if (hit.collider !=null && hit.distance < playerHeight + rampSnapThreshold && !hit.collider.isTrigger) { new Vector3(transform.position.x, hit.point.y + playerHeight, transform.position.z); }
