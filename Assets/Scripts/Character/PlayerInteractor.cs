@@ -21,7 +21,7 @@ public class PlayerInteractor : MonoBehaviour
     void Update()
     {
         nearbyColliders = Physics.OverlapSphere(transform.position,radius);
-        if (ServicesLocator.DialogueManager.isShowing || inv.menuOn == true || settings.settingsActive == true)
+        if (ServicesLocator.DialogueManager.isShowing ==false && inv.menuOn == false && settings.settingsActive == false)
         {
             if (Input.GetKeyDown(KeyCode.Space) && ServicesLocator.DialogueManager.isShowing == false)
             {
