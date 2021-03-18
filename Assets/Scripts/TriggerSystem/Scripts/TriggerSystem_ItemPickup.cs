@@ -20,6 +20,7 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable {
         else
             ServicesLocator.GameManager.invM.SetBook(myItem.ID);
         // ITEM REFERENCE: ServicesLocator.ItemLibrary.ItemList[id]
+        ServicesLocator.GameManager.invM.AddItem(itemId);
 
     }
 }

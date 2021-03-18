@@ -213,8 +213,7 @@ public class SettingsMenu : MonoBehaviour
         if (isHitting)
         {
             Debug.DrawRay(buttonRay.origin, buttonRay.direction * globalHit.distance, Color.magenta);
-            Debug.Log("YES");
-            Debug.Log("Ray hit " + globalHit.collider.gameObject);
+            //Debug.Log("Ray hit " + globalHit.collider.gameObject);
         }
     }
      

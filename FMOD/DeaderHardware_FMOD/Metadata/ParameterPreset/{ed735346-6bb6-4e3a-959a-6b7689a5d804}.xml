@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="ParameterPreset" id="{ed735346-6bb6-4e3a-959a-6b7689a5d804}">
 		<property name="name">
-			<value>Librarain Range</value>
+			<value>LibRange</value>
 		</property>
 		<relationship name="folder">
 			<destination>{461f20d9-2e69-4ccf-a9ea-bb4d33544c39}</destination>
