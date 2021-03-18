@@ -5,14 +5,13 @@ using TMPro;
 
 public class InvMenu : MonoBehaviour
 {
-
     [SerializeField]
     Material activeMat;
     [SerializeField]
     Material inactiveMat;
 
-    private bool menuOn;
-    private bool menuIsMoving;
+    [HideInInspector]
+    public bool menuOn;
 
     [SerializeField]
     private GameObject menuObject;
@@ -161,7 +160,6 @@ public class InvMenu : MonoBehaviour
             itemTags[i].visual.SetActive(true);
         }
         menuOn = false;
-        menuIsMoving = false;
         menuObject.SetActive(menuOn);
     }
 

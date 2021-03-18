@@ -29,8 +29,13 @@ public class PlayerMover : MonoBehaviour
 
     public Vector3 lastGroundedPos;
 
+    InvMenu inv;
+    SettingsMenu settings;
+
     void Start()
     {
+        inv = FindObjectOfType<InvMenu>();
+        settings = FindObjectOfType<SettingsMenu>();
         CC = GetComponent<CharacterController>();
         CamTransform = Camera.main.transform;
         tankRotation = transform.rotation.eulerAngles.y;
@@ -64,7 +69,7 @@ public class PlayerMover : MonoBehaviour
         moveDirection.x *= walkSpeed;
         moveDirection.z *= walkSpeed;
 
-        if (ServicesLocator.DialogueManager.isShowing)
+        if (ServicesLocator.DialogueManager.isShowing || inv.menuOn == true || settings.settingsActive == true)
         {
             moveDirection.x = 0;
             moveDirection.z = 0;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SettingsMenu : MonoBehaviour
 {
+
     [Header("General")]
     [HideInInspector] public bool settingsActive;
     [HideInInspector] public bool menuIsMoving;
