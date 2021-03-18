@@ -8,6 +8,6 @@ public class Trigger_SwitchSprites : MonoBehaviour, ITriggerable
 
     public void ExecuteTriggerFunction() {
         Debug.Log("EXECUTED: SWITCHSPRITES");
-        SpriteHolder.me.SwitchShot(shotNumber);     
+        ShotObjectHolder.me.SwitchShot(shotNumber);     
     }
 }
