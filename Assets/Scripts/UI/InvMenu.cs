@@ -5,10 +5,9 @@ using TMPro;
 
 
 //make it so:
-//cant add duplicates
 //last part of removing code
 //scroll bar
-//if at space 0 and remove go down not up
+//display model???
 public class InvMenu : MonoBehaviour
 {
     [SerializeField]
@@ -206,9 +205,21 @@ public class InvMenu : MonoBehaviour
         DisplayActive();
     }
 
-
-    //Object manipulation related
-    public void AddItem(int ID)
+    private int AddTest(int ID)
+    {
+        if (itemTags != null)
+        {
+            for (int i = 0; i < itemTags.Count; i++)
+            {
+                if (itemTags[i].ID == ID)
+                {
+                    ID++;
+                }
+            }
+        }
+        return ID;
+    }
+    private bool AddGame(int ID)
     {
         bool isCopy = false;
         if (itemTags != null){
@@ -218,6 +229,17 @@ public class InvMenu : MonoBehaviour
                 }
             }
         }
+        return isCopy;
+    }
+    //Object manipulation related
+    public void AddItem(int ID)
+    {
+        bool isCopy = false;
+
+        //comment out for actual game
+        ID = AddTest(ID);
+        //comment back in for actual game
+   //     isCopy = (AddGame(ID));
         if (!isCopy)
         {
             //check if the amount of items is less than the amount of items in the itemLibrary
@@ -245,23 +267,25 @@ public class InvMenu : MonoBehaviour
 
     public int RemoveItem(int index)
     {
-        int toReturn = 0;
-        toReturn = itemTags[index].ID;
-        if (itemCounter > 9)
-        {
-            Debug.Log(1);
+        int toReturn = itemTags[index].ID;
+        if(topTrack != 0){
+            Debug.Log("hello");
             itemTags[index].RemoveTag();
+        }else if (itemCounter > 9){
+            Debug.Log(1);
+            itemTags[topTrack + visItem].visual.SetActive(true);
+            itemTags[index].RemoveTag();
+            itemTags.RemoveAt(index);
             for (int i = 0; i < itemTags.Count; i++)
             {
-                if (i > index)
+                if (i > index-1)
                 {
                     itemTags[i].AddPos(new Vector3(0, 0, -tagSpacer));
                 }
             }
-            itemTags.RemoveAt(index);
+          
         }
-        else
-        {
+        else{//if we are both at less than 9 items and 
             Debug.Log(2);
             itemTags[index].ClearTag();
             if (topTrack + 8 < itemTags.Count)
@@ -278,11 +302,12 @@ public class InvMenu : MonoBehaviour
                 itemTags[itemTags.Count-1].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
                 itemTags[itemTags.Count-1].AddPos(new Vector3(0,0,tagSpacer * itemTags.Count-1));
                 itemTags[itemTags.Count - 1].visual.SetActive(true);
+
             }
         }
-
-        activeItemInt--;
         itemCounter--;
+        if (activeItemInt == itemCounter)
+            activeItemInt--;
         DisplayActive();
         return toReturn;
     }
