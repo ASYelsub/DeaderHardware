@@ -14,11 +14,11 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractabl
 
         _itemPopup = myItem.hoverText;
 
-        if (myItem.isBook == false)
-            ServicesLocator.GameManager.invM.AddItem(myItem.ID);
-        else
-            ServicesLocator.GameManager.invM.SetBook(myItem.ID);
-        ServicesLocator.GameManager.invM.AddItem(itemId);
+    // if (myItem.isBook == false)
+    //     ServicesLocator.GameManager.invM.AddItem(myItem.ID);
+    // else
+    //     ServicesLocator.GameManager.invM.SetBook(myItem.ID);
+        ServicesLocator.GameManager.invM.AddItem(myItem.ID);
 
     }
     public void ExecuteTriggerFunction() {

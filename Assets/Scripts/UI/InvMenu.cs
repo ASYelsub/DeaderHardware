@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
+//make it so:
+//cant add duplicates
+//last part of removing code
+//scroll bar
+//if at space 0 and remove go down not up
 public class InvMenu : MonoBehaviour
 {
     [SerializeField]
@@ -186,7 +192,7 @@ public class InvMenu : MonoBehaviour
                 CycleActive(false);
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 RemoveItem(activeItemInt);
             }
@@ -204,6 +210,10 @@ public class InvMenu : MonoBehaviour
     //Object manipulation related
     public void AddItem(int ID)
     {
+        for (int i = 0; i < itemList.Count; i++)
+        {
+
+        }
         //check if the amount of items is less than the amount of items in the itemLibrary
         if (itemCounter < ServicesLocator.ItemLibrary.ItemList.Count)
         {
