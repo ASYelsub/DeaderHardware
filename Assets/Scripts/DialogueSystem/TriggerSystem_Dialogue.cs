@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
 {
     public TextAsset file;
-    public Text textBox;
+    //public Text textBox;
     // public int lineLength;
 
     public DialogueManager manager;
@@ -16,12 +16,12 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
     // * line spacing
 
     void Start() {
-        textBox.text = "";
+        //textBox.text = "";
         //ExecuteTriggerFunction(); // REMOVE LATER
     } 
 
     public void ExecuteTriggerFunction() { //ServicesLocator.DialogueManager.SplitFile(this);
     }
 
-    public void ExecuteInteraction() { ServicesLocator.DialogueManager.SplitFile(this); }
+    public void ExecuteInteraction() { ServicesLocator.DialogueManager.SplitFile(file); }
 }

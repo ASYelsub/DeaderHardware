@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager me;
-
-    public TriggerSystem_Dialogue dialogue; // REMOVE LATER
 
     private string[] lines;
     private bool dialogueUp;
@@ -17,6 +16,13 @@ public class DialogueManager : MonoBehaviour
     public bool isShowing;
     private bool playCore;
 
+    public TextMeshPro tm;
+
+    public void Start()
+    {
+        tm = GameObject.Find("GameCamera").GetComponentInChildren<TextMeshPro>();
+        tm.text = "";
+    }
 
     public void Update()
     {
@@ -33,13 +39,12 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void SplitFile (TriggerSystem_Dialogue d)
+    public void SplitFile (TextAsset d)
     {
         isShowing = true;
-        dialogue = d;
         dialogueUp = true;
 
-        lines = dialogue.file.text.Split('\n');
+        lines = d.text.Split('\n');
         
         Debug.Log("Lines to print: " + lines.Length);
 
@@ -54,7 +59,7 @@ public class DialogueManager : MonoBehaviour
         lineNum++;
 
         foreach (char c in current) {
-            dialogue.textBox.text += c;
+            tm.text += c;
             yield return null;
         }
         
@@ -66,12 +71,11 @@ public class DialogueManager : MonoBehaviour
     {
         //Object.Destroy(dialogue.gameObject
         isShowing = false;
-        dialogue.textBox.text = "";
-        dialogue = null;
+        tm.text = "";
         lines = null;
         lineNum = 0;
         dialogueUp = false;
     }
 
-    private void ClearText() => dialogue.textBox.text = "";
+    private void ClearText() => tm.text = "";
 }
