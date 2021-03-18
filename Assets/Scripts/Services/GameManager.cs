@@ -7,7 +7,7 @@ using UnityEngine.Rendering.Universal;
 public class GameManager : MonoBehaviour
 {
     public TextAsset ItemDictionary;
-    [SerializeField]
+    [HideInInspector]
     public InvMenu invM;
     public DialogueManager diaMan;
 

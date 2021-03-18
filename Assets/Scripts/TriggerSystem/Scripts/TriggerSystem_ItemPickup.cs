@@ -15,7 +15,10 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable {
         _itemPopup = myItem.hoverText;
 
         //Insert add inventory item here code
-
+        if (myItem.isBook == false)
+            ServicesLocator.GameManager.invM.AddItem(myItem.ID);
+        else
+            ServicesLocator.GameManager.invM.SetBook(myItem.ID);
         // ITEM REFERENCE: ServicesLocator.ItemLibrary.ItemList[id]
         ServicesLocator.GameManager.invM.AddItem(itemId);
 
