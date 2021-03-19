@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Plugins/FMOD/lib/mac/fmodstudio.bundle/Contents/_CodeSignature/CodeResources.meta
 guid: 3c3a12391d8f7484faa70287ea9f3bc9
+=======
+guid: 058581a605d53394796fec4c36e0541f
+folderAsset: yes
+>>>>>>> 822d5d3304656c6722a95ccd545c35c0b970a798:Assets/Andrew/FINAL HUB MESH POPULATION.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

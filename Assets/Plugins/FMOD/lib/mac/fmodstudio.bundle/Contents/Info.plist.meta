@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Plugins/FMOD/lib/mac/fmodstudio.bundle/Contents/Info.plist.meta
 guid: 2b616f958a760f14fb0c30668a8be389
+=======
+guid: a18ca00be40ab6040bf8635c1cab11d1
+folderAsset: yes
+>>>>>>> 822d5d3304656c6722a95ccd545c35c0b970a798:Assets/Andrew.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

@@ -24,7 +24,7 @@ public class InvMenu : MonoBehaviour
     private GameObject menuObject;
 
     [SerializeField]
-    private List<Item> collectedItems = new List<Item>();//will be used for removing items from menu
+    private List<Item> collectedItems = new List<Item>(); //will be used for removing items from menu
     private List<ItemTag> itemTags = new List<ItemTag>();
     [SerializeField]
     private GameObject tagParent;
@@ -197,7 +197,9 @@ public class InvMenu : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 //This function needs to be changed to a currently nonexistant "CheckItem(activeItemInt)" function.
-                RemoveItem(activeItemInt);
+                //                RemoveItem(activeItemInt);
+
+                CheckItem(activeItemInt);
 
                 //bool corresponds = CheckItem(activeItemint);
 
@@ -210,6 +212,14 @@ public class InvMenu : MonoBehaviour
                 //RemoveItem(activeItemInt);
             }
         }
+    }
+
+    public void CheckItem(int activeItemId) {
+
+        int id = itemTags[activeItemInt].ID;
+
+        ServicesLocator.PlayerInteractor.queryItemInteraction(id);
+        Debug.Log("Parsing: " + id);
     }
 
     //?
@@ -528,6 +538,7 @@ public class InvMenu : MonoBehaviour
     }
     void DisplayActive()
     {
+        if (itemTags.Count == 0) return;
         rightDesc.GetComponent<TextMeshPro>().text=itemTags[activeItemInt].tagDesc;
         for (int i = 0; i < itemTags.Count; i++)
         {

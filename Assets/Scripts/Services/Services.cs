@@ -10,5 +10,6 @@ public static class ServicesLocator {
     public static MusicManager Music;
     public static ItemLibrary ItemLibrary;
     public static DialogueManager DialogueManager;
+    public static PlayerInteractor PlayerInteractor;
 
 }
