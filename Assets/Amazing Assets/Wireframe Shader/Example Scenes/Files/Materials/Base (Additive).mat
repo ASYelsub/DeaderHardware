@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Base (Additive)
-  m_Shader: {fileID: -6465566751694194690, guid: 6ba3ba9cf75d60349bbdb9e20303054d, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 6ba3ba9cf75d60349bbdb9e20303054d,
+    type: 3}
   m_ShaderKeywords: ENUM_5312DE06_NONE WIREFRAME_FRESNEL_ON WIREFRAME_LIGHT_ATTENTION_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -76,18 +77,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Wireframe_NormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -172,4 +161,3 @@ Material:
     - _Wireframe_Color: {r: 0.09300464, g: 0.49229297, b: 0.8962264, a: 1}
     - _Wireframe_ColorTexture_Scroll: {r: 0, g: 0, b: 0, a: 0}
     - _Wireframe_MainTex_Scroll: {r: 0, g: 0, b: 0, a: 0}
-  m_BuildTextureStacks: []
