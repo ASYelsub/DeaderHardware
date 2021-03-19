@@ -492,6 +492,62 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251031, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_text
+      value: WHy can't I see this text????
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251031, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_fontSize
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251031, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251031, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251031, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251031, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251031, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251031, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251031, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251032, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 244.994
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251032, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 221.313
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251032, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -22.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251032, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.032
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456111040710251032, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.07
+      objectReference: {fileID: 0}
     - target: {fileID: 8456111040710251033, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
       propertyPath: m_Layer
       value: 8
