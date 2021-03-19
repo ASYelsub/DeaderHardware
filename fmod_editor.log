@@ -16,12 +16,12 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SoundI::release                          : Susan-Voice (000001B770E8DFB8)
-[LOG] SoundI::release                          :     Susan-Voice (000001B76DBD50D8)
-[LOG] SoundI::release                          :     Susan-Voice (000001B76FF4D0B8)
-[LOG] SoundI::release                          : Susan_-_Drums (000001B770ED0A28)
-[LOG] SoundI::release                          :     Susan_-_Drums (000001B76DBD9D38)
-[LOG] SoundI::release                          :     Susan_-_Drums (000001B76FF4D418)
+[LOG] SoundI::release                          : Susan-Voice (000001B76DE0F6E8)
+[LOG] SoundI::release                          :     Susan-Voice (000001B56068C408)
+[LOG] SoundI::release                          :     Susan-Voice (000001B6FF2F6D48)
+[LOG] SoundI::release                          : Susan_-_Drums (000001B7774120A8)
+[LOG] SoundI::release                          :     Susan_-_Drums (000001B56068C268)
+[LOG] SoundI::release                          :     Susan_-_Drums (000001B6FF2F9418)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
