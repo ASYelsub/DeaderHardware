@@ -6876,6 +6876,10 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 645056540621773532, guid: b6a5c7b0cd2c1434bac007e02e7162a7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b6a5c7b0cd2c1434bac007e02e7162a7, type: 3}
       propertyPath: m_Name
       value: FINAL HUB 2
@@ -6971,6 +6975,10 @@ PrefabInstance:
     - target: {fileID: 4913378163796777021, guid: b6a5c7b0cd2c1434bac007e02e7162a7, type: 3}
       propertyPath: m_CastShadows
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328442484975146999, guid: b6a5c7b0cd2c1434bac007e02e7162a7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 5570797635709384316, guid: b6a5c7b0cd2c1434bac007e02e7162a7, type: 3}
       propertyPath: m_Materials.Array.data[0]
