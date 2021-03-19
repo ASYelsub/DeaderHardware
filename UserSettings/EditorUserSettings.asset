@@ -32,7 +32,11 @@ EditorUserSettings:
     RecentlyUsedScenePath-8:
       value: 22424703114646680e0b0227036c791918192706293e233c7f67083debf42d
       flags: 0
+<<<<<<< HEAD
     RecentlyUsedScenePath-9:
+=======
+    RecentlyUsedScenePath-8:
+>>>>>>> 822d5d3304656c6722a95ccd545c35c0b970a798
       value: 22424703114646680e0b0227036c7e1e12051d3d130033326d1a1e36ece57a2decee22f0
       flags: 0
     UnityEditor.ShaderGraph.FloatingWindowsLayout2:
