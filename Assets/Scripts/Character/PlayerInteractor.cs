@@ -45,4 +45,12 @@ public class PlayerInteractor : MonoBehaviour
             }
         }
     }
+
+    public void queryItemInteraction(int itemId) {
+        foreach(Collider col in nearbyColliders) {
+            if (col.GetComponent<InteractionQuery>() != null) {
+                col.GetComponent<InteractionQuery>().ExecuteInteractionQuery(itemId);
+            }
+        }
+    }
 }

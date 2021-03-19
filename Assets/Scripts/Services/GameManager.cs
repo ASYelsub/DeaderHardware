@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         ServicesLocator.SceneChanger = FindObjectOfType<SceneChangeManager>();
         ServicesLocator.ItemLibrary = new ItemLibrary(ItemDictionary.text);
         ServicesLocator.DialogueManager = diaMan;
+        ServicesLocator.PlayerInteractor = FindObjectOfType<PlayerInteractor>();
         invM.DoInvMenu();
           
         ServicesLocator.Initialization();
