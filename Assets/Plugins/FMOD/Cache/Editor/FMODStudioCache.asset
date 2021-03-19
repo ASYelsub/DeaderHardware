@@ -94,7 +94,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637515774785487983
+  lastModified: 637516117644636303
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -256,13 +256,12 @@ MonoBehaviour:
   - {fileID: -4001972868584010433}
   EditorEvents:
   - {fileID: 750135959931644250}
-  EditorParameters:
-  - {fileID: -4051093898711690458}
+  EditorParameters: []
   MasterBanks:
   - {fileID: -4001972868584010433}
   StringsBanks:
   - {fileID: 1862792516906842792}
-  stringsBankWriteTime: 637516736599775572
+  stringsBankWriteTime: 637516117644656244
   cacheVersion: 6
 --- !u!114 &140291049808340098
 MonoBehaviour:
@@ -342,7 +341,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637516736599775572
+  lastModified: 637516117644656244
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -445,7 +444,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Library.bank
   Name: Library
   StudioPath: bank:/Library
-  lastModified: 637516736599765597
+  lastModified: 637516117645114891
   LoadResult: 0
   FileSizes: []
   Exists: 1
