@@ -281,9 +281,17 @@ public class InvMenu : MonoBehaviour
     {
         int toReturn = itemTags[index].ID;
         if(topTrack != 0){
-            Debug.Log("hello");
-            
-        }else if (itemCounter > 9){
+            if(itemCounter > 9)
+            {
+                Debug.Log(3);
+            }
+            else
+            {
+                Debug.Log(4);
+            }
+
+        }
+        else if (itemCounter > 9){
             Debug.Log(1);
             itemTags[topTrack + visItem].visual.SetActive(true);
             itemTags[index].RemoveTag();
@@ -295,7 +303,11 @@ public class InvMenu : MonoBehaviour
                     itemTags[i].AddPos(new Vector3(0, 0, -tagSpacer));
                 }
             }
-          
+            visItem2--;
+            itemCounter--;
+            if (activeItemInt == itemCounter)
+                activeItemInt--;
+            DisplayActive();
         }
         else{//if we are both at less than 9 items and 
             Debug.Log(2);
@@ -316,11 +328,12 @@ public class InvMenu : MonoBehaviour
                 itemTags[itemTags.Count - 1].visual.SetActive(true);
 
             }
+            itemCounter--;
+            if (activeItemInt == itemCounter)
+                activeItemInt--;
+            DisplayActive();
+            
         }
-        itemCounter--;
-        if (activeItemInt == itemCounter)
-            activeItemInt--;
-        DisplayActive();
         return toReturn;
     }
     
