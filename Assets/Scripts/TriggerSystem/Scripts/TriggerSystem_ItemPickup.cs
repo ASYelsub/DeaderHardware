@@ -22,7 +22,7 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractabl
         Item myItem = ServicesLocator.ItemLibrary.ItemList[itemId];
 
         _itemPopup = myItem.hoverText;
-        ServicesLocator.DialogueManager.SplitFile(file);
+      //  ServicesLocator.DialogueManager.SplitFile(file);
         Debug.Log("ExecuteTriggerFunction");
     }
 }

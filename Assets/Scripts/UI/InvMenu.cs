@@ -253,10 +253,10 @@ public class InvMenu : MonoBehaviour
             isStep = true;
             bool isCopy = false;
 
-            //comment out for actual game
-            ID = AddTest(ID);
-            //comment back in for actual game
-            //     isCopy = (AddGame(ID));
+            //for test
+            //ID = AddTest(ID);
+            //for actual game
+            isCopy = (AddGame(ID));
             if (!isCopy)
             {
                 //check if the amount of items is less than the amount of items in the itemLibrary
