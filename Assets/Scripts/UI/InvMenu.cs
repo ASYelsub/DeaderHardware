@@ -8,8 +8,10 @@ using TMPro;
 //last part of removing code
 //scroll bar
 //display model???
+//tags dont appear if you add more items when on page after initial items
 public class InvMenu : MonoBehaviour
 {
+    bool isStep = false;
     [SerializeField]
     Material activeMat;
     [SerializeField]
@@ -246,95 +248,155 @@ public class InvMenu : MonoBehaviour
     //Object manipulation related
     public void AddItem(int ID)
     {
-        bool isCopy = false;
-
-        //comment out for actual game
-        ID = AddTest(ID);
-        //comment back in for actual game
-   //     isCopy = (AddGame(ID));
-        if (!isCopy)
+        if (!isStep)
         {
-            //check if the amount of items is less than the amount of items in the itemLibrary
-            if (itemCounter < ServicesLocator.ItemLibrary.ItemList.Count)
+            isStep = true;
+            bool isCopy = false;
+
+            //comment out for actual game
+            ID = AddTest(ID);
+            //comment back in for actual game
+            //     isCopy = (AddGame(ID));
+            if (!isCopy)
             {
-                //check if amount of collected items is less than spanwed tags
-                if (itemCounter < visItem)
+                //check if the amount of items is less than the amount of items in the itemLibrary
+                if (itemCounter < ServicesLocator.ItemLibrary.ItemList.Count)
                 {
-                    itemTags[itemCounter].AssignItem(ID);
+                    //check if amount of collected items is less than spanwed tags
+                    if (itemCounter < visItem)
+                    {
+                        itemTags[itemCounter].AssignItem(ID);
+                        Debug.Log(6);
+                    }
+                    else
+                    { //if it's more, create a new tag and assign the new item. 
+                        itemTags.Add(new ItemTag(tagPrefab, tagParent));
+                        itemTags[itemCounter].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
+                        if (topTrack != 0) //if we've scrolled down
+                        { Debug.Log(7); itemTags[itemCounter].AddPos(new Vector3(0, 0, (itemCounter - topTrack) * tagSpacer)); }
+
+                        else { Debug.Log(8); itemTags[itemCounter].AddPos(new Vector3(0, 0, itemCounter * tagSpacer)); }
+
+                        itemTags[itemCounter].visual.SetActive(false);
+                        itemTags[itemCounter].AssignItem(ID);
+
+
+                    }
+                    itemCounter++;
                 }
-                else
-                { //if it's more, create a new tag and assign the new item. 
-                    itemTags.Add(new ItemTag(tagPrefab, tagParent));
-                    itemTags[itemCounter].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
-                    itemTags[itemCounter].AddPos(new Vector3(0, 0, itemCounter * tagSpacer));
-                    itemTags[itemCounter].visual.SetActive(false);
-                    itemTags[itemCounter].AssignItem(ID);
-                }
-                itemCounter++;
             }
+
+            DisplayActive();
+            isStep = false;
         }
         
-        DisplayActive();
     }
 
     public int RemoveItem(int index)
     {
-        int toReturn = itemTags[index].ID;
-        if(topTrack != 0){
-            if(itemCounter > 9)
+        if (!isStep)
+        {
+            isStep = true;
+            int toReturn = itemTags[index].ID;
+            if (itemCounter == 0) //paris do you want any item at -1? i'm just using this for the null value.
+                return -1;
+            else if (topTrack != 0)
             {
-                Debug.Log(3);
-            }
-            else
-            {
-                Debug.Log(4);
-            }
-
-        }
-        else if (itemCounter > 9){
-            Debug.Log(1);
-            itemTags[topTrack + visItem].visual.SetActive(true);
-            itemTags[index].RemoveTag();
-            itemTags.RemoveAt(index);
-            for (int i = 0; i < itemTags.Count; i++)
-            {
-                if (i > index-1)
+                if (topTrack + 9 < itemCounter)
                 {
-                    itemTags[i].AddPos(new Vector3(0, 0, -tagSpacer));
+                    Debug.Log(3);
+                    itemTags[topTrack + visItem].visual.SetActive(true);
+                    itemTags[index].RemoveTag();
+                    itemTags.RemoveAt(index);
+                    for (int i = 0; i < itemTags.Count; i++)
+                    {
+                        if (i > index - 1)
+                            itemTags[i].AddPos(new Vector3(0, 0, -tagSpacer));
+                    }
+                    visItem2--;
+                    itemCounter--;
+                    topTrack--;
+                    if (activeItemInt == itemCounter)
+                        activeItemInt--;
+                    DisplayActive();
+                }
+                else
+                {
+                    Debug.Log(4);
+
+                    //move all the tags down i guess?
+
+
+
+                    for (int i = 0; i < itemTags.Count; i++)
+                    {
+                        if (i < index)
+                            itemTags[i].AddPos(new Vector3(0, 0, tagSpacer));
+                    }
+                    itemTags[topTrack - 1].visual.SetActive(true);
+                    itemTags[index].RemoveTag();
+                    itemTags.RemoveAt(index);
+                    visItem2--;
+                    itemCounter--;
+                    topTrack--;
+                    if (activeItemInt == itemCounter)
+                        activeItemInt--;
+                    DisplayActive();
                 }
             }
-            visItem2--;
-            itemCounter--;
-            if (activeItemInt == itemCounter)
-                activeItemInt--;
-            DisplayActive();
-        }
-        else{//if we are both at less than 9 items and 
-            Debug.Log(2);
-            itemTags[index].ClearTag();
-            if (topTrack + 8 < itemTags.Count)
+            else if (itemCounter > 9)
             {
+                Debug.Log(1);
+                itemTags[topTrack + visItem].visual.SetActive(true);
+                itemTags[index].RemoveTag();
+                itemTags.RemoveAt(index);
                 for (int i = 0; i < itemTags.Count; i++)
                 {
-                    if (i > index)
+                    if (i > index - 1)
                     {
                         itemTags[i].AddPos(new Vector3(0, 0, -tagSpacer));
                     }
                 }
-                itemTags.RemoveAt(index);
-                itemTags.Add(new ItemTag(tagPrefab,tagParent));
-                itemTags[itemTags.Count-1].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
-                itemTags[itemTags.Count-1].AddPos(new Vector3(0,0,tagSpacer * itemTags.Count-1));
-                itemTags[itemTags.Count - 1].visual.SetActive(true);
-
+                visItem2--;
+                itemCounter--;
+                if (activeItemInt == itemCounter)
+                    activeItemInt--;
+                DisplayActive();
             }
-            itemCounter--;
-            if (activeItemInt == itemCounter)
-                activeItemInt--;
-            DisplayActive();
-            
+            else
+            {//if we are both at less than 9 items and 
+                Debug.Log(2);
+                itemTags[index].ClearTag();
+                if (topTrack + 8 < itemTags.Count)
+                {
+                    for (int i = 0; i < itemTags.Count; i++)
+                    {
+                        if (i > index)
+                        {
+                            itemTags[i].AddPos(new Vector3(0, 0, -tagSpacer));
+                        }
+                    }
+                    itemTags.RemoveAt(index);
+                    itemTags.Add(new ItemTag(tagPrefab, tagParent));
+                    itemTags[itemTags.Count - 1].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
+                    itemTags[itemTags.Count - 1].AddPos(new Vector3(0, 0, tagSpacer * itemTags.Count - 1));
+                    itemTags[itemTags.Count - 1].visual.SetActive(true);
+
+                }
+                itemCounter--;
+                if (activeItemInt == itemCounter)
+                    activeItemInt--;
+
+                if (itemCounter == 0)
+                {
+                    rightDesc.GetComponent<TextMeshPro>().text = "";
+                }
+                DisplayActive();
+            }
+            isStep = false;
+            return toReturn;
         }
-        return toReturn;
+        return -1;
     }
     
     public void SetBook(int ID)
@@ -345,86 +407,124 @@ public class InvMenu : MonoBehaviour
     //Display related
     void CycleActive(bool increase)
     {
-        if (itemCounter == 0) { }//don't do anything!
-        else if (increase){//if increasing
-            if (itemCounter <= visItem){//if visible items isn't filled up and going down
-                //if at bottom of collected items
-                if (activeItemInt == itemCounter - 1){
-                    activeItemInt = 0;
-                }else{//if not at bottom of collected items
-                    activeItemInt++;
-                }
-            }else{//if visible items is filled and going down
-                if (activeItemInt >= visItem2 - 1){ //if visible items is filled and at bottom of visible items
-                    if (activeItemInt == itemCounter - 1){//if visible items is filled and at bottom of collected items
-                        for (int i = 0; i < itemTags.Count; i++){
-                            itemTags[i].AddPos(new Vector3(0, 0, (visItem2 - visItem) * tagSpacer));
-                            if (i <= visItem - 1)
-                                itemTags[i].visual.SetActive(true);
-                            else
-                                itemTags[i].visual.SetActive(false);
-                        }
-                        visItem2 = 9;
+        if (!isStep)
+        {
+            isStep = false;
+            if (itemCounter == 0) { }//don't do anything!
+            else if (increase)
+            {//if increasing
+                if (itemCounter <= visItem)
+                {//if visible items isn't filled up and going down
+                 //if at bottom of collected items
+                    if (activeItemInt == itemCounter - 1)
+                    {
                         activeItemInt = 0;
-                        topTrack = 0;
-                    }else{ //if visible items is filled and not at the bottom of collected items
-                        itemTags[visItem2].visual.SetActive(true);
-                        itemTags[visItem2 - visItem].visual.SetActive(false);
-                        for (int i = 0; i < itemTags.Count; i++){
-                            itemTags[i].AddPos(new Vector3(0, 0, -tagSpacer));
-                        }
-                        visItem2++;
+                    }
+                    else
+                    {//if not at bottom of collected items
                         activeItemInt++;
-                        topTrack++;
                     }
-                }else{//if not at bottom of visible items
-                    activeItemInt++;
+                }
+                else
+                {//if visible items is filled and going down
+                    if (activeItemInt >= visItem2 - 1)
+                    { //if visible items is filled and at bottom of visible items
+                        if (activeItemInt == itemCounter - 1)
+                        {//if visible items is filled and at bottom of collected items
+                            for (int i = 0; i < itemTags.Count; i++)
+                            {
+                                itemTags[i].AddPos(new Vector3(0, 0, (visItem2 - visItem) * tagSpacer));
+                                if (i <= visItem - 1)
+                                    itemTags[i].visual.SetActive(true);
+                                else
+                                    itemTags[i].visual.SetActive(false);
+                            }
+                            visItem2 = 9;
+                            activeItemInt = 0;
+                            topTrack = 0;
+                        }
+                        else
+                        { //if visible items is filled and not at the bottom of collected items
+                            itemTags[visItem2].visual.SetActive(true);
+                            itemTags[visItem2 - visItem].visual.SetActive(false);
+                            for (int i = 0; i < itemTags.Count; i++)
+                            {
+                                itemTags[i].AddPos(new Vector3(0, 0, -tagSpacer));
+                            }
+                            visItem2++;
+                            activeItemInt++;
+                            topTrack++;
+                        }
+                    }
+                    else
+                    {//if not at bottom of visible items
+                        activeItemInt++;
+                    }
                 }
             }
-        }else if (!increase){ //if decreasing
-            if (itemCounter <= visItem) {//if visible items isn't filled up
-                if (activeItemInt == 0) { //if at top of collected items
-                    activeItemInt = itemCounter - 1;
-                } else {//if not at bottom of collected items
-                    activeItemInt--;
-                }
-            }else{//if collected items is more than visible items
-                //vis
-                if (activeItemInt != topTrack){//if we're not at the top of whatever is being displayed//which is tracked by topTrack, which starts at 0
-                    activeItemInt--;//decrease activeItemInt
-                }else if (activeItemInt==topTrack){//else if we're at the top of whatever is being displayed
-                    if(topTrack == 0){//if activeItemInt is equal to 0
-                                      // Debug.Log("3");
-                        activeItemInt = itemTags.Count - 1;
-                        topTrack += itemTags.Count - visItem;
-                        visItem2 = topTrack + visItem;
-                        for (int i = 0; i < itemTags.Count; i++){ //set activeItemInt to itemtags.count
-                            itemTags[i].AddPos(new Vector3(0, 0, (itemTags.Count - visItem) * -tagSpacer));
-                           if(i >= topTrack){
-                               itemTags[i].visual.SetActive(true);
-                           }else{
-                               itemTags[i].visual.SetActive(false);
-                           }
-                        }
-                        
+            else if (!increase)
+            { //if decreasing
+                if (itemCounter <= visItem)
+                {//if visible items isn't filled up
+                    if (activeItemInt == 0)
+                    { //if at top of collected items
+                        activeItemInt = itemCounter - 1;
                     }
-                    else if(topTrack > 0){ //else if activeItemInt is greater than 0
-                                                //move all the itemtags down by one
+                    else
+                    {//if not at bottom of collected items
                         activeItemInt--;
-                        topTrack--;
-                        visItem2--;
-                        for (int i = 0; i < itemTags.Count; i++)
-                        {
-                            itemTags[i].AddPos(new Vector3(0, 0, tagSpacer));
+                    }
+                }
+                else
+                {//if collected items is more than visible items
+                 //vis
+                    if (activeItemInt != topTrack)
+                    {//if we're not at the top of whatever is being displayed//which is tracked by topTrack, which starts at 0
+                        activeItemInt--;//decrease activeItemInt
+                    }
+                    else if (activeItemInt == topTrack)
+                    {//else if we're at the top of whatever is being displayed
+                        if (topTrack == 0)
+                        {//if activeItemInt is equal to 0
+                         // Debug.Log("3");
+                            activeItemInt = itemTags.Count - 1;
+                            topTrack += itemTags.Count - visItem;
+                            visItem2 = topTrack + visItem;
+                            for (int i = 0; i < itemTags.Count; i++)
+                            { //set activeItemInt to itemtags.count
+                                itemTags[i].AddPos(new Vector3(0, 0, (itemTags.Count - visItem) * -tagSpacer));
+                                if (i >= topTrack)
+                                {
+                                    itemTags[i].visual.SetActive(true);
+                                }
+                                else
+                                {
+                                    itemTags[i].visual.SetActive(false);
+                                }
+                            }
+
                         }
-                        itemTags[activeItemInt].visual.SetActive(true);
-                        itemTags[activeItemInt + 9].visual.SetActive(false);
+                        else if (topTrack > 0)
+                        { //else if activeItemInt is greater than 0
+                          //move all the itemtags down by one
+                            activeItemInt--;
+                            topTrack--;
+                            visItem2--;
+                            for (int i = 0; i < itemTags.Count; i++)
+                            {
+                                itemTags[i].AddPos(new Vector3(0, 0, tagSpacer));
+                            }
+                            itemTags[activeItemInt].visual.SetActive(true);
+                            itemTags[activeItemInt + 9].visual.SetActive(false);
+                        }
                     }
                 }
             }
+            isStep = false;
+            DisplayActive();
+            //  CycleScroller(increase);
         }
-        DisplayActive();
-      //  CycleScroller(increase);
+
     }
     void DisplayActive()
     {
