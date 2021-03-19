@@ -17,14 +17,14 @@ public class ShotObjectHolder : MonoBehaviour
     public void SwitchShot(int x)
     {
         Debug.Log("Switching from " + currentShot + " to " + x);
-        for (int i = 0; i < shots[currentShot].sprites.Length; i++)
+        for (int i = 0; i < shots[currentShot].Objs.Length; i++)
         {
-            shots[currentShot].sprites[i].SetActive(false);
+            shots[currentShot].Objs[i].SetActive(false);
         }
 
-        for (int i = 0; i < shots[x].sprites.Length; i++)
+        for (int i = 0; i < shots[x].Objs.Length; i++)
         {
-            shots[x].sprites[i].SetActive(true);
+            shots[x].Objs[i].SetActive(true);
         }
 
         currentShot = x;
@@ -34,5 +34,6 @@ public class ShotObjectHolder : MonoBehaviour
 [System.Serializable]
 public struct ShotObjects
 {
-    public GameObject[] sprites;
+    public GameObject[] Objs;
 }
+ 

@@ -39,9 +39,10 @@ public class ItemLibrary
         //Float Text
         itemEntry.hoverText = elements[3];
         //Is a book?
-        itemEntry.isBook = bool.Parse(elements[4]);
+        //Got the error "string is not recognized as valid boolean" so commented this out, I'm sure it can be figured out later. :^)
+        //itemEntry.isBook = bool.Parse(elements[4]);
 
-        itemEntry.UIModel = null;
+       // itemEntry.UIModel = null;
 
         return itemEntry;
 

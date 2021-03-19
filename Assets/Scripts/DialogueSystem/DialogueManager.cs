@@ -8,6 +8,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager me;
+    public TextAsset file;
 
     private string[] lines;
     private bool dialogueUp;
