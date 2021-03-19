@@ -39,7 +39,7 @@ public class InteractionQuery : MonoBehaviour
         if (id == requiredItemId) {
 
             Debug.Log("Success: " + id);
-
+            ServicesLocator.GameManager.invM.RemoveItem(id);
             if (_triggerableArrayOnSuccess.Length == 0) return;
 
             foreach (ITriggerable n in _triggerableArrayOnSuccess) {
