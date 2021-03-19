@@ -21,7 +21,7 @@ public class TowerPopUp_Trigger : MonoBehaviour,ITriggerable
             leftDoor.localPosition = Vector3.Lerp(leftDoor.localPosition, new Vector3(2.85f, l.y, l.z), Time.deltaTime * 10);
 
             Vector3 t = towerBase.localPosition;
-            towerBase.localPosition = Vector3.Lerp(towerBase.localPosition, new Vector3(t.x,8.750f,t.z));
+            //towerBase.localPosition = Vector3.Lerp(towerBase.localPosition, new Vector3(t.x,8.750f,t.z));
         }
     }
 
