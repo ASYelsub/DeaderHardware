@@ -16,6 +16,10 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
     // * line spacing
 
     void Start() {
+        if(manager == null)
+        {
+            manager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
+        }
         //textBox.text = "";
         //ExecuteTriggerFunction(); // REMOVE LATER
     } 

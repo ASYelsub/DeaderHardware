@@ -103,7 +103,7 @@ public class InvMenu : MonoBehaviour
             tagText.text = "";
             visual.SetActive(false);
             isEmpty = true;
-            ID = -1; //correlates w duplicates
+            ID = 500; //correlates w duplicates
         }
         public void SetItem(string name)
         {
@@ -172,17 +172,18 @@ public class InvMenu : MonoBehaviour
 
     private void Update()
     {
+       
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             ToggleMenu();
         }
         if (menuOn)
         {
-
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                AddItem(itemCounter);
-            }
+           
+            //if (Input.GetKeyDown(KeyCode.F))
+            //{
+            //    AddItem(itemCounter);
+            //}
 
             if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
@@ -198,9 +199,10 @@ public class InvMenu : MonoBehaviour
             {
                 //This function needs to be changed to a currently nonexistant "CheckItem(activeItemInt)" function.
                 //                RemoveItem(activeItemInt);
-
+                Debug.Log("Space");
+                Debug.Log(activeItemInt);
                 CheckItem(activeItemInt);
-
+                
                 //bool corresponds = CheckItem(activeItemint);
 
                 //if(corresponds == true){
@@ -216,10 +218,12 @@ public class InvMenu : MonoBehaviour
 
     public void CheckItem(int activeItemId) {
 
+        Debug.Log("yeet");
         int id = itemTags[activeItemInt].ID;
+        Debug.Log("Parsing: " + id);
 
         ServicesLocator.PlayerInteractor.queryItemInteraction(id);
-        Debug.Log("Parsing: " + id);
+        
     }
 
     //?
@@ -264,9 +268,9 @@ public class InvMenu : MonoBehaviour
             bool isCopy = false;
 
             //for test
-            //ID = AddTest(ID);
+            ID = AddTest(ID);
             //for actual game
-            isCopy = (AddGame(ID));
+           // isCopy = (AddGame(ID));
             if (!isCopy)
             {
                 //check if the amount of items is less than the amount of items in the itemLibrary
@@ -276,16 +280,18 @@ public class InvMenu : MonoBehaviour
                     if (itemCounter < visItem)
                     {
                         itemTags[itemCounter].AssignItem(ID);
-                        Debug.Log(6);
+                    //    Debug.Log(6);
                     }
                     else
                     { //if it's more, create a new tag and assign the new item. 
                         itemTags.Add(new ItemTag(tagPrefab, tagParent));
                         itemTags[itemCounter].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
                         if (topTrack != 0) //if we've scrolled down
-                        { Debug.Log(7); itemTags[itemCounter].AddPos(new Vector3(0, 0, (itemCounter - topTrack) * tagSpacer)); }
+                        { //Debug.Log(7); 
+                            itemTags[itemCounter].AddPos(new Vector3(0, 0, (itemCounter - topTrack) * tagSpacer)); }
 
-                        else { Debug.Log(8); itemTags[itemCounter].AddPos(new Vector3(0, 0, itemCounter * tagSpacer)); }
+                        else { //Debug.Log(8); 
+                            itemTags[itemCounter].AddPos(new Vector3(0, 0, itemCounter * tagSpacer)); }
 
                         itemTags[itemCounter].visual.SetActive(false);
                         itemTags[itemCounter].AssignItem(ID);
@@ -302,14 +308,25 @@ public class InvMenu : MonoBehaviour
         
     }
 
-    public int RemoveItem(int index)
+    public int RemoveItem(int ID)
     {
+        int index = 0;
+        for (int i = 0; i < itemTags.Count; i++)
+        {
+            if(itemTags[i].ID == ID)
+            {
+                index = i;
+            }
+        }
         if (!isStep)
         {
             isStep = true;
             int toReturn = itemTags[index].ID;
-            if (itemCounter == 0) //paris do you want any item at -1? i'm just using this for the null value.
-                return -1;
+            if (itemCounter == 0)
+            { //paris do you want any item at 500? i'm just using this for the null value.
+                Debug.Log("this?");
+                return 500;
+            }
             else if (topTrack != 0)
             {
                 if (topTrack + 9 < itemCounter)
@@ -404,9 +421,11 @@ public class InvMenu : MonoBehaviour
                 DisplayActive();
             }
             isStep = false;
+            
             return toReturn;
         }
-        return -1;
+        Debug.Log("this2");
+        return 500;
     }
     
     public void SetBook(int ID)
