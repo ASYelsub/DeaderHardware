@@ -538,6 +538,7 @@ public class InvMenu : MonoBehaviour
     }
     void DisplayActive()
     {
+        if (itemTags.Count == 0) return;
         rightDesc.GetComponent<TextMeshPro>().text=itemTags[activeItemInt].tagDesc;
         for (int i = 0; i < itemTags.Count; i++)
         {
