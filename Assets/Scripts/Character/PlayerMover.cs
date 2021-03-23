@@ -34,7 +34,7 @@ public class PlayerMover : MonoBehaviour
     public float trigger_respawn_dist = 30f;
     void Start()
     {
-        startY = CamTransform.position.y;
+//        startY = CamTransform.position.y;
         respawnY = startY - trigger_respawn_dist;
 
         CC = GetComponent<CharacterController>();
