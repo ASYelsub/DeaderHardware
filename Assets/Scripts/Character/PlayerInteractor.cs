@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PlayerInteractor : MonoBehaviour
 {
+    InvMenu inv;
+    SettingsMenu settings;
     Transform body;
     void Start()
     {
         body = transform;
+        inv = FindObjectOfType<InvMenu>();
+        settings = FindObjectOfType<SettingsMenu>();
     }
 
     public float radius;
@@ -17,20 +21,35 @@ public class PlayerInteractor : MonoBehaviour
     void Update()
     {
         nearbyColliders = Physics.OverlapSphere(transform.position,radius);
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (ServicesLocator.DialogueManager.isShowing ==false && inv.menuOn == false && settings.settingsActive == false)
         {
-            float dist = Mathf.Infinity;
-            Collider nearestCollider = null;
-            foreach (Collider item in nearbyColliders)
+            if (Input.GetKeyDown(KeyCode.Space) && ServicesLocator.DialogueManager.isShowing == false)
             {
-                if (item.GetComponent<IInteractable>() == null) { return; }
-                //find the closest one
-                if (Vector3.Distance(item.ClosestPoint(transform.position), transform.position + body.forward) < dist)
+                float dist = Mathf.Infinity;
+                Collider nearestCollider = null;
+                foreach (Collider item in nearbyColliders)
                 {
-                    dist = Vector3.Distance(item.ClosestPoint(transform.position), transform.position + body.forward);
-                    nearestCollider = item;
+                    //if (item.GetComponent<IInteractable>() == null) { return; }
+                    //find the closest one
+                    //if (Vector3.Distance(item.ClosestPoint(transform.position), transform.position + body.forward) < dist)
+                    //{
+                    //    dist = Vector3.Distance(item.ClosestPoint(transform.position), transform.position + body.forward);
+                    //    nearestCollider = item;
+                    //}
+                    //nearestCollider.GetComponentInChildren<IInteractable>().ExecuteInteraction();
+                    if (item.GetComponent<IInteractable>() != null)
+                    {
+                        item.GetComponentInChildren<IInteractable>().ExecuteInteraction();
+                    }
                 }
-                nearestCollider.GetComponentInChildren<IInteractable>().ExecuteInteraction();
+            }
+        }
+    }
+
+    public void queryItemInteraction(int itemId) {
+        foreach(Collider col in nearbyColliders) {
+            if (col.GetComponent<InteractionQuery>() != null) {
+                col.GetComponent<InteractionQuery>().ExecuteInteractionQuery(itemId);
             }
         }
     }

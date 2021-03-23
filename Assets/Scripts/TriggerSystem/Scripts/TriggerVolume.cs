@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TriggerVolume : MonoBehaviour
+public class TriggerVolume : MonoBehaviour, IInteractable
 {
     public bool OtherTarget;
     public bool ExecuteOnAwake;
@@ -39,7 +39,7 @@ public class TriggerVolume : MonoBehaviour
 
         if (!ExecuteOnAwake && other.gameObject != _triggerTarget) return;
 
-        Debug.Log("Executing Trigger Functions...");
+//        Debug.Log("Executing Trigger Functions...");
 
         foreach (ITriggerable n in _triggerableArray) {
             n.ExecuteTriggerFunction();
@@ -51,6 +51,17 @@ public class TriggerVolume : MonoBehaviour
             if (n == null) return;
             Debug.DrawLine(transform.position, n.transform.position, Color.red);
  
+        }
+    }
+
+    public void ExecuteInteraction()
+    {
+        foreach (IInteractable g in GetComponentsInChildren<IInteractable>())
+        {
+            if (g != this.gameObject.GetComponent<IInteractable>())
+            {
+                g.ExecuteInteraction();
+            }
         }
     }
 }
