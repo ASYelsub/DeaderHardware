@@ -73,7 +73,7 @@ public class PlayerMover : MonoBehaviour
         CC.Move(moveDirection * Time.deltaTime);
 
         if (hit.collider !=null && hit.distance < playerHeight + rampSnapThreshold && !hit.collider.isTrigger) { new Vector3(transform.position.x, hit.point.y + playerHeight, transform.position.z); }
-        if (trandform.position.y < respawnY) { FallRespawn(); }
+        if (transform.position.y < respawnY) { FallRespawn(); }
     }
 
     public void FallRespawn()
