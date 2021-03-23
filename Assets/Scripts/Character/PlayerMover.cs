@@ -29,13 +29,14 @@ public class PlayerMover : MonoBehaviour
 
     public Vector3 lastGroundedPos;
 
-    InvMenu inv;
-    SettingsMenu settings;
-
+    float startY;
+    float respawnY;
+    public float trigger_respawn_dist = 30f;
     void Start()
     {
-        inv = FindObjectOfType<InvMenu>();
-        settings = FindObjectOfType<SettingsMenu>();
+        startY = CamTransform.position.y;
+        respawnY = startY - trigger_respawn_dist;
+
         CC = GetComponent<CharacterController>();
         CamTransform = Camera.main.transform;
         tankRotation = transform.rotation.eulerAngles.y;
@@ -69,15 +70,10 @@ public class PlayerMover : MonoBehaviour
         moveDirection.x *= walkSpeed;
         moveDirection.z *= walkSpeed;
 
-        if (ServicesLocator.DialogueManager.isShowing || inv.menuOn == true || settings.settingsActive == true)
-        {
-            moveDirection.x = 0;
-            moveDirection.z = 0;
-        }
-
         CC.Move(moveDirection * Time.deltaTime);
 
         if (hit.collider !=null && hit.distance < playerHeight + rampSnapThreshold && !hit.collider.isTrigger) { new Vector3(transform.position.x, hit.point.y + playerHeight, transform.position.z); }
+        if (trandform.position.y < respawnY) { FallRespawn(); }
     }
 
     public void FallRespawn()
