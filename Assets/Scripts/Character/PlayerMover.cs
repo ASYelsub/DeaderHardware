@@ -11,7 +11,7 @@ public class PlayerMover : MonoBehaviour
     Vector3 fDir; //Camera Forward Direction
     Vector3 uDir; //Camera Up Direction
 
-    public Transform CamTransform;
+    //public Transform CamTransform;
 
     public float walkSpeed = 0;
     public float maxWalkSpeed = 6;
@@ -29,10 +29,16 @@ public class PlayerMover : MonoBehaviour
 
     public Vector3 lastGroundedPos;
 
+    float startY;
+    float respawnY;
+    public float trigger_respawn_dist = 30f;
     void Start()
     {
+        //startY = CamTransform.position.y;
+        respawnY = startY - trigger_respawn_dist;
+
         CC = GetComponent<CharacterController>();
-        CamTransform = Camera.main.transform;
+        //CamTransform = Camera.main.transform;
         tankRotation = transform.rotation.eulerAngles.y;
     }
 
@@ -67,6 +73,7 @@ public class PlayerMover : MonoBehaviour
         CC.Move(moveDirection * Time.deltaTime);
 
         if (hit.collider !=null && hit.distance < playerHeight + rampSnapThreshold && !hit.collider.isTrigger) { new Vector3(transform.position.x, hit.point.y + playerHeight, transform.position.z); }
+        if (transform.position.y < respawnY) { FallRespawn(); }
     }
 
     public void FallRespawn()

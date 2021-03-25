@@ -53,6 +53,17 @@ public class ItemMenu : MonoBehaviour
         public string itemDecription;
     }
 
+    //Item script: goes on every object
+    //has the properties:
+    //Name
+    //ID
+    //UI Description
+    //UI Model
+    //isBook
+    //Hover Writing
+    //In world model object
+    //Item data script
+
 
     public class Item{
         [HideInInspector] public bool isActive;
@@ -63,6 +74,8 @@ public class ItemMenu : MonoBehaviour
         private Material activeMat;
         private Material inactiveMat;
         private GameObject textHolder;
+
+        //For making an item in the inspector
         public Item(GameObject tagPrefab, GameObject textHolder, GameObject tagParent, List<ItemTag> itemTags,
             string desc, string name, bool collected,
             Material activeMat, Material inactiveMat)
@@ -75,6 +88,24 @@ public class ItemMenu : MonoBehaviour
             this.itemName = name;
             tag = new ItemTag(tagPrefab, tagParent, collected, isActive, itemName);
             itemTags.Add(tag);
+        }
+        //For adding an item to the list in game
+        public Item(List<ItemTag> itemTags,
+            string desc, string name, bool collected,
+            Material activeMat, Material inactiveMat)
+        {
+            this.activeMat = activeMat;
+            this.inactiveMat = inactiveMat;
+            this.collected = collected;
+            this.itemDecription = desc;
+            this.itemName = name;
+            for (int i = 0; i < itemTags.Count; i++)
+            {
+                if(itemTags[i].isEmpty == true)
+                {
+                    tag = itemTags[i];
+                }
+            }
         }
 
         public void SetActiveState(){
@@ -93,8 +124,9 @@ public class ItemMenu : MonoBehaviour
         [HideInInspector] public GameObject visual;
         [HideInInspector] public TextMeshPro tagText;
         [HideInInspector] public GameObject model;
+        [HideInInspector] public bool isEmpty;
         
-        
+        //For when created with an item
         public ItemTag(GameObject tagPrefab, GameObject tagParent,
             bool collected, bool active, string name){
             
@@ -103,6 +135,25 @@ public class ItemMenu : MonoBehaviour
             tagText = visual.GetComponentInChildren<TextMeshPro>();
             tagText.text = name;
             visual.SetActive(false);
+            isEmpty = false;
+        }
+        //For when created without an item, empty, to take up space
+        public ItemTag(GameObject tagPrefab, GameObject tagParent)
+        {
+            tagPos = new Vector3(0, 0, 0);
+            visual = Instantiate(tagPrefab, tagParent.transform, false);
+            tagText = visual.GetComponentInChildren<TextMeshPro>();
+            tagText.text = "";
+            visual.SetActive(false);
+            isEmpty = true;
+        }
+        public void SetItem(string name)
+        {
+            if (isEmpty)
+            {
+                tagText.text = name;
+                isEmpty = false;
+            }
         }
         public void SetPos(Vector3 pos)
         {
@@ -220,10 +271,6 @@ public class ItemMenu : MonoBehaviour
         menuOn = !menuOn;
         menuObject.SetActive(menuOn);
     }
-
-
-
-
 
     void ButtonRay()
     {
