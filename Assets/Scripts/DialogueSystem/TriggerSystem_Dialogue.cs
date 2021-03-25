@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
 {
-    public TextAsset file;
+    public TextAsset file; // ASSIGN IN INSPECTOR
     //public Text textBox;
     // public int lineLength;
 
