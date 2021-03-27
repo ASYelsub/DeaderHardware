@@ -7,7 +7,8 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractabl
     public int itemId;
     public TextAsset file;
     private string _itemPopup;
-    
+
+    // Executes when you hit space near the object    
     public void ExecuteInteraction()
     {
         Item myItem = ServicesLocator.ItemLibrary.ItemList[itemId];
@@ -17,6 +18,8 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractabl
         ServicesLocator.GameManager.invM.AddItem(myItem.ID);
 
     }
+
+    // Executes when you get near the object 
     public void ExecuteTriggerFunction() {
 
         Item myItem = ServicesLocator.ItemLibrary.ItemList[itemId];

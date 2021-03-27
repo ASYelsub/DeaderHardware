@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -14,7 +15,7 @@ public class DialogueManager : MonoBehaviour
     private bool dialogueUp;
     private bool isTyping;
     private int lineNum = 0;
-    public bool isShowing;
+    public bool isShowing; // same as dialogueUp
     private bool playCore;
 
     public TextMeshPro tm;
@@ -45,9 +46,13 @@ public class DialogueManager : MonoBehaviour
         isShowing = true;
         dialogueUp = true;
 
+
         lines = d.text.Split('\n');
-        
+        //lines = d.text.Split(StringSplitOptions.);
+
         Debug.Log("Lines to print: " + lines.Length);
+
+        // if (lines[lineNum[0] == "\n"]) (trim string)
 
         Debug.Log(lines[lineNum]);
         //StartCoroutine("DisplayText", lines[lineNum]);
