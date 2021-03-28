@@ -17,16 +17,39 @@ public class ShotObjectHolder : MonoBehaviour
     public void SwitchShot(int x)
     {
         Debug.Log("Switching from " + currentShot + " to " + x);
-        for (int i = 0; i < shots[currentShot].Objs.Length; i++)
-        {
-            shots[currentShot].Objs[i].SetActive(false);
+
+        int length = 0;
+        if(shots[currentShot].mrs.Length >= shots[currentShot].srs.Length){
+            length = shots[currentShot].mrs.Length;
+        }else{
+            length = shots[currentShot].srs.Length;
+        }
+        for (int i = 0; i < length; i++){
+            if(shots[currentShot].mrs[i] != null){
+                shots[currentShot].mrs[i].enabled = false;
+            }
+            if(shots[currentShot].srs[i] != null){
+                shots[currentShot].srs[i].enabled = false;
+            }
+//            shots[currentShot].Objs[i].SetActive(false);
         }
 
-        for (int i = 0; i < shots[x].Objs.Length; i++)
-        {
-            shots[x].Objs[i].SetActive(true);
+        if (shots[x].mrs.Length >= shots[x].srs.Length){
+            length = shots[x].mrs.Length;
+        }else{
+            length = shots[x].srs.Length;
         }
 
+        for (int i = 0; i < length; i++){
+            if (shots[currentShot].mrs[i] != null){
+                shots[x].mrs[i].enabled = true;
+            }
+            if(shots[currentShot].mrs[i] != null){
+                shots[x].srs[i].enabled = true;
+            }
+           
+          //  shots[x].Objs[i].SetActive(true);
+        }
         currentShot = x;
     }
 }
@@ -34,6 +57,7 @@ public class ShotObjectHolder : MonoBehaviour
 [System.Serializable]
 public struct ShotObjects
 {
-    public GameObject[] Objs;
+    public MeshRenderer[] mrs;
+    public SpriteRenderer[] srs;
 }
  
