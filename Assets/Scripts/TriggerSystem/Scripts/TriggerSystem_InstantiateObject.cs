@@ -11,11 +11,13 @@ public class TriggerSystem_InstantiateObject : MonoBehaviour, ITriggerable
     private Vector3 overridePosition;
 
     public void ExecuteTriggerFunction() {
-        if (overridePosition == Vector3.zero) {
-            Instantiate(objectToInstantiate);
-        } else {
-            Instantiate(objectToInstantiate, overridePosition, Quaternion.identity);
-        }
+        //   if (overridePosition == Vector3.zero) {
+        //      Instantiate(objectToInstantiate);
+        //  } else {
+        //      Instantiate(objectToInstantiate, overridePosition, Quaternion.identity);
+        // }
+
+        objectToInstantiate.SetActive(true);
     }
 
 }

@@ -84,20 +84,29 @@ public class SettingsMenu : MonoBehaviour
 
 
     void Update(){
-        if (!menuIsMoving){
-            if (Input.GetKeyDown(KeyCode.P )|| Input.GetKey(KeyCode.Alpha1)){
-                TurnMenuOnOff(settingsActive);
-            }
-            if (settingsActive){
-                if (Input.GetMouseButtonDown(0)){
-                    point = (new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-                    point.z = -10;
-                    ButtonRay();
+
+        if (!ServicesLocator.GameManager.diaMan.isShowing)
+        {
+            if (!menuIsMoving)
+            {
+                if (Input.GetKeyDown(KeyCode.P) || Input.GetKey(KeyCode.Alpha1))
+                {
+                    TurnMenuOnOff(settingsActive);
+                }
+                if (settingsActive)
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        point = (new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+                        point.z = -10;
+                        ButtonRay();
+                    }
                 }
             }
-        }
 
-        ShowRay();
+            ShowRay();
+        }
+        
     }
 
     public void TurnMenuOnOff(bool currentMenuState){

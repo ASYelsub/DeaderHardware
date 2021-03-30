@@ -11,14 +11,14 @@ public class DialogueManager : MonoBehaviour
     public TextAsset file;
 
     private string[] lines;
-    private bool dialogueUp;
     private bool isTyping;
     private int lineNum = 0;
+    [HideInInspector]
     public bool isShowing;
     private bool playCore;
 
     public TextMeshPro tm;
-
+    
     public void Start()
     {
         tm = GameObject.Find("GameCamera").GetComponentInChildren<TextMeshPro>();
@@ -27,23 +27,29 @@ public class DialogueManager : MonoBehaviour
 
     public void Update()
     {
-        
-        if (dialogueUp && Input.GetKeyUp(KeyCode.Space)) {
-            Debug.Log("SPACE");
-            if (lineNum >= lines.Length) {
-                Cleanup();
-            } else {
-                StopCoroutine("DisplayText");
-                ClearText();
-                StartCoroutine("DisplayText", lines[lineNum]);
+        if(!GameManager.invM.menuOn && !GameManager.settingsM.settingsActive)
+        {
+            if (isShowing && Input.GetKeyUp(KeyCode.Space))
+            {
+                Debug.Log("SPACE");
+                if (lineNum >= lines.Length)
+                {
+                    Cleanup();
+                }
+                else
+                {
+                    StopCoroutine("DisplayText");
+                    ClearText();
+                    StartCoroutine("DisplayText", lines[lineNum]);
+                }
             }
         }
+        
     }
 
     public void SplitFile (TextAsset d, IDialogueCommand[] commands)
     {
         isShowing = true;
-        dialogueUp = true;
 
         lines = d.text.Split('\n');
         
@@ -76,6 +82,7 @@ public class DialogueManager : MonoBehaviour
                 }
                 i += 5; //skip ahead in the text so that you dont end up printing '<CMD>' on screen
             }
+            if(i < current.Length)
             tm.text += current[i];
             yield return null;
         }
@@ -107,7 +114,6 @@ public class DialogueManager : MonoBehaviour
         tm.text = "";
         lines = null;
         lineNum = 0;
-        dialogueUp = false;
     }
 
     private void ClearText() => tm.text = "";

@@ -11,6 +11,8 @@ TagManager:
   - T3
   - T4
   - Quit
+  - Gate1
+  - Gate2
   layers:
   - Default
   - TransparentFX
