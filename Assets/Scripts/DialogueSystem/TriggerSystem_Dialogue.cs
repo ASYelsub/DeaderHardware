@@ -27,5 +27,13 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
     public void ExecuteTriggerFunction() { //ServicesLocator.DialogueManager.SplitFile(this);
     }
 
-    public void ExecuteInteraction() { ServicesLocator.DialogueManager.SplitFile(file); }
+    public void ExecuteInteraction()
+    {
+        List<IDialogueCommand> dialogueCommands = new List<IDialogueCommand>();
+        foreach (IDialogueCommand d in GetComponentsInChildren<IDialogueCommand>())
+        {
+            dialogueCommands.Add(d);
+        }
+        ServicesLocator.DialogueManager.SplitFile(file,dialogueCommands.ToArray());
+    }
 }

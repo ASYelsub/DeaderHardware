@@ -40,7 +40,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void SplitFile (TextAsset d)
+    public void SplitFile (TextAsset d, IDialogueCommand[] commands)
     {
         isShowing = true;
         dialogueUp = true;
@@ -50,8 +50,15 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Lines to print: " + lines.Length);
 
         Debug.Log(lines[lineNum]);
+        currentCommands = commands;
+        if (commands.Length == 0)
+        {
+            currentCommands = null;
+        }
         //StartCoroutine("DisplayText", lines[lineNum]);
     }
+
+    IDialogueCommand[] currentCommands;
 
     public IEnumerator DisplayText (string current) 
     {
@@ -59,13 +66,38 @@ public class DialogueManager : MonoBehaviour
         isTyping = true;
         lineNum++;
 
-        foreach (char c in current) {
-            tm.text += c;
+        for (int i = 0; i < current.Length; i++)
+        {
+            if (commandInText(current, i)) // if a command is detected in the dialogue
+            {
+                foreach (IDialogueCommand cmd in currentCommands)// go through all the scripts in the trigger's children that use the interface 'IDialogueCommands'
+                {
+                    cmd.ExcecuteDialogueCommand(); //excecute the commands
+                }
+                i += 5; //skip ahead in the text so that you dont end up printing '<CMD>' on screen
+            }
+            tm.text += current[i];
             yield return null;
         }
+
+        //foreach (char c in current) {
+        //    tm.text += c;
+        //    yield return null;
+        //}
         
         isTyping = false;
         yield return null;
+    }
+
+    bool commandInText(string str, int i) //checks to see if string "<CMD>" is in text
+    {
+        bool b = false;
+        b = str[i] == '<' &&
+            str[i+1] == 'C' &&
+            str[i+2] == 'M' &&
+            str[i + 3] == 'D' &&
+            str[i + 4] == '>';
+        return b;
     }
 
     private void Cleanup() 
