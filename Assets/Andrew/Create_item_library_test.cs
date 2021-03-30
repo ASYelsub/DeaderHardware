@@ -11,6 +11,11 @@ public class Create_item_library_test : MonoBehaviour
 
     void Start()
     {
+        CreateItemLibrary();
+    }
+
+    void CreateItemLibrary()
+    {
         string condensedString = "\n";
 
         foreach (string file in fileNames)
@@ -28,13 +33,6 @@ public class Create_item_library_test : MonoBehaviour
         {
             print("NO FILE NAMES INCLUDED.");
         }
-
-        //print($"items : {itemLibrary.ItemList.Count}");
-        //print("-------------------------------------");
-        //foreach (Item i in itemLibrary.ItemList)
-        //{
-        //    print(i.name);
-        //}
 
         for (int i = 0; i < 12; i++)
         {
