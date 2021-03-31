@@ -8228,7 +8228,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 26726
+    surfaceParameter: 23608
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: -7877759318745819876
@@ -8720,7 +8720,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 20776
+    surfaceParameter: 23534
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 2097349534929498153
@@ -9431,7 +9431,7 @@ Transform:
   - {fileID: 908732272}
   - {fileID: 1454798012}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &792126545
 GameObject:
@@ -15230,6 +15230,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1139831784712160961, guid: 1dd5fa5fce9b4954aafb38e313712331, type: 3}
   m_PrefabInstance: {fileID: 1982548416}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1671613537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1671613538}
+  m_Layer: 0
+  m_Name: ConsoleEntity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1671613538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671613537}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 81.3986, y: 3.6646, z: 65.2556}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1881864425}
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1672226065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16154,7 +16185,7 @@ Transform:
   m_Children:
   - {fileID: 140277036}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1785865629
 GameObject:
@@ -16465,6 +16496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1842395508}
   - component: {fileID: 1842395507}
+  - component: {fileID: 1842395509}
   m_Layer: 0
   m_Name: DialogueTrigger
   m_TagString: Untagged
@@ -16500,6 +16532,19 @@ Transform:
   m_Father: {fileID: 1881864425}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1842395509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842395506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da599260731b4e57a99868c8a4042d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 1944773999}
 --- !u!1001 &1847923420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16736,7 +16781,7 @@ GameObject:
   - component: {fileID: 1881864422}
   - component: {fileID: 1881864421}
   m_Layer: 0
-  m_Name: ConsoleEntityDialogue
+  m_Name: ConsoleEntityDialogue_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16759,7 +16804,6 @@ MonoBehaviour:
   triggerTarget: {fileID: 0}
   triggerObjects:
   - {fileID: 1842395506}
-  - {fileID: 1944773997}
 --- !u!65 &1881864422
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16829,14 +16873,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881864420}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.3986, y: 3.6646, z: 65.2556}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 9.6229925, y: 4.9318113, z: 12.005631}
   m_Children:
   - {fileID: 1842395508}
   - {fileID: 1944773998}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 1671613538}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1882021016
 PrefabInstance:
@@ -17009,7 +17053,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1919315453
 GameObject:
@@ -17619,7 +17663,7 @@ Transform:
   m_Children:
   - {fileID: 827486133}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1952648745
 Mesh:
@@ -18355,7 +18399,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27576
+    surfaceParameter: 23674
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 3463095238749078560
@@ -18788,7 +18832,7 @@ Transform:
   - {fileID: 253988554}
   - {fileID: 792126546}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2092840309
 MonoBehaviour:
@@ -19049,7 +19093,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 20636
+    surfaceParameter: 23710
     meshQueryIndex: 2
     subMeshQueryIndex: 0
     geometryHashValue: 5432002727855736640

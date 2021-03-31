@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime;
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -12,14 +11,14 @@ public class DialogueManager : MonoBehaviour
     public TextAsset file;
 
     private string[] lines;
-    private bool dialogueUp;
     private bool isTyping;
     private int lineNum = 0;
-    public bool isShowing; // same as dialogueUp
+    [HideInInspector]
+    public bool isShowing;
     private bool playCore;
 
     public TextMeshPro tm;
-
+    
     public void Start()
     {
         tm = GameObject.Find("GameCamera").GetComponentInChildren<TextMeshPro>();
@@ -28,35 +27,44 @@ public class DialogueManager : MonoBehaviour
 
     public void Update()
     {
-        
-        if (dialogueUp && Input.GetKeyUp(KeyCode.Space)) {
-            Debug.Log("SPACE");
-            if (lineNum >= lines.Length) {
-                Cleanup();
-            } else {
-                StopCoroutine("DisplayText");
-                ClearText();
-                StartCoroutine("DisplayText", lines[lineNum]);
+        if(!GameManager.invM.menuOn && !GameManager.settingsM.settingsActive)
+        {
+            if (isShowing && Input.GetKeyUp(KeyCode.Space))
+            {
+                Debug.Log("SPACE");
+                if (lineNum >= lines.Length)
+                {
+                    Cleanup();
+                }
+                else
+                {
+                    StopCoroutine("DisplayText");
+                    ClearText();
+                    StartCoroutine("DisplayText", lines[lineNum]);
+                }
             }
         }
+        
     }
 
-    public void SplitFile (TextAsset d)
+    public void SplitFile (TextAsset d, IDialogueCommand[] commands)
     {
         isShowing = true;
-        dialogueUp = true;
-
 
         lines = d.text.Split('\n');
-        //lines = d.text.Split(StringSplitOptions.);
-
+        
         Debug.Log("Lines to print: " + lines.Length);
 
-        // if (lines[lineNum[0] == "\n"]) (trim string)
-
         Debug.Log(lines[lineNum]);
+        currentCommands = commands;
+        if (commands.Length == 0)
+        {
+            currentCommands = null;
+        }
         //StartCoroutine("DisplayText", lines[lineNum]);
     }
+
+    IDialogueCommand[] currentCommands;
 
     public IEnumerator DisplayText (string current) 
     {
@@ -64,13 +72,39 @@ public class DialogueManager : MonoBehaviour
         isTyping = true;
         lineNum++;
 
-        foreach (char c in current) {
-            tm.text += c;
+        for (int i = 0; i < current.Length; i++)
+        {
+            if (commandInText(current, i)) // if a command is detected in the dialogue
+            {
+                foreach (IDialogueCommand cmd in currentCommands)// go through all the scripts in the trigger's children that use the interface 'IDialogueCommands'
+                {
+                    cmd.ExcecuteDialogueCommand(); //excecute the commands
+                }
+                i += 5; //skip ahead in the text so that you dont end up printing '<CMD>' on screen
+            }
+            if(i < current.Length)
+            tm.text += current[i];
             yield return null;
         }
+
+        //foreach (char c in current) {
+        //    tm.text += c;
+        //    yield return null;
+        //}
         
         isTyping = false;
         yield return null;
+    }
+
+    bool commandInText(string str, int i) //checks to see if string "<CMD>" is in text
+    {
+        bool b = false;
+        b = str[i] == '<' &&
+            str[i+1] == 'C' &&
+            str[i+2] == 'M' &&
+            str[i + 3] == 'D' &&
+            str[i + 4] == '>';
+        return b;
     }
 
     private void Cleanup() 
@@ -80,7 +114,6 @@ public class DialogueManager : MonoBehaviour
         tm.text = "";
         lines = null;
         lineNum = 0;
-        dialogueUp = false;
     }
 
     private void ClearText() => tm.text = "";

@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractable {
 
+    
     public int itemId;
+
+    enum BookNames { };
+
     public TextAsset file;
     private string _itemPopup;
 
@@ -15,7 +19,7 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractabl
 
         _itemPopup = myItem.hoverText;
 
-        ServicesLocator.GameManager.invM.AddItem(myItem.ID);
+        GameManager.invM.AddItem(myItem.ID);
 
     }
 
