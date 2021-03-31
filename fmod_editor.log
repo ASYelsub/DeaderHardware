@@ -7,7 +7,7 @@
 [LOG] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x7fb66a9c2808 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x7ffae7e2b008 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,12 +16,12 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SoundI::release                          : Susan-Voice (0x7fb6708d6a58)
-[LOG] SoundI::release                          :     Susan-Voice (0x7fb67d4d66b8)
-[LOG] SoundI::release                          :     Susan-Voice (0x7fb67e423938)
-[LOG] SoundI::release                          : Susan_-_Drums (0x7fb6708d8628)
-[LOG] SoundI::release                          :     Susan_-_Drums (0x7fb67d4e67b8)
-[LOG] SoundI::release                          :     Susan_-_Drums (0x7fb67e4ffb58)
+[LOG] SoundI::release                          : Susan-Voice (0x7ffad54dc1d8)
+[LOG] SoundI::release                          :     Susan-Voice (0x7ffaf16efbd8)
+[LOG] SoundI::release                          :     Susan-Voice (0x7ffaf16c9898)
+[LOG] SoundI::release                          : Susan_-_Drums (0x7ffad549e8f8)
+[LOG] SoundI::release                          :     Susan_-_Drums (0x7ffaf5119a68)
+[LOG] SoundI::release                          :     Susan_-_Drums (0x7ffaf16f42a8)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
