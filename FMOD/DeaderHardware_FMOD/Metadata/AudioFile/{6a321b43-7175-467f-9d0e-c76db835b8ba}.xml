@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{6a321b43-7175-467f-9d0e-c76db835b8ba}">
+		<property name="assetPath">
+			<value>Aud_ConsoleEntitiy.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>10.618412698412698</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c02e9820-8f81-4706-ba4a-533dc1fc6f27}</destination>
+		</relationship>
+	</object>
+</objects>

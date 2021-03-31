@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{1165c57e-2271-4670-8a41-d1925ded4a29}">
+		<property name="assetPath">
+			<value>Wind,Ext,Alley,Urban,Howl,Pronounced,Metal,Clinking.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>68.679000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c02e9820-8f81-4706-ba4a-533dc1fc6f27}</destination>
+		</relationship>
+	</object>
+</objects>
