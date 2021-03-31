@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{45032269-ac06-4fb8-98af-e9a59214733b}">
+		<property name="assetPath">
+			<value>BranchesBreaking.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.0891156462585032</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c02e9820-8f81-4706-ba4a-533dc1fc6f27}</destination>
+		</relationship>
+	</object>
+</objects>
