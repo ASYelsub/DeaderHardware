@@ -19,7 +19,9 @@ public class ShotObjectHolder : MonoBehaviour
         Debug.Log("Switching from " + currentShot + " to " + x);
 
         int length = 0;
-        if(shots[currentShot].mrs.Length >= shots[currentShot].srs.Length)
+
+        //First, disables the meshrenders and spirte renderers of the previous shot
+        if(shots[currentShot].mrs.Length >= shots[currentShot].srs.Length) //Check which is longer so we can do them all simultaneously
         {
             length = shots[currentShot].mrs.Length;
         }
@@ -27,6 +29,7 @@ public class ShotObjectHolder : MonoBehaviour
         {
             length = shots[currentShot].srs.Length;
         }
+
         for (int i = 0; i < length; i++)
         {
             if(shots[currentShot].mrs[i] != null)
@@ -59,6 +62,7 @@ public class ShotObjectHolder : MonoBehaviour
                 shots[x].srs[i].enabled = true;
             }
         }
+
         currentShot = x;
     }
 }
