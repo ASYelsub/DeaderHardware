@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{29a4541a-dcac-4af3-bf00-1933de77db80}">
+		<property name="assetPath">
+			<value>Turn Page of Paper Back Book 02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.6038095238095238</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c02e9820-8f81-4706-ba4a-533dc1fc6f27}</destination>
+		</relationship>
+	</object>
+</objects>

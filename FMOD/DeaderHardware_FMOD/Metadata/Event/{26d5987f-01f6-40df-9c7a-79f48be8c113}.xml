@@ -126,7 +126,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{50844bd3-57d9-482d-9ed1-714eba90cf84}">
 		<property name="volume">
-			<value>-22</value>
+			<value>-13.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -196,7 +196,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{86bc79bf-1608-42a0-8953-f679dfdf6c4a}">
 		<property name="volume">
-			<value>1</value>
+			<value>-32</value>
 		</property>
 		<property name="name">
 			<value>Audio 3</value>
@@ -276,6 +276,9 @@
 		<relationship name="effects">
 			<destination>{1874de0c-a723-4af7-8f2e-9b954ec08d55}</destination>
 			<destination>{9e6834b5-3b54-4875-b11c-1ee7427345c8}</destination>
+			<destination>{a5039baf-cee7-42b6-9e6b-5a26f2bef2ae}</destination>
+			<destination>{c6396c54-f36c-4246-ab58-b17f3cb3117e}</destination>
+			<destination>{dd89613e-ca91-4d81-8adb-b630232ac10d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{3d886844-4f1c-41ec-9c64-17bd466edb56}" />
@@ -380,6 +383,27 @@
 	<object class="DistortionEffect" id="{9e6834b5-3b54-4875-b11c-1ee7427345c8}">
 		<property name="level">
 			<value>0.399999976</value>
+		</property>
+	</object>
+	<object class="PitchShifterEffect" id="{a5039baf-cee7-42b6-9e6b-5a26f2bef2ae}">
+		<property name="fftSize">
+			<value>1000</value>
+		</property>
+		<property name="overlap">
+			<value>15.1999998</value>
+		</property>
+	</object>
+	<object class="DistortionEffect" id="{c6396c54-f36c-4246-ab58-b17f3cb3117e}">
+		<property name="level">
+			<value>0.969999969</value>
+		</property>
+	</object>
+	<object class="MultibandEqEffect" id="{dd89613e-ca91-4d81-8adb-b630232ac10d}">
+		<property name="frequencyA">
+			<value>487.233795</value>
+		</property>
+		<property name="qualityA">
+			<value>1.06368971</value>
 		</property>
 	</object>
 </objects>

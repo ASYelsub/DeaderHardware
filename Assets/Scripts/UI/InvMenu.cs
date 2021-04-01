@@ -438,14 +438,10 @@ public class InvMenu : MonoBehaviour
             
             return toReturn;
         }
-        Debug.Log("this2");
+    //    Debug.Log("this2");
         return 500;
     }
     
-    public void SetBook(int ID)
-    {
-
-    }
 
     //Display related
     void CycleActive(bool increase)
