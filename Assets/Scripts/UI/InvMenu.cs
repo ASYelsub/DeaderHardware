@@ -11,6 +11,7 @@ using TMPro;
 //tags dont appear if you add more items when on page after initial items
 public class InvMenu : MonoBehaviour
 {
+    public List<GameObject> models;
     bool isStep = false;
     [SerializeField]
     Material activeMat;
@@ -172,48 +173,53 @@ public class InvMenu : MonoBehaviour
 
     private void Update()
     {
+        if (!ServicesLocator.GameManager.diaMan.isShowing)
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                ToggleMenu();
+            }
+            if (menuOn)
+            {
+
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    AddItem(itemCounter);
+                }
+
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+                {
+                    CycleActive(true);
+                }
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                {
+                    CycleActive(false);
+                }
+
+                //This removes an item from the inventory.
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    //This function needs to be changed to a currently nonexistant "CheckItem(activeItemInt)" function.
+                    //                RemoveItem(activeItemInt);
+                    Debug.Log("Space");
+                    Debug.Log(activeItemInt);
+                    CheckItem(activeItemInt);
+
+                    //bool corresponds = CheckItem(activeItemint);
+
+                    //if(corresponds == true){
+                    //this.ToggleMenu();
+                    // int l = 0;
+                    //for(i=0; i<activeItemInt; i++){
+                    //}
+                    //dialoguemanager.splitfile()}
+                    //RemoveItem(activeItemInt);
+                }
+            }
+        }
        
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            ToggleMenu();
-        }
-        if (menuOn)
-        {
-           
-            //if (Input.GetKeyDown(KeyCode.F))
-            //{
-            //    AddItem(itemCounter);
-            //}
-
-            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            {
-                CycleActive(true);
-            }
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
-            {
-                CycleActive(false);
-            }
-
-            //This removes an item from the inventory.
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                //This function needs to be changed to a currently nonexistant "CheckItem(activeItemInt)" function.
-                //                RemoveItem(activeItemInt);
-                Debug.Log("Space");
-                Debug.Log(activeItemInt);
-                CheckItem(activeItemInt);
-                
-                //bool corresponds = CheckItem(activeItemint);
-
-                //if(corresponds == true){
-                //this.ToggleMenu();
-                // int l = 0;
-                //for(i=0; i<activeItemInt; i++){
-                //}
-                //dialoguemanager.splitfile()}
-                //RemoveItem(activeItemInt);
-            }
-        }
+       
+        
     }
 
     public void CheckItem(int activeItemId) {
@@ -268,9 +274,9 @@ public class InvMenu : MonoBehaviour
             bool isCopy = false;
 
             //for test
-            ID = AddTest(ID);
+             ID = AddTest(ID);
             //for actual game
-           // isCopy = (AddGame(ID));
+            isCopy = AddGame(ID);
             if (!isCopy)
             {
                 //check if the amount of items is less than the amount of items in the itemLibrary

@@ -17,16 +17,48 @@ public class ShotObjectHolder : MonoBehaviour
     public void SwitchShot(int x)
     {
         Debug.Log("Switching from " + currentShot + " to " + x);
-        for (int i = 0; i < shots[currentShot].Objs.Length; i++)
+
+        int length = 0;
+        if(shots[currentShot].mrs.Length >= shots[currentShot].srs.Length)
         {
-            shots[currentShot].Objs[i].SetActive(false);
+            length = shots[currentShot].mrs.Length;
+        }
+        else
+        {
+            length = shots[currentShot].srs.Length;
+        }
+        for (int i = 0; i < length; i++)
+        {
+            if(shots[currentShot].mrs[i] != null)
+            {
+                shots[currentShot].mrs[i].enabled = false;
+            }
+            if(shots[currentShot].srs[i] != null)
+            {
+                shots[currentShot].srs[i].enabled = false;
+            }
         }
 
-        for (int i = 0; i < shots[x].Objs.Length; i++)
+        if (shots[x].mrs.Length >= shots[x].srs.Length)
         {
-            shots[x].Objs[i].SetActive(true);
+            length = shots[x].mrs.Length;
+        }
+        else
+        {
+            length = shots[x].srs.Length;
         }
 
+        for (int i = 0; i < length; i++)
+        {
+            if (shots[currentShot].mrs[i] != null)
+            {
+                shots[x].mrs[i].enabled = true;
+            }
+            if(shots[currentShot].mrs[i] != null)
+            {
+                shots[x].srs[i].enabled = true;
+            }
+        }
         currentShot = x;
     }
 }
@@ -34,6 +66,7 @@ public class ShotObjectHolder : MonoBehaviour
 [System.Serializable]
 public struct ShotObjects
 {
-    public GameObject[] Objs;
+    public MeshRenderer[] mrs;
+    public SpriteRenderer[] srs;
 }
  

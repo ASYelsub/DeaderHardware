@@ -8,7 +8,8 @@ public class TriggerSystem_DeleteObject : MonoBehaviour, ITriggerable {
     private GameObject objectToDelete;
 
     public void ExecuteTriggerFunction() {
-        Destroy(objectToDelete);
+    	print("object disabled");
+        objectToDelete.SetActive(false);
     }
 
 }
