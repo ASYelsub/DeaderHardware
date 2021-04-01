@@ -13,10 +13,13 @@ public class ItemLibrary_2
         //string[] lines = ItemDictionary.Split(new string[] { "__" }, StringSplitOptions.None);
         string[] lines = ItemDictionary.Split('~');
 
+        string idList = "";
         for (int i = 0; i < lines.Length; i++)
         {
             ItemList.Add(TXTtoITEM(lines[i], i));
+            idList += $"{TXTtoITEM(lines[i], i).ID} : {TXTtoITEM(lines[i], i).name}\n";
         }
+        Debug.Log(idList);
     }
 
 
