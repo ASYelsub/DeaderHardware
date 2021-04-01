@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8748388798962414486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LibraryAmbience
+  m_EditorClassIdentifier: 
+  Path: event:/LibraryAmbience
+  guid: 9d6d6966155d8d4eb05aea1acff489e5
+  Banks:
+  - {fileID: -5667579719130870732}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 46500
 --- !u!114 &-5937941523317038836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,7 +61,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Library.bank
   Name: Library
   StudioPath: bank:/Library
-  lastModified: 637517567260000000
+  lastModified: 637528885836366596
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -57,7 +80,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637527888350000000
+  lastModified: 637528885836759030
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -76,11 +99,11 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637527888350000000
+  lastModified: 637528885836862478
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1068
+    Value: 1120
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -105,13 +128,34 @@ MonoBehaviour:
   - {fileID: -5937941523317038836}
   - {fileID: 5029498410621572997}
   - {fileID: 3939724776106992019}
+  - {fileID: -8748388798962414486}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4864880204628343646}
   StringsBanks:
   - {fileID: -3239525537253944786}
-  stringsBankWriteTime: 637527888350000000
+  stringsBankWriteTime: 637528885836862478
   cacheVersion: 6
+--- !u!114 &405598438230864534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 0
 --- !u!114 &830309898911704375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +176,46 @@ MonoBehaviour:
     data1: 1985215825
     data2: 1795238556
   Exists: 0
+--- !u!114 &1561389951952661959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 0
+--- !u!114 &2888803308516358453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 1
 --- !u!114 &3939724776106992019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +239,26 @@ MonoBehaviour:
   MinDistance: 4.2000003
   MaxDistance: 8.400001
   Length: 14783
+--- !u!114 &4564330002181347080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 0
 --- !u!114 &5029498410621572997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +320,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Hub.bank
   Name: Hub
   StudioPath: bank:/Hub
-  lastModified: 637527888350000000
+  lastModified: 637528885835752114
   LoadResult: 0
   FileSizes: []
   Exists: 1
