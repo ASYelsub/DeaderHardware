@@ -557,6 +557,26 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3595669767463237076, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595669767463237076, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595669767463237076, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595669767463237076, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595669767463237076, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4324129103282467225, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
       propertyPath: panelDescNormItem
       value: 

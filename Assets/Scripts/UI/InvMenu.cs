@@ -7,8 +7,6 @@ using TMPro;
 //make it so:
 //last part of removing code
 //scroll bar
-//display model???
-//tags dont appear if you add more items when on page after initial items
 public class InvMenu : MonoBehaviour
 {
     bool isStep = false;
@@ -48,7 +46,10 @@ public class InvMenu : MonoBehaviour
     [SerializeField]
     private GameObject panelDescNormItem;
     [SerializeField]
-    private List<GameObject> models;
+    private GameObject bookModel;
+    [SerializeField]
+    private List<Material> bookModelMaterials;
+
 
 
     static int bookCounter = 0;
@@ -155,11 +156,7 @@ public class InvMenu : MonoBehaviour
 
     }
 
-    public class Book
-    {
-
-    }
-
+    
     public void Start(){
         scrollPoints = new List<ScrollPoint>();
         for (int i = 0; i < scrollCount; i++)
@@ -583,15 +580,20 @@ public class InvMenu : MonoBehaviour
             panelDescNormItem.SetActive(false);
             panelDescBook.SetActive(true);
             rightDescBook.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
+            bookModel.SetActive(true);
+            bookModel.GetComponent<MeshRenderer>().material = bookModelMaterials[activeItemInt];
         }
         else
         {
             panelDescBook.SetActive(false);
             panelDescNormItem.SetActive(true);
             rightDescNormItem.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
+            bookModel.SetActive(false);
         }
+
         for (int i = 0; i < itemTags.Count; i++)
         {
+            print(activeItemInt);
             if (i == activeItemInt)
                 itemTags[i].visual.GetComponent<MeshRenderer>().material = activeMat;
             else
