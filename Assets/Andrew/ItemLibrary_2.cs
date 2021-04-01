@@ -27,6 +27,9 @@ public class ItemLibrary_2
     {
         Item itemEntry = new Item();
         string[] elements = itemInfo.Split('\n');
+        //added this in until andrew can implement fix
+        //-abby
+        itemEntry.isBook = true;
 
         itemEntry.ID = id;
         itemEntry.name = elements[1];
