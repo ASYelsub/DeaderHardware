@@ -11,6 +11,7 @@ using TMPro;
 //tags dont appear if you add more items when on page after initial items
 public class InvMenu : MonoBehaviour
 {
+    public List<GameObject> models;
     bool isStep = false;
     [SerializeField]
     Material activeMat;
