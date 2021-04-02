@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000014C5393D3C8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001DC4A27F178 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,15 +16,30 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SoundI::release                          : typewriter-1 (0000014C10FD4258)
-[LOG] SoundI::release                          :     typewriter-1 (0000014CBDD50808)
-[LOG] SoundI::release                          :     typewriter-1 (0000014BF6E420C8)
-[LOG] SoundI::release                          : Susan-Voice (0000014CBDA2CCE8)
-[LOG] SoundI::release                          :     Susan-Voice (0000014CBDD50188)
-[LOG] SoundI::release                          :     Susan-Voice (00000149E4B8F888)
-[LOG] SoundI::release                          : Susan_-_Drums (0000014CBDA2D1F8)
-[LOG] SoundI::release                          :     Susan_-_Drums (0000014CBDD4E108)
-[LOG] SoundI::release                          :     Susan_-_Drums (00000149E4B8F528)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SoundI::release                          : Aud_LibraryHushed (000001D9E3CE96D8)
+[LOG] SoundI::release                          :     Aud_LibraryHushed (000001D9E3A786C8)
+[LOG] SoundI::release                          :     Aud_LibraryHushed (000001DBF0BE5C48)
+[LOG] SoundI::release                          : typewriter-1 (000001D9E3CE91C8)
+[LOG] SoundI::release                          :     typewriter-1 (000001D9E3A78D48)
+[LOG] SoundI::release                          :     typewriter-1 (000001DBF0BE5228)
+[LOG] SoundI::release                          : Susan-Voice (000001D9E3CE9D98)
+[LOG] SoundI::release                          :     Susan-Voice (000001D9E3A7AC28)
+[LOG] SoundI::release                          :     Susan-Voice (000001DBF0BE5A98)
+[LOG] SoundI::release                          : Susan_-_Drums (000001DBF0BE6088)
+[LOG] SoundI::release                          :     Susan_-_Drums (000001D9E3A79708)
+[LOG] SoundI::release                          :     Susan_-_Drums (000001DBF0BE5738)
+[LOG] SoundI::release                          :  (000001DB8C7F82E8)
+[LOG] SoundI::release                          :     WoodenDoorCreak1 (000001D9E3A7A748)
+[LOG] SoundI::release                          :  (000001DB8C7F9148)
+[LOG] SoundI::release                          :     WoodenDoorCreak2 (000001D9E3A7A408)
+[LOG] SoundI::release                          :  (000001DB8C7F6908)
+[LOG] SoundI::release                          :     WoodenDoorCreak4 (000001D9E3A78528)
+[LOG] SoundI::release                          :  (000001DB8C7F71A8)
+[LOG] SoundI::release                          :     Turn Page of Paper Back Book 02 (000001D9E3A7B448)
+[LOG] SoundI::release                          :  (000001DB8C7F5098)
+[LOG] SoundI::release                          :     Turn Page of Hard Cover Book 06 (000001D9E3A77688)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
