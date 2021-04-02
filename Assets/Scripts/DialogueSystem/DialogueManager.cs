@@ -34,7 +34,7 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("SPACE");
                 if (lineNum >= lines.Length)
                 {
-                    Cleanup();
+                    StartCoroutine(Cleanup());
                 }
                 else
                 {
@@ -107,13 +107,16 @@ public class DialogueManager : MonoBehaviour
         return b;
     }
 
-    private void Cleanup() 
+    private IEnumerator Cleanup() 
     {
         //Object.Destroy(dialogue.gameObject
-        isShowing = false;
         tm.text = "";
         lines = null;
         lineNum = 0;
+        yield return new WaitForSeconds(3);
+        isShowing = false;
+        
+        yield return null;
     }
 
     private void ClearText() => tm.text = "";
