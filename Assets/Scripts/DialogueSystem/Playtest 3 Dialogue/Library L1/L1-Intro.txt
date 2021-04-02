@@ -3,7 +3,6 @@ Look. You can't go upstairs. The answer is the same no matter how many times you
 Every time someone goes upstairs, the console has to load all the books up there.
 You can only go up there if you're reshelving or loaning something. It's library policy. 
 We haven't loaned a book in years. Even if I wanted to, we just don't have the equipment anymore.
-...
 I'll tell you what––if you can sort the books on this floor, I might be able to dig up something that needs reshelving upstairs.
 I've beem looking for a book that has someone doing something in the past, in the future.
 "Will have been doing" and all that. Bring that one to me and we'll see what we can do.<CMD> 
