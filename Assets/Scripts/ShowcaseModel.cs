@@ -17,7 +17,7 @@ public class ShowcaseModel : MonoBehaviour
     {
         rotateObject = this.gameObject;
         rotateVector = new Vector3(0, rotateSpeed);
-        initialPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+        initialPos = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
     }
     private void FixedUpdate()
     {

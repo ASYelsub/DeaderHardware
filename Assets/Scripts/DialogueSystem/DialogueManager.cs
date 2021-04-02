@@ -14,6 +14,8 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping;
     private int lineNum = 0;
     [HideInInspector]
+    public bool canEngage = true;
+    [HideInInspector]
     public bool isShowing;
     private bool playCore;
 
@@ -23,15 +25,18 @@ public class DialogueManager : MonoBehaviour
     {
         tm = GameObject.Find("GameCamera").GetComponentInChildren<TextMeshPro>();
         tm.text = "";
+        canEngage = true;
     }
 
     public void Update()
     {
+       // print(canEngage);
         if(!GameManager.invM.menuOn && !GameManager.settingsM.settingsActive)
         {
-            if (isShowing && Input.GetKeyUp(KeyCode.Space))
+            if (isShowing && Input.GetKeyUp(KeyCode.Space) && canEngage)
             {
-                Debug.Log("SPACE");
+                
+                //Debug.Log("SPACE");
                 if (lineNum >= lines.Length)
                 {
                     Cleanup();
@@ -68,6 +73,7 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator DisplayText (string current) 
     {
+        
         Debug.Log("Display Text is happening");
         isTyping = true;
         lineNum++;
@@ -81,6 +87,8 @@ public class DialogueManager : MonoBehaviour
                     cmd.ExcecuteDialogueCommand(); //excecute the commands
                 }
                 i += 5; //skip ahead in the text so that you dont end up printing '<CMD>' on screen
+                Cleanup();
+                yield return null;
             }
             if(i < current.Length)
             tm.text += current[i];
@@ -109,12 +117,24 @@ public class DialogueManager : MonoBehaviour
 
     private void Cleanup() 
     {
+        Debug.Log("Cleanup");
         //Object.Destroy(dialogue.gameObject
-        isShowing = false;
         tm.text = "";
         lines = null;
         lineNum = 0;
+        isShowing = false;
+        StartCoroutine(SpaceSpace());
     }
 
-    private void ClearText() => tm.text = "";
+    private void ClearText()
+    {
+        tm.text = "";
+    }
+    private IEnumerator SpaceSpace()
+    {
+        canEngage = false;
+        yield return new WaitForSeconds(3);
+        canEngage = true;
+        yield return null;
+    }
 }

@@ -34,6 +34,7 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
         {
             dialogueCommands.Add(d);
         }
-        ServicesLocator.DialogueManager.SplitFile(file,dialogueCommands.ToArray());
+        if(ServicesLocator.DialogueManager.canEngage)
+            ServicesLocator.DialogueManager.SplitFile(file,dialogueCommands.ToArray());
     }
 }

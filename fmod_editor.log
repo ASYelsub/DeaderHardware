@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000023BC82C51F8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000023BC82BE0E8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,67 +16,7 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000023C3E5B8E68
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000023C3E5B8E68
-[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build\Desktop/Hub.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000023B9DEEC528 : node = 000002396A1AE890
-[LOG] SystemI::createSound                     : add node to async list : head = 000002396C6C0BA8.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000023B9DEEC528
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build\Desktop/Hub.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5043808
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12032
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002396A1AE9A0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_ConsoleEntitiy', format=5, channels=2, frequency=48000, lengthbytes=144352, lengthpcm=509683, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.242588.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000023B9DEEC528
-[LOG] SoundI::release                          : Aud_ConsoleEntitiy (0000023C3E5BB538)
-[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (0000023B9DEF5F08)
-[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (0000023C3E5B8E68)
-[LOG] SoundI::release                          :  (0000023B957B8E68)
-[LOG] SoundI::release                          :     BranchesBreaking (00000239694195C8)
-[LOG] SoundI::release                          : sci-fi-ambience-surround-static-low-scraping-RS (0000023C19EE77C8)
-[LOG] SoundI::release                          :     sci-fi-ambience-surround-static-low-scraping-RS (0000023B9DEF5D68)
-[LOG] SoundI::release                          :     sci-fi-ambience-surround-static-low-scraping-RS (0000023C3E5B8CB8)
-[LOG] SoundI::release                          : Wind,Ext,Alley,Urban,Howl,Pronounced,Metal,Clinking (0000023C19EE21B8)
-[LOG] SoundI::release                          :     Wind,Ext,Alley,Urban,Howl,Pronounced,Metal,Clinking (0000023B9DEF6248)
-[LOG] SoundI::release                          :     Wind,Ext,Alley,Urban,Howl,Pronounced,Metal,Clinking (0000023C3E5B76C8)
-[LOG] SoundI::release                          : Whirlwind (0000023C19EE0D78)
-[LOG] SoundI::release                          :     Whirlwind (0000023B9DEF6588)
-[LOG] SoundI::release                          :     Whirlwind (0000023C3E5B5BC8)
-[LOG] SoundI::release                          : Aud_Portal (0000023C19ED8318)
-[LOG] SoundI::release                          :     Aud_Portal (0000023969418DA8)
-[LOG] SoundI::release                          :     Aud_Portal (0000023C19EEC568)
-[LOG] SoundI::release                          : Aud_Portal (0000023C19ED3F98)
-[LOG] SoundI::release                          :     Aud_Portal (0000023969419768)
-[LOG] SoundI::release                          :     Aud_Portal (0000023C19EECA78)
-[LOG] SoundI::release                          : Aud_ConsoleEntitiy (0000023B9DEEC528)
-[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (0000023B9DEF4508)
-[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (0000023B9DEE8BC8)
-[LOG] SoundI::release                          : Centrifugal V4 (0000023C19ED4EC8)
-[LOG] SoundI::release                          :     Centrifugal V4 (0000023B9DEF5BC8)
-[LOG] SoundI::release                          :     Centrifugal V4 (0000023C19EED498)
-[LOG] SoundI::release                          :  (0000023B957B8B88)
-[LOG] SoundI::release                          :     BranchesImpact1 (0000023969419AA8)
-[LOG] SoundI::release                          :  (0000023B957BAF78)
-[LOG] SoundI::release                          :     BranchesBreaking2 (0000023969419C48)
-[LOG] SoundI::release                          :  (0000023B957B6798)
-[LOG] SoundI::release                          :     Aud_ConsoleEntitiy_3 (0000023969416028)
-[LOG] SoundI::release                          :  (0000023B957B85C8)
-[LOG] SoundI::release                          :     Aud_ConsoleEntitiy_1 (0000023969415E88)
-[LOG] SoundI::release                          :  (0000023B957BAC98)
-[LOG] SoundI::release                          :     Aud_ConsoleEntitiy_2 (0000023969419908)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
