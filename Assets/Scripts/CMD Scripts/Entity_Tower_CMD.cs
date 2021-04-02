@@ -8,6 +8,7 @@ public class Entity_Tower_CMD : MonoBehaviour, IDialogueCommand
     private TowerPopUp_Trigger tower;
     public void ExcecuteDialogueCommand()
     {
+        Debug.Log("Checking Execute Dialogue Command");
         tower.ExecuteTriggerFunction();
     }
 
