@@ -6,6 +6,6 @@ public class TestDialogueCommand : MonoBehaviour, IDialogueCommand
 {
     public void ExcecuteDialogueCommand()
     {
-        print("SDKGJHDSLKJGHSKJDGHKJSDHG");
+ //       print("SDKGJHDSLKJGHSKJDGHKJSDHG");
     }
 }
