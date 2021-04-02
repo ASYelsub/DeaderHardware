@@ -190,10 +190,10 @@ public class InvMenu : MonoBehaviour
             if (menuOn)
             {
 
-                if (Input.GetKeyDown(KeyCode.F))
+                /*if (Input.GetKeyDown(KeyCode.F))
                 {
                     AddItem(itemCounter);
-                }
+                }*/
 
                 if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
                 {

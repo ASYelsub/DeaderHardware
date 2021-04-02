@@ -29,4 +29,9 @@ public class TriggerSystem_CameraSpline : MonoBehaviour, ITriggerable
         Debug.Log("EXECUTED: STATIC CAMERA");
         ServicesLocator.CameraManager.setShotDynamic(splinePoints, true, this.gameObject);
     }
+
+    public void ExecuteLeaveTriggerFunction()
+    {
+        throw new System.NotImplementedException();
+    }
 }

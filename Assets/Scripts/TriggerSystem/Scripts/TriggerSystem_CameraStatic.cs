@@ -7,6 +7,7 @@ public class TriggerSystem_CameraStatic : MonoBehaviour,ITriggerable
     [Header("Configure")]
     public GameObject ShotObject;
     public bool track = true;
+   // public int shotID;
 
     void OnDrawGizmos() {
         if (ShotObject == null) return;
@@ -22,5 +23,10 @@ public class TriggerSystem_CameraStatic : MonoBehaviour,ITriggerable
     public void ExecuteTriggerFunction() {
 //        Debug.Log("EXECUTED: STATIC CAMERA");
         ServicesLocator.CameraManager.setShotStatic(ShotObject, track, this.gameObject);
+    }
+
+    public void ExecuteLeaveTriggerFunction()
+    {
+     //   throw new System.NotImplementedException();
     }
 }
