@@ -9,8 +9,14 @@ public class TriggerSystem_InstantiateObject : MonoBehaviour, ITriggerable
     private GameObject[] objectsToEnable;
     [SerializeField]
     private GameObject[] objectsToDisable;
+
+    public void ExecuteLeaveTriggerFunction()
+    {
+        throw new System.NotImplementedException();
+    }
+
     //[SerializeField]
-   // private Vector3 overridePosition;
+    // private Vector3 overridePosition;
 
     public void ExecuteTriggerFunction() {
         //   if (overridePosition == Vector3.zero) {

@@ -12,7 +12,12 @@ public class TriggerSystem_Popup : MonoBehaviour, ITriggerable, IInteractable
 
     public void ExecuteTriggerFunction()
     {
-        particleObject.Emit(1);
+        particleObject.Play();
         
+    }
+
+    void ITriggerable.ExecuteLeaveTriggerFunction()
+    {
+        throw new System.NotImplementedException();
     }
 }

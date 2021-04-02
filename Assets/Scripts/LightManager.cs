@@ -33,6 +33,6 @@ public class LightManager : MonoBehaviour
 
             }
         }
-        Debug.Log("setting lights for " + shot);
+    //    Debug.Log("setting lights for " + shot);
     }
 }

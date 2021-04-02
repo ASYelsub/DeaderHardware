@@ -32,4 +32,9 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractabl
       //  ServicesLocator.DialogueManager.SplitFile(file);
         Debug.Log("ExecuteTriggerFunction");
     }
+
+    void ITriggerable.ExecuteLeaveTriggerFunction()
+    {
+        throw new System.NotImplementedException();
+    }
 }

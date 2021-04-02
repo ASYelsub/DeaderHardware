@@ -24,4 +24,9 @@ public class TriggerSystem_CameraStatic : MonoBehaviour,ITriggerable
 //        Debug.Log("EXECUTED: STATIC CAMERA");
         ServicesLocator.CameraManager.setShotStatic(ShotObject, track, this.gameObject);
     }
+
+    public void ExecuteLeaveTriggerFunction()
+    {
+        throw new System.NotImplementedException();
+    }
 }

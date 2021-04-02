@@ -37,4 +37,9 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
         if(ServicesLocator.DialogueManager.canEngage)
             ServicesLocator.DialogueManager.SplitFile(file,dialogueCommands.ToArray());
     }
+
+    public void ExecuteLeaveTriggerFunction()
+    {
+        throw new System.NotImplementedException();
+    }
 }

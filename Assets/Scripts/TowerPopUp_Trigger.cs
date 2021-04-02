@@ -30,4 +30,9 @@ public class TowerPopUp_Trigger : MonoBehaviour, ITriggerable
         open = true;
         Debug.Log("Executed");
     }
+
+    public void ExecuteLeaveTriggerFunction()
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -61,7 +61,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Library.bank
   Name: Library
   StudioPath: bank:/Library
-  lastModified: 637528885836366596
+  lastModified: 637528979560000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -80,7 +80,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637528885836759030
+  lastModified: 637527888350000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -99,7 +99,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637528885836862478
+  lastModified: 637528979560000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -129,13 +129,12 @@ MonoBehaviour:
   - {fileID: 5029498410621572997}
   - {fileID: 3939724776106992019}
   - {fileID: -8748388798962414486}
-  EditorParameters:
-  - {fileID: 1241303177157588616}
+  EditorParameters: []
   MasterBanks:
   - {fileID: -4864880204628343646}
   StringsBanks:
   - {fileID: -3239525537253944786}
-  stringsBankWriteTime: 637528885836862478
+  stringsBankWriteTime: 637528979560000000
   cacheVersion: 6
 --- !u!114 &405598438230864534
 MonoBehaviour:
@@ -196,7 +195,7 @@ MonoBehaviour:
   ID:
     data1: 1985215825
     data2: 1795238556
-  Exists: 1
+  Exists: 0
 --- !u!114 &1561389951952661959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,7 +400,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Hub.bank
   Name: Hub
   StudioPath: bank:/Hub
-  lastModified: 637528885835752114
+  lastModified: 637528979560000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
