@@ -40,6 +40,6 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
 
     public void ExecuteLeaveTriggerFunction()
     {
-        throw new System.NotImplementedException();
+     //   throw new System.NotImplementedException();
     }
 }

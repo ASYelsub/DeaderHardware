@@ -8,7 +8,7 @@ public class Trigger_SwitchSprites : MonoBehaviour, ITriggerable
 
     public void ExecuteLeaveTriggerFunction()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     public void ExecuteTriggerFunction() {

@@ -45,7 +45,17 @@ public class TriggerVolume : MonoBehaviour, IInteractable
             n.ExecuteTriggerFunction();
         }
     }
+    public void OnTriggerExit(Collider other)
+    {
+        if (!ExecuteOnAwake && other.gameObject != _triggerTarget) return;
 
+        //        Debug.Log("Executing Trigger Functions...");
+
+        foreach (ITriggerable n in _triggerableArray)
+        {
+            n.ExecuteLeaveTriggerFunction();
+        }
+    }
     public void OnDrawGizmos() {
         foreach (GameObject n in triggerObjects) {
             if (n == null) return;

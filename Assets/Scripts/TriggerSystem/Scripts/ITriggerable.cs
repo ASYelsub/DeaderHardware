@@ -5,6 +5,5 @@ using UnityEngine;
 public interface ITriggerable
 {
     void ExecuteTriggerFunction();
-
     void ExecuteLeaveTriggerFunction();
 }

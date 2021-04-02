@@ -27,6 +27,6 @@ public class TriggerSystem_CameraStatic : MonoBehaviour,ITriggerable
 
     public void ExecuteLeaveTriggerFunction()
     {
-        throw new System.NotImplementedException();
+     //   throw new System.NotImplementedException();
     }
 }

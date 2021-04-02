@@ -13,11 +13,11 @@ public class TriggerSystem_Popup : MonoBehaviour, ITriggerable, IInteractable
     public void ExecuteTriggerFunction()
     {
         particleObject.Play();
-        
     }
 
     void ITriggerable.ExecuteLeaveTriggerFunction()
     {
-        throw new System.NotImplementedException();
+        //print("WE STOPPED");
+        particleObject.Stop();
     }
 }
