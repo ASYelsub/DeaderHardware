@@ -2,6 +2,7 @@ Loading operating system...
 **FAILURE** Console data not found!
 Checking BackUpDataSlot...
 **FAILURE** BackUp data not inserted!
-Raising BackUpDataSlot for manual insertion... <CMD>
+Raising BackUpDataSlot for manual insertion... 
 BackUp data detected in Console/FarPlatform/Library
-**/Straight > ahead // Avatar../**
+**/Straight > ahead // Avatar../** 
+<CMD>

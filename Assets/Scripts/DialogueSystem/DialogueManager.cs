@@ -87,6 +87,7 @@ public class DialogueManager : MonoBehaviour
                     cmd.ExcecuteDialogueCommand(); //excecute the commands
                 }
                 i += 5; //skip ahead in the text so that you dont end up printing '<CMD>' on screen
+                Cleanup();
                 yield return null;
             }
             if(i < current.Length)
