@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001F0A7377058 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001F35621F048 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,3 +16,275 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F31CE69DF8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F31CE69DF8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F31CE67C38
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F31CE67C38
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F31CE69DF8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F31CE69DF8
+[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build\Desktop/Hub.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001F28C14FFC8 : node = 000001F0A7FA0550
+[LOG] SystemI::createSound                     : add node to async list : head = 000001F0A8010988.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C14FFC8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build\Desktop/Hub.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5043808
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12032
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F0A7FA0660
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_ConsoleEntitiy', format=5, channels=2, frequency=48000, lengthbytes=144352, lengthpcm=509683, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.242588.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C14FFC8
+[LOG] SoundI::release                          : Aud_ConsoleEntitiy (000001F31CE669A8)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (000001F0A3F038D8)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (000001F31CE69DF8)
+[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001F28C150178 : node = 000001F0A7F9C810
+[LOG] SystemI::createSound                     : add node to async list : head = 000001F0A8010988.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C150178
+[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 000001F28C14D748 : node = 000001F0A7F9C6D0
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 217248
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001F0A8010988.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F0A7F9C920
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 246
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_Portal', format=5, channels=2, frequency=48000, lengthbytes=217024, lengthpcm=709623, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.520958.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C150178
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C14D748
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 217248
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F0A7F9C7E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 246
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_Portal', format=5, channels=2, frequency=48000, lengthbytes=217024, lengthpcm=709623, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.520958.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C14D748
+[LOG] SoundI::release                          : Aud_Portal (000001F31CE69738)
+[LOG] SoundI::release                          :     Aud_Portal (000001F0A076DD58)
+[LOG] SoundI::release                          :     Aud_Portal (000001F31CE67C38)
+[LOG] SoundI::release                          : Aud_Portal (000001F31CE64EA8)
+[LOG] SoundI::release                          :     Aud_Portal (000001F0A076D538)
+[LOG] SoundI::release                          :     Aud_Portal (000001F31CE6A308)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C14BDF8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C14BDF8
+[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build\Desktop/Hub.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001F28C14BA98 : node = 000001F0A7F9C1D0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001F0A8010988.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C14BA98
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build\Desktop/Hub.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5043808
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12032
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F0A7F9C2E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_ConsoleEntitiy', format=5, channels=2, frequency=48000, lengthbytes=144352, lengthpcm=509683, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.242588.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C14BA98
+[LOG] SoundI::release                          : Aud_ConsoleEntitiy (000001F28C14FFC8)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (000001F0A3F02078)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (000001F28C14D238)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C14D3E8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C14D3E8
+[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001F28C14E4C8 : node = 000001F0A7F9F650
+[LOG] SystemI::createSound                     : add node to async list : head = 000001F0A8010988.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C14E4C8
+[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 000001F28C14B738 : node = 000001F0A7F9DD50
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 217248
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001F0A8010988.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F0A7F9F760
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 246
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_Portal', format=5, channels=2, frequency=48000, lengthbytes=217024, lengthpcm=709623, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.520958.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C14E4C8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C14B738
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 217248
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F0A7F9DE60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 246
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_Portal', format=5, channels=2, frequency=48000, lengthbytes=217024, lengthpcm=709623, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.520958.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C14B738
+[LOG] SoundI::release                          : Aud_Portal (000001F28C14D748)
+[LOG] SoundI::release                          :     Aud_Portal (000001F0A043ABE8)
+[LOG] SoundI::release                          :     Aud_Portal (000001F28C14D598)
+[LOG] SoundI::release                          : Aud_Portal (000001F28C150178)
+[LOG] SoundI::release                          :     Aud_Portal (000001F0A3F038D8)
+[LOG] SoundI::release                          :     Aud_Portal (000001F28C14BDF8)
+[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build\Desktop/Hub.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001F28C14B8E8 : node = 000001F0A7FA0550
+[LOG] SystemI::createSound                     : add node to async list : head = 000001F0A8010988.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C14B8E8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build\Desktop/Hub.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5043808
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12032
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F0A7FA0660
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_ConsoleEntitiy', format=5, channels=2, frequency=48000, lengthbytes=144352, lengthpcm=509683, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.242588.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C14B8E8
+[LOG] SoundI::release                          : Aud_ConsoleEntitiy (000001F28C14BA98)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (000001F0A043AD88)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (000001F28C14D3E8)
+[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build\Desktop/Hub.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001F28C1509E8 : node = 000001F0A7F9E610
+[LOG] SystemI::createSound                     : add node to async list : head = 000001F0A8010988.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C1509E8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build\Desktop/Hub.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5043808
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12032
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F0A7F9E720
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='sci-fi-ambience-surround-static-low-scraping-RS', format=5, channels=1, frequency=48000, lengthbytes=251008, lengthpcm=1920000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.406129.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C1509E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C150D48
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C150D48
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C151408
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C151408
+[LOG] SoundI::release                          : sci-fi-ambience-surround-static-low-scraping-RS (000001F31CE6A4B8)
+[LOG] SoundI::release                          :     sci-fi-ambience-surround-static-low-scraping-RS (000001F0A3F02558)
+[LOG] SoundI::release                          :     sci-fi-ambience-surround-static-low-scraping-RS (000001F31CE684A8)
+[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build\Desktop/Hub.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001F28C14DAA8 : node = 000001F0A7FA0F50
+[LOG] SystemI::createSound                     : add node to async list : head = 000001F0A8010988.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C14DAA8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build\Desktop/Hub.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5043808
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12032
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F0A7FA1060
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_ConsoleEntitiy', format=5, channels=2, frequency=48000, lengthbytes=144352, lengthpcm=509683, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.242588.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C14DAA8
+[LOG] SoundI::release                          : Aud_ConsoleEntitiy (000001F28C14B8E8)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (000001F0A043C2A8)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (000001F28C151408)
+[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001F28C14FFC8 : node = 000001F0A7F9F790
+[LOG] SystemI::createSound                     : add node to async list : head = 000001F0A8010988.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C14FFC8
+[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 000001F28C14E678 : node = 000001F0A7F9C090
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 217248
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001F0A8010988.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F0A7F9F8A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 246
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_Portal', format=5, channels=2, frequency=48000, lengthbytes=217024, lengthpcm=709623, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.520958.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C14FFC8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F28C14E678
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 217248
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F0A7F9C1A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 246
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_Portal', format=5, channels=2, frequency=48000, lengthbytes=217024, lengthpcm=709623, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.520958.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F28C14E678
+[LOG] SoundI::release                          : Aud_Portal (000001F28C14B738)
+[LOG] SoundI::release                          :     Aud_Portal (000001F0A043BA88)
+[LOG] SoundI::release                          :     Aud_Portal (000001F28C14BC48)
+[LOG] SoundI::release                          : Aud_Portal (000001F28C14E4C8)
+[LOG] SoundI::release                          :     Aud_Portal (000001F0A043B5A8)
+[LOG] SoundI::release                          :     Aud_Portal (000001F28C14ED38)
+[LOG] SoundI::release                          :  (000001F28B61F498)
+[LOG] SoundI::release                          :     BranchesBreaking (000001F0A076C358)
+[LOG] SoundI::release                          : sci-fi-ambience-surround-static-low-scraping-RS (000001F28C1509E8)
+[LOG] SoundI::release                          :     sci-fi-ambience-surround-static-low-scraping-RS (000001F0A043BF68)
+[LOG] SoundI::release                          :     sci-fi-ambience-surround-static-low-scraping-RS (000001F28C150D48)
+[LOG] SoundI::release                          : Wind,Ext,Alley,Urban,Howl,Pronounced,Metal,Clinking (000001F31CE667F8)
+[LOG] SoundI::release                          :     Wind,Ext,Alley,Urban,Howl,Pronounced,Metal,Clinking (000001F0A3F023B8)
+[LOG] SoundI::release                          :     Wind,Ext,Alley,Urban,Howl,Pronounced,Metal,Clinking (000001F31CE6A668)
+[LOG] SoundI::release                          : Whirlwind (000001F31CE68808)
+[LOG] SoundI::release                          :     Whirlwind (000001F0A3F03738)
+[LOG] SoundI::release                          :     Whirlwind (000001F31CE69A98)
+[LOG] SoundI::release                          : Aud_Portal (000001F28C14FFC8)
+[LOG] SoundI::release                          :     Aud_Portal (000001F0A043C2A8)
+[LOG] SoundI::release                          :     Aud_Portal (000001F28C151408)
+[LOG] SoundI::release                          : Aud_Portal (000001F28C14E678)
+[LOG] SoundI::release                          :     Aud_Portal (000001F0A043AD88)
+[LOG] SoundI::release                          :     Aud_Portal (000001F28C150178)
+[LOG] SoundI::release                          : Aud_ConsoleEntitiy (000001F28C14DAA8)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (000001F0A043BDC8)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (000001F28C14D748)
+[LOG] SoundI::release                          : Centrifugal V4 (000001F31CE65058)
+[LOG] SoundI::release                          :     Centrifugal V4 (000001F0A3F02BD8)
+[LOG] SoundI::release                          :     Centrifugal V4 (000001F31CE698E8)
+[LOG] SoundI::release                          :  (000001F28B6205D8)
+[LOG] SoundI::release                          :     BranchesImpact1 (000001F0A076C4F8)
+[LOG] SoundI::release                          :  (000001F28B61CC58)
+[LOG] SoundI::release                          :     BranchesBreaking2 (000001F0A076DEF8)
+[LOG] SoundI::release                          :  (000001F28B61DF08)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy_3 (000001F0A076CEB8)
+[LOG] SoundI::release                          :  (000001F28B61FEA8)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy_1 (000001F0A076CD18)
+[LOG] SoundI::release                          :  (000001F28B61FD38)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy_2 (000001F0A076DA18)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.

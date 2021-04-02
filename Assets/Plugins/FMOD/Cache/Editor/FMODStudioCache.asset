@@ -129,7 +129,8 @@ MonoBehaviour:
   - {fileID: 5029498410621572997}
   - {fileID: 3939724776106992019}
   - {fileID: -8748388798962414486}
-  EditorParameters: []
+  EditorParameters:
+  - {fileID: 6333204039843521724}
   MasterBanks:
   - {fileID: -4864880204628343646}
   StringsBanks:
@@ -305,6 +306,26 @@ MonoBehaviour:
   MinDistance: 0.7
   MaxDistance: 25
   Length: 21236
+--- !u!114 &6333204039843521724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 1
 --- !u!114 &6386867410523585495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +345,26 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &7018734799943742347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 0
 --- !u!114 &7921672518677566059
 MonoBehaviour:
   m_ObjectHideFlags: 0
