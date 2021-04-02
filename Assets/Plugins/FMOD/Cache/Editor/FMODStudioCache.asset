@@ -129,8 +129,7 @@ MonoBehaviour:
   - {fileID: 5029498410621572997}
   - {fileID: 3939724776106992019}
   - {fileID: -8748388798962414486}
-  EditorParameters:
-  - {fileID: 6333204039843521724}
+  EditorParameters: []
   MasterBanks:
   - {fileID: -4864880204628343646}
   StringsBanks:
