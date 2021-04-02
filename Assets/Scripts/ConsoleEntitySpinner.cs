@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ConsoleEntitySpinner : MonoBehaviour
 {
-    public Vector3 spin;
-
-
+    int timer;
+    public int spin;
 
     void FixedUpdate()
     {
-        transform.Rotate(spin);
+        timer++;
+        transform.Rotate(new Vector3(0,spin * Mathf.Sin(timer * 0.001f), 0));
     }
 }
 

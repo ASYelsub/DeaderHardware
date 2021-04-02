@@ -3980,7 +3980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21a106a6b148514d8f1d6079c821075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spin: {x: 0, y: 1, z: 0}
+  spin: 2
 --- !u!43 &560594629
 Mesh:
   m_ObjectHideFlags: 16
