@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000023A9B63B178 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000023A9B642F18 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,28 +16,28 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SoundI::release                          : Aud_LibraryHushed (0000023AE4CE1278)
-[LOG] SoundI::release                          :     Aud_LibraryHushed (0000023AEAC8C728)
-[LOG] SoundI::release                          :     Aud_LibraryHushed (0000023AE4CE4A28)
-[LOG] SoundI::release                          : typewriter-1 (0000023AE4CDB908)
-[LOG] SoundI::release                          :     typewriter-1 (0000023AEAC8EAE8)
+[LOG] SoundI::release                          : Aud_LibraryHushed (0000023AE4CDD768)
+[LOG] SoundI::release                          :     Aud_LibraryHushed (0000023AE87EB958)
+[LOG] SoundI::release                          :     Aud_LibraryHushed (0000023AE4CDF778)
+[LOG] SoundI::release                          : typewriter-1 (0000023AE4CDDFD8)
+[LOG] SoundI::release                          :     typewriter-1 (0000023AE87EC318)
 [LOG] SoundI::release                          :     typewriter-1 (0000023AE4CDD0A8)
-[LOG] SoundI::release                          : Susan-Voice (0000023AE4CDED58)
-[LOG] SoundI::release                          :     Susan-Voice (0000023AEAC89E88)
-[LOG] SoundI::release                          :     Susan-Voice (0000023AE4CDCD48)
-[LOG] SoundI::release                          : Susan_-_Drums (0000023AE4CDE698)
-[LOG] SoundI::release                          :     Susan_-_Drums (0000023AEAC8A508)
-[LOG] SoundI::release                          :     Susan_-_Drums (0000023AE4CDE848)
-[LOG] SoundI::release                          :  (0000023BDDB7A998)
-[LOG] SoundI::release                          :     WoodenDoorCreak1 (0000023AEAC8E2C8)
-[LOG] SoundI::release                          :  (0000023BDDB778B8)
-[LOG] SoundI::release                          :     WoodenDoorCreak2 (0000023AEAC8DF88)
-[LOG] SoundI::release                          :  (0000023BDDB7C098)
-[LOG] SoundI::release                          :     WoodenDoorCreak4 (0000023AEAC8B548)
-[LOG] SoundI::release                          :  (0000023BDDB79408)
-[LOG] SoundI::release                          :     Turn Page of Paper Back Book 02 (0000023AEAC8D428)
-[LOG] SoundI::release                          :  (0000023BDDB78E48)
-[LOG] SoundI::release                          :     Turn Page of Hard Cover Book 06 (0000023AEAC8C8C8)
+[LOG] SoundI::release                          : Susan-Voice (0000023AE4CDCEF8)
+[LOG] SoundI::release                          :     Susan-Voice (0000023AE87E9F58)
+[LOG] SoundI::release                          :     Susan-Voice (0000023AE4CDF418)
+[LOG] SoundI::release                          : Susan_-_Drums (0000023AE4CDE9F8)
+[LOG] SoundI::release                          :     Susan_-_Drums (0000023AE87E9A78)
+[LOG] SoundI::release                          :     Susan_-_Drums (0000023AE4CDFFE8)
+[LOG] SoundI::release                          :  (0000023BDDB7BC48)
+[LOG] SoundI::release                          :     WoodenDoorCreak1 (0000023A911B2488)
+[LOG] SoundI::release                          :  (0000023BDDB78438)
+[LOG] SoundI::release                          :     WoodenDoorCreak2 (0000023A911B1928)
+[LOG] SoundI::release                          :  (0000023BDDB7A6B8)
+[LOG] SoundI::release                          :     WoodenDoorCreak4 (0000023A911B1AC8)
+[LOG] SoundI::release                          :  (0000023BDDB77E78)
+[LOG] SoundI::release                          :     Turn Page of Paper Back Book 02 (0000023A911B05A8)
+[LOG] SoundI::release                          :  (0000023BDDB7B3A8)
+[LOG] SoundI::release                          :     Turn Page of Hard Cover Book 06 (0000023A911B00C8)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

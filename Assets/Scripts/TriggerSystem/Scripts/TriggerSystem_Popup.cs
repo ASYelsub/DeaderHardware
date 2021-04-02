@@ -8,11 +8,16 @@ public class TriggerSystem_Popup : MonoBehaviour, ITriggerable, IInteractable
     public enum objectType {Librarian, Book, Console};
     public ParticleSystem particleObject;
     public Material selectMat;
+    public TriggerSystem_ItemPickup itemPickup;
     public void ExecuteInteraction(){}
 
     public void ExecuteTriggerFunction()
     {
-        particleObject.Play();
+        if(itemPickup.pickedUp == false || itemPickup == null)
+        {
+            particleObject.Play();
+
+        }
     }
 
     void ITriggerable.ExecuteLeaveTriggerFunction()

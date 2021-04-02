@@ -11,16 +11,27 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractabl
 
     public TextAsset file;
     private string _itemPopup;
+    [HideInInspector]
+    public bool pickedUp = false;
+    public GameObject bookModel;
 
+    private void Start()
+    {
+        pickedUp = false;
+    }
     // Executes when you hit space near the object    
     public void ExecuteInteraction()
     {
-        Item myItem = ServicesLocator.ItemLibrary.ItemList[itemId];
+        if(pickedUp == false)
+        {
+            Item myItem = ServicesLocator.ItemLibrary.ItemList[itemId];
 
-        _itemPopup = myItem.hoverText;
+            _itemPopup = myItem.hoverText;
 
-        GameManager.invM.AddItem(myItem.ID);
-
+            GameManager.invM.AddItem(myItem.ID);
+            bookModel.GetComponent<MeshRenderer>().enabled = false;
+            pickedUp = true;
+        }
     }
 
     // Executes when you get near the object 
