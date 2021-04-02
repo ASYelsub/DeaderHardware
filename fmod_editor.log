@@ -7,7 +7,7 @@
 [LOG] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x7fac9631c008 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x7fac78d2b008 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,3 +16,35 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SoundI::release                          : Aud_LibraryHushed (0x7fac7ca9d518)
+[LOG] SoundI::release                          :     Aud_LibraryHushed (0x7fac7c5f5a18)
+[LOG] SoundI::release                          :     Aud_LibraryHushed (0x7fac9108d588)
+[LOG] SoundI::release                          : typewriter-1 (0x7fac9106fa28)
+[LOG] SoundI::release                          :     typewriter-1 (0x7fac7ca9d048)
+[LOG] SoundI::release                          :     typewriter-1 (0x7fac7ca9d1d8)
+[LOG] SoundI::release                          : Susan-Voice (0x7fac8a0d99a8)
+[LOG] SoundI::release                          :     Susan-Voice (0x7fac7ca9c758)
+[LOG] SoundI::release                          :     Susan-Voice (0x7fac7ca9c8e8)
+[LOG] SoundI::release                          : Susan_-_Drums (0x7fac8a0d7db8)
+[LOG] SoundI::release                          :     Susan_-_Drums (0x7fac7ca9d8d8)
+[LOG] SoundI::release                          :     Susan_-_Drums (0x7fac7ca9da68)
+[LOG] SoundI::release                          :  (0x7fac8a074fd8)
+[LOG] SoundI::release                          :     WoodenDoorCreak1 (0x7fac92b43bc8)
+[LOG] SoundI::release                          :  (0x7fac8a0b0658)
+[LOG] SoundI::release                          :     WoodenDoorCreak2 (0x7fac91b1a2c8)
+[LOG] SoundI::release                          :  (0x7fac91bdddf8)
+[LOG] SoundI::release                          :     WoodenDoorCreak4 (0x7fac7c56e888)
+[LOG] SoundI::release                          :  (0x7fac91b3f418)
+[LOG] SoundI::release                          :     Turn Page of Paper Back Book 02 (0x7fac7c575048)
+[LOG] SoundI::release                          :  (0x7fac91b66c08)
+[LOG] SoundI::release                          :     Turn Page of Hard Cover Book 06 (0x7fac7c51da08)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.

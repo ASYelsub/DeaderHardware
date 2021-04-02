@@ -7,6 +7,7 @@ public class TriggerSystem_CameraStatic : MonoBehaviour,ITriggerable
     [Header("Configure")]
     public GameObject ShotObject;
     public bool track = true;
+   // public int shotID;
 
     void OnDrawGizmos() {
         if (ShotObject == null) return;
