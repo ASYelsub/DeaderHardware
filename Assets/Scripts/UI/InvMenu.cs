@@ -7,11 +7,8 @@ using TMPro;
 //make it so:
 //last part of removing code
 //scroll bar
-//display model???
-//tags dont appear if you add more items when on page after initial items
 public class InvMenu : MonoBehaviour
 {
-    public List<GameObject> models;
     bool isStep = false;
     [SerializeField]
     Material activeMat;
@@ -40,8 +37,20 @@ public class InvMenu : MonoBehaviour
     private GameObject scrollPointParent;
     [Header("Right Panel")]
     [SerializeField]
-    private GameObject rightDesc;
-    private GameObject rightModel;
+    private GameObject rightDescNormItem;
+    [SerializeField]
+    private GameObject rightDescBook;
+    private GameObject activeModel;
+    [SerializeField]
+    private GameObject panelDescBook;
+    [SerializeField]
+    private GameObject panelDescNormItem;
+    [SerializeField]
+    private GameObject bookModel;
+    [SerializeField]
+    private List<Material> bookModelMaterials;
+
+
 
     static int bookCounter = 0;
 
@@ -93,7 +102,7 @@ public class InvMenu : MonoBehaviour
         public Item tagItem;
         [HideInInspector]
         public int ID;
-
+        [HideInInspector]public bool isBook;
 
         //For when created without an item, empty, to take up space
         public ItemTag(GameObject tagPrefab, GameObject tagParent)
@@ -130,6 +139,7 @@ public class InvMenu : MonoBehaviour
             this.tagText.text = ServicesLocator.ItemLibrary.ItemList[ID].name;
             this.tagDesc = ServicesLocator.ItemLibrary.ItemList[ID].UIDesc;
             this.ID = ID;
+            this.isBook = ServicesLocator.ItemLibrary.ItemList[ID].isBook;
         }
         public void ClearTag()
         {
@@ -146,11 +156,7 @@ public class InvMenu : MonoBehaviour
 
     }
 
-    public class Book
-    {
-
-    }
-
+    
     public void Start(){
         scrollPoints = new List<ScrollPoint>();
         for (int i = 0; i < scrollCount; i++)
@@ -169,6 +175,8 @@ public class InvMenu : MonoBehaviour
         }
         menuOn = false;
         menuObject.SetActive(menuOn);
+        panelDescBook.SetActive(false);
+        panelDescNormItem.SetActive(true);
     }
 
     private void Update()
@@ -182,10 +190,10 @@ public class InvMenu : MonoBehaviour
             if (menuOn)
             {
 
-                if (Input.GetKeyDown(KeyCode.F))
+                /*if (Input.GetKeyDown(KeyCode.F))
                 {
                     AddItem(itemCounter);
-                }
+                }*/
 
                 if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
                 {
@@ -224,9 +232,9 @@ public class InvMenu : MonoBehaviour
 
     public void CheckItem(int activeItemId) {
 
-        Debug.Log("yeet");
+        //Debug.Log("yeet");
         int id = itemTags[activeItemInt].ID;
-        Debug.Log("Parsing: " + id);
+        //Debug.Log("Parsing: " + id);
 
         ServicesLocator.PlayerInteractor.queryItemInteraction(id);
         
@@ -235,7 +243,7 @@ public class InvMenu : MonoBehaviour
     //?
     public void DoInvMenu()
     {
-        Debug.Log("this was called");
+       // Debug.Log("this was called");
         DisplayActive();
     }
 
@@ -276,7 +284,7 @@ public class InvMenu : MonoBehaviour
             //for test
              ID = AddTest(ID);
             //for actual game
-            isCopy = AddGame(ID);
+            //isCopy = AddGame(ID);
             if (!isCopy)
             {
                 //check if the amount of items is less than the amount of items in the itemLibrary
@@ -422,7 +430,7 @@ public class InvMenu : MonoBehaviour
 
                 if (itemCounter == 0)
                 {
-                    rightDesc.GetComponent<TextMeshPro>().text = "";
+                    rightDescNormItem.GetComponent<TextMeshPro>().text = "";
                 }
                 DisplayActive();
             }
@@ -430,14 +438,10 @@ public class InvMenu : MonoBehaviour
             
             return toReturn;
         }
-        Debug.Log("this2");
+    //    Debug.Log("this2");
         return 500;
     }
     
-    public void SetBook(int ID)
-    {
-
-    }
 
     //Display related
     void CycleActive(bool increase)
@@ -564,9 +568,28 @@ public class InvMenu : MonoBehaviour
     void DisplayActive()
     {
         if (itemTags.Count == 0) return;
-        rightDesc.GetComponent<TextMeshPro>().text=itemTags[activeItemInt].tagDesc;
+
+
+        //if is a book, display the book UI
+        if (itemTags[activeItemInt].isBook)
+        {
+            panelDescNormItem.SetActive(false);
+            panelDescBook.SetActive(true);
+            rightDescBook.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
+            bookModel.SetActive(true);
+            bookModel.GetComponent<MeshRenderer>().material = bookModelMaterials[activeItemInt];
+        }
+        else
+        {
+            panelDescBook.SetActive(false);
+            panelDescNormItem.SetActive(true);
+            rightDescNormItem.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
+            bookModel.SetActive(false);
+        }
+
         for (int i = 0; i < itemTags.Count; i++)
         {
+            print(activeItemInt);
             if (i == activeItemInt)
                 itemTags[i].visual.GetComponent<MeshRenderer>().material = activeMat;
             else

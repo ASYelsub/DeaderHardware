@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerPopUp_Trigger : MonoBehaviour,ITriggerable
+public class TowerPopUp_Trigger : MonoBehaviour, ITriggerable
 {
-    bool open;
+    public bool open;
 
     public Transform towerBase;
     public Transform RightDoor;
     public Transform leftDoor;
 
-    void Update()
+    void FixedUpdate()
     {
         if (open)
         {
@@ -28,5 +28,11 @@ public class TowerPopUp_Trigger : MonoBehaviour,ITriggerable
     public void ExecuteTriggerFunction()
     {
         open = true;
+        Debug.Log("Executed");
+    }
+
+    public void ExecuteLeaveTriggerFunction()
+    {
+        throw new System.NotImplementedException();
     }
 }

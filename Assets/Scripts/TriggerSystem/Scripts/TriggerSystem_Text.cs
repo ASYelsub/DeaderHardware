@@ -8,6 +8,11 @@ public class TriggerSystem_Text : MonoBehaviour,ITriggerable
 
     public string TestText;
 
+    public void ExecuteLeaveTriggerFunction()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public void ExecuteTriggerFunction() {
         Debug.Log(TestText);
     }

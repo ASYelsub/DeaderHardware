@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
         }
         //Initalize Services
         ServicesLocator.GameManager = this;
+        ServicesLocator.LightManager = FindObjectOfType<LightManager>();
         ServicesLocator.CameraManager = new CameraManager();
         ServicesLocator.Music = new MusicManager();
         ServicesLocator.SceneChanger = FindObjectOfType<SceneChangeManager>();
@@ -34,10 +35,9 @@ public class GameManager : MonoBehaviour
         invM.DoInvMenu();
           
         ServicesLocator.Initialization();
-       // ServicesLocator.ItemLibrary.Initialize(ItemDictionary.text);
+        // ServicesLocator.ItemLibrary.Initialize(ItemDictionary.text);
 
         ServicesLocator.Music.changeTrack(0);
-        
     }
 
     public string[] fileNames; // if you want to use multiple text files, put them here in order, and it will add all of the text together, then process them as a string. 
