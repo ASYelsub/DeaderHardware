@@ -14711,16 +14711,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2106369380388972010, guid: 451032f2adb5c3b41b67a960fbc54792, type: 3}
+      propertyPath: m_text
+      value: Loading operating system...
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106369380388972010, guid: 451032f2adb5c3b41b67a960fbc54792, type: 3}
       propertyPath: m_fontSize
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2106369380388972010, guid: 451032f2adb5c3b41b67a960fbc54792, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 830fadb30d259b84081eece28cd73481, type: 2}
+    - target: {fileID: 2106369380388972010, guid: 451032f2adb5c3b41b67a960fbc54792, type: 3}
       propertyPath: m_fontColor.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2106369380388972010, guid: 451032f2adb5c3b41b67a960fbc54792, type: 3}
       propertyPath: m_fontColor.g
-      value: 1
+      value: 0.702134
       objectReference: {fileID: 0}
     - target: {fileID: 2106369380388972010, guid: 451032f2adb5c3b41b67a960fbc54792, type: 3}
       propertyPath: m_fontColor.r
@@ -14735,8 +14743,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2106369380388972010, guid: 451032f2adb5c3b41b67a960fbc54792, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2555012135579867877, guid: 830fadb30d259b84081eece28cd73481, type: 2}
+    - target: {fileID: 2106369380388972010, guid: 451032f2adb5c3b41b67a960fbc54792, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 4278236159
       objectReference: {fileID: 0}
     - target: {fileID: 2106369380388972011, guid: 451032f2adb5c3b41b67a960fbc54792, type: 3}
       propertyPath: m_SizeDelta.x
@@ -14770,6 +14782,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.5307
       objectReference: {fileID: 0}
+    - target: {fileID: 2106369380388972013, guid: 451032f2adb5c3b41b67a960fbc54792, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2555012135579867877, guid: 830fadb30d259b84081eece28cd73481, type: 2}
     - target: {fileID: 2106369381442187331, guid: 451032f2adb5c3b41b67a960fbc54792, type: 3}
       propertyPath: m_Name
       value: GameCamera

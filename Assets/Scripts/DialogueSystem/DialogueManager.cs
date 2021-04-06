@@ -42,6 +42,8 @@ public class DialogueManager : MonoBehaviour
                 if (lineNum >= lines.Length)
                 {
                     Cleanup();
+                    isShowing = false;
+                    Debug.Log("This is happening");
                 }
                 else if(!isTyping)
                 {
