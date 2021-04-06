@@ -10,9 +10,11 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager me;
     public TextAsset file;
 
-    private string[] lines;
+    [HideInInspector]
+    public string[] lines;
     private bool isTyping;
-    private int lineNum = 0;
+    [HideInInspector]
+    public int lineNum = 0;
     [HideInInspector]
     public bool canEngage = true;
     [HideInInspector]
@@ -35,17 +37,16 @@ public class DialogueManager : MonoBehaviour
         {
             if (isShowing && Input.GetKeyUp(KeyCode.Space) && canEngage)
             {
-                
+
                 //Debug.Log("SPACE");
                 if (lineNum >= lines.Length)
                 {
                     Cleanup();
                 }
-                else
+                else if(!isTyping)
                 {
-                    StopCoroutine("DisplayText");
                     ClearText();
-                    StartCoroutine("DisplayText", lines[lineNum]);
+                    StartCoroutine(DisplayText(lines[lineNum]));
                 }
             }
         }
@@ -70,11 +71,12 @@ public class DialogueManager : MonoBehaviour
     }
 
     IDialogueCommand[] currentCommands;
-
+    [SerializeField]
+    private float typeSpeed;//lower is faster
     public IEnumerator DisplayText (string current) 
     {
         
-        Debug.Log("Display Text is happening");
+        //Debug.Log("Display Text is happening");
         isTyping = true;
         lineNum++;
 
@@ -92,16 +94,35 @@ public class DialogueManager : MonoBehaviour
             }
             if(i < current.Length)
             tm.text += current[i];
-            yield return null;
+            yield return new WaitForSeconds(typeSpeed);
         }
 
         //foreach (char c in current) {
         //    tm.text += c;
         //    yield return null;
         //}
-        
         isTyping = false;
         yield return null;
+    }
+
+    public void FillText(string current)
+    {
+        isTyping = true;
+        for (int i = 0; i < current.Length; i++)
+        {
+            if (commandInText(current, i)) // if a command is detected in the dialogue
+            {
+                foreach (IDialogueCommand cmd in currentCommands)// go through all the scripts in the trigger's children that use the interface 'IDialogueCommands'
+                {
+                    cmd.ExcecuteDialogueCommand(); //excecute the commands
+                }
+                i += 5;
+            }
+            if (i < current.Length)
+                tm.text += current[i];
+        }
+
+        isTyping = false;
     }
 
     bool commandInText(string str, int i) //checks to see if string "<CMD>" is in text
@@ -123,18 +144,21 @@ public class DialogueManager : MonoBehaviour
         lines = null;
         lineNum = 0;
         isShowing = false;
-        StartCoroutine(SpaceSpace());
+        StartCoroutine(SpaceSpace(3));
     }
 
     private void ClearText()
     {
         tm.text = "";
     }
+    private void FillLine()
+    {
 
-    private IEnumerator SpaceSpace()
+    }
+    private IEnumerator SpaceSpace(float time)
     {
         canEngage = false;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(time);
         canEngage = true;
         yield return null;
     }

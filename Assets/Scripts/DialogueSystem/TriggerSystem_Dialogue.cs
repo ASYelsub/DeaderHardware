@@ -11,10 +11,22 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
 
     public DialogueManager manager;
 
+
+    //Set to true if first dialogue with librarian or console entity, otherwise set to false
+    [SerializeField]
+    private bool grabPlayer;
+
     // TODO:
     // * font
     // * line spacing
 
+    [Header("Console Specific")]
+    [SerializeField]
+    private bool isConsole;
+    [SerializeField]
+    private GameObject oldConsole;
+    [SerializeField]
+    private GameObject newConsole;
     void Start() {
         if(manager == null)
         {
@@ -25,21 +37,43 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
     } 
 
     public void ExecuteTriggerFunction() { //ServicesLocator.DialogueManager.SplitFile(this);
+
+        if (grabPlayer)
+        {
+            
+            List<IDialogueCommand> dialogueCommands = new List<IDialogueCommand>();
+            foreach (IDialogueCommand d in GetComponentsInChildren<IDialogueCommand>())
+            {
+                dialogueCommands.Add(d);
+            }
+            if (ServicesLocator.DialogueManager.canEngage)
+            {
+                ServicesLocator.DialogueManager.SplitFile(file, dialogueCommands.ToArray());
+                StartCoroutine(ServicesLocator.DialogueManager.DisplayText(ServicesLocator.DialogueManager.lines[ServicesLocator.DialogueManager.lineNum]));
+            }
+        }
     }
 
     public void ExecuteInteraction()
     {
-        List<IDialogueCommand> dialogueCommands = new List<IDialogueCommand>();
-        foreach (IDialogueCommand d in GetComponentsInChildren<IDialogueCommand>())
+        if (!grabPlayer)
         {
-            dialogueCommands.Add(d);
+            List<IDialogueCommand> dialogueCommands = new List<IDialogueCommand>();
+            foreach (IDialogueCommand d in GetComponentsInChildren<IDialogueCommand>())
+            {
+                dialogueCommands.Add(d);
+            }
+            if (ServicesLocator.DialogueManager.canEngage)
+                ServicesLocator.DialogueManager.SplitFile(file, dialogueCommands.ToArray());
         }
-        if(ServicesLocator.DialogueManager.canEngage)
-            ServicesLocator.DialogueManager.SplitFile(file,dialogueCommands.ToArray());
     }
 
     public void ExecuteLeaveTriggerFunction()
     {
-     //   throw new System.NotImplementedException();
+        if (isConsole)
+        {
+            oldConsole.SetActive(false);
+            newConsole.SetActive(true);
+        }
     }
 }

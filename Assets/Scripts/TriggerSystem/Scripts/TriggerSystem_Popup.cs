@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TriggerSystem_Popup : MonoBehaviour, ITriggerable, IInteractable
 {
+    //This class is like this so particle effects (or whatever) dont play when itemPickup is null,
+    //itemPickup is null when an item has been picked up and added to the inventory.
+    //This script should be used specifically for items that are added to the inventory.
     [SerializeField]
     public enum objectType {Librarian, Book, Console};
     public ParticleSystem particleObject;

@@ -89,7 +89,7 @@ public class SettingsMenu : MonoBehaviour
         {
             if (!menuIsMoving)
             {
-                if (Input.GetKeyDown(KeyCode.P) || Input.GetKey(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.P) || Input.GetKey(KeyCode.Escape))
                 {
                     TurnMenuOnOff(settingsActive);
                 }
