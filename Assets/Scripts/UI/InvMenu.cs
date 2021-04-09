@@ -51,7 +51,10 @@ public class InvMenu : MonoBehaviour
     private List<Material> bookModelMaterials;
 
 
-
+    [SerializeField]
+    Material activeTextMat;
+    [SerializeField]
+    Material inactiveTextMat;
     static int bookCounter = 0;
 
 
@@ -104,8 +107,13 @@ public class InvMenu : MonoBehaviour
         public int ID;
         [HideInInspector]public bool isBook;
 
+        private Material activeTextMat;
+        private Material inactiveTextMat;
+        private Material activeMat;
+        private Material inactiveMat;
+
         //For when created without an item, empty, to take up space
-        public ItemTag(GameObject tagPrefab, GameObject tagParent)
+        public ItemTag(GameObject tagPrefab, GameObject tagParent, Material activeTextMat, Material inactiveTextMat, Material activeMat, Material inactiveMat)
         {
             tagPos = new Vector3(0, 0, 0);
             visual = Instantiate(tagPrefab, tagParent.transform, false);
@@ -114,6 +122,10 @@ public class InvMenu : MonoBehaviour
             visual.SetActive(false);
             isEmpty = true;
             ID = 500; //correlates w duplicates
+            this.activeMat = activeMat;
+            this.inactiveMat = inactiveMat;
+            this.activeTextMat = activeTextMat;
+            this.inactiveTextMat = inactiveTextMat;
         }
         public void SetItem(string name)
         {
@@ -154,6 +166,18 @@ public class InvMenu : MonoBehaviour
             visual.SetActive(false);
         }
 
+
+        public void SetActive()
+        {
+            this.tagText.fontMaterial = activeTextMat;
+            this.visual.GetComponent<MeshRenderer>().material = activeMat;
+        }
+
+        public void SetInactive()
+        {
+            this.tagText.fontMaterial = inactiveTextMat;
+            this.visual.GetComponent<MeshRenderer>().material = inactiveMat;
+        }
     }
 
     
@@ -168,7 +192,7 @@ public class InvMenu : MonoBehaviour
         //create the tags with no items in them
         for (int i = 0; i < visItem; i++)
         {
-            itemTags.Add(new ItemTag(tagPrefab, tagParent));
+            itemTags.Add(new ItemTag(tagPrefab, tagParent,activeTextMat,inactiveTextMat,activeMat,inactiveMat));
             itemTags[i].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
             itemTags[i].AddPos(new Vector3(0, 0, i * tagSpacer));
             itemTags[i].visual.SetActive(true);
@@ -298,7 +322,7 @@ public class InvMenu : MonoBehaviour
                     }
                     else
                     { //if it's more, create a new tag and assign the new item. 
-                        itemTags.Add(new ItemTag(tagPrefab, tagParent));
+                        itemTags.Add(new ItemTag(tagPrefab, tagParent, activeTextMat,inactiveTextMat,activeMat,inactiveMat));
                         itemTags[itemCounter].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
                         if (topTrack != 0) //if we've scrolled down
                         { //Debug.Log(7); 
@@ -418,7 +442,7 @@ public class InvMenu : MonoBehaviour
                         }
                     }
                     itemTags.RemoveAt(index);
-                    itemTags.Add(new ItemTag(tagPrefab, tagParent));
+                    itemTags.Add(new ItemTag(tagPrefab, tagParent,activeTextMat,inactiveTextMat,activeMat,inactiveMat));
                     itemTags[itemTags.Count - 1].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
                     itemTags[itemTags.Count - 1].AddPos(new Vector3(0, 0, tagSpacer * itemTags.Count - 1));
                     itemTags[itemTags.Count - 1].visual.SetActive(true);
@@ -577,7 +601,7 @@ public class InvMenu : MonoBehaviour
             panelDescBook.SetActive(true);
             rightDescBook.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
             bookModel.SetActive(true);
-            bookModel.GetComponent<MeshRenderer>().material = bookModelMaterials[activeItemInt];
+            bookModel.GetComponent<MeshRenderer>().material = bookModelMaterials[itemTags[activeItemInt].ID];
         }
         else
         {
@@ -585,15 +609,22 @@ public class InvMenu : MonoBehaviour
             panelDescNormItem.SetActive(true);
             rightDescNormItem.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
             bookModel.SetActive(false);
+            
         }
 
         for (int i = 0; i < itemTags.Count; i++)
         {
             print(activeItemInt);
             if (i == activeItemInt)
-                itemTags[i].visual.GetComponent<MeshRenderer>().material = activeMat;
+            {
+                itemTags[i].SetActive();
+
+            }
             else
-                itemTags[i].visual.GetComponent<MeshRenderer>().material = inactiveMat;
+            {
+                itemTags[i].SetInactive();
+
+            }
 
         }
     }

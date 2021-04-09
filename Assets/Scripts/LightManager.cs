@@ -4,35 +4,82 @@ using UnityEngine;
 
 public class LightManager : MonoBehaviour
 {
+    public List<Light> lightsInScene;
+
     [System.Serializable]
-    public class LightHolder
+    public class Light
     {
-        public GameObject[] lights;
+        public int lightInt;
+        public GameObject lightObject;
+        public bool marked = false;
+        public Light()
+        {
+            marked = false;
+        }
+
+        public void Enable()
+        {
+            this.lightObject.SetActive(true);
+        }
+        public void Disable()
+        {
+            this.lightObject.SetActive(false);
+        }
     }
 
-    public List<LightHolder> lightHolders;
+
+    [System.Serializable]
+    public class ShotData
+    {
+        public List<int> activeLightInt;
+    }
+
+    public List<ShotData> Shots;
+    private ShotData activeShot;
+
+    
 
     public void UpdatelightManager(int shot)
     {
-        for (int i = 0; i < lightHolders.Count; i++)
-        {
-            if (i == shot)
-            {
-                for (int j = 0; j < lightHolders[i].lights.Length; j++)
-                {
-                    lightHolders[i].lights[j].SetActive(true);
-                }
+        //set the active shot
+        if(shot < Shots.Count) { 
+            activeShot = Shots[shot];
+        //go through integers in activeshot
 
+        
+        
+            for (int i = 0; i < activeShot.activeLightInt.Count; i++)
+            {
+                print("this happened " + i + " times.");
+                //go through lights in scene
+                for (int j = 0; j < lightsInScene.Count; j++)
+                {
+                    if (lightsInScene[j].lightInt == activeShot.activeLightInt[i])
+                    {
+                        lightsInScene[j].marked = true;
+                    }
+                }
             }
-            else
-            {
-                for (int j = 0; j < lightHolders[i].lights.Length; j++)
-                {
-                    lightHolders[i].lights[j].SetActive(false);
-                }
 
+            for (int i = 0; i < lightsInScene.Count; i++)
+            {
+                if (lightsInScene[i].marked)
+                    lightsInScene[i].Enable();
+                else
+                    lightsInScene[i].Disable();
+            }
+
+
+            //reset mark for all lights
+            for (int i = 0; i < lightsInScene.Count; i++)
+            {
+                lightsInScene[i].marked = false;
             }
         }
-    //    Debug.Log("setting lights for " + shot);
+        else
+        {
+            print("No thing yet.");
+        }
+        
     }
 }

@@ -141,7 +141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 573e618e31e52804a93234f556626a23, type: 2}
+  - {fileID: 2100000, guid: b22dc8558b0efa14aa0aaa0a7b149937, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -299,7 +299,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3385070068077970894}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
   m_LocalScale: {x: 0.03400175, y: 0.4156626, z: 1}
   m_Children: []
   m_Father: {fileID: 3385070068329943764}
@@ -307,7 +307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.02, y: 0.03}
+  m_AnchoredPosition: {x: -0.15, y: 0.03}
   m_SizeDelta: {x: 279.7845, y: 15.1201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &3385070068077970897
@@ -329,7 +329,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2555012135579867877, guid: 44e907fe52baee240bfb6a2ebc6c6165, type: 2}
+  - {fileID: 2555012135579867877, guid: 958caab8fb68b4935999c325cc61049c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -373,15 +373,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: asdaaglkjalskdjgalksdjg;alsdkgjalkjg
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 44e907fe52baee240bfb6a2ebc6c6165, type: 2}
-  m_sharedMaterial: {fileID: 2555012135579867877, guid: 44e907fe52baee240bfb6a2ebc6c6165, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 958caab8fb68b4935999c325cc61049c, type: 2}
+  m_sharedMaterial: {fileID: 2555012135579867877, guid: 958caab8fb68b4935999c325cc61049c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -701,7 +701,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 573e618e31e52804a93234f556626a23, type: 2}
+  - {fileID: 2100000, guid: b22dc8558b0efa14aa0aaa0a7b149937, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
