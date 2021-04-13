@@ -6,6 +6,7 @@ public class Rotate : MonoBehaviour
 {
     Transform tf;
 
+    public bool disabled;
     public Vector3 rotPerFrame;
     void Start()
     {
@@ -15,6 +16,9 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        tf.Rotate(rotPerFrame);
+        if (!disabled)
+        {
+            tf.Rotate(rotPerFrame);
+        }
     }
 }

@@ -65,7 +65,6 @@ namespace FMODUnity
                 eventCache = AssetDatabase.LoadAssetAtPath(CacheAssetFullName, typeof(EventCache)) as EventCache;
                 if (eventCache == null || eventCache.cacheVersion != EventCache.CurrentCacheVersion)
                 {
-                    Debug.Log("FMOD: Event cache is missing or in an old format; creating a new instance.");
 
                     eventCache = ScriptableObject.CreateInstance<EventCache>();
                     eventCache.cacheVersion = EventCache.CurrentCacheVersion;
@@ -313,7 +312,6 @@ namespace FMODUnity
                 // Unload the strings banks
                 loadedStringsBanks.ForEach(x => x.unload());
                 AssetDatabase.StopAssetEditing();
-                Debug.Log("FMOD: Cache updated.");
             }
 
             return null;
