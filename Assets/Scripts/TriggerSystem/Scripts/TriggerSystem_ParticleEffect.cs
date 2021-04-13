@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerSystem_ParticleEffect : MonoBehaviour, ITriggerable
 {
     public ParticleSystem ps;
-
+    //
     public void ExecuteTriggerFunction()
     {
         ps.Play();
