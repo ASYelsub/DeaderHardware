@@ -386,8 +386,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -575.0,
-            "y": 78.5,
+            "x": -559.0,
+            "y": -330.0000305175781,
             "width": 121.5,
             "height": 34.0
         }
@@ -491,10 +491,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -264.0,
-            "y": -12.5,
-            "width": 0.0,
-            "height": 0.0
+            "x": -248.0,
+            "y": -421.00006103515627,
+            "width": 97.50000762939453,
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -1232,10 +1232,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -165.5000762939453,
-            "y": 72.00000762939453,
+            "x": -149.5,
+            "y": -336.50006103515627,
             "width": 208.0,
-            "height": 301.9999694824219
+            "height": 302.0
         }
     },
     "m_Slots": [
@@ -2071,8 +2071,8 @@
     "m_ObjectId": "a641b348bed7498eb20d0acd32ffb23e",
     "m_Title": "Albedo & Tint",
     "m_Position": {
-        "x": 10.0,
-        "y": 10.0
+        "x": -583.9000244140625,
+        "y": -480.1183166503906
     }
 }
 
@@ -2270,10 +2270,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -412.0,
-            "y": 46.5,
+            "x": -396.0,
+            "y": -362.0000305175781,
             "width": 208.0,
-            "height": 434.0
+            "height": 434.0000305175781
         }
     },
     "m_Slots": [
