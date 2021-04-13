@@ -45,7 +45,7 @@ Material:
     - _AlphaClip: 1
     - _Blend: 0
     - _Cull: 2
-    - _Cutoff: 0.57
+    - _Cutoff: 0.159
     - _DstBlend: 0
     - _QueueOffset: 0
     - _SampleGI: 0

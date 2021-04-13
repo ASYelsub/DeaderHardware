@@ -14,19 +14,27 @@ public class TriggerSystem_ParticleEffect : MonoBehaviour, ITriggerable
     [SerializeField]
     Material onMat;
     [SerializeField]
-    GameObject matBody;
+
+    List<GameObject> matBody = new List<GameObject>();
 
     public void ExecuteTriggerFunction()
     {
         ps.Play();
-        matBody.GetComponent<MeshRenderer>().material = onMat;
+        for (int i = 0; i < matBody.Count; i++)
+        {
+            matBody[i].GetComponent<MeshRenderer>().material = onMat;
+        }
+
     }
 
 
     public void ExecuteLeaveTriggerFunction()
     {
         ps.Stop();
-        matBody.GetComponent<MeshRenderer>().material = offMat;
-    }
+        for (int i = 0; i < matBody.Count; i++)
+        {
+            matBody[i].GetComponent<MeshRenderer>().material = offMat;
+        }
 
+    }
 }
