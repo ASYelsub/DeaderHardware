@@ -44,7 +44,11 @@ public class PlayerMover : MonoBehaviour
 
     public void Update()
     {
-        tankRotation += Input.GetAxisRaw("Horizontal") * rotationSpeed * Time.deltaTime;
+        if (!(ServicesLocator.DialogueManager.isShowing || GameManager.invM.menuOn || GameManager.settingsM.settingsActive))
+        {
+            tankRotation += Input.GetAxisRaw("Horizontal") * rotationSpeed * Time.deltaTime;
+        }
+
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, tankRotation, transform.rotation.eulerAngles.z);
 
         moveDirection = new Vector3(transform.forward.x, moveDirection.y, transform.forward.z);

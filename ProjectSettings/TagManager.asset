@@ -13,6 +13,7 @@ TagManager:
   - Quit
   - Gate1
   - Gate2
+  - POPUP
   layers:
   - Default
   - TransparentFX
