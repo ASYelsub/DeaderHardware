@@ -101,7 +101,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Library.bank
   Name: Library
   StudioPath: bank:/Library
-  lastModified: 637532997190229346
+  lastModified: 637533486491045619
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -120,9 +120,29 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637532997190259268
+  lastModified: 637533486491060816
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-3703574080904271390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
   Exists: 1
 --- !u!114 &-3239525537253944786
 MonoBehaviour:
@@ -139,7 +159,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637532997190279224
+  lastModified: 637533486491070160
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -169,12 +189,13 @@ MonoBehaviour:
   - {fileID: 5029498410621572997}
   - {fileID: 3939724776106992019}
   - {fileID: -8748388798962414486}
-  EditorParameters: []
+  EditorParameters:
+  - {fileID: -3703574080904271390}
   MasterBanks:
   - {fileID: -4864880204628343646}
   StringsBanks:
   - {fileID: -3239525537253944786}
-  stringsBankWriteTime: 637532997190279224
+  stringsBankWriteTime: 637533486491070160
   cacheVersion: 6
 --- !u!114 &405598438230864534
 MonoBehaviour:
@@ -440,7 +461,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Hub.bank
   Name: Hub
   StudioPath: bank:/Hub
-  lastModified: 637532997190807801
+  lastModified: 637533486490820840
   LoadResult: 0
   FileSizes: []
   Exists: 1
