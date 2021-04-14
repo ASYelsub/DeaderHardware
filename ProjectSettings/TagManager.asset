@@ -6,14 +6,16 @@ TagManager:
   tags:
   - Interactable
   - GameCamera
-  - T1
-  - T2
-  - T3
-  - T4
   - Quit
   - Gate1
   - Gate2
   - POPUP
+  - Theme
+  - Music
+  - SFX
+  - Help
+  - Y
+  - N
   layers:
   - Default
   - TransparentFX
