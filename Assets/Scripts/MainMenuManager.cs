@@ -160,7 +160,7 @@ public class MainMenuManager : MonoBehaviour
     {
         if(selectedOption == 0)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
 
         if(selectedOption == 1)

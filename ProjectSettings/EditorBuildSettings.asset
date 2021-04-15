@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 761bac69665ebbf46a58c1c1fade4593
+  - enabled: 1
     path: Assets/Scenes/Andrew_Hub Scene.unity
     guid: ba24145623eec044abc80367144a2006
   - enabled: 1
@@ -14,7 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Finn_Level2.unity
     guid: ebd2e54382ea28b4f867d99d1539f563
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 761bac69665ebbf46a58c1c1fade4593
   m_configObjects: {}
