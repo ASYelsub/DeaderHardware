@@ -50,29 +50,29 @@ public class PlayerInteractor : MonoBehaviour
                 }
             }
 
-            displayedItem = null;
-            foreach (Collider item in nearbyColliders)
-            {
-                if (item.GetComponent<IInteractable>() != null)
-                {
-                    displayedItem = item.gameObject;
-                }
-            }
+            //displayedItem = null;
+            //foreach (Collider item in nearbyColliders)
+            //{
+            //    if (item.GetComponent<IInteractable>() != null)
+            //    {
+            //        displayedItem = item.gameObject;
+            //    }
+            //}
         }
         else
         {
             displayedItem = null;
         }
 
-        if (displayedItem == null)
-        {
-            displayText.color = Color.Lerp(displayText.color,new Color(1,1,1,0), Time.deltaTime * 7f);
-        }
-        else
-        {
-            displayText.text = "INTERACTABLE NEARBY...";
-            displayText.color = Color.Lerp(displayText.color, new Color(1, 1, 1, 1), Time.deltaTime * 7f);
-        }
+        //if (displayedItem == null)
+        //{
+        //    displayText.color = Color.Lerp(displayText.color,new Color(1,1,1,0), Time.deltaTime * 7f);
+        //}
+        //else
+        //{
+        //    displayText.text = "INTERACTABLE NEARBY...";
+        //    displayText.color = Color.Lerp(displayText.color, new Color(1, 1, 1, 1), Time.deltaTime * 7f);
+        //}
     }
 
     public void queryItemInteraction(int itemId) {
