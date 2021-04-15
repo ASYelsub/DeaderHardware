@@ -313,6 +313,7 @@ public class SettingsMenu : MonoBehaviour
                 volumeMusic[i].GetComponent<MeshRenderer>().material = currentTheme.primaryMat;
             }
         }
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Music Slider", Mathf.Clamp(f * .1f,0,1));
     }
     void SetSFXVolume(int f)
     {
@@ -328,6 +329,7 @@ public class SettingsMenu : MonoBehaviour
                 volumeSFX[i].GetComponent<MeshRenderer>().material = currentTheme.primaryMat;
             }
         }
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("SFX Slider", Mathf.Clamp(f * .1f, 0, 1));
     }
 
 
