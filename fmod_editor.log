@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000220B5015AA8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000002209D0562A8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,49 +18,49 @@
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 00000220EC3927F8 : node = 0000022023F15640
-[LOG] SystemI::createSound                     : add node to async list : head = 00000220ED25BF88.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000220EC3927F8
+[LOG] SystemI::createSound                     : setdata soundi = 00000220EC39A328 : node = 00000220EC755670
+[LOG] SystemI::createSound                     : add node to async list : head = 00000220A8C08588.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000220EC39A328
 [LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build\Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 217248
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2688
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000022023F15750
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000220EC755780
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 246
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_Portal', format=5, channels=2, frequency=48000, lengthbytes=217024, lengthpcm=709623, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.520958.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000220EC3927F8
-[LOG] SoundI::release                          : Aud_Portal (00000220EC3953D8)
-[LOG] SoundI::release                          :     Aud_Portal (0000021FE27F0B98)
-[LOG] SoundI::release                          :     Aud_Portal (00000220EC395588)
-[LOG] SoundI::release                          : Aud_LibraryHushed (00000220EC394148)
-[LOG] SoundI::release                          :     Aud_LibraryHushed (0000021FE27F0D38)
-[LOG] SoundI::release                          :     Aud_LibraryHushed (00000220EC3902D8)
-[LOG] SoundI::release                          : Aud_Portal (00000220EC3927F8)
-[LOG] SoundI::release                          :     Aud_Portal (0000021FE27F0ED8)
-[LOG] SoundI::release                          :     Aud_Portal (00000220EC393DE8)
-[LOG] SoundI::release                          : typewriter-1 (00000220EC391568)
-[LOG] SoundI::release                          :     typewriter-1 (0000022013CFCE18)
-[LOG] SoundI::release                          :     typewriter-1 (00000220EC391A78)
-[LOG] SoundI::release                          : Susan-Voice (00000220EC396B78)
-[LOG] SoundI::release                          :     Susan-Voice (0000022013CFCC78)
-[LOG] SoundI::release                          :     Susan-Voice (00000220EC3964B8)
-[LOG] SoundI::release                          : Susan_-_Drums (00000220EC395078)
-[LOG] SoundI::release                          :     Susan_-_Drums (0000022013CFCAD8)
-[LOG] SoundI::release                          :     Susan_-_Drums (00000220EC3918C8)
-[LOG] SoundI::release                          :  (00000220A88EC348)
-[LOG] SoundI::release                          :     WoodenDoorCreak1 (00000220201125E8)
-[LOG] SoundI::release                          :  (00000220A88EB7C8)
-[LOG] SoundI::release                          :     WoodenDoorCreak2 (0000022020112448)
-[LOG] SoundI::release                          :  (00000220A88EF428)
-[LOG] SoundI::release                          :     WoodenDoorCreak4 (0000022020113B08)
-[LOG] SoundI::release                          :  (00000220A88ED1A8)
-[LOG] SoundI::release                          :     Turn Page of Paper Back Book 02 (0000022020110D88)
-[LOG] SoundI::release                          :  (00000220A88F06D8)
-[LOG] SoundI::release                          :     Turn Page of Hard Cover Book 06 (0000022020111408)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000220EC39A328
+[LOG] SoundI::release                          : Aud_Portal (000002209BFBD408)
+[LOG] SoundI::release                          :     Aud_Portal (0000022022752A78)
+[LOG] SoundI::release                          :     Aud_Portal (000002209BFC41B8)
+[LOG] SoundI::release                          : Aud_Portal (00000220EC39A328)
+[LOG] SoundI::release                          :     Aud_Portal (00000220910A54A8)
+[LOG] SoundI::release                          :     Aud_Portal (00000220EC3A4378)
+[LOG] SoundI::release                          : Aud_LibraryHushed (000002209BFC5CB8)
+[LOG] SoundI::release                          :     Aud_LibraryHushed (0000022022766758)
+[LOG] SoundI::release                          :     Aud_LibraryHushed (000002209BFC6018)
+[LOG] SoundI::release                          : typewriter-1 (000002209BFBCB98)
+[LOG] SoundI::release                          :     typewriter-1 (0000022022752598)
+[LOG] SoundI::release                          :     typewriter-1 (000002209BFC1938)
+[LOG] SoundI::release                          : Susan-Voice (000002209BFBC688)
+[LOG] SoundI::release                          :     Susan-Voice (0000022022750858)
+[LOG] SoundI::release                          :     Susan-Voice (000002209BFBE4E8)
+[LOG] SoundI::release                          : Susan_-_Drums (000002209BFB98F8)
+[LOG] SoundI::release                          :     Susan_-_Drums (0000022022785A38)
+[LOG] SoundI::release                          :     Susan_-_Drums (000002209BFBD768)
+[LOG] SoundI::release                          :  (00000220A88F86C8)
+[LOG] SoundI::release                          :     WoodenDoorCreak1 (00000220910A8A48)
+[LOG] SoundI::release                          :  (00000220A88F7F98)
+[LOG] SoundI::release                          :     WoodenDoorCreak2 (00000220910AA448)
+[LOG] SoundI::release                          :  (00000220A88FA4F8)
+[LOG] SoundI::release                          :     WoodenDoorCreak4 (00000220910A6348)
+[LOG] SoundI::release                          :  (00000220A88FA0A8)
+[LOG] SoundI::release                          :     Turn Page of Paper Back Book 02 (00000220910A90C8)
+[LOG] SoundI::release                          :  (00000220A88F8278)
+[LOG] SoundI::release                          :     Turn Page of Hard Cover Book 06 (00000220910A9268)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

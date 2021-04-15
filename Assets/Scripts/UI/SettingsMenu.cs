@@ -42,6 +42,9 @@ public class SettingsMenu : MonoBehaviour
     private int musicVol = 5;
     private int SFXVol = 5;
     bool homePrompt = false;
+
+
+    private InvMenu inv;
     [System.Serializable]
     private class Theme {
         public GameObject element;
@@ -66,7 +69,7 @@ public class SettingsMenu : MonoBehaviour
         homePanel.SetActive(false);
         topPanelTransform.localPosition = topPanelOffPos;
         bottomPanelTransform.localPosition = botPanelOffPos;
-
+        inv = FindObjectOfType<InvMenu>();
         //All of these should be read from
         //whatever save file we have
         //but for now i'm just initalizing like this.
@@ -98,7 +101,7 @@ public class SettingsMenu : MonoBehaviour
                 {
                     TurnMenuOnOff(settingsActive);
                 }
-                if (settingsActive)
+                if (settingsActive && !inv.menuOn)
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
