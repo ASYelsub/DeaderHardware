@@ -46,6 +46,6 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractabl
 
     void ITriggerable.ExecuteLeaveTriggerFunction()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 }
