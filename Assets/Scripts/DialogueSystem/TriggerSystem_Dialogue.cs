@@ -15,6 +15,8 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
     //Set to true if first dialogue with librarian or console entity, otherwise set to false
     [SerializeField]
     private bool grabPlayer;
+    [SerializeField]
+    private bool afterItemDeposit;
 
     // TODO:
     // * font

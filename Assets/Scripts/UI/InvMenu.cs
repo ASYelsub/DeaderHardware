@@ -236,7 +236,7 @@ public class InvMenu : MonoBehaviour
                     Debug.Log("Space");
                     Debug.Log(activeItemInt);
                     CheckItem(activeItemInt);
-
+                    ToggleMenu();
                     //bool corresponds = CheckItem(activeItemint);
 
                     //if(corresponds == true){
@@ -459,7 +459,6 @@ public class InvMenu : MonoBehaviour
                 DisplayActive();
             }
             isStep = false;
-            
             return toReturn;
         }
     //    Debug.Log("this2");
