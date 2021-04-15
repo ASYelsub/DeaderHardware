@@ -29,7 +29,8 @@ public class CameraManager
     private _dynamicCameraSplinePoint _splinePointB;
 
     public void Initialize() {
-        _mainCamera = GameObject.FindGameObjectWithTag("GameCamera");
+        Debug.Log("I am called");
+        _mainCamera = GameObject.Find("GameCamera");
         _cameraTarget = GameObject.FindGameObjectWithTag("Player").transform;
         _lastTargetPosition = Vector3.zero;
     }

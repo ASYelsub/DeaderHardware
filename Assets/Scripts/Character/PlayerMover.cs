@@ -44,7 +44,7 @@ public class PlayerMover : MonoBehaviour
 
     public void Update()
     {
-        if (!(ServicesLocator.DialogueManager.isShowing || GameManager.invM.menuOn || GameManager.settingsM.settingsActive))
+        if (!(ServicesLocator.GameManager.diaMan.isShowing || GameManager.invM.menuOn || GameManager.settingsM.settingsActive))
         {
             tankRotation += Input.GetAxisRaw("Horizontal") * rotationSpeed * Time.deltaTime;
         }
@@ -74,7 +74,7 @@ public class PlayerMover : MonoBehaviour
         moveDirection.x *= walkSpeed;
         moveDirection.z *= walkSpeed;
 
-        if(ServicesLocator.DialogueManager.isShowing || GameManager.invM.menuOn || GameManager.settingsM.settingsActive)
+        if(ServicesLocator.GameManager.diaMan.isShowing || GameManager.invM.menuOn || GameManager.settingsM.settingsActive)
         {
             moveDirection.x = 0;
             moveDirection.z = 0;
