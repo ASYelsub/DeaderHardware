@@ -9,7 +9,7 @@ public class ItemLibrary_2
 
     public ItemLibrary_2(string ItemDictionary)
     {
-        //Debug.Log(ItemDictionary);
+       // Debug.Log(ItemDictionary);
         //string[] lines = ItemDictionary.Split(new string[] { "__" }, StringSplitOptions.None);
         string[] lines = ItemDictionary.Split('~');
 
@@ -20,6 +20,7 @@ public class ItemLibrary_2
             idList += $"{TXTtoITEM(lines[i], i).ID} : {TXTtoITEM(lines[i], i).name}\n";
         }
         Debug.Log(idList);
+
     }
 
 
@@ -42,6 +43,7 @@ public class ItemLibrary_2
         {
             itemEntry.hoverText = $"press SPACE to pick up {itemEntry.name}";
         }
+
 
         return itemEntry;
     }

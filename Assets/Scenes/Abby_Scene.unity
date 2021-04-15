@@ -3714,7 +3714,7 @@ PrefabInstance:
     - target: {fileID: -1362131490974801122, guid: c03f7560a990f2a45ae9e6342127aaa8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 80587cb78d074e9488cbfba93a615d49, type: 2}
+      objectReference: {fileID: 2100000, guid: fea627edfacc24cc7a23d24828c22d09, type: 2}
     - target: {fileID: 919132149155446097, guid: c03f7560a990f2a45ae9e6342127aaa8, type: 3}
       propertyPath: m_Name
       value: Elglore_Smankoff (1)
@@ -3734,7 +3734,7 @@ PrefabInstance:
     - target: {fileID: 7318365842641221132, guid: c03f7560a990f2a45ae9e6342127aaa8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 80587cb78d074e9488cbfba93a615d49, type: 2}
+      objectReference: {fileID: 2100000, guid: fea627edfacc24cc7a23d24828c22d09, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c03f7560a990f2a45ae9e6342127aaa8, type: 3}
 --- !u!1001 &2140480277

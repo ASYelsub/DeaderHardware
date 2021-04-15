@@ -172,6 +172,22 @@ PrefabInstance:
       propertyPath: bookModelMaterials.Array.data[11]
       value: 
       objectReference: {fileID: 2100000, guid: 012def7d18377487b8454f11507e183e, type: 2}
+    - target: {fileID: 4324129103282467225, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: bookModelMaterials.Array.data[12]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324129103282467225, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: bookModelMaterials.Array.data[13]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324129103282467225, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: bookModelMaterials.Array.data[14]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324129103282467225, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
+      propertyPath: bookModelMaterials.Array.data[15]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8456111038924010401, guid: 4fefdd846945a8e449589cd05ff95522, type: 3}
       propertyPath: m_Layer
       value: 8
