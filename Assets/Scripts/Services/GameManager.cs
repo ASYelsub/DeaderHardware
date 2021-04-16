@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 public class GameManager : MonoBehaviour
 {
-    public TextAsset ItemDictionary;
+    //public TextAsset ItemDictionary;
     [HideInInspector]
     public static InvMenu invM;
     public static SettingsMenu settingsM;
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         ServicesLocator.GameManager = this;
         ServicesLocator.LightManager = FindObjectOfType<LightManager>();
         ServicesLocator.CameraManager = new CameraManager();
-        ServicesLocator.Music = new MusicManager();
+      //  ServicesLocator.Music = new MusicManager();
         ServicesLocator.SceneChanger = FindObjectOfType<SceneChangeManager>();
         // ServicesLocator.ItemLibrary = new ItemLibrary(ItemDictionary.text);
         CreateItemLibrary();
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         ServicesLocator.Initialization();
         // ServicesLocator.ItemLibrary.Initialize(ItemDictionary.text);
 
-        ServicesLocator.Music.changeTrack(0);
+    //    ServicesLocator.Music.changeTrack(0);
     }
 
     public string[] fileNames; // if you want to use multiple text files, put them here in order, and it will add all of the text together, then process them as a string. 

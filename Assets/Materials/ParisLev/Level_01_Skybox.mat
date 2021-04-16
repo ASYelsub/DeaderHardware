@@ -20,13 +20,13 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _AtmosphereThickness: 1.82
-    - _Exposure: 0.61
+    - _AtmosphereThickness: 1.7
+    - _Exposure: 1.19
     - _SunDisk: 2
-    - _SunSize: 0.139
-    - _SunSizeConvergence: 10
+    - _SunSize: 0.498
+    - _SunSizeConvergence: 7.13
     m_Colors:
-    - _GroundColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GroundColor: {r: 0.6415094, g: 0.26803282, b: 0.105909556, a: 1}
     - _SkyTint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &3620780459267794745

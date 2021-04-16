@@ -9,7 +9,7 @@ public class ItemLibrary_2
 
     public ItemLibrary_2(string ItemDictionary)
     {
-        //Debug.Log(ItemDictionary);
+       // Debug.Log(ItemDictionary);
         //string[] lines = ItemDictionary.Split(new string[] { "__" }, StringSplitOptions.None);
         string[] lines = ItemDictionary.Split('~');
 
@@ -20,6 +20,7 @@ public class ItemLibrary_2
             idList += $"{TXTtoITEM(lines[i], i).ID} : {TXTtoITEM(lines[i], i).name}\n";
         }
         Debug.Log(idList);
+
     }
 
 
@@ -27,21 +28,20 @@ public class ItemLibrary_2
     {
         Item itemEntry = new Item();
         string[] elements = itemInfo.Split('\n');
-        //added this in until andrew can implement fix
-        //-abby
-        itemEntry.isBook = true;
 
         itemEntry.ID = id;
         itemEntry.name = elements[1];
         itemEntry.UIDesc = elements[2];
-        if (elements[3] != null && elements[3]!="" && elements[3].Length>1)
+        itemEntry.isBook = Convert.ToBoolean(elements[3]);
+        if (elements[4] != null && elements[4]!="" && elements[4].Length>1)
         {
-            itemEntry.hoverText = elements[3];
+            itemEntry.hoverText = elements[4];
         }
         else
         {
             itemEntry.hoverText = $"press SPACE to pick up {itemEntry.name}";
         }
+
 
         return itemEntry;
     }

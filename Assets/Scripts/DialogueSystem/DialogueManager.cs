@@ -39,9 +39,12 @@ public class DialogueManager : MonoBehaviour
             {
 
                 //Debug.Log("SPACE");
-                if (lineNum >= lines.Length)
+                if (lineNum >= lines.Length && !isTyping)
                 {
+                    ClearText();
                     Cleanup();
+                    isShowing = false;
+                    Debug.Log("This is happening");
                 }
                 else if(!isTyping)
                 {
@@ -76,7 +79,7 @@ public class DialogueManager : MonoBehaviour
     public IEnumerator DisplayText (string current) 
     {
         
-        //Debug.Log("Display Text is happening");
+        Debug.Log("Display Text is happening");
         isTyping = true;
         lineNum++;
 
@@ -107,6 +110,7 @@ public class DialogueManager : MonoBehaviour
 
     public void FillText(string current)
     {
+        Debug.Log("FillText");
         isTyping = true;
         for (int i = 0; i < current.Length; i++)
         {

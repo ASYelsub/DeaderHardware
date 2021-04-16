@@ -6,8 +6,8 @@
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x7fd7642d1008 isAsync 0 updatePeriod 0.02
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 0000019B4EB68E08 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,31 +16,6 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SoundI::release                          : Aud_LibraryHushed (0000020A26614E18)
-[LOG] SoundI::release                          :     Aud_LibraryHushed (00000207C79FEA28)
-[LOG] SoundI::release                          :     Aud_LibraryHushed (0000020A4D25D808)
-[LOG] SoundI::release                          : Aud_Portal (0000020A266145A8)
-[LOG] SoundI::release                          :     Aud_Portal (0000020A46E18E88)
-[LOG] SoundI::release                          :     Aud_Portal (0000020A4D25E078)
-[LOG] SoundI::release                          : typewriter-1 (0000020A26614908)
-[LOG] SoundI::release                          :     typewriter-1 (0000020A46E18CE8)
-[LOG] SoundI::release                          :     typewriter-1 (00000209AD82D288)
-[LOG] SoundI::release                          : Susan-Voice (0000020A266143F8)
-[LOG] SoundI::release                          :     Susan-Voice (0000020A46E19028)
-[LOG] SoundI::release                          :     Susan-Voice (00000209AD82D438)
-[LOG] SoundI::release                          : Susan_-_Drums (00000209AEF775A8)
-[LOG] SoundI::release                          :     Susan_-_Drums (0000020A46E18B48)
-[LOG] SoundI::release                          :     Susan_-_Drums (00000209AD82D0D8)
-[LOG] SoundI::release                          :  (00000209C39B1C18)
-[LOG] SoundI::release                          :     WoodenDoorCreak1 (0000020988D06068)
-[LOG] SoundI::release                          :  (00000209C39B21D8)
-[LOG] SoundI::release                          :     WoodenDoorCreak2 (0000020988D06A28)
-[LOG] SoundI::release                          :  (00000209C39AF6B8)
-[LOG] SoundI::release                          :     WoodenDoorCreak4 (0000020988D06BC8)
-[LOG] SoundI::release                          :  (00000209C39B0C48)
-[LOG] SoundI::release                          :     Turn Page of Paper Back Book 02 (0000020988D07A68)
-[LOG] SoundI::release                          :  (00000209C39AF3D8)
-[LOG] SoundI::release                          :     Turn Page of Hard Cover Book 06 (0000020988D07C08)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

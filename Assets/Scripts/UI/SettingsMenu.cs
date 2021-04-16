@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -19,14 +20,13 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private Vector3 botPanelOffPos;
 
     [Header("Elements")]
-    [SerializeField] private GameObject[] volume;
+    [SerializeField] private GameObject[] volumeMusic;
+    [SerializeField] private GameObject[] volumeSFX;
     [SerializeField] private GameObject home;
     [SerializeField] private GameObject[] primaryCol;
     [SerializeField] private GameObject[] secondaryCol;
     [SerializeField] private GameObject[] quitButton;
-
-    [Header("Volume")]
-    private int vol;
+    [SerializeField] private GameObject homePanel;
 
     [Header("Raycast Stuff")]
     [SerializeField] private Camera cam;
@@ -39,6 +39,12 @@ public class SettingsMenu : MonoBehaviour
     private Theme[] themes;
     private bool themeTagMoving;
 
+    private int musicVol = 5;
+    private int SFXVol = 5;
+    bool homePrompt = false;
+
+
+    private InvMenu inv;
     [System.Serializable]
     private class Theme {
         public GameObject element;
@@ -60,9 +66,10 @@ public class SettingsMenu : MonoBehaviour
     }
 
     private void Start(){
+        homePanel.SetActive(false);
         topPanelTransform.localPosition = topPanelOffPos;
         bottomPanelTransform.localPosition = botPanelOffPos;
-
+        inv = FindObjectOfType<InvMenu>();
         //All of these should be read from
         //whatever save file we have
         //but for now i'm just initalizing like this.
@@ -75,7 +82,8 @@ public class SettingsMenu : MonoBehaviour
             }
         }
         SetTheme();
-        vol = 5;
+        SetMusicVolume(musicVol);
+        SetSFXVolume(SFXVol);
         settingsActive = false;
         menuIsMoving = false;
 
@@ -93,7 +101,7 @@ public class SettingsMenu : MonoBehaviour
                 {
                     TurnMenuOnOff(settingsActive);
                 }
-                if (settingsActive)
+                if (settingsActive && !inv.menuOn)
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
@@ -104,7 +112,7 @@ public class SettingsMenu : MonoBehaviour
                 }
             }
 
-            ShowRay();
+           // ShowRay();
         }
         
     }
@@ -216,6 +224,8 @@ public class SettingsMenu : MonoBehaviour
                 themes[i].themeTransform.localPosition = themes[i].offPos;
             }
         }
+        SetMusicVolume(musicVol);
+        SetSFXVolume(SFXVol);
     }
 
     void ShowRay()
@@ -241,57 +251,95 @@ public class SettingsMenu : MonoBehaviour
             globalHit = hit;
             ShowRay();
             isHitting = true;
-           
-            if (hit.collider.tag == "Quit")
-            {
-                Quit();
+            if (hit.collider.tag == "Theme")
+            {ChangeTheme(hit.collider.gameObject.GetComponent<SettingsButton>().themeInt);}
+            if(hit.collider.tag == "Music")
+            { SetMusicVolume(hit.collider.gameObject.GetComponent<SettingsButton>().soundInt); }
+            if(hit.collider.tag == "SFX")
+            { SetSFXVolume(hit.collider.gameObject.GetComponent<SettingsButton>().soundInt); }
+            if(hit.collider.tag == "Quit")
+            { if (homePrompt == false)
+                {
+                    EnableHomePrompt();
+                    print("Yo");
+                }
+                else if (homePrompt == true)
+                {
+                    DisableHomePrompt();
+                    
+                }
             }
-            if (hit.collider.tag == "T1")
-            {ChangeTheme(0);}
-            if (hit.collider.tag == "T2")
-            {ChangeTheme(1);}
-            if (hit.collider.tag == "T3")
-            {ChangeTheme(2);}
-            if (hit.collider.tag == "T4")
-            {ChangeTheme(3);}
-            if(hit.collider.tag == "V6")
-            {SetMusicVolume(4);}
-            if(hit.collider.tag == "V7")
-            {SetMusicVolume(5);}
-            if(hit.collider.tag == "V8")
-            {SetMusicVolume(6);}
-            if(hit.collider.tag == "V9")
-            {SetMusicVolume(7);}
-            if(hit.collider.tag == "V10")
-            {SetMusicVolume(8);}
-            if(hit.collider.tag == "V11")
-            {SetMusicVolume(9);}
-            if(hit.collider.tag == "V10")
-            {SetMusicVolume(10);}
-            if(hit.collider.tag == "V11")
-            {SetMusicVolume(11);}
-            if (hit.collider.tag == "V12")
-            {SetSFXVolume(12);}
-            if (hit.collider.tag == "V12")
-            {SetMusicVolume(13);}
-            if (hit.collider.tag == "V13")
-            {SetMusicVolume(9);}
+            if (hit.collider.tag == "Y")
+            { if (homePrompt == true) { Quit(); } }
+            if(hit.collider.tag == "N")
+            {
+                if (homePrompt == true) {
+                    DisableHomePrompt();
+                    
+                }
+            }
+
         }
+    }
+
+    private void EnableHomePrompt()
+    {
+        homePrompt = true;
+        homePanel.SetActive(true);
+    }
+    private void DisableHomePrompt()
+    {
+        homePrompt = false;
+        homePanel.SetActive(false);
     }
     private void Quit()
     {
         Debug.Log("quit");
-        //Application.Quit();
+        SceneManager.LoadScene("MainMenu");
        
     }
 
-    void SetMusicVolume(int i)
+    void SetMusicVolume(int f)
+    {
+        musicVol = f;
+        for (int i = 0; i < volumeMusic.Length; i++)
+        {
+            if(f == i)
+            {
+                volumeMusic[i].GetComponent<MeshRenderer>().material = currentTheme.secondaryMat;
+            }
+            else
+            {
+                volumeMusic[i].GetComponent<MeshRenderer>().material = currentTheme.primaryMat;
+            }
+        }
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Music Slider", Mathf.Clamp(f * .1f,0,1));
+    }
+    void SetSFXVolume(int f)
+    {
+        SFXVol = f;
+        for (int i = 0; i < volumeMusic.Length; i++)
+        {
+            if (f == i)
+            {
+                volumeSFX[i].GetComponent<MeshRenderer>().material = currentTheme.secondaryMat;
+            }
+            else
+            {
+                volumeSFX[i].GetComponent<MeshRenderer>().material = currentTheme.primaryMat;
+            }
+        }
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("SFX Slider", Mathf.Clamp(f * .1f, 0, 1));
+    }
+
+
+    public void SetSoundActive(int i)
     {
 
     }
-    void SetSFXVolume(int i)
+
+    public void SetSoundInactive(int i)
     {
 
     }
-
 }
