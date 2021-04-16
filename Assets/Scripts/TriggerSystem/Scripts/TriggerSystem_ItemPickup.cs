@@ -31,6 +31,7 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractabl
             GameManager.invM.AddItem(myItem.ID);
             bookModel.GetComponent<MeshRenderer>().enabled = false;
             pickedUp = true;
+            Debug.Log("Item picked up.");
         }
     }
 
@@ -41,7 +42,7 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractabl
 
         _itemPopup = myItem.hoverText;
       //  ServicesLocator.DialogueManager.SplitFile(file);
-        Debug.Log("ExecuteTriggerFunction");
+        
     }
 
     void ITriggerable.ExecuteLeaveTriggerFunction()

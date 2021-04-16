@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: CyberpunkWaifusONSCREEN_HUB
   m_EditorClassIdentifier: 
-  hashCode: -2060900803
+  hashCode: -1519836611
   material: {fileID: 2555012135579867877}
-  materialHashCode: -820418819
+  materialHashCode: -1832787203
   m_Version: 1.1.0
   m_SourceFontFileGUID: 7a280b64246529042be18b7911072d29
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 7a280b64246529042be18b7911072d29, type: 3}
