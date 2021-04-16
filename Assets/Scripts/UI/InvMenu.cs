@@ -597,6 +597,7 @@ public class InvMenu : MonoBehaviour
     }
     void DisplayActive()
     {
+        print("activeItemInt " + activeItemInt);
         if (activeItemInt < 0)
         {
             return;

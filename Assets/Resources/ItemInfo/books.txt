@@ -233,3 +233,7 @@ true
 Note
 This is a guide to poetic devices!
 false
+~
+Mysterious Key
+It must open something...
+false
