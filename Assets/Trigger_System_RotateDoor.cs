@@ -29,7 +29,7 @@ public class Trigger_System_RotateDoor : MonoBehaviour, ITriggerable
             rotateAmount++;
             
             if (spinDir) pivot.transform.Rotate(0, 1, 0);
-            else pivot.transform.Rotate(0, 1, 0);
+            else pivot.transform.Rotate(0, -1, 0);
 
             if (rotateAmount > 90) opened = true;
         }

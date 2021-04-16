@@ -13129,7 +13129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneToLoad: 3
-  interactable: 1
 --- !u!108 &1125561870
 Light:
   m_ObjectHideFlags: 0
@@ -13983,7 +13982,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneToLoad: 2
-  interactable: 1
 --- !u!108 &1217277568
 Light:
   m_ObjectHideFlags: 0
@@ -20417,7 +20415,7 @@ MonoBehaviour:
   deccel: 10
   grav: 20
   grounded: 0
-  rotationSpeed: 90
+  rotationSpeed: 125
   playerHeight: 1
   rampSnapThreshold: 0.1
   lastGroundedPos: {x: 0, y: 0, z: 0}
