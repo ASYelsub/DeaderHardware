@@ -49,7 +49,7 @@ namespace RealtimeCSG
 		#region ValidateDropPoint
 		public bool ValidateDropPoint(SceneView sceneView)
 		{
-            var camera = sceneView.camera;
+            var camera = SceneView.lastActiveSceneView.camera;
 
 			GameObject foundObject;
 			if (!SceneQueryUtility.FindClickWorldIntersection(camera, Event.current.mousePosition, out foundObject))

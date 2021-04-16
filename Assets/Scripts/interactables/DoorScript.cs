@@ -31,4 +31,9 @@ public class DoorScript : SceneChangeManager,ITriggerable,IInteractable
             ChangeScene(SceneToLoad);
         }
     }
+
+    public void ExecuteLeaveTriggerFunction()
+    {
+        throw new System.NotImplementedException();
+    }
 }

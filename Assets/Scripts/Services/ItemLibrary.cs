@@ -45,8 +45,6 @@ public class ItemLibrary
        // itemEntry.UIModel = null;
 
         return itemEntry;
-
-
     }
 
 }
