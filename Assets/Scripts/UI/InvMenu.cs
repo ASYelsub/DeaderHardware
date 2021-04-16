@@ -306,11 +306,12 @@ public class InvMenu : MonoBehaviour
             bool isCopy = false;
 
             //for test
-             ID = AddTest(ID);
+          //   ID = AddTest(ID);
             //for actual game
-            //isCopy = AddGame(ID);
+            isCopy = AddGame(ID);
             if (!isCopy)
             {
+                Debug.Log("InvMenu AddItem");
                 //check if the amount of items is less than the amount of items in the itemLibrary
                 if (itemCounter < ServicesLocator.ItemLibrary.ItemList.Count)
                 {
@@ -459,6 +460,11 @@ public class InvMenu : MonoBehaviour
                 DisplayActive();
             }
             isStep = false;
+            if(activeItemInt < 0)
+            {
+                activeItemInt = 0;
+            }
+            DisplayActive();
             return toReturn;
         }
     //    Debug.Log("this2");
@@ -590,7 +596,10 @@ public class InvMenu : MonoBehaviour
     }
     void DisplayActive()
     {
-        if (itemTags.Count == 0) return;
+        if (activeItemInt < 0)
+        {
+            return;
+        }
 
 
         //if is a book, display the book UI
