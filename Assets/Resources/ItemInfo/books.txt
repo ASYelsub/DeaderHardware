@@ -229,3 +229,7 @@ true
 Midnight
 YA & narrator describes own breath
 true
+~
+Note
+This is a guide to poetic devices!
+false

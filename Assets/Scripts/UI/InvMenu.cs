@@ -29,12 +29,12 @@ public class InvMenu : MonoBehaviour
 
     [SerializeField]
     private GameObject tagPrefab;
-    [SerializeField]
+  /*  [SerializeField]
     private GameObject scroller;
     [SerializeField]
     private GameObject scrollPointPrefab;
     [SerializeField]
-    private GameObject scrollPointParent;
+    private GameObject scrollPointParent;*/
     [Header("Right Panel")]
     [SerializeField]
     private GameObject rightDescNormItem;
@@ -49,7 +49,8 @@ public class InvMenu : MonoBehaviour
     private GameObject bookModel;
     [SerializeField]
     private List<Material> bookModelMaterials;
-
+    [SerializeField]
+    private List<GameObject> normItemObjects;
 
     [SerializeField]
     Material activeTextMat;
@@ -79,8 +80,8 @@ public class InvMenu : MonoBehaviour
     //amount of items that have been picked up
     static int itemCounter = 0;
 
-    private List<ScrollPoint> scrollPoints;
-    public class ScrollPoint{
+   // private List<ScrollPoint> scrollPoints;
+    /*public class ScrollPoint{
         [HideInInspector] public Vector3 pos;
         [HideInInspector] public GameObject visual;
         public ScrollPoint(GameObject parent, GameObject prefab){
@@ -91,7 +92,7 @@ public class InvMenu : MonoBehaviour
             this.pos += pos;
             this.visual.GetComponent<Transform>().localPosition = this.pos;
         }
-    }
+    }*/
 
     public class ItemTag
     {
@@ -182,12 +183,12 @@ public class InvMenu : MonoBehaviour
 
     
     public void Start(){
-        scrollPoints = new List<ScrollPoint>();
+    /*    scrollPoints = new List<ScrollPoint>();
         for (int i = 0; i < scrollCount; i++)
         {
             scrollPoints.Add(new ScrollPoint(scrollPointParent,scrollPointPrefab));
             scrollPoints[i].AddPos(new Vector3(0, 0, i * scrollSpacer));
-        }
+        }*/
         
         //create the tags with no items in them
         for (int i = 0; i < visItem; i++)
@@ -610,14 +611,29 @@ public class InvMenu : MonoBehaviour
             rightDescBook.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
             bookModel.SetActive(true);
             bookModel.GetComponent<MeshRenderer>().material = bookModelMaterials[itemTags[activeItemInt].ID];
+            foreach (GameObject item in normItemObjects)
+            {
+                item.SetActive(false);
+            }
         }
         else
         {
             panelDescBook.SetActive(false);
-            panelDescNormItem.SetActive(true);
             rightDescNormItem.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
             bookModel.SetActive(false);
-            
+            panelDescNormItem.SetActive(true);
+            for (int i = bookModelMaterials.Count; i < bookModelMaterials.Count + normItemObjects.Count; i++)
+            {
+                if(i == itemTags[activeItemInt].ID)
+                {
+                    normItemObjects[i - bookModelMaterials.Count].SetActive(true);
+                }
+                else
+                {
+                    normItemObjects[i - bookModelMaterials.Count].SetActive(false);
+                }
+            }
+
         }
 
         for (int i = 0; i < itemTags.Count; i++)
@@ -637,7 +653,7 @@ public class InvMenu : MonoBehaviour
         }
     }
     
-    void CycleScroller(bool increase){
+    /*void CycleScroller(bool increase){
         if (increase){
             if (scrollSpot < scrollCount - 1){
                 scrollSpot++;
@@ -653,7 +669,7 @@ public class InvMenu : MonoBehaviour
                 
         }
         scroller.transform.localPosition = scrollPoints[scrollSpot].pos;
-    }
+    }*/
 
     private void ToggleMenu()
     {

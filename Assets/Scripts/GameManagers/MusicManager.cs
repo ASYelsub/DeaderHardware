@@ -5,11 +5,14 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     public AudioSource AS;
-
-    public void Initialize()
+    private void Start()
     {
+
         AS = GetComponent<AudioSource>();
         initializeTracks();
+    }
+    public void Initialize()
+    {
         //DeleteOtherManager();
     }
 

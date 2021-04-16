@@ -26,7 +26,7 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractabl
         {
             Item myItem = ServicesLocator.ItemLibrary.ItemList[itemId];
 
-            _itemPopup = myItem.hoverText;
+            //_itemPopup = myItem.hoverText;
 
             GameManager.invM.AddItem(myItem.ID);
             bookModel.GetComponent<MeshRenderer>().enabled = false;
@@ -38,9 +38,9 @@ public class TriggerSystem_ItemPickup : MonoBehaviour, ITriggerable,IInteractabl
     // Executes when you get near the object 
     public void ExecuteTriggerFunction() {
 
-        Item myItem = ServicesLocator.ItemLibrary.ItemList[itemId];
+//        Item myItem = ServicesLocator.ItemLibrary.ItemList[itemId];
 
-        _itemPopup = myItem.hoverText;
+  //      _itemPopup = myItem.hoverText;
       //  ServicesLocator.DialogueManager.SplitFile(file);
         
     }
