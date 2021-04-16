@@ -622,15 +622,17 @@ public class InvMenu : MonoBehaviour
             rightDescNormItem.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
             bookModel.SetActive(false);
             panelDescNormItem.SetActive(true);
-            for (int i = bookModelMaterials.Count; i < bookModelMaterials.Count + normItemObjects.Count; i++)
+            for (int i = 0; i < normItemObjects.Count; i++)
             {
-                if(i == itemTags[activeItemInt].ID)
+                print("i is " + (i + bookModelMaterials.Count - 1));
+                if(i + bookModelMaterials.Count - 1 == itemTags[activeItemInt].ID)
                 {
-                    normItemObjects[i - bookModelMaterials.Count].SetActive(true);
+                    normItemObjects[i].SetActive(true);
+                    Debug.Log("This is happening.");
                 }
                 else
                 {
-                    normItemObjects[i - bookModelMaterials.Count].SetActive(false);
+                    normItemObjects[i].SetActive(false);
                 }
             }
 
@@ -638,7 +640,7 @@ public class InvMenu : MonoBehaviour
 
         for (int i = 0; i < itemTags.Count; i++)
         {
-            print(activeItemInt);
+          //  print(activeItemInt);
             if (i == activeItemInt)
             {
                 itemTags[i].SetActive();
@@ -673,6 +675,7 @@ public class InvMenu : MonoBehaviour
 
     private void ToggleMenu()
     {
+        DisplayActive();
         menuOn = !menuOn;
         menuObject.SetActive(menuOn);
     }
