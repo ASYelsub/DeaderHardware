@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 public class GameManager : MonoBehaviour
 {
-    public TextAsset ItemDictionary;
+    //public TextAsset ItemDictionary;
     [HideInInspector]
     public static InvMenu invM;
     public static SettingsMenu settingsM;
