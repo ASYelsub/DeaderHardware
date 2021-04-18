@@ -17,6 +17,10 @@ public class MainMenuManager : MonoBehaviour
 
     [Header("Main Menu Variables")]
     [SerializeField] GameObject MenuHolder;
+    [SerializeField] TextMeshPro pressAny;
+    Color openColor;
+    bool opening;
+    float loadingFloat;
     int loadingInt;
 
     [SerializeField] Rotate CERotateScript;
@@ -31,6 +35,8 @@ public class MainMenuManager : MonoBehaviour
     {
         opPos = GameCamera.position; //So the camera knows where to return to on escape
         ChangeActiveOption(true); //To set the active option to play
+        openColor = pressAny.color;
+        pressAny.color = Color.clear;
     }
 
     void Update()
@@ -68,6 +74,14 @@ public class MainMenuManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(pressAny.color != openColor && loadingFloat < 1)
+        {
+            loadingFloat += 0.0025f;
+            {
+                pressAny.color = Color.Lerp(Color.clear, openColor, loadingFloat);
+            }
+        }
+
         if(menuState)
         {
             //Moves Camera Up
