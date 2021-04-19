@@ -2745,6 +2745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 6882340311924592110, guid: 4f5216cbd7e365d468dfe2073f1e538a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6882340312382847828, guid: 4f5216cbd7e365d468dfe2073f1e538a, type: 3}
       propertyPath: m_text
       value: 
