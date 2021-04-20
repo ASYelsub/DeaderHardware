@@ -229,7 +229,6 @@ public class InvMenu : MonoBehaviour
     //?
     public void DoInvMenu()
     {
-        Debug.Log("this was called");
         DisplayActive();
     }
 
