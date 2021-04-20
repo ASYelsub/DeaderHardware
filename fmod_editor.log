@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001EBBE162978 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000021A25000878 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,49 +16,6 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001EB22171C58
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001EB22171C58
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001EB22174688
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001EB22174688
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001EB22174D48
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001EB22174D48
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001EB22173AB8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001EB22173AB8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001EB22175C78
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001EB22175C78
-[LOG] SoundI::release                          :  (000001EB36F893C8)
-[LOG] SoundI::release                          :     BranchesBreaking (000001EAFFEADFB8)
-[LOG] SoundI::release                          : sci-fi-ambience-surround-static-low-scraping-RS (000001EB22175AC8)
-[LOG] SoundI::release                          :     sci-fi-ambience-surround-static-low-scraping-RS (000001EB215E0208)
-[LOG] SoundI::release                          :     sci-fi-ambience-surround-static-low-scraping-RS (000001EB22175C78)
-[LOG] SoundI::release                          : Wind,Ext,Alley,Urban,Howl,Pronounced,Metal,Clinking (000001EB221735A8)
-[LOG] SoundI::release                          :     Wind,Ext,Alley,Urban,Howl,Pronounced,Metal,Clinking (000001EB215E0068)
-[LOG] SoundI::release                          :     Wind,Ext,Alley,Urban,Howl,Pronounced,Metal,Clinking (000001EB22174D48)
-[LOG] SoundI::release                          : Whirlwind (000001EB22172168)
-[LOG] SoundI::release                          :     Whirlwind (000001EB215E1DA8)
-[LOG] SoundI::release                          :     Whirlwind (000001EB22173AB8)
-[LOG] SoundI::release                          : Aud_Portal (000001EB22173248)
-[LOG] SoundI::release                          :     Aud_Portal (000001EAFFEAC418)
-[LOG] SoundI::release                          :     Aud_Portal (000001EB22172318)
-[LOG] SoundI::release                          : Aud_Portal (000001EB22171598)
-[LOG] SoundI::release                          :     Aud_Portal (000001EAFFEAC5B8)
-[LOG] SoundI::release                          :     Aud_Portal (000001EB22174178)
-[LOG] SoundI::release                          : Aud_ConsoleEntitiy (000001EB22171AA8)
-[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (000001EB215E1728)
-[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (000001EB22171C58)
-[LOG] SoundI::release                          : Centrifugal V4 (000001EB221718F8)
-[LOG] SoundI::release                          :     Centrifugal V4 (000001EAFFEACC38)
-[LOG] SoundI::release                          :     Centrifugal V4 (000001EB22174688)
-[LOG] SoundI::release                          :  (000001EB36F8A508)
-[LOG] SoundI::release                          :     BranchesImpact1 (000001EAFFEAC758)
-[LOG] SoundI::release                          :  (000001EB36F8C618)
-[LOG] SoundI::release                          :     BranchesBreaking2 (000001EAFFEAC8F8)
-[LOG] SoundI::release                          :  (000001EB36F89818)
-[LOG] SoundI::release                          :     Aud_ConsoleEntitiy_3 (000001EAFFEAD5F8)
-[LOG] SoundI::release                          :  (000001EB36F8D028)
-[LOG] SoundI::release                          :     Aud_ConsoleEntitiy_1 (000001EAFFEACA98)
-[LOG] SoundI::release                          :  (000001EB36F896A8)
-[LOG] SoundI::release                          :     Aud_ConsoleEntitiy_2 (000001EAFFEAD798)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
