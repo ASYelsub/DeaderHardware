@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
         ServicesLocator.DialogueManager = diaMan;
         ServicesLocator.PlayerInteractor = FindObjectOfType<PlayerInteractor>();
-        invM.DoInvMenu();
+       // invM.DoInvMenu();
           
         ServicesLocator.Initialization();
         // ServicesLocator.ItemLibrary.Initialize(ItemDictionary.text);

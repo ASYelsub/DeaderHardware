@@ -342,7 +342,7 @@ public class InvMenu : MonoBehaviour
                 }
             }
 
-            DisplayActive();
+           // DisplayActive();
             isStep = false;
         }
         
@@ -597,6 +597,7 @@ public class InvMenu : MonoBehaviour
     }
     void DisplayActive()
     {
+        print("activeItemInt " + activeItemInt);
         if (activeItemInt < 0)
         {
             return;
@@ -622,20 +623,21 @@ public class InvMenu : MonoBehaviour
             rightDescNormItem.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
             bookModel.SetActive(false);
             panelDescNormItem.SetActive(true);
+           
             for (int i = 0; i < normItemObjects.Count; i++)
             {
-                print("i is " + (i + bookModelMaterials.Count - 1));
-                if(i + bookModelMaterials.Count - 1 == itemTags[activeItemInt].ID)
+                print(itemTags[activeItemInt].ID);
+                print(i + bookModelMaterials.Count - 1);
+                if(itemTags[activeItemInt].ID == i + bookModelMaterials.Count - 1)
                 {
+                    print("Hello");
                     normItemObjects[i].SetActive(true);
-                    Debug.Log("This is happening.");
                 }
                 else
                 {
                     normItemObjects[i].SetActive(false);
                 }
             }
-
         }
 
         for (int i = 0; i < itemTags.Count; i++)
