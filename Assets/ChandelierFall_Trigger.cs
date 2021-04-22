@@ -42,11 +42,15 @@ public class ChandelierFall_Trigger : MonoBehaviour, ITriggerable
         float timer = 0;
         while(timer < 1)
         {
-            
             timer = timer + .01f;
             yield return null;
         }
         //PlayOneShot ChandelierCrash
+        while (timer < 1.5 && timer >= 1)
+        {
+            timer = timer + .01f;
+            yield return null;
+        }       
         //Scenemanager.loadScene(End)
         yield return null;
     }
