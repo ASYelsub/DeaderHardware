@@ -7,6 +7,8 @@ using TMPro;
 //make it so:
 //last part of removing code
 //scroll bar
+//display model???
+//tags dont appear if you add more items when on page after initial items
 public class InvMenu : MonoBehaviour
 {
     bool isStep = false;
@@ -29,33 +31,17 @@ public class InvMenu : MonoBehaviour
 
     [SerializeField]
     private GameObject tagPrefab;
-  /*  [SerializeField]
+    [SerializeField]
     private GameObject scroller;
     [SerializeField]
     private GameObject scrollPointPrefab;
     [SerializeField]
-    private GameObject scrollPointParent;*/
+    private GameObject scrollPointParent;
     [Header("Right Panel")]
     [SerializeField]
-    private GameObject rightDescNormItem;
-    [SerializeField]
-    private GameObject rightDescBook;
-    private GameObject activeModel;
-    [SerializeField]
-    private GameObject panelDescBook;
-    [SerializeField]
-    private GameObject panelDescNormItem;
-    [SerializeField]
-    private GameObject bookModel;
-    [SerializeField]
-    private List<Material> bookModelMaterials;
-    [SerializeField]
-    private List<GameObject> normItemObjects;
+    private GameObject rightDesc;
+    private GameObject rightModel;
 
-    [SerializeField]
-    Material activeTextMat;
-    [SerializeField]
-    Material inactiveTextMat;
     static int bookCounter = 0;
 
 
@@ -80,8 +66,8 @@ public class InvMenu : MonoBehaviour
     //amount of items that have been picked up
     static int itemCounter = 0;
 
-   // private List<ScrollPoint> scrollPoints;
-    /*public class ScrollPoint{
+    private List<ScrollPoint> scrollPoints;
+    public class ScrollPoint{
         [HideInInspector] public Vector3 pos;
         [HideInInspector] public GameObject visual;
         public ScrollPoint(GameObject parent, GameObject prefab){
@@ -92,7 +78,7 @@ public class InvMenu : MonoBehaviour
             this.pos += pos;
             this.visual.GetComponent<Transform>().localPosition = this.pos;
         }
-    }*/
+    }
 
     public class ItemTag
     {
@@ -106,15 +92,10 @@ public class InvMenu : MonoBehaviour
         public Item tagItem;
         [HideInInspector]
         public int ID;
-        [HideInInspector]public bool isBook;
 
-        private Material activeTextMat;
-        private Material inactiveTextMat;
-        private Material activeMat;
-        private Material inactiveMat;
 
         //For when created without an item, empty, to take up space
-        public ItemTag(GameObject tagPrefab, GameObject tagParent, Material activeTextMat, Material inactiveTextMat, Material activeMat, Material inactiveMat)
+        public ItemTag(GameObject tagPrefab, GameObject tagParent)
         {
             tagPos = new Vector3(0, 0, 0);
             visual = Instantiate(tagPrefab, tagParent.transform, false);
@@ -123,10 +104,6 @@ public class InvMenu : MonoBehaviour
             visual.SetActive(false);
             isEmpty = true;
             ID = 500; //correlates w duplicates
-            this.activeMat = activeMat;
-            this.inactiveMat = inactiveMat;
-            this.activeTextMat = activeTextMat;
-            this.inactiveTextMat = inactiveTextMat;
         }
         public void SetItem(string name)
         {
@@ -152,7 +129,6 @@ public class InvMenu : MonoBehaviour
             this.tagText.text = ServicesLocator.ItemLibrary.ItemList[ID].name;
             this.tagDesc = ServicesLocator.ItemLibrary.ItemList[ID].UIDesc;
             this.ID = ID;
-            this.isBook = ServicesLocator.ItemLibrary.ItemList[ID].isBook;
         }
         public void ClearTag()
         {
@@ -167,99 +143,84 @@ public class InvMenu : MonoBehaviour
             visual.SetActive(false);
         }
 
-
-        public void SetActive()
-        {
-            this.tagText.fontMaterial = activeTextMat;
-            this.visual.GetComponent<MeshRenderer>().material = activeMat;
-        }
-
-        public void SetInactive()
-        {
-            this.tagText.fontMaterial = inactiveTextMat;
-            this.visual.GetComponent<MeshRenderer>().material = inactiveMat;
-        }
     }
 
-    
+    public class Book
+    {
+
+    }
+
     public void Start(){
-    /*    scrollPoints = new List<ScrollPoint>();
+        scrollPoints = new List<ScrollPoint>();
         for (int i = 0; i < scrollCount; i++)
         {
             scrollPoints.Add(new ScrollPoint(scrollPointParent,scrollPointPrefab));
             scrollPoints[i].AddPos(new Vector3(0, 0, i * scrollSpacer));
-        }*/
+        }
         
         //create the tags with no items in them
         for (int i = 0; i < visItem; i++)
         {
-            itemTags.Add(new ItemTag(tagPrefab, tagParent,activeTextMat,inactiveTextMat,activeMat,inactiveMat));
+            itemTags.Add(new ItemTag(tagPrefab, tagParent));
             itemTags[i].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
             itemTags[i].AddPos(new Vector3(0, 0, i * tagSpacer));
             itemTags[i].visual.SetActive(true);
         }
         menuOn = false;
         menuObject.SetActive(menuOn);
-        panelDescBook.SetActive(false);
-        panelDescNormItem.SetActive(true);
     }
 
     private void Update()
     {
-        if (!ServicesLocator.GameManager.diaMan.isShowing)
+       
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (Input.GetKeyDown(KeyCode.Tab))
+            ToggleMenu();
+        }
+        if (menuOn)
+        {
+           
+            //if (Input.GetKeyDown(KeyCode.F))
+            //{
+            //    AddItem(itemCounter);
+            //}
+
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
-                ToggleMenu();
+                CycleActive(true);
             }
-            if (menuOn)
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
+                CycleActive(false);
+            }
 
-                /*if (Input.GetKeyDown(KeyCode.F))
-                {
-                    AddItem(itemCounter);
-                }*/
+            //This removes an item from the inventory.
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                //This function needs to be changed to a currently nonexistant "CheckItem(activeItemInt)" function.
+                //                RemoveItem(activeItemInt);
+                Debug.Log("Space");
+                Debug.Log(activeItemInt);
+                CheckItem(activeItemInt);
+                
+                //bool corresponds = CheckItem(activeItemint);
 
-                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-                {
-                    CycleActive(true);
-                }
-                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
-                {
-                    CycleActive(false);
-                }
-
-                //This removes an item from the inventory.
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    //This function needs to be changed to a currently nonexistant "CheckItem(activeItemInt)" function.
-                    //                RemoveItem(activeItemInt);
-                    Debug.Log("Space");
-                    Debug.Log(activeItemInt);
-                    CheckItem(activeItemInt);
-                    ToggleMenu();
-                    //bool corresponds = CheckItem(activeItemint);
-
-                    //if(corresponds == true){
-                    //this.ToggleMenu();
-                    // int l = 0;
-                    //for(i=0; i<activeItemInt; i++){
-                    //}
-                    //dialoguemanager.splitfile()}
-                    //RemoveItem(activeItemInt);
-                }
+                //if(corresponds == true){
+                //this.ToggleMenu();
+                // int l = 0;
+                //for(i=0; i<activeItemInt; i++){
+                //}
+                //dialoguemanager.splitfile()}
+                //RemoveItem(activeItemInt);
             }
         }
-       
-       
-        
     }
 
     public void CheckItem(int activeItemId) {
 
-        //Debug.Log("yeet");
+        Debug.Log("yeet");
         int id = itemTags[activeItemInt].ID;
-        //Debug.Log("Parsing: " + id);
+        Debug.Log("Parsing: " + id);
 
         ServicesLocator.PlayerInteractor.queryItemInteraction(id);
         
@@ -268,7 +229,6 @@ public class InvMenu : MonoBehaviour
     //?
     public void DoInvMenu()
     {
-       // Debug.Log("this was called");
         DisplayActive();
     }
 
@@ -307,12 +267,11 @@ public class InvMenu : MonoBehaviour
             bool isCopy = false;
 
             //for test
-          //   ID = AddTest(ID);
+            ID = AddTest(ID);
             //for actual game
-            isCopy = AddGame(ID);
+           // isCopy = (AddGame(ID));
             if (!isCopy)
             {
-                Debug.Log("InvMenu AddItem");
                 //check if the amount of items is less than the amount of items in the itemLibrary
                 if (itemCounter < ServicesLocator.ItemLibrary.ItemList.Count)
                 {
@@ -324,7 +283,7 @@ public class InvMenu : MonoBehaviour
                     }
                     else
                     { //if it's more, create a new tag and assign the new item. 
-                        itemTags.Add(new ItemTag(tagPrefab, tagParent, activeTextMat,inactiveTextMat,activeMat,inactiveMat));
+                        itemTags.Add(new ItemTag(tagPrefab, tagParent));
                         itemTags[itemCounter].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
                         if (topTrack != 0) //if we've scrolled down
                         { //Debug.Log(7); 
@@ -342,7 +301,7 @@ public class InvMenu : MonoBehaviour
                 }
             }
 
-           // DisplayActive();
+            DisplayActive();
             isStep = false;
         }
         
@@ -444,7 +403,7 @@ public class InvMenu : MonoBehaviour
                         }
                     }
                     itemTags.RemoveAt(index);
-                    itemTags.Add(new ItemTag(tagPrefab, tagParent,activeTextMat,inactiveTextMat,activeMat,inactiveMat));
+                    itemTags.Add(new ItemTag(tagPrefab, tagParent));
                     itemTags[itemTags.Count - 1].SetPos(new Vector3(2.4f, 0.001f, -4.153f));
                     itemTags[itemTags.Count - 1].AddPos(new Vector3(0, 0, tagSpacer * itemTags.Count - 1));
                     itemTags[itemTags.Count - 1].visual.SetActive(true);
@@ -456,22 +415,22 @@ public class InvMenu : MonoBehaviour
 
                 if (itemCounter == 0)
                 {
-                    rightDescNormItem.GetComponent<TextMeshPro>().text = "";
+                    rightDesc.GetComponent<TextMeshPro>().text = "";
                 }
                 DisplayActive();
             }
             isStep = false;
-            if(activeItemInt < 0)
-            {
-                activeItemInt = 0;
-            }
-            DisplayActive();
+            
             return toReturn;
         }
-    //    Debug.Log("this2");
+        Debug.Log("this2");
         return 500;
     }
     
+    public void SetBook(int ID)
+    {
+
+    }
 
     //Display related
     void CycleActive(bool increase)
@@ -597,67 +556,19 @@ public class InvMenu : MonoBehaviour
     }
     void DisplayActive()
     {
-        print("activeItemInt " + activeItemInt);
-        if (activeItemInt < 0)
-        {
-            return;
-        }
-
-
-        //if is a book, display the book UI
-        if (itemTags[activeItemInt].isBook)
-        {
-            panelDescNormItem.SetActive(false);
-            panelDescBook.SetActive(true);
-            rightDescBook.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
-            bookModel.SetActive(true);
-            bookModel.GetComponent<MeshRenderer>().material = bookModelMaterials[itemTags[activeItemInt].ID];
-            foreach (GameObject item in normItemObjects)
-            {
-                item.SetActive(false);
-            }
-        }
-        else
-        {
-            panelDescBook.SetActive(false);
-            rightDescNormItem.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
-            bookModel.SetActive(false);
-            panelDescNormItem.SetActive(true);
-           
-            for (int i = 0; i < normItemObjects.Count; i++)
-            {
-                print(itemTags[activeItemInt].ID);
-                print(i + bookModelMaterials.Count - 1);
-                if(itemTags[activeItemInt].ID == i + bookModelMaterials.Count - 1)
-                {
-                    print("Hello");
-                    normItemObjects[i].SetActive(true);
-                }
-                else
-                {
-                    normItemObjects[i].SetActive(false);
-                }
-            }
-        }
-
+        if (itemTags.Count == 0) return;
+        rightDesc.GetComponent<TextMeshPro>().text=itemTags[activeItemInt].tagDesc;
         for (int i = 0; i < itemTags.Count; i++)
         {
-          //  print(activeItemInt);
             if (i == activeItemInt)
-            {
-                itemTags[i].SetActive();
-
-            }
+                itemTags[i].visual.GetComponent<MeshRenderer>().material = activeMat;
             else
-            {
-                itemTags[i].SetInactive();
-
-            }
+                itemTags[i].visual.GetComponent<MeshRenderer>().material = inactiveMat;
 
         }
     }
     
-    /*void CycleScroller(bool increase){
+    void CycleScroller(bool increase){
         if (increase){
             if (scrollSpot < scrollCount - 1){
                 scrollSpot++;
@@ -673,11 +584,10 @@ public class InvMenu : MonoBehaviour
                 
         }
         scroller.transform.localPosition = scrollPoints[scrollSpot].pos;
-    }*/
+    }
 
     private void ToggleMenu()
     {
-        DisplayActive();
         menuOn = !menuOn;
         menuObject.SetActive(menuOn);
     }

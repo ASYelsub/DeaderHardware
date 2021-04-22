@@ -1,66 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8901000762061887117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SFX Slider
-  m_EditorClassIdentifier: 
-  Name: SFX Slider
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 3622919467
-    data2: 185449052
-  Exists: 0
---- !u!114 &-8661338027693467619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Slider
-  m_EditorClassIdentifier: 
-  Name: Music Slider
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 1712288478
-    data2: 1321706971
-  Exists: 0
---- !u!114 &-6690346920337935895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SFX Slider
-  m_EditorClassIdentifier: 
-  Name: SFX Slider
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 3622919467
-    data2: 185449052
-  Exists: 0
---- !u!114 &-5348920555239156310
+--- !u!114 &-7672247642426974207
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,7 +20,7 @@ MonoBehaviour:
     data1: 1985215825
     data2: 1795238556
   Exists: 0
---- !u!114 &-5011224989488668420
+--- !u!114 &-6982307985729173892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,40 +30,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Slider
+  m_Name: parameter:/LibRange
   m_EditorClassIdentifier: 
-  Name: Music Slider
+  Name: LibRange
   Min: 0
-  Max: 1
-  Default: 1
+  Max: 50
+  Default: 0
   ID:
-    data1: 1712288478
-    data2: 1321706971
+    data1: 1985215825
+    data2: 1795238556
   Exists: 0
---- !u!114 &-4138266809928281834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/LibraryAmbience
-  m_EditorClassIdentifier: 
-  Path: event:/LibraryAmbience
-  guid: 9d6d6966155d8d4eb05aea1acff489e5
-  Banks:
-  - {fileID: -3831341634766095280}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 46500
---- !u!114 &-4094941582622104420
+--- !u!114 &-6962615626929007062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,262 +50,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SFX Slider
+  m_Name: parameter:/Librarain Range
   m_EditorClassIdentifier: 
-  Name: SFX Slider
+  Name: Librarain Range
   Min: 0
-  Max: 1
-  Default: 1
+  Max: 50
+  Default: 0
   ID:
-    data1: 3622919467
-    data2: 185449052
-  Exists: 0
---- !u!114 &-4039418684808006740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/ConsoleEntity
-  m_EditorClassIdentifier: 
-  Path: event:/ConsoleEntity
-  guid: 6eceef8d4bf2c64bbf789884d7941f45
-  Banks:
-  - {fileID: -3207874133628744678}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0.7
-  MaxDistance: 25
-  Length: 21236
---- !u!114 &-3909274663475223760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Portal
-  m_EditorClassIdentifier: 
-  Path: event:/Portal
-  guid: 88341cd86ef3ac40926ca971050bf90a
-  Banks:
-  - {fileID: 656153253155419798}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 4.2000003
-  MaxDistance: 8.400001
-  Length: 14783
---- !u!114 &-3831341634766095280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Library.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Library.bank
-  Name: Library
-  StudioPath: bank:/Library
-  lastModified: 637540987141418008
-  LoadResult: 0
-  FileSizes: []
+    data1: 1985215825
+    data2: 1795238556
   Exists: 1
---- !u!114 &-3639193901144695178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/HubMusic
-  m_EditorClassIdentifier: 
-  Path: event:/HubMusic
-  guid: 678bd521c414254db0a973db7b15f249
-  Banks:
-  - {fileID: -3207874133628744678}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 8000
-  Length: 217025
---- !u!114 &-3207874133628744678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Hub.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Hub.bank
-  Name: Hub
-  StudioPath: bank:/Hub
-  lastModified: 637540987139370479
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &-2984413914579134078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/HubAmbience
-  m_EditorClassIdentifier: 
-  Path: event:/HubAmbience
-  guid: 7f98d526f601df409c7a79f48be8c113
-  Banks:
-  - {fileID: -3207874133628744678}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1400
-  MaxDistance: 10000
-  Length: 103885
---- !u!114 &-2898144702467496317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Slider
-  m_EditorClassIdentifier: 
-  Name: Music Slider
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 1712288478
-    data2: 1321706971
-  Exists: 0
---- !u!114 &-720217040679821805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SFX Slider
-  m_EditorClassIdentifier: 
-  Name: SFX Slider
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 3622919467
-    data2: 185449052
-  Exists: 0
---- !u!114 &-499783936321590070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 637540987141742063
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 1216
-  Exists: 1
---- !u!114 &-492089598058464304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/LibrarianMusic
-  m_EditorClassIdentifier: 
-  Path: event:/LibrarianMusic
-  guid: a69d55cfccda9b49b69dc16ed952d3ff
-  Banks:
-  - {fileID: -3831341634766095280}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 250
-  Length: 87745
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -499783936321590070}
-  - {fileID: -3207874133628744678}
-  - {fileID: -3831341634766095280}
-  - {fileID: 656153253155419798}
-  EditorEvents:
-  - {fileID: -3639193901144695178}
-  - {fileID: -4039418684808006740}
-  - {fileID: -2984413914579134078}
-  - {fileID: -4138266809928281834}
-  - {fileID: -492089598058464304}
-  - {fileID: -3909274663475223760}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 656153253155419798}
-  StringsBanks:
-  - {fileID: -499783936321590070}
-  stringsBankWriteTime: 637540987141742063
-  cacheVersion: 6
---- !u!114 &656153253155419798
+--- !u!114 &-5544948207286130061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -403,11 +75,129 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637540987141723085
+  lastModified: 637515282496274091
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &5026586012890482680
+--- !u!114 &-4051093898711690458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 1
+--- !u!114 &-4001972868584010433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637516767330677910
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3597794585850133445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DeaderHardware_FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637515282496274091
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3100656955893760532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Library.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Library.bank
+  Name: Library
+  StudioPath: bank:/Library
+  lastModified: 637515282496885629
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3054254041963865610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637515282496379049
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 852
+  Exists: 1
+--- !u!114 &-2662937165796160172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 1
+--- !u!114 &-2262472313730701625
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,47 +217,7 @@ MonoBehaviour:
     data1: 1985215825
     data2: 1795238556
   Exists: 0
---- !u!114 &5169234231707390962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Slider
-  m_EditorClassIdentifier: 
-  Name: Music Slider
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 1712288478
-    data2: 1321706971
-  Exists: 0
---- !u!114 &5307577490555950232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SFX Slider
-  m_EditorClassIdentifier: 
-  Name: SFX Slider
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 3622919467
-    data2: 185449052
-  Exists: 0
---- !u!114 &5795496453489617670
+--- !u!114 &-1902225800351579005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -487,7 +237,53 @@ MonoBehaviour:
     data1: 1985215825
     data2: 1795238556
   Exists: 0
---- !u!114 &7034558071554916722
+--- !u!114 &-401828773491965069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DeaderHardware_FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637516115761309860
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 750
+  Exists: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 1862792516906842792}
+  - {fileID: 4623210459463668086}
+  - {fileID: -4001972868584010433}
+  EditorEvents:
+  - {fileID: 750135959931644250}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -4001972868584010433}
+  StringsBanks:
+  - {fileID: 1862792516906842792}
+  stringsBankWriteTime: 637516767330677910
+  cacheVersion: 6
+--- !u!114 &140291049808340098
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -507,7 +303,7 @@ MonoBehaviour:
     data1: 1985215825
     data2: 1795238556
   Exists: 0
---- !u!114 &7039866685363023942
+--- !u!114 &750135959931644250
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -516,18 +312,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Slider
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LibrarianMusic
   m_EditorClassIdentifier: 
-  Name: Music Slider
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 1712288478
-    data2: 1321706971
-  Exists: 0
---- !u!114 &7871969861805794754
+  Path: event:/LibrarianMusic
+  guid: a69d55cfccda9b49b69dc16ed952d3ff
+  Banks:
+  - {fileID: 4623210459463668086}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 250
+  Length: 87745
+--- !u!114 &880685605012569232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -547,3 +346,168 @@ MonoBehaviour:
     data1: 1985215825
     data2: 1795238556
   Exists: 0
+--- !u!114 &1862792516906842792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637516767330677910
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 852
+  Exists: 1
+--- !u!114 &1893869784192260718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Library.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DeaderHardware_FMOD/Build/Desktop/Library.bank
+  Name: Library
+  StudioPath: bank:/Library
+  lastModified: 637515282496885629
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &2450047773352350633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LibrarianMusic
+  m_EditorClassIdentifier: 
+  Path: event:/LibrarianMusic
+  guid: a69d55cfccda9b49b69dc16ed952d3ff
+  Banks:
+  - {fileID: -3100656955893760532}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 250
+  Length: 87745
+--- !u!114 &2858926415591751116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 0
+--- !u!114 &3987046449652484663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 0
+--- !u!114 &4623210459463668086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Library.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Library.bank
+  Name: Library
+  StudioPath: bank:/Library
+  lastModified: 637516767330667913
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &7856308540332725485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 0
+--- !u!114 &8589421616836284280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LibrarianMusic
+  m_EditorClassIdentifier: 
+  Path: event:/LibrarianMusic
+  guid: a69d55cfccda9b49b69dc16ed952d3ff
+  Banks:
+  - {fileID: 1893869784192260718}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 250
+  Length: 87745
