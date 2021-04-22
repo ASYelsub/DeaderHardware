@@ -21,8 +21,7 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
     // TODO:
     // * font
     // * line spacing
-
-    [Header("Console Specific")]
+    [Header("Console (and Chandelier) Specific")]
     [SerializeField]
     private bool isConsole;
     [SerializeField]
@@ -77,5 +76,6 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
             oldConsole.SetActive(false);
             newConsole.SetActive(true);
         }
+
     }
 }
