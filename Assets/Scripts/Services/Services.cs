@@ -12,5 +12,6 @@ public static class ServicesLocator {
     public static DialogueManager DialogueManager;
     public static PlayerInteractor PlayerInteractor;
     public static LightManager LightManager;
+    public static LabelManager LabelManager;
 
 }

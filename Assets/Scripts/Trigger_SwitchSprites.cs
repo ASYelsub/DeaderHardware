@@ -13,6 +13,7 @@ public class Trigger_SwitchSprites : MonoBehaviour, ITriggerable
 
     public void ExecuteTriggerFunction() {
         ServicesLocator.LightManager.UpdatelightManager(shotNumber);
+        ServicesLocator.LabelManager.UpdateLabelManager(shotNumber);
         Debug.Log("EXECUTED: SWITCHSPRITES");
         ShotObjectHolder.me.SwitchShot(shotNumber);
     }

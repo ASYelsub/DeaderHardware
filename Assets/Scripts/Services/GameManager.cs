@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         //Initalize Services
         ServicesLocator.GameManager = this;
         ServicesLocator.LightManager = FindObjectOfType<LightManager>();
+        ServicesLocator.LabelManager = FindObjectOfType<LabelManager>();
         ServicesLocator.CameraManager = new CameraManager();
       //  ServicesLocator.Music = new MusicManager();
         ServicesLocator.SceneChanger = FindObjectOfType<SceneChangeManager>();
