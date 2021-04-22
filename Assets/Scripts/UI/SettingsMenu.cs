@@ -101,7 +101,7 @@ public class SettingsMenu : MonoBehaviour
                 {
                     TurnMenuOnOff(settingsActive);
                 }
-                if (settingsActive && !inv.menuOn)
+                if (settingsActive)
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
@@ -273,10 +273,7 @@ public class SettingsMenu : MonoBehaviour
             { if (homePrompt == true) { Quit(); } }
             if(hit.collider.tag == "N")
             {
-                if (homePrompt == true) {
-                    DisableHomePrompt();
-                    
-                }
+                if (homePrompt == true) {DisableHomePrompt();}
             }
 
         }

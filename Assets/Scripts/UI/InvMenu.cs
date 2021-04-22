@@ -206,7 +206,7 @@ public class InvMenu : MonoBehaviour
 
     private void Update()
     {
-        if (!ServicesLocator.GameManager.diaMan.isShowing)
+        if (!ServicesLocator.GameManager.diaMan.isShowing && !GameManager.settingsM.settingsActive)
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
