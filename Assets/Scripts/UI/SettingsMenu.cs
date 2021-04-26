@@ -27,6 +27,7 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private GameObject[] secondaryCol;
     [SerializeField] private GameObject[] quitButton;
     [SerializeField] private GameObject homePanel;
+    [SerializeField] private GameObject helpPanel;
 
     [Header("Raycast Stuff")]
     [SerializeField] private Camera cam;
@@ -42,6 +43,7 @@ public class SettingsMenu : MonoBehaviour
     private int musicVol = 5;
     private int SFXVol = 5;
     bool homePrompt = false;
+    bool helpPrompt = false;
 
 
     private InvMenu inv;
@@ -67,6 +69,7 @@ public class SettingsMenu : MonoBehaviour
 
     private void Start(){
         homePanel.SetActive(false);
+        helpPanel.SetActive(false);
         topPanelTransform.localPosition = topPanelOffPos;
         bottomPanelTransform.localPosition = botPanelOffPos;
         inv = FindObjectOfType<InvMenu>();
@@ -257,6 +260,8 @@ public class SettingsMenu : MonoBehaviour
             { SetMusicVolume(hit.collider.gameObject.GetComponent<SettingsButton>().soundInt); }
             if(hit.collider.tag == "SFX")
             { SetSFXVolume(hit.collider.gameObject.GetComponent<SettingsButton>().soundInt); }
+            if (hit.collider.tag == "Help")
+            { ToggleHelpPrompt(); }
             if(hit.collider.tag == "Quit")
             { if (homePrompt == false)
                 {
@@ -278,9 +283,17 @@ public class SettingsMenu : MonoBehaviour
 
         }
     }
-
+    private void ToggleHelpPrompt()
+    {
+        helpPrompt = !helpPrompt;
+        helpPanel.SetActive(helpPrompt);
+        if(homePrompt == true)
+            DisableHomePrompt();
+    }
     private void EnableHomePrompt()
     {
+        if (helpPrompt == true)
+            ToggleHelpPrompt();
         homePrompt = true;
         homePanel.SetActive(true);
     }
