@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000016569DE38B8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000166B10E7B08 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,3 +16,38 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SoundI::release                          : Aud_LibraryHushed (00000166A2781088)
+[LOG] SoundI::release                          :     Aud_LibraryHushed (0000016588D55008)
+[LOG] SoundI::release                          :     Aud_LibraryHushed (000001656A1ED798)
+[LOG] SoundI::release                          : Aud_Portal (00000166A2D13528)
+[LOG] SoundI::release                          :     Aud_Portal (0000016588D573C8)
+[LOG] SoundI::release                          :     Aud_Portal (000001656A1EBC98)
+[LOG] SoundI::release                          : typewriter-1 (00000166A2D13018)
+[LOG] SoundI::release                          :     typewriter-1 (0000016588D52C48)
+[LOG] SoundI::release                          :     typewriter-1 (000001656A1E9C88)
+[LOG] SoundI::release                          : Susan-Voice (00000164FC6E6068)
+[LOG] SoundI::release                          :     Susan-Voice (0000016588D57088)
+[LOG] SoundI::release                          :     Susan-Voice (000001656A1EA4F8)
+[LOG] SoundI::release                          : Susan_-_Drums (00000164FC6E5138)
+[LOG] SoundI::release                          :     Susan_-_Drums (0000016588D54308)
+[LOG] SoundI::release                          :     Susan_-_Drums (000001656A1ED288)
+[LOG] SoundI::release                          :  (00000166071C6888)
+[LOG] SoundI::release                          :     WoodenDoorCreak1 (00000166B05F1328)
+[LOG] SoundI::release                          :  (00000166071CAAA8)
+[LOG] SoundI::release                          :     WoodenDoorCreak2 (00000166B05EEF68)
+[LOG] SoundI::release                          :  (00000166071C9238)
+[LOG] SoundI::release                          :     WoodenDoorCreak4 (00000166B05F2B88)
+[LOG] SoundI::release                          :  (00000166071CA098)
+[LOG] SoundI::release                          :     Turn Page of Paper Back Book 02 (00000166B05EEDC8)
+[LOG] SoundI::release                          :  (00000166071C86B8)
+[LOG] SoundI::release                          :     Turn Page of Hard Cover Book 06 (00000166B05F33A8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.

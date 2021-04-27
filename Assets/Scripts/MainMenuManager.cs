@@ -19,6 +19,8 @@ public class MainMenuManager : MonoBehaviour
     [Header("Main Menu Variables")]
     [SerializeField] GameObject MenuHolder;
     [SerializeField] TextMeshPro pressAny;
+    [SerializeField] GameObject textRotateObject;
+    [SerializeField] GameObject controlsTutorial;
     Color openColor;
     bool opening;
     float loadingFloat;
@@ -36,6 +38,7 @@ public class MainMenuManager : MonoBehaviour
    
     void Start()
     {
+        controlsTutorial.SetActive(false);
         hLSScript = FindObjectOfType<HUB_LightSpin>();
         SetMenuActive(false);
         SetOptionsActive(false);
@@ -51,8 +54,10 @@ public class MainMenuManager : MonoBehaviour
         {
             menuState = true;
         }
-
-        if (menuState && optionsActive) //For Navigating Menu
+        
+        if(Input.anyKeyDown && tutorialOpen == true){
+            ToggleControls(false);
+        }else if (menuState && optionsActive) //For Navigating Menu
         {
             if(Input.GetKeyDown(KeyCode.Escape)) //Returns to Title
             {
@@ -140,6 +145,7 @@ public class MainMenuManager : MonoBehaviour
         hLSScript.disabled = b;
         loadingInt = 0;
         menuActive = b;
+        textRotateObject.GetComponent<Rotate>().disabled = b;
         
     }
 
@@ -189,7 +195,7 @@ public class MainMenuManager : MonoBehaviour
             }
         }
     }
-
+    bool tutorialOpen = false;
     void SelectOption()
     {
         if(selectedOption == 0)
@@ -199,6 +205,7 @@ public class MainMenuManager : MonoBehaviour
 
         if(selectedOption == 1)
         {
+            ToggleControls(true);
             //Put Controls Screen stuff here
         }
 
@@ -206,5 +213,10 @@ public class MainMenuManager : MonoBehaviour
         {
             Application.Quit();
         }
+    }
+    void ToggleControls(bool f)
+    {
+        controlsTutorial.SetActive(f);
+        tutorialOpen = f;
     }
 }
