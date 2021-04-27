@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001E69AE02E18 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000022F4FCE83F8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,31 +16,9 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SoundI::release                          : Aud_LibraryHushed (000001E6910DE6D8)
-[LOG] SoundI::release                          :     Aud_LibraryHushed (000001E69BFA4D18)
-[LOG] SoundI::release                          :     Aud_LibraryHushed (000001E6910DE888)
-[LOG] SoundI::release                          : Aud_Portal (000001E6910E1618)
-[LOG] SoundI::release                          :     Aud_Portal (000001E69BFA4838)
-[LOG] SoundI::release                          :     Aud_Portal (000001E6910E26F8)
-[LOG] SoundI::release                          : typewriter-1 (000001E6910E1468)
-[LOG] SoundI::release                          :     typewriter-1 (000001E69BFA5538)
-[LOG] SoundI::release                          :     typewriter-1 (000001E6910DE018)
-[LOG] SoundI::release                          : Susan-Voice (000001E6910DCF38)
-[LOG] SoundI::release                          :     Susan-Voice (000001E69BFA4698)
-[LOG] SoundI::release                          :     Susan-Voice (000001E6910DED98)
-[LOG] SoundI::release                          : Susan_-_Drums (000001E6910DDCB8)
-[LOG] SoundI::release                          :     Susan_-_Drums (000001E69BFA3E78)
-[LOG] SoundI::release                          :     Susan_-_Drums (000001E6910DFCC8)
-[LOG] SoundI::release                          :  (000001E7144FC1F8)
-[LOG] SoundI::release                          :     WoodenDoorCreak1 (000001E69BFA3998)
-[LOG] SoundI::release                          :  (000001E7144FCC08)
-[LOG] SoundI::release                          :     WoodenDoorCreak2 (000001E69BFA2138)
-[LOG] SoundI::release                          :  (000001E7144FFCE8)
-[LOG] SoundI::release                          :     WoodenDoorCreak4 (000001E69BFA5398)
-[LOG] SoundI::release                          :  (000001E7144FE758)
-[LOG] SoundI::release                          :     Turn Page of Paper Back Book 02 (000001E69BFA3B38)
-[LOG] SoundI::release                          :  (000001E714500868)
-[LOG] SoundI::release                          :     Turn Page of Hard Cover Book 06 (000001E69BFA4018)
+[LOG] SoundI::release                          : Centrifugal V4 (0000022F7BEC2548)
+[LOG] SoundI::release                          :     Centrifugal V4 (0000022F03971F18)
+[LOG] SoundI::release                          :     Centrifugal V4 (0000022F7BEC2DB8)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
