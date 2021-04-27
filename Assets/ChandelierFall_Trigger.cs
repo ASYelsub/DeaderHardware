@@ -50,8 +50,8 @@ public class ChandelierFall_Trigger : MonoBehaviour, ITriggerable
         {
             timer = timer + .01f;
             yield return null;
-        }       
-        //Scenemanager.loadScene(End)
+        }
+        SceneManager.LoadScene("CreditsScene");
         yield return null;
     }
 }

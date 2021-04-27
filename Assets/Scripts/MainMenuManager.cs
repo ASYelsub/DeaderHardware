@@ -194,7 +194,7 @@ public class MainMenuManager : MonoBehaviour
     {
         if(selectedOption == 0)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("Level 1");
         }
 
         if(selectedOption == 1)

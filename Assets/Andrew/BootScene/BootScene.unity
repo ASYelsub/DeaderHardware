@@ -311,6 +311,11 @@ MonoBehaviour:
   actionString: 
   consoleText: {fileID: 0}
   displayString: 
+  isCredits: 0
+  title: 
+  TitleText: 
+  Scene_int: -1
+  Scene_str: MainMenu
 --- !u!1 &812131888
 GameObject:
   m_ObjectHideFlags: 0

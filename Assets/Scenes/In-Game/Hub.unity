@@ -450,7 +450,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh105456
+  m_Name: pb_Mesh68746
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13110,7 +13110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aecba5ad114487e438ea92136ce9e8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: 3
+  SceneToLoad: 4
 --- !u!108 &1125561870
 Light:
   m_ObjectHideFlags: 0
@@ -13129,7 +13129,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -13165,7 +13165,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 4.6
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: NaN, z: 4.5905e-41, w: 0.0000000024108164}
@@ -13963,7 +13963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aecba5ad114487e438ea92136ce9e8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: 2
+  SceneToLoad: 3
 --- !u!108 &1217277568
 Light:
   m_ObjectHideFlags: 0
