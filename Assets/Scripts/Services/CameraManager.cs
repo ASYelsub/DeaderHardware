@@ -72,7 +72,7 @@ public class CameraManager
     void _trackingUpdate() {
         Vector3 _desiredDirection = ((_cameraTarget.position + _cameraTarget.transform.forward * 2) - _mainCamera.transform.position);
         Quaternion _desiredRotation = Quaternion.LookRotation(_desiredDirection, Vector3.up);
-        _mainCamera.transform.rotation = Quaternion.Slerp(_mainCamera.transform.rotation, _desiredRotation, Time.deltaTime);
+        _mainCamera.transform.rotation = Quaternion.Slerp(_mainCamera.transform.rotation, _desiredRotation, Time.deltaTime * 2);
     }
 
     public void setShotStatic(GameObject shotHolder, bool tracking, GameObject shotSetter) {
