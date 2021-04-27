@@ -324,6 +324,7 @@ MonoBehaviour:
   displayString: 
   isCredits: 1
   title: 
+  TitleText: 
   Scene_int: -1
   Scene_str: '-'
 --- !u!1 &812131888

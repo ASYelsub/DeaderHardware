@@ -36,6 +36,7 @@ public class BootText : MonoBehaviour
     }
 
     public string title;
+    public string TitleText;
     IEnumerator creditSequence()
     {
         yield return new WaitForSeconds(2);
@@ -51,6 +52,7 @@ public class BootText : MonoBehaviour
         yield return new WaitForSeconds(.1f);
         //displayString = title;
         PerformAction(0,title,0);
+        //TitleText = title;
         yield return new WaitForSeconds(2f);
         PerformAction(0, "\n=====================================================================================================\n", 0);
         yield return new WaitForSeconds(1.5f);
@@ -233,7 +235,7 @@ public class BootText : MonoBehaviour
 
     void Update()
     {
-        consoleText.SetText(displayString + loadString);
+        consoleText.SetText(TitleText + displayString + loadString);
         if (moveToNextLevel)
         {
             consoleText.color = Color.Lerp(consoleText.color, new Color(0,0,0,-.1f), Time.deltaTime);
