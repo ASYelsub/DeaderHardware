@@ -12,6 +12,7 @@ public class MainMenuManager : MonoBehaviour
     
     [Header("Camera Variables")]
     [SerializeField] Transform GameCamera;
+    [SerializeField] GameObject gC;
     [SerializeField] Vector3 endPos;
     Vector3 opPos;
 
@@ -24,15 +25,20 @@ public class MainMenuManager : MonoBehaviour
     int loadingInt;
 
     [SerializeField] Rotate CERotateScript;
+    HUB_LightSpin hLSScript;
+    [SerializeField] GameObject loadingText;
 
     [Header("Option Variables")]
     [SerializeField] GameObject[] options;
     int selectedOption = 1;
     [SerializeField] Material selectMat;
     [SerializeField] Material unselectMat;
-
+   
     void Start()
     {
+        hLSScript = FindObjectOfType<HUB_LightSpin>();
+        SetMenuActive(false);
+        SetOptionsActive(false);
         opPos = GameCamera.position; //So the camera knows where to return to on escape
         ChangeActiveOption(true); //To set the active option to play
         openColor = pressAny.color;
@@ -111,6 +117,17 @@ public class MainMenuManager : MonoBehaviour
             if(loadingInt >= 100)
             {
                 SetOptionsActive(true);
+            }else if(loadingInt >= 70)
+            {
+                loadingText.GetComponent<TextMeshPro>().text = "Loading...";
+            }
+            else if(loadingInt >= 40)
+            {
+                loadingText.GetComponent<TextMeshPro>().text = "Loading..";
+            }
+            else if(loadingInt >= 10)
+            {
+                loadingText.GetComponent<TextMeshPro>().text = "Loading.";
             }
         }
     }
@@ -119,8 +136,11 @@ public class MainMenuManager : MonoBehaviour
     {
         MenuHolder.SetActive(b);
         CERotateScript.disabled = b;
+        GameCamera.gameObject.GetComponent<Rotate>().disabled = b;
+        hLSScript.disabled = b;
         loadingInt = 0;
         menuActive = b;
+        
     }
 
     void SetOptionsActive(bool b)
