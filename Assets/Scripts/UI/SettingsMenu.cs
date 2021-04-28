@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SettingsMenu : MonoBehaviour
 {
+    MenuSounds menuSounds;
 
     [Header("General")]
     [HideInInspector] public bool settingsActive;
     [HideInInspector] public bool menuIsMoving;
     [SerializeField] Transform topPanelTransform;
     [SerializeField] Transform bottomPanelTransform;
+    [SerializeField] GameObject bookHide;
 
     //All local positions.
     [Header("Panel Positions")]
@@ -68,6 +70,7 @@ public class SettingsMenu : MonoBehaviour
     }
 
     private void Start(){
+        menuSounds = gameObject.GetComponent<MenuSounds>();
         homePanel.SetActive(false);
         helpPanel.SetActive(false);
         topPanelTransform.localPosition = topPanelOffPos;
@@ -132,6 +135,8 @@ public class SettingsMenu : MonoBehaviour
         menuIsMoving = true;
     }
     private IEnumerator MoveMenuOn(){
+       // bookHide.SetActive(false);
+        menuSounds.OpenSettings();
         float timer = 0;
         while (timer < 1)
         {
@@ -142,9 +147,16 @@ public class SettingsMenu : MonoBehaviour
         }
         menuIsMoving = false;
         settingsActive = true;
+        //bookHide.SetActive(true);
         yield return null;
     }
     private IEnumerator MoveMenuOff(){
+       // bookHide.SetActive(false);
+        menuSounds.CloseSettings();
+        if (helpPrompt == true)
+            ToggleHelpPrompt();
+        if (homePrompt == true)
+            DisableHomePrompt();
         float timer = 0;
         while (timer < 1)
         {
@@ -177,6 +189,7 @@ public class SettingsMenu : MonoBehaviour
                 }
             }
         }
+        menuSounds.ButtonSettings();
         
     }
     private IEnumerator MoveThemeOff()
@@ -252,39 +265,29 @@ public class SettingsMenu : MonoBehaviour
             
             Debug.DrawRay(buttonRay.origin, buttonRay.direction*hit.distance, Color.magenta);
             globalHit = hit;
-            ShowRay();
+            //ShowRay();
             isHitting = true;
             if (hit.collider.tag == "Theme")
             {ChangeTheme(hit.collider.gameObject.GetComponent<SettingsButton>().themeInt);}
             if(hit.collider.tag == "Music")
-            { SetMusicVolume(hit.collider.gameObject.GetComponent<SettingsButton>().soundInt); }
+            { SetMusicVolume(hit.collider.gameObject.GetComponent<SettingsButton>().soundInt); menuSounds.VolumeSettings(); }
             if(hit.collider.tag == "SFX")
-            { SetSFXVolume(hit.collider.gameObject.GetComponent<SettingsButton>().soundInt); }
+            { SetSFXVolume(hit.collider.gameObject.GetComponent<SettingsButton>().soundInt); menuSounds.VolumeSettings(); }
             if (hit.collider.tag == "Help")
-            { ToggleHelpPrompt(); }
-            if(hit.collider.tag == "Quit")
-            { if (homePrompt == false)
-                {
-                    EnableHomePrompt();
-                    print("Yo");
-                }
-                else if (homePrompt == true)
-                {
-                    DisableHomePrompt();
-                    
-                }
-            }
+            { ToggleHelpPrompt(); menuSounds.ButtonSettings(); }
+            if(hit.collider.tag == "Quit"){ if (homePrompt == false){EnableHomePrompt();}
+                else if (homePrompt == true){DisableHomePrompt();}
+                menuSounds.ButtonSettings();}
             if (hit.collider.tag == "Y")
-            { if (homePrompt == true) { Quit(); } }
+            { if (homePrompt == true) { Quit(); menuSounds.ButtonSettings(); } }
             if(hit.collider.tag == "N")
-            {
-                if (homePrompt == true) {DisableHomePrompt();}
-            }
+            { if (homePrompt == true) {DisableHomePrompt(); menuSounds.ButtonSettings(); }}
 
         }
     }
     private void ToggleHelpPrompt()
     {
+        
         helpPrompt = !helpPrompt;
         helpPanel.SetActive(helpPrompt);
         if(homePrompt == true)
@@ -292,6 +295,7 @@ public class SettingsMenu : MonoBehaviour
     }
     private void EnableHomePrompt()
     {
+
         if (helpPrompt == true)
             ToggleHelpPrompt();
         homePrompt = true;
@@ -299,11 +303,13 @@ public class SettingsMenu : MonoBehaviour
     }
     private void DisableHomePrompt()
     {
+
         homePrompt = false;
         homePanel.SetActive(false);
     }
     private void Quit()
     {
+        menuSounds.ButtonSettings();
         Debug.Log("quit");
         SceneManager.LoadScene("MainMenu");
        
@@ -340,6 +346,7 @@ public class SettingsMenu : MonoBehaviour
             }
         }
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("SFX Slider", Mathf.Clamp(f * .1f, 0, 1));
+        
     }
 
 

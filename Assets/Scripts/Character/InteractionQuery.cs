@@ -38,6 +38,7 @@ public class InteractionQuery : MonoBehaviour
     public void ExecuteInteractionQuery(int id) {
         if (id == requiredItemId) {
 
+            GameManager.invM.menuSounds.UseItemInv();
             Debug.Log("Success: " + id);
             GameManager.invM.RemoveItem(id);
             if (_triggerableArrayOnSuccess.Length == 0) return;
@@ -47,7 +48,7 @@ public class InteractionQuery : MonoBehaviour
             }
 
         } else {
-
+            GameManager.invM.menuSounds.RejectItemInv();
             Debug.Log("Failure: " + id);
 
             if (_triggerableArrayOnFailure.Length == 0) return;
