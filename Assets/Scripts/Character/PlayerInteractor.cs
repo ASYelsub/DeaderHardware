@@ -45,7 +45,6 @@ public class PlayerInteractor : MonoBehaviour
                     //nearestCollider.GetComponentInChildren<IInteractable>().ExecuteInteraction();
                     if (item.GetComponent<IInteractable>() != null)
                     {
-                        FMODUnity.RuntimeManager.PlayOneShot("event:/Interaction");
                         item.GetComponentInChildren<IInteractable>().ExecuteInteraction();
                     }
                 }

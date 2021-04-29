@@ -89,8 +89,6 @@ public class DialogueManager : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "Level 2")
             {
-                //comment out this line below
-                menuSounds.RejectItemInv();
                 FMODUnity.RuntimeManager.PlayOneShot("event:/LibrarianTalk");
             }
             else if (SceneManager.GetActiveScene().name == "Hub")

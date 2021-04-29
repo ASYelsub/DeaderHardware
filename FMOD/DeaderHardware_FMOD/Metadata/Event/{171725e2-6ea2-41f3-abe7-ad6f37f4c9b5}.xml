@@ -111,9 +111,6 @@
 		<property name="length">
 			<value>0.3125</value>
 		</property>
-		<property name="pitch">
-			<value>-5.5</value>
-		</property>
 		<property name="playlistMode">
 			<value>1</value>
 		</property>
@@ -168,7 +165,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>10.5</value>
+			<value>22</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{0434088e-2bef-42d0-a1de-e234a30f8dcd}">
@@ -215,7 +212,17 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{bbe19ab4-0102-4395-b122-18304f7f9291}" />
-	<object class="SpatialiserEffect" id="{b74bb8e1-64fa-4c7a-8337-ed3f776d183c}" />
+	<object class="SpatialiserEffect" id="{b74bb8e1-64fa-4c7a-8337-ed3f776d183c}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+		<property name="minimumDistance">
+			<value>8000</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10000</value>
+		</property>
+	</object>
 	<object class="FlangerEffect" id="{8f680f1a-891c-4fcc-872f-9605ad9395ce}">
 		<property name="rate">
 			<value>2</value>
