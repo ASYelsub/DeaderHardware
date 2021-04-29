@@ -37,6 +37,8 @@ public class BootText : MonoBehaviour
 
     public string title;
     public string TitleText;
+    public string[] emotes;
+
     IEnumerator creditSequence()
     {
         yield return new WaitForSeconds(2);
@@ -53,14 +55,14 @@ public class BootText : MonoBehaviour
         //displayString = title;
         PerformAction(0,title,0);
         //TitleText = title;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         PerformAction(0, "\n=====================================================================================================\n", 0);
         yield return new WaitForSeconds(1.5f);
 
         PerformAction(1,"\n[CREDITS]\n\n");
         yield return new WaitForSeconds(.1f);
 
-        PerformAction(1, $"\n[{"Name"}]\n");
+        PerformAction(1, $"\n[{"Name"}] {emotes[0]}\n");
         PerformAction(0, "  -Contribution 1\n");
         yield return new WaitForSeconds(.5f);
         PerformAction(0, "  -Contribution 2\n");
@@ -70,7 +72,7 @@ public class BootText : MonoBehaviour
         PerformAction(0, "  -Contribution 4\n");
         yield return new WaitForSeconds(.5f);
 
-        PerformAction(1, $"\n[{"Name"}]\n");
+        PerformAction(1, $"\n[{"Name"}] {emotes[1]}\n");
         PerformAction(0, "  -Contribution 1\n");
         yield return new WaitForSeconds(.5f);
         PerformAction(0, "  -Contribution 2\n");
@@ -80,7 +82,7 @@ public class BootText : MonoBehaviour
         PerformAction(0, "  -Contribution 4\n");
         yield return new WaitForSeconds(.5f);
 
-        PerformAction(1, $"\n[{"Name"}]\n");
+        PerformAction(1, $"\n[{"Name"}] {emotes[2]}\n");
         PerformAction(0, "  -Contribution 1\n");
         yield return new WaitForSeconds(.5f);
         PerformAction(0, "  -Contribution 2\n");
@@ -90,7 +92,7 @@ public class BootText : MonoBehaviour
         PerformAction(0, "  -Contribution 4\n");
         yield return new WaitForSeconds(.5f);
 
-        PerformAction(1, $"\n[{"Name"}]\n");
+        PerformAction(1, $"\n[{"Name"}] {emotes[3]}\n");
         PerformAction(0, "  -Contribution 1\n");
         yield return new WaitForSeconds(.5f);
         PerformAction(0, "  -Contribution 2\n");
@@ -100,7 +102,7 @@ public class BootText : MonoBehaviour
         PerformAction(0, "  -Contribution 4\n");
         yield return new WaitForSeconds(.5f);
 
-        PerformAction(1, $"\n[{"Name"}]\n");
+        PerformAction(1, $"\n[{"Name"}] {emotes[4]}\n");
         PerformAction(0, "  -Contribution 1\n");
         yield return new WaitForSeconds(.5f);
         PerformAction(0, "  -Contribution 2\n");
@@ -110,7 +112,7 @@ public class BootText : MonoBehaviour
         PerformAction(0, "  -Contribution 4\n");
         yield return new WaitForSeconds(.5f);
 
-        PerformAction(1, $"\n[{"Name"}]\n");
+        PerformAction(1, $"\n[{"Name"}] {emotes[5]}\n");
         PerformAction(0, "  -Contribution 1\n");
         yield return new WaitForSeconds(.5f);
         PerformAction(0, "  -Contribution 2\n");
@@ -120,7 +122,7 @@ public class BootText : MonoBehaviour
         PerformAction(0, "  -Contribution 4\n");
         yield return new WaitForSeconds(.5f);
 
-        PerformAction(1, $"\n[{"Name"}]\n");
+        PerformAction(1, $"\n[{"Name"}] {emotes[6]}\n");
         PerformAction(0, "  -Contribution 1\n");
         yield return new WaitForSeconds(.5f);
         PerformAction(0, "  -Contribution 2\n");
@@ -142,7 +144,9 @@ public class BootText : MonoBehaviour
 
     IEnumerator bootScreenSequence()
     {
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds(1);
+        PerformAction(0, "<b>VIV RECOVERY TOOL, Viv-tech, Inc. 2001</b>\n\n");
+        yield return new WaitForSeconds(.6f);
         PerformAction(1,"<b>[INITIATING SAFE-BOOT SEQUENCE]</b>\n\n");
         PerformAction(1,"System user name: "+Application.persistentDataPath.Split('/')[2]+"\n");
         yield return new WaitForSeconds(.5f);
@@ -151,7 +155,7 @@ public class BootText : MonoBehaviour
         PerformAction(1,"Loading");
         PerformAction(2, "", 2);
         yield return new WaitForSeconds(2.2f);
-        PerformAction(1,"/FILE FOUND\n\n");
+        PerformAction(1,"/<color=yellow>FILE FOUND</color>\n\n");
         PerformAction(0,"repair tool added, gathering hardware information...\n\n");
         yield return new WaitForSeconds(1);
         PerformAction(0, "<size=8>[*****</size>",.25f);
@@ -170,49 +174,49 @@ public class BootText : MonoBehaviour
         PerformAction(1,"\n[Disc Drive]:\n");
         PerformAction(0, $"0x000{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}",.05f);
         yield return new WaitForSeconds(.75f);
-        PerformAction(1," (ACTIVE)\n");
+        PerformAction(1, " <color=yellow>(ACTIVE)\n</color>");
         PerformAction(1, "--\n");
 
         yield return new WaitForSeconds(.1f);
         PerformAction(1, "\n[Fan]:\n");
         PerformAction(0, $"0x000{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}", .05f);
         yield return new WaitForSeconds(.75f);
-        PerformAction(1, " (DEAD/NOT FOUND)\n");
+        PerformAction(1, " <color=red>(DEAD/NOT FOUND)\n</color>");
         PerformAction(1, "--\n");
 
         yield return new WaitForSeconds(.1f);
         PerformAction(1, "\n[Input Port - 0]:\n");
         PerformAction(0, $"0x000{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}", .05f);
         yield return new WaitForSeconds(.75f);
-        PerformAction(1, " (ACTIVE)\n");
+        PerformAction(1, " <color=yellow>(ACTIVE)\n</color>");
         PerformAction(1, "--\n");
 
         yield return new WaitForSeconds(.1f);
         PerformAction(1, "\n[Input Port - 1]:\n");
         PerformAction(0, $"0x000{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}", .05f);
         yield return new WaitForSeconds(.75f);
-        PerformAction(1, " (DEAD/NOT FOUND)\n");
+        PerformAction(1, " <color=red>(DEAD/NOT FOUND)\n</color>");
         PerformAction(1, "--\n");
 
         yield return new WaitForSeconds(.1f);
         PerformAction(1, "\n[Input Port - 2]:\n");
         PerformAction(0, $"0x000{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}", .05f);
         yield return new WaitForSeconds(.75f);
-        PerformAction(1, " (ACTIVE)\n");
+        PerformAction(1, " <color=yellow>(ACTIVE)\n</color>");
         PerformAction(1, "--\n");
 
         yield return new WaitForSeconds(.1f);
         PerformAction(1, "\n[Input Port - 3]:\n");
         PerformAction(0, $"0x000{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}", .05f);
         yield return new WaitForSeconds(.75f);
-        PerformAction(1, " (ACTIVE)\n");
+        PerformAction(1, " <color=yellow>(ACTIVE)\n</color>");
         PerformAction(1, "--\n");
 
         yield return new WaitForSeconds(.1f);
         PerformAction(1, "\n[External Memory Port]:\n");
         PerformAction(0, $"0x000{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}", .05f);
         yield return new WaitForSeconds(.75f);
-        PerformAction(1, " (DEAD/NOT FOUND)\n");
+        PerformAction(1, " <color=red>(DEAD/NOT FOUND)\n</color>");
         PerformAction(1, "--\n");
 
         yield return new WaitForSeconds(1f);
@@ -220,7 +224,7 @@ public class BootText : MonoBehaviour
         yield return new WaitForSeconds(.2f);
         PerformAction(2, "", 4f);
         yield return new WaitForSeconds(5);
-        PerformAction(1, " (COMPLETE)");
+        PerformAction(1, " (<color=yellow>COMPLETE</color>)");
         PerformAction(0, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", .07f);
         yield return new WaitForSeconds(4);
 
