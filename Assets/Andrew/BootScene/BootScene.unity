@@ -311,6 +311,19 @@ MonoBehaviour:
   actionString: 
   consoleText: {fileID: 0}
   displayString: 
+  isCredits: 0
+  title: 
+  TitleText: 
+  emotes:
+  - "( \u0361\xB0 \u035C\u0296 \u0361\xB0)"
+  - "(\u0CA0_\u0CA0)"
+  - "( \u2022_\u2022)"
+  - "(\u25C9\u072B-\u25C9)"
+  - "(\u30C4)"
+  - "(\u2022\u0300\u1D17\u2022\u0301)"
+  - "(\u0CA5_\u0CA5)"
+  Scene_int: -1
+  Scene_str: MainMenu
 --- !u!1 &812131888
 GameObject:
   m_ObjectHideFlags: 0
