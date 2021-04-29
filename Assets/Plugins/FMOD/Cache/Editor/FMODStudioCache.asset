@@ -646,10 +646,7 @@ MonoBehaviour:
   - {fileID: -1047820114195211058}
   - {fileID: -2863316727757751431}
   - {fileID: -2088515186094518192}
-  EditorParameters:
-  - {fileID: 2172259594975616800}
-  - {fileID: -5618880226354070778}
-  - {fileID: 1029729250205888644}
+  EditorParameters: []
   MasterBanks:
   - {fileID: 656153253155419798}
   StringsBanks:

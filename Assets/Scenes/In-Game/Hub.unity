@@ -19812,6 +19812,11 @@ Transform:
   m_Father: {fileID: 1671613538}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1897026850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1ff2027823ffb49349a50dfd21f40a88, type: 3}
+  m_PrefabInstance: {fileID: 535430118}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1905143301
 GameObject:
   m_ObjectHideFlags: 0
@@ -21612,8 +21617,8 @@ MonoBehaviour:
   offMat: {fileID: 2100000, guid: 8ffe5d3265edf4686ba9d024596f5583, type: 2}
   onMat: {fileID: 2100000, guid: 96b1af084ef994fd8bae47a701dfcd60, type: 2}
   matBody:
-  - {fileID: 0}
-  hoverText: 
+  - {fileID: 1897026850}
+  hoverText: Speak
 --- !u!1001 &2060045839
 PrefabInstance:
   m_ObjectHideFlags: 0
