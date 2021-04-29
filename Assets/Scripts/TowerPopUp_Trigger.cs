@@ -33,6 +33,6 @@ public class TowerPopUp_Trigger : MonoBehaviour, ITriggerable
 
     public void ExecuteLeaveTriggerFunction()
     {
-        throw new System.NotImplementedException();
+  //      throw new System.NotImplementedException();
     }
 }

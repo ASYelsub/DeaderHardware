@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: CyberpunkWaifus_ONSCREEN_LIB
+  m_Name: CyberpunkWaifus_SettingsMenu
   m_EditorClassIdentifier: 
-  hashCode: 1513389498
+  hashCode: 710499929
   material: {fileID: 2555012135579867877}
-  materialHashCode: -1236634790
+  materialHashCode: -1048526631
   m_Version: 1.1.0
   m_SourceFontFileGUID: 7a280b64246529042be18b7911072d29
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 7a280b64246529042be18b7911072d29, type: 3}
@@ -2475,7 +2475,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: CyberpunkWaifus SDF Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
-  m_ShaderKeywords: BEVEL_ON
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -2520,7 +2520,7 @@ Material:
     - _FaceDilate: 0.61
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
-    - _GlowInner: 0.05
+    - _GlowInner: 0
     - _GlowOffset: 0
     - _GlowOuter: 0.05
     - _GlowPower: 0.75
@@ -2531,10 +2531,10 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.222
+    - _OutlineWidth: 0.38
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 0.81739414
+    - _ScaleRatioA: 0.7077141
     - _ScaleRatioB: 0.16874997
     - _ScaleRatioC: 0.16874997
     - _ScaleX: 1
@@ -2560,12 +2560,12 @@ Material:
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
-    - _FaceColor: {r: 1, g: 0.009225865, b: 0, a: 1}
+    - _FaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
-    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+    - _UnderlayColor: {r: 0.22939968, g: 1, b: 0, a: 0.5}
   m_BuildTextureStacks: []

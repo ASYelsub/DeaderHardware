@@ -9,6 +9,8 @@ using TMPro;
 //scroll bar
 public class InvMenu : MonoBehaviour
 {
+    [HideInInspector]
+    public MenuSounds menuSounds;
     bool isStep = false;
     [SerializeField]
     Material activeMat;
@@ -202,11 +204,12 @@ public class InvMenu : MonoBehaviour
         menuObject.SetActive(menuOn);
         panelDescBook.SetActive(false);
         panelDescNormItem.SetActive(true);
+        menuSounds = gameObject.GetComponent<MenuSounds>();
     }
 
     private void Update()
     {
-        if (!ServicesLocator.GameManager.diaMan.isShowing)
+        if (!ServicesLocator.GameManager.diaMan.isShowing && !GameManager.settingsM.settingsActive)
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
@@ -339,6 +342,7 @@ public class InvMenu : MonoBehaviour
 
                     }
                     itemCounter++;
+                    menuSounds.AddItemInv();
                 }
             }
 
@@ -363,8 +367,7 @@ public class InvMenu : MonoBehaviour
             isStep = true;
             int toReturn = itemTags[index].ID;
             if (itemCounter == 0)
-            { //paris do you want any item at 500? i'm just using this for the null value.
-                Debug.Log("this?");
+            { 
                 return 500;
             }
             else if (topTrack != 0)
@@ -466,9 +469,10 @@ public class InvMenu : MonoBehaviour
                 activeItemInt = 0;
             }
             DisplayActive();
+           // menuSounds.UseItemInv();
             return toReturn;
         }
-    //    Debug.Log("this2");
+        //    Debug.Log("this2");
         return 500;
     }
     
@@ -478,10 +482,12 @@ public class InvMenu : MonoBehaviour
     {
         if (!isStep)
         {
+            
             isStep = false;
             if (itemCounter == 0) { }//don't do anything!
             else if (increase)
             {//if increasing
+                menuSounds.CycleItemInv();
                 if (itemCounter <= visItem)
                 {//if visible items isn't filled up and going down
                  //if at bottom of collected items
@@ -533,6 +539,7 @@ public class InvMenu : MonoBehaviour
             }
             else if (!increase)
             { //if decreasing
+                menuSounds.CycleItemInv();
                 if (itemCounter <= visItem)
                 {//if visible items isn't filled up
                     if (activeItemInt == 0)
@@ -680,6 +687,8 @@ public class InvMenu : MonoBehaviour
         DisplayActive();
         menuOn = !menuOn;
         menuObject.SetActive(menuOn);
+        if (menuOn == true) { menuSounds.OpenInv(); }
+        else if (menuOn == false) { menuSounds.CloseInv(); }
     }
 
 
