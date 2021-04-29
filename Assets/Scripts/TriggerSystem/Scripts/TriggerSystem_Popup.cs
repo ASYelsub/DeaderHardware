@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerSystem_Popup : MonoBehaviour, ITriggerable, IInteractable
+public class TriggerSystem_Popup : MonoBehaviour, ITriggerable
 {
     //This class is like this so particle effects (or whatever) dont play when itemPickup is null,
     //itemPickup is null when an item has been picked up and added to the inventory.
@@ -10,7 +10,12 @@ public class TriggerSystem_Popup : MonoBehaviour, ITriggerable, IInteractable
     [SerializeField]
     public enum objectType {Librarian, Book, Console};
     public ParticleSystem particleObject;
-    public Material selectMat;
+    [SerializeField]
+    private Material onMat;
+    [SerializeField]
+    private Material offMat;
+    [SerializeField]
+    private GameObject matObj;
     public TriggerSystem_ItemPickup itemPickup;
     public void ExecuteInteraction(){}
 
@@ -21,11 +26,14 @@ public class TriggerSystem_Popup : MonoBehaviour, ITriggerable, IInteractable
             particleObject.Play();
 
         }
+
+        matObj.GetComponent<MeshRenderer>().material = onMat;
     }
 
-    void ITriggerable.ExecuteLeaveTriggerFunction()
+    public void ExecuteLeaveTriggerFunction()
     {
         //print("WE STOPPED");
         particleObject.Stop();
+        matObj.GetComponent<MeshRenderer>().material = offMat;
     }
 }

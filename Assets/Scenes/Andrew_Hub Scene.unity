@@ -450,7 +450,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh119708
+  m_Name: pb_Mesh65050
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3950,13 +3950,18 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 1ff2027823ffb49349a50dfd21f40a88, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 44a3b6f7ca049f440bcea89049e09816, type: 2}
+      objectReference: {fileID: 2100000, guid: 8ffe5d3265edf4686ba9d024596f5583, type: 2}
     - target: {fileID: 919132149155446097, guid: 1ff2027823ffb49349a50dfd21f40a88, type: 3}
       propertyPath: m_Name
       value: Console_Logo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ff2027823ffb49349a50dfd21f40a88, type: 3}
+--- !u!1 &535430119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1ff2027823ffb49349a50dfd21f40a88, type: 3}
+  m_PrefabInstance: {fileID: 535430118}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &554929991
 GameObject:
   m_ObjectHideFlags: 0
@@ -16395,7 +16400,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh119660
+  m_Name: pb_Mesh65002
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20377,6 +20382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.5
   nearbyColliders: []
+  displayedItem: {fileID: 0}
 --- !u!143 &1950574573
 CharacterController:
   m_ObjectHideFlags: 0
@@ -20706,6 +20712,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 1352351141}
+  offMat: {fileID: 2100000, guid: 8ffe5d3265edf4686ba9d024596f5583, type: 2}
+  onMat: {fileID: 2100000, guid: 96b1af084ef994fd8bae47a701dfcd60, type: 2}
+  matBody: {fileID: 535430119}
 --- !u!4 &1968810440 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ff2027823ffb49349a50dfd21f40a88, type: 3}
@@ -21600,6 +21609,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 1087305097}
+  offMat: {fileID: 2100000, guid: 8ffe5d3265edf4686ba9d024596f5583, type: 2}
+  onMat: {fileID: 2100000, guid: 96b1af084ef994fd8bae47a701dfcd60, type: 2}
+  matBody: {fileID: 535430119}
 --- !u!1001 &2056222085
 PrefabInstance:
   m_ObjectHideFlags: 0
