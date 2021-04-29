@@ -32,6 +32,8 @@ public class PlayerMover : MonoBehaviour
     float startY;
     float respawnY;
     public float trigger_respawn_dist = 30f;
+    private FMOD.Studio.EventInstance playerMoveAud;
+    
     void Start()
     {
         //startY = CamTransform.position.y;
@@ -40,6 +42,10 @@ public class PlayerMover : MonoBehaviour
         CC = GetComponent<CharacterController>();
         //CamTransform = Camera.main.transform;
         tankRotation = transform.rotation.eulerAngles.y;
+
+        playerMoveAud = FMODUnity.RuntimeManager.CreateInstance("event:/PlayerMove");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(playerMoveAud, transform, GetComponent<Rigidbody>());
+        playerMoveAud.start();
     }
 
     public void Update()
@@ -74,6 +80,8 @@ public class PlayerMover : MonoBehaviour
             moveDirection.z *= walkSpeed;
 
             CC.Move(moveDirection * Time.deltaTime);
+
+            
 
             if (hit.collider != null && hit.distance < playerHeight + rampSnapThreshold && !hit.collider.isTrigger) { new Vector3(transform.position.x, hit.point.y + playerHeight, transform.position.z); }
             if (transform.position.y < respawnY) { FallRespawn(); }
