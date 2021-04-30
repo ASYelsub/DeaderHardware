@@ -45,13 +45,14 @@ public class ChandelierFall_Trigger : MonoBehaviour, ITriggerable
             timer = timer + .01f;
             yield return null;
         }
+        FMODUnity.RuntimeManager.PlayOneShot("Event:/LibraryChandelierCrash");
         //PlayOneShot ChandelierCrash
         while (timer < 1.5 && timer >= 1)
         {
             timer = timer + .01f;
             yield return null;
         }
-        SceneManager.LoadScene("CreditsScene");
+        SceneManager.LoadScene("CreditScene");
         yield return null;
     }
 }

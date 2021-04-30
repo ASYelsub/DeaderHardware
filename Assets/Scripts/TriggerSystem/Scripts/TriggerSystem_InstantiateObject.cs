@@ -12,7 +12,7 @@ public class TriggerSystem_InstantiateObject : MonoBehaviour, ITriggerable
 
     public void ExecuteLeaveTriggerFunction()
     {
-        throw new System.NotImplementedException();
+//        throw new System.NotImplementedException();
     }
 
     //[SerializeField]

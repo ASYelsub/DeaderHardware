@@ -79,7 +79,7 @@ public class PlayerMover : MonoBehaviour
             moveDirection.x *= walkSpeed;
             moveDirection.z *= walkSpeed;
 
-            Debug.Log("WalkSpeed = " + walkSpeed / maxWalkSpeed);
+          //  Debug.Log("WalkSpeed = " + walkSpeed / maxWalkSpeed);
 
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PlayerVelocity", Mathf.Abs(walkSpeed) / maxWalkSpeed);
 

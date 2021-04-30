@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     MenuSounds menuSounds;
     public void Start()
     {
+        soundNow = 0;
         menuSounds = FindObjectOfType<MenuSounds>();
         tm = GameObject.Find("GameCamera").GetComponentInChildren<TextMeshPro>();
         tm.text = "";
@@ -78,6 +79,35 @@ public class DialogueManager : MonoBehaviour
     IDialogueCommand[] currentCommands;
     [SerializeField]
     private float typeSpeed;//lower is faster
+
+    private void TypeSound() {
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/LibrarianTalk");
+        }
+        else if (SceneManager.GetActiveScene().name == "Hub")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/ConsoleEntityTalk");
+        }
+    }
+
+    private void OrganizeSound(int i)
+    {
+        switch (i)
+        {
+            case 0:
+                TypeSound();
+                soundNow = 1;
+                break;
+            case 1:
+                soundNow = 2;
+                break;
+            case 2:
+                soundNow = 0;
+                break;
+        }
+    }
+    private int soundNow;
     public IEnumerator DisplayText (string current) 
     {
         
@@ -87,14 +117,8 @@ public class DialogueManager : MonoBehaviour
 
         for (int i = 0; i < current.Length; i++)
         {
-            if (SceneManager.GetActiveScene().name == "Level 2")
-            {
-                FMODUnity.RuntimeManager.PlayOneShot("event:/LibrarianTalk");
-            }
-            else if (SceneManager.GetActiveScene().name == "Hub")
-            {
-                FMODUnity.RuntimeManager.PlayOneShot("event:/ConsoleEntityTalk");
-            }
+
+            OrganizeSound(soundNow);
             if (commandInText(current, i)) // if a command is detected in the dialogue
             {
                 foreach (IDialogueCommand cmd in currentCommands)// go through all the scripts in the trigger's children that use the interface 'IDialogueCommands'
