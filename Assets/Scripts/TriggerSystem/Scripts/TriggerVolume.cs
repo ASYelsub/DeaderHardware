@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TriggerVolume : MonoBehaviour, IInteractable
@@ -66,7 +68,7 @@ public class TriggerVolume : MonoBehaviour, IInteractable
 
     public void ExecuteInteraction()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Interaction");
+        //FMODUnity.RuntimeManager.PlayOneShot("event:/Interaction");
         foreach (IInteractable g in GetComponentsInChildren<IInteractable>())
         {
             if (g != this.gameObject.GetComponent<IInteractable>())
