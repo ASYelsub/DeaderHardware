@@ -66,6 +66,7 @@ public class TriggerVolume : MonoBehaviour, IInteractable
 
     public void ExecuteInteraction()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Interaction");
         foreach (IInteractable g in GetComponentsInChildren<IInteractable>())
         {
             if (g != this.gameObject.GetComponent<IInteractable>())

@@ -7,11 +7,11 @@ public class PopupTextScript : MonoBehaviour
 {
     bool fadeIn;
 
-    public void StartUp(string textToDisplay="")
+    public void StartUp(string textToDisplay = "")
     {
-        if (textToDisplay != "")
+        if (textToDisplay == "")
         {
-            GetComponent<TextMeshPro>().text = "no text input...";
+            GetComponent<TextMeshPro>().text = "Interact";
         }
         else
         {

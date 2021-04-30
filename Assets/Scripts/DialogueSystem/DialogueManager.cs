@@ -4,6 +4,7 @@ using System.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -22,9 +23,11 @@ public class DialogueManager : MonoBehaviour
     private bool playCore;
 
     public TextMeshPro tm;
-    
+    MenuSounds menuSounds;
     public void Start()
     {
+        soundNow = 0;
+        menuSounds = FindObjectOfType<MenuSounds>();
         tm = GameObject.Find("GameCamera").GetComponentInChildren<TextMeshPro>();
         tm.text = "";
         canEngage = true;
@@ -76,6 +79,35 @@ public class DialogueManager : MonoBehaviour
     IDialogueCommand[] currentCommands;
     [SerializeField]
     private float typeSpeed;//lower is faster
+
+    private void TypeSound() {
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/LibrarianTalk");
+        }
+        else if (SceneManager.GetActiveScene().name == "Hub")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/ConsoleEntityTalk");
+        }
+    }
+
+    private void OrganizeSound(int i)
+    {
+        switch (i)
+        {
+            case 0:
+                TypeSound();
+                soundNow = 1;
+                break;
+            case 1:
+                soundNow = 2;
+                break;
+            case 2:
+                soundNow = 0;
+                break;
+        }
+    }
+    private int soundNow;
     public IEnumerator DisplayText (string current) 
     {
         
@@ -85,6 +117,8 @@ public class DialogueManager : MonoBehaviour
 
         for (int i = 0; i < current.Length; i++)
         {
+
+            OrganizeSound(soundNow);
             if (commandInText(current, i)) // if a command is detected in the dialogue
             {
                 foreach (IDialogueCommand cmd in currentCommands)// go through all the scripts in the trigger's children that use the interface 'IDialogueCommands'
@@ -93,6 +127,7 @@ public class DialogueManager : MonoBehaviour
                 }
                 i += 5; //skip ahead in the text so that you dont end up printing '<CMD>' on screen
                 //Cleanup();
+                
                 yield return null;
             }
             if(i < current.Length)

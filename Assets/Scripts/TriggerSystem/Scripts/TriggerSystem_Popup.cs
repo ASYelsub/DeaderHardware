@@ -17,11 +17,19 @@ public class TriggerSystem_Popup : MonoBehaviour, ITriggerable
     [SerializeField]
     private GameObject matObj;
     public TriggerSystem_ItemPickup itemPickup;
+
+    [SerializeField] string hoverText;
     public void ExecuteInteraction(){}
 
     public void ExecuteTriggerFunction()
     {
-        if(itemPickup.pickedUp == false || itemPickup == null)
+        if (GameObject.FindGameObjectWithTag("POPUP"))
+        {
+            GameObject.FindGameObjectWithTag("POPUP").GetComponent<PopupTextScript>().StartUp(hoverText);
+        }
+
+
+        if (itemPickup.pickedUp == false || itemPickup == null)
         {
             particleObject.Play();
 
@@ -33,6 +41,11 @@ public class TriggerSystem_Popup : MonoBehaviour, ITriggerable
     public void ExecuteLeaveTriggerFunction()
     {
         //print("WE STOPPED");
+        if (GameObject.FindGameObjectWithTag("POPUP"))
+        {
+            GameObject.FindGameObjectWithTag("POPUP").GetComponent<PopupTextScript>().Stop();
+        }
+
         particleObject.Stop();
         matObj.GetComponent<MeshRenderer>().material = offMat;
     }
