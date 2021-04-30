@@ -634,8 +634,8 @@ public class InvMenu : MonoBehaviour
             for (int i = 0; i < normItemObjects.Count; i++)
             {
                 print(itemTags[activeItemInt].ID);
-                print(i + bookModelMaterials.Count - 1);
-                if(itemTags[activeItemInt].ID == i + bookModelMaterials.Count - 1)
+                print(i + bookModelMaterials.Count);
+                if(itemTags[activeItemInt].ID == i + bookModelMaterials.Count)
                 {
                     print("Hello");
                     normItemObjects[i].SetActive(true);

@@ -1289,7 +1289,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2151941568233927999}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27b8d34b9567d4f1fa00add9d9b66895, type: 3}
   m_Name: 
@@ -1303,7 +1303,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2308292871758967222}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27b8d34b9567d4f1fa00add9d9b66895, type: 3}
   m_Name: 
@@ -12709,7 +12709,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: cbaa8fea1ea7641cab9e885ffdf2b9f8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 363f3589d33e57f4aaa58ff42a4696fa, type: 2}
+      objectReference: {fileID: 2100000, guid: 359f7368e4275f04a98054280f4b0e39, type: 2}
     - target: {fileID: 919132149155446097, guid: cbaa8fea1ea7641cab9e885ffdf2b9f8, type: 3}
       propertyPath: m_Name
       value: Book_Model
