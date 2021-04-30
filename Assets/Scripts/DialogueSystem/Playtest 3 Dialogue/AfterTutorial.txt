@@ -1,3 +1,6 @@
-Hi! I'm the console entity after you've triggered the tower!
-You need to go to the library which is like... behind the tower.
-Or you could just fall into the void, or something...
+[INITIATING RECOVERY PROTOCOL]
+. . . . . . . . . . . . . . . .
+Hello! I'm "blake family game room"! You've booted me into RECOVERY MODE! 
+It looks like my LIBRARY has become CORRUPTED.
+Enter the library to complete diagnostic protocols and retrieve the sector's RECOVERY KEY.
+The library is behind me! Please return with the RECOVERY KEY to continue RECOVERY operations. 
