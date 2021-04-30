@@ -166,7 +166,17 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{2c22bdaa-f231-42f4-a138-db164f7c5dfe}" />
-	<object class="SpatialiserEffect" id="{5f9ea859-7bbf-4bae-b01f-ed1fa8338021}" />
+	<object class="SpatialiserEffect" id="{5f9ea859-7bbf-4bae-b01f-ed1fa8338021}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+		<property name="minimumDistance">
+			<value>2800</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10000</value>
+		</property>
+	</object>
 	<object class="FlangerEffect" id="{9b859f45-43cd-401e-8f01-947b13d069ab}">
 		<property name="rate">
 			<value>10</value>
