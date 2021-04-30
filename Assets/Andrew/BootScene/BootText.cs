@@ -27,10 +27,19 @@ public class BootText : MonoBehaviour
         if (!isCredits)
         {
             StartCoroutine(bootScreenSequence());
+
+            if (GameObject.Find("anim"))
+            {
+                Color c = GameObject.Find("anim").GetComponent<TextMeshPro>().color;
+                c.a = 0;
+                GameObject.Find("anim").GetComponent<TextMeshPro>().color = c;
+            }
+
         }
         else
         {
             StartCoroutine(creditSequence());
+
         }
         moveToNextLevel = false;
     }
@@ -142,6 +151,8 @@ public class BootText : MonoBehaviour
         moveToNextLevel = true;
     }
 
+
+    public float flashStandard = .1f;
     IEnumerator bootScreenSequence()
     {
         yield return new WaitForSeconds(1);
@@ -182,6 +193,7 @@ public class BootText : MonoBehaviour
         PerformAction(0, $"0x000{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}", .05f);
         yield return new WaitForSeconds(.75f);
         PerformAction(1, " <color=red>(DEAD/NOT FOUND)\n</color>");
+        vivFlash(flashStandard);
         PerformAction(1, "--\n");
 
         yield return new WaitForSeconds(.1f);
@@ -196,6 +208,7 @@ public class BootText : MonoBehaviour
         PerformAction(0, $"0x000{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}", .05f);
         yield return new WaitForSeconds(.75f);
         PerformAction(1, " <color=red>(DEAD/NOT FOUND)\n</color>");
+        vivFlash(flashStandard);
         PerformAction(1, "--\n");
 
         yield return new WaitForSeconds(.1f);
@@ -217,6 +230,7 @@ public class BootText : MonoBehaviour
         PerformAction(0, $"0x000{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}{Random.Range(0, 9)}", .05f);
         yield return new WaitForSeconds(.75f);
         PerformAction(1, " <color=red>(DEAD/NOT FOUND)\n</color>");
+        vivFlash(flashStandard);
         PerformAction(1, "--\n");
 
         yield return new WaitForSeconds(1f);
@@ -362,6 +376,7 @@ public class BootText : MonoBehaviour
     int dotCount;
     string loadString;
 
+
     void EllipseLoad(float loadTime)
     {
         loadString = "";
@@ -369,5 +384,25 @@ public class BootText : MonoBehaviour
         ellipseLoading = true;
         loadTime_ = loadTime;
         loadTimer_ = 0;
+    }
+
+    void vivFlash(float flashtime)
+    {
+        StartCoroutine(vivVlasher(flashtime));
+    }
+    IEnumerator vivVlasher(float flash)
+    {
+        if (GameObject.Find("anim")) {
+            Color c = GameObject.Find("anim").GetComponent<TextMeshPro>().color;
+            c.a = 1;
+            GameObject.Find("anim").GetComponent<TextMeshPro>().color = c;
+        }
+        yield return new WaitForSeconds(flash);
+        if (GameObject.Find("anim"))
+        {
+            Color c = GameObject.Find("anim").GetComponent<TextMeshPro>().color;
+            c.a = 0;
+            GameObject.Find("anim").GetComponent<TextMeshPro>().color = c;
+        }
     }
 }
