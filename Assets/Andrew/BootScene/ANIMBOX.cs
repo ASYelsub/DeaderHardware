@@ -26,7 +26,14 @@ public class ANIMBOX : MonoBehaviour
         fr++;
         if (fr % 2 == 0)
         {
-            currentFR+=increment;
+            if (currentFR == 0)
+            {
+                currentFR = 4;
+            }
+            else
+            {
+                currentFR = 0;
+            }
         }
         if (currentFR == boxFrames.Length-1) { increment = -1; }
         if (currentFR == 0) { increment = 1; }
