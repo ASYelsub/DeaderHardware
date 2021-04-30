@@ -119,6 +119,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{71520710-0680-4fd5-8875-d98dacf4e545}">
+		<property name="volume">
+			<value>9.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -166,6 +169,7 @@
 	<object class="MixerBusEffectChain" id="{62dee101-b3a0-448c-9617-624ced3512f4}">
 		<relationship name="effects">
 			<destination>{01d0b09f-49ee-47fc-ae62-7c5e59265b08}</destination>
+			<destination>{6da7bfe6-0296-4c20-ada3-12be4a0f9dc9}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d51053fa-2909-4df7-96b2-eef8c4f55775}" />
@@ -181,24 +185,53 @@
 	<object class="MixerBusFader" id="{91355af2-ffd5-407c-aa05-4d94f27b4ec9}" />
 	<object class="SpatialiserEffect" id="{aadeca87-f1e1-4828-86d1-2dc060e2923b}">
 		<property name="minimumDistance">
-			<value>4.20000029</value>
+			<value>3.4000001</value>
 		</property>
 		<property name="maximumDistance">
-			<value>8.40000057</value>
+			<value>10</value>
 		</property>
 	</object>
 	<object class="DistortionEffect" id="{1defb455-a554-47c1-9b30-83729ee0de53}">
 		<property name="level">
-			<value>0.119999997</value>
+			<value>0.194999993</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{01d0b09f-49ee-47fc-ae62-7c5e59265b08}" />
+	<object class="SFXReverbEffect" id="{6da7bfe6-0296-4c20-ada3-12be4a0f9dc9}">
+		<property name="decayTime">
+			<value>3400</value>
+		</property>
+		<property name="earlyDelay">
+			<value>30</value>
+		</property>
+		<property name="lateDelay">
+			<value>51</value>
+		</property>
+		<property name="diffusion">
+			<value>95.5</value>
+		</property>
+		<property name="density">
+			<value>80</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>11</value>
+		</property>
+		<property name="highCut">
+			<value>1050</value>
+		</property>
+		<property name="wetLevel">
+			<value>4</value>
+		</property>
+		<property name="dryLevel">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{7197a73f-6d63-4766-9b25-7e5042397eb9}">
 		<property name="position">
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-75</value>
+			<value>-80</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{0abecdb5-a234-4106-8127-b3c9a2280a6e}">
@@ -206,7 +239,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-6</value>
 		</property>
 	</object>
 </objects>
