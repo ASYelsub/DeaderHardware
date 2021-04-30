@@ -15,12 +15,13 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
     //Set to true if first dialogue with librarian or console entity, otherwise set to false
     [SerializeField]
     private bool grabPlayer;
+    [SerializeField]
+    private bool afterItemDeposit;
 
     // TODO:
     // * font
     // * line spacing
-
-    [Header("Console Specific")]
+    [Header("Console (and Chandelier) Specific")]
     [SerializeField]
     private bool isConsole;
     [SerializeField]
@@ -75,5 +76,6 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
             oldConsole.SetActive(false);
             newConsole.SetActive(true);
         }
+
     }
 }

@@ -4,6 +4,7 @@ using System.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -22,9 +23,10 @@ public class DialogueManager : MonoBehaviour
     private bool playCore;
 
     public TextMeshPro tm;
-    
+    MenuSounds menuSounds;
     public void Start()
     {
+        menuSounds = FindObjectOfType<MenuSounds>();
         tm = GameObject.Find("GameCamera").GetComponentInChildren<TextMeshPro>();
         tm.text = "";
         canEngage = true;
@@ -39,8 +41,9 @@ public class DialogueManager : MonoBehaviour
             {
 
                 //Debug.Log("SPACE");
-                if (lineNum >= lines.Length)
+                if (lineNum >= lines.Length && !isTyping)
                 {
+                    ClearText();
                     Cleanup();
                     isShowing = false;
                     Debug.Log("This is happening");
@@ -78,12 +81,22 @@ public class DialogueManager : MonoBehaviour
     public IEnumerator DisplayText (string current) 
     {
         
-        //Debug.Log("Display Text is happening");
+        Debug.Log("Display Text is happening");
         isTyping = true;
         lineNum++;
 
         for (int i = 0; i < current.Length; i++)
         {
+            if (SceneManager.GetActiveScene().name == "Level 2")
+            {
+                //comment out this line below
+                menuSounds.RejectItemInv();
+                FMODUnity.RuntimeManager.PlayOneShot("event:/LibrarianTalk");
+            }
+            else if (SceneManager.GetActiveScene().name == "Hub")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/ConsoleEntityTalk");
+            }
             if (commandInText(current, i)) // if a command is detected in the dialogue
             {
                 foreach (IDialogueCommand cmd in currentCommands)// go through all the scripts in the trigger's children that use the interface 'IDialogueCommands'
@@ -92,6 +105,7 @@ public class DialogueManager : MonoBehaviour
                 }
                 i += 5; //skip ahead in the text so that you dont end up printing '<CMD>' on screen
                 //Cleanup();
+                
                 yield return null;
             }
             if(i < current.Length)
@@ -109,6 +123,7 @@ public class DialogueManager : MonoBehaviour
 
     public void FillText(string current)
     {
+        Debug.Log("FillText");
         isTyping = true;
         for (int i = 0; i < current.Length; i++)
         {

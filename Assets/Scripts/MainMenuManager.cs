@@ -12,25 +12,40 @@ public class MainMenuManager : MonoBehaviour
     
     [Header("Camera Variables")]
     [SerializeField] Transform GameCamera;
+    [SerializeField] GameObject gC;
     [SerializeField] Vector3 endPos;
     Vector3 opPos;
 
     [Header("Main Menu Variables")]
     [SerializeField] GameObject MenuHolder;
+    [SerializeField] TextMeshPro pressAny;
+    [SerializeField] GameObject textRotateObject;
+    [SerializeField] GameObject controlsTutorial;
+    Color openColor;
+    bool opening;
+    float loadingFloat;
     int loadingInt;
 
     [SerializeField] Rotate CERotateScript;
+    HUB_LightSpin hLSScript;
+    [SerializeField] GameObject loadingText;
 
     [Header("Option Variables")]
     [SerializeField] GameObject[] options;
     int selectedOption = 1;
     [SerializeField] Material selectMat;
     [SerializeField] Material unselectMat;
-
+   
     void Start()
     {
+        controlsTutorial.SetActive(false);
+        hLSScript = FindObjectOfType<HUB_LightSpin>();
+        SetMenuActive(false);
+        SetOptionsActive(false);
         opPos = GameCamera.position; //So the camera knows where to return to on escape
         ChangeActiveOption(true); //To set the active option to play
+        openColor = pressAny.color;
+        pressAny.color = Color.clear;
     }
 
     void Update()
@@ -39,8 +54,10 @@ public class MainMenuManager : MonoBehaviour
         {
             menuState = true;
         }
-
-        if (menuState && optionsActive) //For Navigating Menu
+        
+        if(Input.anyKeyDown && tutorialOpen == true){
+            ToggleControls(false);
+        }else if (menuState && optionsActive) //For Navigating Menu
         {
             if(Input.GetKeyDown(KeyCode.Escape)) //Returns to Title
             {
@@ -68,6 +85,14 @@ public class MainMenuManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(pressAny.color != openColor && loadingFloat < 1)
+        {
+            loadingFloat += 0.0025f;
+            {
+                pressAny.color = Color.Lerp(Color.clear, openColor, loadingFloat);
+            }
+        }
+
         if(menuState)
         {
             //Moves Camera Up
@@ -97,6 +122,17 @@ public class MainMenuManager : MonoBehaviour
             if(loadingInt >= 100)
             {
                 SetOptionsActive(true);
+            }else if(loadingInt >= 70)
+            {
+                loadingText.GetComponent<TextMeshPro>().text = "Loading...";
+            }
+            else if(loadingInt >= 40)
+            {
+                loadingText.GetComponent<TextMeshPro>().text = "Loading..";
+            }
+            else if(loadingInt >= 10)
+            {
+                loadingText.GetComponent<TextMeshPro>().text = "Loading.";
             }
         }
     }
@@ -105,8 +141,12 @@ public class MainMenuManager : MonoBehaviour
     {
         MenuHolder.SetActive(b);
         CERotateScript.disabled = b;
+        GameCamera.gameObject.GetComponent<Rotate>().disabled = b;
+        hLSScript.disabled = b;
         loadingInt = 0;
         menuActive = b;
+        textRotateObject.GetComponent<Rotate>().disabled = b;
+        
     }
 
     void SetOptionsActive(bool b)
@@ -155,16 +195,17 @@ public class MainMenuManager : MonoBehaviour
             }
         }
     }
-
+    bool tutorialOpen = false;
     void SelectOption()
     {
         if(selectedOption == 0)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("Level 1");
         }
 
         if(selectedOption == 1)
         {
+            ToggleControls(true);
             //Put Controls Screen stuff here
         }
 
@@ -172,5 +213,10 @@ public class MainMenuManager : MonoBehaviour
         {
             Application.Quit();
         }
+    }
+    void ToggleControls(bool f)
+    {
+        controlsTutorial.SetActive(f);
+        tutorialOpen = f;
     }
 }

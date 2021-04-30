@@ -12,12 +12,15 @@ public class CameraManager
 
     private bool _tracking = true;
     private bool _dynamic = false;
+    private bool _progressgoingup = false;
+    private float _lastframeProgress;
 
     private GameObject _lastShotSetter;
 
     //Dynamic Camera Variables
-    private float _dynamicCameraProgress;
-    private GameObject[] _splineArray;
+    private float _dynamicCameraProgress, increments;
+    private GameObject[] _camSplineArray;
+    private GameObject[] _playerPathSpline;
 
     private struct _dynamicCameraSplinePoint {
         public int index;
@@ -25,11 +28,23 @@ public class CameraManager
         public Vector3 position;
     }
 
-    private _dynamicCameraSplinePoint _splinePointA;
-    private _dynamicCameraSplinePoint _splinePointB;
+    private struct SplineHolder {
+        public GameObject[] array;
+        public Transform pointA;
+        public Transform pointB;
+        public int index;
+        public bool movingUpArray;
+    }
+
+    private SplineHolder cameraSpline;
+    private SplineHolder pathSpline;
+
+//    private _dynamicCameraSplinePoint _splinePointA;
+//    private _dynamicCameraSplinePoint _splinePointB;
 
     public void Initialize() {
-        _mainCamera = GameObject.FindGameObjectWithTag("GameCamera");
+        Debug.Log("I am called");
+        _mainCamera = GameObject.Find("GameCamera");
         _cameraTarget = GameObject.FindGameObjectWithTag("Player").transform;
         _lastTargetPosition = Vector3.zero;
     }
@@ -42,10 +57,11 @@ public class CameraManager
         if (_dynamic) _dynamicUpdate();
         if (_tracking) _trackingUpdate();
 
+        /*
         //TEMP!!!!
         _dynamicCameraProgress += .005f;
         if (_dynamicCameraProgress > 1) _dynamicCameraProgress = 0;
-
+        */
     }
 
     void constructForwardVectorForTarget() {
@@ -56,7 +72,7 @@ public class CameraManager
     void _trackingUpdate() {
         Vector3 _desiredDirection = ((_cameraTarget.position + _cameraTarget.transform.forward * 2) - _mainCamera.transform.position);
         Quaternion _desiredRotation = Quaternion.LookRotation(_desiredDirection, Vector3.up);
-        _mainCamera.transform.rotation = Quaternion.Slerp(_mainCamera.transform.rotation, _desiredRotation, Time.deltaTime);
+        _mainCamera.transform.rotation = Quaternion.Slerp(_mainCamera.transform.rotation, _desiredRotation, Time.deltaTime * 2);
     }
 
     public void setShotStatic(GameObject shotHolder, bool tracking, GameObject shotSetter) {
@@ -74,23 +90,36 @@ public class CameraManager
 
     }
 
-    public void setShotDynamic(GameObject[] splineArray, bool tracking, GameObject shotSetter) {
+    //Set shot to be dynamic
+    public void setShotDynamic(GameObject[] cameraSplineArray, GameObject[] playerPathSplineArray, bool tracking, GameObject shotSetter) {
 
+        //Set Shot to be dynamic
         if (shotSetter == _lastShotSetter) return;
+        if (cameraSplineArray.Length == 0 || playerPathSplineArray.Length == 0) return;
+        if (_cameraTarget == null) return;
+
+        cameraSpline.index = 0;
+        pathSpline.index = 0;
 
         _dynamic = true;
-
         _lastShotSetter = shotSetter;
 
+        //Is Camera Tracking
         _tracking = tracking;
 
-        _splineArray = splineArray;
+        //Configure Camera Spline
+        cameraSpline.array = cameraSplineArray;
+        pathSpline.array = playerPathSplineArray;
 
-        _splinePointA.transform = splineArray[0].transform;
-        _splinePointA.index = 0;
+        cameraSpline.pointA = cameraSpline.array[1].transform;
+        cameraSpline.pointB = cameraSpline.array[0].transform;
 
-        _splinePointB.transform = splineArray[1].transform;
-        _splinePointB.index = 1;
+        pathSpline.pointA = pathSpline.array[0].transform;
+        pathSpline.pointB = pathSpline.array[1].transform;
+
+        increments = (1f / (cameraSpline.array.Length - 1f));
+
+        // -------------------------------- //
 
     }
 
@@ -98,60 +127,112 @@ public class CameraManager
 
         _updateSplineInformation();
 
-        float _progress = GetProgress(_splinePointA.position, _splinePointB.position, _cameraTarget.position);
+        float _progress = GetProgress(pathSpline.pointA.position, pathSpline.pointB.position, _cameraTarget.position);
 
-        if (_progress > .95f) _dynamicCamUpIndex();
-        if (_progress < .05f) _dynamicCamDownIndex();
+        if (_progress > .95 && !_progressgoingup) {
+            pathSpline = SplineUpIndex(pathSpline);
 
-        _dynamicCameraProgress = (_progress + _splinePointA.index / _splineArray.Length);
+        }
+        if (_progress < .05 && _progressgoingup) {
+            pathSpline = SplineDownIndex(pathSpline);
+            cameraSpline = SplineDownIndex(cameraSpline);
+        }
 
-        Debug.Log(_splinePointA.index);
-        Debug.Log(_splinePointB.index);
+        
+
+        float overallProgress = (_progress + pathSpline.index) / (pathSpline.array.Length - 1);
+
+        Debug.Log("Increments:" + increments);
+
+        if (overallProgress > (cameraSpline.index * increments)) cameraSpline = splineUpIndexCamera(cameraSpline);
+        if (overallProgress < (cameraSpline.index * increments)) cameraSpline = splineDownIndexCamera(cameraSpline);
+
+        //---------- things broken blow this point ---------------//
+
+        _dynamicCameraProgress = (overallProgress) / (((cameraSpline.index) * increments) + .25f);
+        Debug.Log(new Vector3(_dynamicCameraProgress, overallProgress, cameraSpline.index));
+
+        if (cameraSpline.pointA == null || cameraSpline.pointB == null) Debug.Log("Null Spline Points"); 
+        if (pathSpline.pointA == null || pathSpline.pointB == null) Debug.Log("Null Spline Points");
 
         //Set Camera Along Line
-        Vector3 _noramlizedDirection = Vector3.Normalize(_splinePointA.position - _splinePointB.position);
-        float _distanceBetweenPoints = Vector3.Distance(_splinePointA.position, _splinePointB.position);
+        Vector3 _noramlizedDirection = Vector3.Normalize(cameraSpline.pointB.position - cameraSpline.pointA.position);
+        float _distanceBetweenPoints = Vector3.Distance(cameraSpline.pointB.position, cameraSpline.pointA.position);
 
-        _mainCamera.transform.position = _splinePointA.position + (-_noramlizedDirection * _dynamicCameraProgress * _distanceBetweenPoints);
+        _dynamicCameraProgress = _progress;
+        Vector3 desiredCameraPosition = cameraSpline.pointB.position + ((-_noramlizedDirection * _distanceBetweenPoints) * (_dynamicCameraProgress));
+
+        _mainCamera.transform.position = Vector3.Lerp(_mainCamera.transform.position, desiredCameraPosition, .1f);
+
+        _progressgoingup = (_lastframeProgress > _progress);
+
+        _lastframeProgress = _progress;
 
     }
 
     void _updateSplineInformation() {
 
-        _splinePointA.transform = _splineArray[_splinePointA.index].transform;
-        _splinePointB.transform = _splineArray[_splinePointB.index].transform;
+    }
 
-        _splinePointA.position = _splinePointA.transform.position;
-        _splinePointB.position = _splinePointB.transform.position;
+    //TODO refactor to take in SplineHolder
+    SplineHolder SplineUpIndex(SplineHolder a) {
+
+        /*
+        if (a.index + 2 == a.array.Length) return a;
+
+        //point a becomes b
+        //point b becomes a+1
+
+        a.pointA = a.pointB;
+        a.pointB = a.array[a.index + 2].transform;
+
+        a.index += 1;
+                */
+        return a;
+
 
     }
 
-    void _dynamicCamUpIndex() {
-
-        //B becomes A, B+1 becomes B
-
-        int _i = _splinePointB.index;
-
-        if (_i == _splineArray.Length - 1) return;
-
-        Debug.Log("Up Index");
-
-        _splinePointB.index = _i + 1;
-        _splinePointA.index = _i;
-    }
-
-    void _dynamicCamDownIndex() {
-
-        int _i = _splinePointA.index;
-
-        Debug.Log("Down Index");
-
-        if (_i == 0) return;
-
-        _splinePointA.index = _i - 1;
-        _splinePointB.index = _i;
-
+    SplineHolder SplineDownIndex(SplineHolder a) {
         //A becomes B, A-1 becomes B
+
+        /*
+        if (a.index == 0) return a;
+
+        a.pointB = a.pointA;
+        a.pointA = a.array[a.index - 1].transform;
+
+        a.index--;
+        */
+        return a;
+    }
+
+    SplineHolder splineUpIndexCamera(SplineHolder a) {
+        /*
+        Debug.Log("Up:" + a.index);
+
+        if (a.index == a.array.Length - 1) return a;
+
+        a.pointA = a.array[a.index + 1].transform;
+        a.pointB = a.array[a.index].transform;
+
+        a.index++;
+        */
+        return a;
+    }
+
+    SplineHolder splineDownIndexCamera(SplineHolder a) {
+        /*
+        Debug.Log("Down:" + a.index);
+
+        if (a.index - 1 == 0) return a;
+
+        a.pointA = a.array[a.index - 1].transform;
+        a.pointB = a.array[a.index - 2].transform;
+
+        a.index--;
+        */
+        return a;
     }
 
     float GetProgress(Vector3 _origin, Vector3 _end, Vector3 _point) {
@@ -174,7 +255,6 @@ public class CameraManager
         float progress = Vector2.Distance(origin, output) / Vector2.Distance(origin, end);
 
         return progress;
-
     }
 
 }

@@ -9,6 +9,8 @@ using TMPro;
 //scroll bar
 public class InvMenu : MonoBehaviour
 {
+    [HideInInspector]
+    public MenuSounds menuSounds;
     bool isStep = false;
     [SerializeField]
     Material activeMat;
@@ -29,12 +31,12 @@ public class InvMenu : MonoBehaviour
 
     [SerializeField]
     private GameObject tagPrefab;
-    [SerializeField]
+  /*  [SerializeField]
     private GameObject scroller;
     [SerializeField]
     private GameObject scrollPointPrefab;
     [SerializeField]
-    private GameObject scrollPointParent;
+    private GameObject scrollPointParent;*/
     [Header("Right Panel")]
     [SerializeField]
     private GameObject rightDescNormItem;
@@ -49,7 +51,8 @@ public class InvMenu : MonoBehaviour
     private GameObject bookModel;
     [SerializeField]
     private List<Material> bookModelMaterials;
-
+    [SerializeField]
+    private List<GameObject> normItemObjects;
 
     [SerializeField]
     Material activeTextMat;
@@ -79,8 +82,8 @@ public class InvMenu : MonoBehaviour
     //amount of items that have been picked up
     static int itemCounter = 0;
 
-    private List<ScrollPoint> scrollPoints;
-    public class ScrollPoint{
+   // private List<ScrollPoint> scrollPoints;
+    /*public class ScrollPoint{
         [HideInInspector] public Vector3 pos;
         [HideInInspector] public GameObject visual;
         public ScrollPoint(GameObject parent, GameObject prefab){
@@ -91,7 +94,7 @@ public class InvMenu : MonoBehaviour
             this.pos += pos;
             this.visual.GetComponent<Transform>().localPosition = this.pos;
         }
-    }
+    }*/
 
     public class ItemTag
     {
@@ -182,12 +185,12 @@ public class InvMenu : MonoBehaviour
 
     
     public void Start(){
-        scrollPoints = new List<ScrollPoint>();
+    /*    scrollPoints = new List<ScrollPoint>();
         for (int i = 0; i < scrollCount; i++)
         {
             scrollPoints.Add(new ScrollPoint(scrollPointParent,scrollPointPrefab));
             scrollPoints[i].AddPos(new Vector3(0, 0, i * scrollSpacer));
-        }
+        }*/
         
         //create the tags with no items in them
         for (int i = 0; i < visItem; i++)
@@ -201,11 +204,12 @@ public class InvMenu : MonoBehaviour
         menuObject.SetActive(menuOn);
         panelDescBook.SetActive(false);
         panelDescNormItem.SetActive(true);
+        menuSounds = gameObject.GetComponent<MenuSounds>();
     }
 
     private void Update()
     {
-        if (!ServicesLocator.GameManager.diaMan.isShowing)
+        if (!ServicesLocator.GameManager.diaMan.isShowing && !GameManager.settingsM.settingsActive)
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
@@ -236,7 +240,7 @@ public class InvMenu : MonoBehaviour
                     Debug.Log("Space");
                     Debug.Log(activeItemInt);
                     CheckItem(activeItemInt);
-
+                    ToggleMenu();
                     //bool corresponds = CheckItem(activeItemint);
 
                     //if(corresponds == true){
@@ -306,11 +310,12 @@ public class InvMenu : MonoBehaviour
             bool isCopy = false;
 
             //for test
-             ID = AddTest(ID);
+          //   ID = AddTest(ID);
             //for actual game
-            //isCopy = AddGame(ID);
+            isCopy = AddGame(ID);
             if (!isCopy)
             {
+                Debug.Log("InvMenu AddItem");
                 //check if the amount of items is less than the amount of items in the itemLibrary
                 if (itemCounter < ServicesLocator.ItemLibrary.ItemList.Count)
                 {
@@ -337,10 +342,11 @@ public class InvMenu : MonoBehaviour
 
                     }
                     itemCounter++;
+                    menuSounds.AddItemInv();
                 }
             }
 
-            DisplayActive();
+           // DisplayActive();
             isStep = false;
         }
         
@@ -361,8 +367,7 @@ public class InvMenu : MonoBehaviour
             isStep = true;
             int toReturn = itemTags[index].ID;
             if (itemCounter == 0)
-            { //paris do you want any item at 500? i'm just using this for the null value.
-                Debug.Log("this?");
+            { 
                 return 500;
             }
             else if (topTrack != 0)
@@ -459,10 +464,15 @@ public class InvMenu : MonoBehaviour
                 DisplayActive();
             }
             isStep = false;
-            
+            if(activeItemInt < 0)
+            {
+                activeItemInt = 0;
+            }
+            DisplayActive();
+           // menuSounds.UseItemInv();
             return toReturn;
         }
-    //    Debug.Log("this2");
+        //    Debug.Log("this2");
         return 500;
     }
     
@@ -472,10 +482,12 @@ public class InvMenu : MonoBehaviour
     {
         if (!isStep)
         {
+            
             isStep = false;
             if (itemCounter == 0) { }//don't do anything!
             else if (increase)
             {//if increasing
+                menuSounds.CycleItemInv();
                 if (itemCounter <= visItem)
                 {//if visible items isn't filled up and going down
                  //if at bottom of collected items
@@ -527,6 +539,7 @@ public class InvMenu : MonoBehaviour
             }
             else if (!increase)
             { //if decreasing
+                menuSounds.CycleItemInv();
                 if (itemCounter <= visItem)
                 {//if visible items isn't filled up
                     if (activeItemInt == 0)
@@ -591,7 +604,11 @@ public class InvMenu : MonoBehaviour
     }
     void DisplayActive()
     {
-        if (itemTags.Count == 0) return;
+        print("activeItemInt " + activeItemInt);
+        if (activeItemInt < 0)
+        {
+            return;
+        }
 
 
         //if is a book, display the book UI
@@ -602,19 +619,37 @@ public class InvMenu : MonoBehaviour
             rightDescBook.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
             bookModel.SetActive(true);
             bookModel.GetComponent<MeshRenderer>().material = bookModelMaterials[itemTags[activeItemInt].ID];
+            foreach (GameObject item in normItemObjects)
+            {
+                item.SetActive(false);
+            }
         }
         else
         {
             panelDescBook.SetActive(false);
-            panelDescNormItem.SetActive(true);
             rightDescNormItem.GetComponent<TextMeshPro>().text = itemTags[activeItemInt].tagDesc;
             bookModel.SetActive(false);
-            
+            panelDescNormItem.SetActive(true);
+           
+            for (int i = 0; i < normItemObjects.Count; i++)
+            {
+                print(itemTags[activeItemInt].ID);
+                print(i + bookModelMaterials.Count - 1);
+                if(itemTags[activeItemInt].ID == i + bookModelMaterials.Count - 1)
+                {
+                    print("Hello");
+                    normItemObjects[i].SetActive(true);
+                }
+                else
+                {
+                    normItemObjects[i].SetActive(false);
+                }
+            }
         }
 
         for (int i = 0; i < itemTags.Count; i++)
         {
-            print(activeItemInt);
+          //  print(activeItemInt);
             if (i == activeItemInt)
             {
                 itemTags[i].SetActive();
@@ -629,7 +664,7 @@ public class InvMenu : MonoBehaviour
         }
     }
     
-    void CycleScroller(bool increase){
+    /*void CycleScroller(bool increase){
         if (increase){
             if (scrollSpot < scrollCount - 1){
                 scrollSpot++;
@@ -645,12 +680,15 @@ public class InvMenu : MonoBehaviour
                 
         }
         scroller.transform.localPosition = scrollPoints[scrollSpot].pos;
-    }
+    }*/
 
     private void ToggleMenu()
     {
+        DisplayActive();
         menuOn = !menuOn;
         menuObject.SetActive(menuOn);
+        if (menuOn == true) { menuSounds.OpenInv(); }
+        else if (menuOn == false) { menuSounds.CloseInv(); }
     }
 
 

@@ -17,24 +17,40 @@ public class TriggerSystem_ParticleEffect : MonoBehaviour, ITriggerable
 
     List<GameObject> matBody = new List<GameObject>();
 
+    public string hoverText;
+
     public void ExecuteTriggerFunction()
     {
-        ps.Play();
+        if (GameObject.FindGameObjectWithTag("POPUP"))
+        {
+            GameObject.FindGameObjectWithTag("POPUP").GetComponent<PopupTextScript>().StartUp(hoverText);
+        }
+        
         for (int i = 0; i < matBody.Count; i++)
         {
             matBody[i].GetComponent<MeshRenderer>().material = onMat;
         }
 
+        
+        ps.Play();
+        
     }
 
 
     public void ExecuteLeaveTriggerFunction()
     {
-        ps.Stop();
+        if (GameObject.FindGameObjectWithTag("POPUP"))
+        {
+            GameObject.FindGameObjectWithTag("POPUP").GetComponent<PopupTextScript>().Stop();
+        }
+
         for (int i = 0; i < matBody.Count; i++)
         {
             matBody[i].GetComponent<MeshRenderer>().material = offMat;
         }
-
+        ps.Stop();
+        
     }
+
+
 }

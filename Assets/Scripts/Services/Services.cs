@@ -2,7 +2,7 @@ public static class ServicesLocator {
 
     public static void Initialization() {
         CameraManager.Initialize();
-        Music.Initialize();
+        //Music.Initialize();
     }
     public static CameraManager CameraManager;
     public static GameManager GameManager;
@@ -12,5 +12,6 @@ public static class ServicesLocator {
     public static DialogueManager DialogueManager;
     public static PlayerInteractor PlayerInteractor;
     public static LightManager LightManager;
+    public static LabelManager LabelManager;
 
 }
