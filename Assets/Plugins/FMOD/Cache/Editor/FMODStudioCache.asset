@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Ruins.bank
   Name: Ruins
   StudioPath: bank:/Ruins
-  lastModified: 637553052465926286
+  lastModified: 637553958747264600
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -412,7 +412,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Library.bank
   Name: Library
   StudioPath: bank:/Library
-  lastModified: 637553052465297503
+  lastModified: 637553958747153648
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -454,7 +454,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Hub.bank
   Name: Hub
   StudioPath: bank:/Hub
-  lastModified: 637553052464387465
+  lastModified: 637553958746713707
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -567,8 +567,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 3598965317804915638}
-  MinDistance: 90
+  - {fileID: 6032661810330177334}
+  MinDistance: 750
   MaxDistance: 4800
   Length: 4129
 --- !u!114 &-720217040679821805
@@ -606,7 +606,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637553052465686885
+  lastModified: 637553958747182966
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -694,7 +694,7 @@ MonoBehaviour:
   - {fileID: 656153253155419798}
   StringsBanks:
   - {fileID: -499783936321590070}
-  stringsBankWriteTime: 637553052465686885
+  stringsBankWriteTime: 637553958747182966
   cacheVersion: 6
 --- !u!114 &656153253155419798
 MonoBehaviour:
@@ -711,7 +711,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637553052465656948
+  lastModified: 637553958747172483
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -894,7 +894,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &5026586012890482680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +975,26 @@ MonoBehaviour:
     data1: 1985215825
     data2: 1795238556
   Exists: 0
+--- !u!114 &6032661810330177334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlayerMove/PlayerVelocity
+  m_EditorClassIdentifier: 
+  Name: PlayerVelocity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &6041809731513498134
 MonoBehaviour:
   m_ObjectHideFlags: 0
