@@ -6,7 +6,7 @@
 [LOG] OutputCoreAudio::init                    : Maximum hardware read size: 1024 samples, Software buffer size: 512 samples, Number of software buffers: 4.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x7faae6316208 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x7faae6b7b208 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -15,74 +15,35 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0x7faadaebbaf8 : node = 0x7faadaebbcb0
-[LOG] SystemI::createSound                     : add node to async list : head = 0x7faadb95c298.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7faadaebbaf8
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 318720
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 8992
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7faadaebbdc0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 246
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_Portal', format=5, channels=2, frequency=48000, lengthbytes=217024, lengthpcm=709623, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.520958.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7faadaebbaf8
-[LOG] SoundI::release                          : Aud_Portal (0x7faadb95b1e8)
-[LOG] SoundI::release                          :     Aud_Portal (0x7faaed431178)
-[LOG] SoundI::release                          :     Aud_Portal (0x7faaed431308)
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 318720
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 8992
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x700004d6d954
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x1857b42ce
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x1857b4385
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x1857b43b2
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x1857b4456
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x7faad55c3fe8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Aud_Interaction', format=5, channels=2, frequency=48000, lengthbytes=4736, lengthpcm=16136, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.525741.
-[LOG] SystemI::createSound                     : filename = FMOD/DeaderHardware_FMOD/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0x7faaf0eb3d08 : node = 0x7faaf0ece780
-[LOG] SystemI::createSound                     : add node to async list : head = 0x7faadb95c298.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7faaf0eb3d08
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/DeaderHardware_FMOD/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 318720
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 8992
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7faaf0ece890
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 246
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Aud_Portal', format=5, channels=2, frequency=48000, lengthbytes=217024, lengthpcm=709623, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.520958.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7faaf0eb3d08
-[LOG] SoundI::release                          : Aud_Portal (0x7faadaebbaf8)
-[LOG] SoundI::release                          :     Aud_Portal (0x7faadbcc5d18)
-[LOG] SoundI::release                          :     Aud_Portal (0x7faadbcc5ea8)
-[LOG] SoundI::release                          : Aud_Portal (0x7faaf0eb3d08)
-[LOG] SoundI::release                          :     Aud_Portal (0x7faad96f05e8)
-[LOG] SoundI::release                          :     Aud_Portal (0x7faad96ef888)
-[LOG] SoundI::release                          : Ambience_mixdown (0x7faadb95be68)
-[LOG] SoundI::release                          :     Ambience_mixdown (0x7faad4f9e318)
-[LOG] SoundI::release                          :     Ambience_mixdown (0x7faaed464e88)
-[LOG] SoundI::release                          :  (0x7faaebe392d8)
-[LOG] SoundI::release                          :     Aud_Interaction (0x7faaed1f44c8)
-[LOG] SoundI::release                          :  (0x7faaebe31b88)
-[LOG] SoundI::release                          :     Aud_PlayerMove_Engine (0x7faae54f1528)
+[LOG] SoundI::release                          : Aud_LibraryHushed (0x7faaee983858)
+[LOG] SoundI::release                          :     Aud_LibraryHushed (0x7faad7cf3d78)
+[LOG] SoundI::release                          :     Aud_LibraryHushed (0x7faad7cf3f08)
+[LOG] SoundI::release                          : Aud_Portal (0x7faaeda2a838)
+[LOG] SoundI::release                          :     Aud_Portal (0x7faad7cf3488)
+[LOG] SoundI::release                          :     Aud_Portal (0x7faad7cf3618)
+[LOG] SoundI::release                          : typewriter-1 (0x7faaf2a834f8)
+[LOG] SoundI::release                          :     typewriter-1 (0x7faad7c30818)
+[LOG] SoundI::release                          :     typewriter-1 (0x7faad7c309a8)
+[LOG] SoundI::release                          : Susan-Voice (0x7faaf2a07038)
+[LOG] SoundI::release                          :     Susan-Voice (0x7faad7cfdaa8)
+[LOG] SoundI::release                          :     Susan-Voice (0x7faad7cbbb08)
+[LOG] SoundI::release                          : Susan_-_Drums (0x7faaf2a301d8)
+[LOG] SoundI::release                          :     Susan_-_Drums (0x7faadaec0a48)
+[LOG] SoundI::release                          :     Susan_-_Drums (0x7faadae654d8)
+[LOG] SoundI::release                          :  (0x7faad7cf8cd8)
+[LOG] SoundI::release                          :     Aud_PlayerMove_Engine (0x7faaf22d1e28)
+[LOG] SoundI::release                          :  (0x7faad5686e28)
+[LOG] SoundI::release                          :     Aud_PlayerMove_Hum (0x7faaecb130a8)
 [LOG] SoundI::release                          :  (0x7faaebee1878)
-[LOG] SoundI::release                          :     Aud_PlayerMove_Hum (0x7faaebedb828)
+[LOG] SoundI::release                          :     WoodenDoorCreak1 (0x7faaed1f44c8)
+[LOG] SoundI::release                          :  (0x7faaebef1028)
+[LOG] SoundI::release                          :     WoodenDoorCreak2 (0x7faaed1f5198)
+[LOG] SoundI::release                          :  (0x7faaebedc8d8)
+[LOG] SoundI::release                          :     WoodenDoorCreak4 (0x7faad5560768)
+[LOG] SoundI::release                          :  (0x7faaebee4298)
+[LOG] SoundI::release                          :     Turn Page of Paper Back Book 02 (0x7faaed1cb4d8)
+[LOG] SoundI::release                          :  (0x7faaebedf298)
+[LOG] SoundI::release                          :     Turn Page of Hard Cover Book 06 (0x7faad556c688)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
