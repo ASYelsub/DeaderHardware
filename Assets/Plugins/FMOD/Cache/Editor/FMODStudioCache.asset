@@ -99,8 +99,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 2800
+  MaxDistance: 10000
   Length: 1500
 --- !u!114 &-6990239246784297494
 MonoBehaviour:
@@ -452,7 +452,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Library.bank
   Name: Library
   StudioPath: bank:/Library
-  lastModified: 637553811650000000
+  lastModified: 637553908730000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
