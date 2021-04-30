@@ -294,7 +294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20022733}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 95, y: 1.43, z: 65.19}
+  m_LocalPosition: {x: 94.09, y: -0.08, z: 65.19}
   m_LocalScale: {x: 1.06, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -546,7 +546,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20490
+  m_Name: pb_Mesh104428
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11161,7 +11161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838467599}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 69, y: 14.27, z: 71}
+  m_LocalPosition: {x: 68.35, y: 14.27, z: 71}
   m_LocalScale: {x: 0.59, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14175,7 +14175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aecba5ad114487e438ea92136ce9e8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: 3
+  SceneToLoad: 6
 --- !u!108 &1217277568
 Light:
   m_ObjectHideFlags: 0
@@ -18208,7 +18208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644121393}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 62.9, y: 10, z: 63.999992}
+  m_LocalPosition: {x: 62.9, y: 10, z: 64.54}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.55}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20711,7 +20711,7 @@ MonoBehaviour:
   deccel: 10
   grav: 20
   grounded: 0
-  rotationSpeed: 125
+  rotationSpeed: 105
   playerHeight: 1
   rampSnapThreshold: 0.1
   lastGroundedPos: {x: 0, y: 0, z: 0}
