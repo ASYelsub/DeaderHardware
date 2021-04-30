@@ -42,6 +42,6 @@ public class TriggerSystem_CameraSpline : MonoBehaviour, ITriggerable
 
     public void ExecuteLeaveTriggerFunction()
     {
-        throw new System.NotImplementedException();
+//        throw new System.NotImplementedException();
     }
 }
