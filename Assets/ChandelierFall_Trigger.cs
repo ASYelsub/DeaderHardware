@@ -10,19 +10,10 @@ public class ChandelierFall_Trigger : MonoBehaviour, ITriggerable
     public Transform chandelier;
     public GameObject chandelierData;
     public AudioClip chandelierCrash;
+    [SerializeField] private Vector3 upPos;
+    [SerializeField] private Vector3 downPos;
 
-    
 
-    void FixedUpdate()
-    {
-       
-        if (open)
-        {
-            Debug.Log("Yes");
-            Vector3 c = chandelier.localPosition;
-            chandelier.localPosition = Vector3.Lerp(chandelier.localPosition, new Vector3(c.x, -2.85f, c.z), Time.deltaTime * 5);
-        }
-    }
     public void ExecuteLeaveTriggerFunction()
     {
         //   throw new System.NotImplementedException();
@@ -39,19 +30,24 @@ public class ChandelierFall_Trigger : MonoBehaviour, ITriggerable
 
     private IEnumerator EndGameCountDown()
     {
+        
+        //Vector3 c = chandelier.localPosition;
         float timer = 0;
         while(timer < 1)
         {
+            chandelier.localPosition = Vector3.Lerp(upPos,downPos,timer);
             timer = timer + .01f;
             yield return null;
         }
+        FMODUnity.RuntimeManager.PlayOneShot("Event:/LibraryChandelierCrash");
         //PlayOneShot ChandelierCrash
         while (timer < 1.5 && timer >= 1)
         {
+            chandelier.localPosition = Vector3.Lerp(upPos,downPos,timer);
             timer = timer + .01f;
             yield return null;
         }
-        SceneManager.LoadScene("CreditsScene");
+        SceneManager.LoadScene("CreditScene");
         yield return null;
     }
 }

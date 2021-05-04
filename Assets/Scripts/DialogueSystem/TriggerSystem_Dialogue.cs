@@ -39,6 +39,7 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
 
     public void ExecuteTriggerFunction() { //ServicesLocator.DialogueManager.SplitFile(this);
 
+        print("This happened1");
         if (grabPlayer)
         {
             
@@ -57,6 +58,8 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
 
     public void ExecuteInteraction()
     {
+        print("This happened");
+
         if (!grabPlayer)
         {
             List<IDialogueCommand> dialogueCommands = new List<IDialogueCommand>();

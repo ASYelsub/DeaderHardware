@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000019F419BF5E8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000002852184D4F8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,3 +16,52 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028521A95C38
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028521A95C38
+[LOG] SoundI::release                          :  (0000028521DB57E8)
+[LOG] SoundI::release                          :     BranchesBreaking (000002852481FAE8)
+[LOG] SoundI::release                          :  (0000028521DB5DA8)
+[LOG] SoundI::release                          :     BranchesImpact1 (000002852481D0A8)
+[LOG] SoundI::release                          :  (0000028521DB5958)
+[LOG] SoundI::release                          :     BranchesBreaking2 (000002852481C208)
+[LOG] SoundI::release                          :  (00000285218574C8)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy_3 (000002852481E428)
+[LOG] SoundI::release                          : sci-fi-ambience-surround-static-low-scraping-RS (0000028538502298)
+[LOG] SoundI::release                          :     sci-fi-ambience-surround-static-low-scraping-RS (000002852481EF88)
+[LOG] SoundI::release                          :     sci-fi-ambience-surround-static-low-scraping-RS (0000028521A95728)
+[LOG] SoundI::release                          : Wind,Ext,Alley,Urban,Howl,Pronounced,Metal,Clinking (0000028538500E58)
+[LOG] SoundI::release                          :     Wind,Ext,Alley,Urban,Howl,Pronounced,Metal,Clinking (000002852481C548)
+[LOG] SoundI::release                          :     Wind,Ext,Alley,Urban,Howl,Pronounced,Metal,Clinking (0000028521A95068)
+[LOG] SoundI::release                          : Whirlwind (0000028538500CA8)
+[LOG] SoundI::release                          :     Whirlwind (000002852481E768)
+[LOG] SoundI::release                          :     Whirlwind (0000028521A95DE8)
+[LOG] SoundI::release                          : Aud_ConsoleEntitiy (0000028538503018)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (000002852481CF08)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy (0000028521A95C38)
+[LOG] SoundI::release                          : Aud_Portal (00000285385040F8)
+[LOG] SoundI::release                          :     Aud_Portal (000002852481DC08)
+[LOG] SoundI::release                          :     Aud_Portal (00000285F04F9588)
+[LOG] SoundI::release                          : Aud_Portal (0000028538501BD8)
+[LOG] SoundI::release                          :     Aud_Portal (000002852481C3A8)
+[LOG] SoundI::release                          :     Aud_Portal (00000285F04F93D8)
+[LOG] SoundI::release                          : Centrifugal V4 (00000285385025F8)
+[LOG] SoundI::release                          :     Centrifugal V4 (000002852481EDE8)
+[LOG] SoundI::release                          :     Centrifugal V4 (00000285F04F9078)
+[LOG] SoundI::release                          :  (00000285218571E8)
+[LOG] SoundI::release                          :     Aud_PlayerMove_Engine (000002852481EC48)
+[LOG] SoundI::release                          :  (0000028521857638)
+[LOG] SoundI::release                          :     Aud_PlayerMove_Hum (000002852481D8C8)
+[LOG] SoundI::release                          :  (0000028521857358)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy_1 (000002852481E288)
+[LOG] SoundI::release                          :  (0000028521DB5AC8)
+[LOG] SoundI::release                          :     Aud_ConsoleEntitiy_2 (000002852481CD68)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
