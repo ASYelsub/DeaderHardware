@@ -21,19 +21,24 @@ public class TriggerSystem_ParticleEffect : MonoBehaviour, ITriggerable
 
     public void ExecuteTriggerFunction()
     {
-        if (GameObject.FindGameObjectWithTag("POPUP"))
-        {
-            GameObject.FindGameObjectWithTag("POPUP").GetComponent<PopupTextScript>().StartUp(hoverText);
-        }
-        
-        for (int i = 0; i < matBody.Count; i++)
-        {
-            matBody[i].GetComponent<MeshRenderer>().material = onMat;
-        }
+
+
+       
+            if (GameObject.FindGameObjectWithTag("POPUP"))
+            {
+                GameObject.FindGameObjectWithTag("POPUP").GetComponent<PopupTextScript>().StartUp(hoverText);
+            }
+
+            for (int i = 0; i < matBody.Count; i++)
+            {
+                matBody[i].GetComponent<MeshRenderer>().material = onMat;
+            }
+
+
+            ps.Play();
 
         
-        ps.Play();
-        
+
     }
 
 

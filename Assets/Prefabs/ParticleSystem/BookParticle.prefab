@@ -4818,4 +4818,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleObject: {fileID: 3275642666542631182}
-  selectMat: {fileID: 0}
+  onMat: {fileID: 0}
+  offMat: {fileID: 0}
+  matObj: {fileID: 0}
+  itemPickup: {fileID: 0}
+  hoverText: 
