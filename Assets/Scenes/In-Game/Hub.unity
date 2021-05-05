@@ -546,7 +546,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh93058
+  m_Name: pb_Mesh774120
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -755,6 +755,7 @@ GameObject:
   - component: {fileID: 132341369}
   - component: {fileID: 132341368}
   - component: {fileID: 132341367}
+  - component: {fileID: 132341371}
   m_Layer: 0
   m_Name: ConsoleEntityDialogue_AfterTower
   m_TagString: Untagged
@@ -770,13 +771,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132341365}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 9.97, z: 0}
   m_LocalScale: {x: 9.6229925, y: 4.9318113, z: 12.005631}
   m_Children:
   - {fileID: 1956442201}
   - {fileID: 1714870137}
   m_Father: {fileID: 1671613538}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &132341367
 MonoBehaviour:
@@ -795,7 +796,7 @@ MonoBehaviour:
   triggerTarget: {fileID: 0}
   triggerObjects:
   - {fileID: 1714870136}
-  - {fileID: 1956442200}
+  - {fileID: 2046043072}
 --- !u!65 &132341368
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -858,6 +859,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132341365}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &132341371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132341365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d1d5d63705b24eaa8f6cdbc9a65394a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upPos: {x: 0, y: 9.97, z: 0}
+  downPos: {x: 0, y: 0, z: 0}
 --- !u!1 &140277035
 GameObject:
   m_ObjectHideFlags: 0
@@ -17272,7 +17287,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh92994
+  m_Name: pb_Mesh774056
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19176,6 +19191,8 @@ Transform:
   m_LocalPosition: {x: 81.3986, y: 3.6646, z: 65.2556}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1944773998}
+  - {fileID: 2046043073}
   - {fileID: 1881864425}
   - {fileID: 132341366}
   m_Father: {fileID: 0}
@@ -20483,7 +20500,7 @@ Transform:
   m_LocalScale: {x: 0.20875974, y: 0.25601247, z: 0.28376675}
   m_Children: []
   m_Father: {fileID: 1881864425}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1842395509
 MonoBehaviour:
@@ -20498,6 +20515,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 1944773999}
+  isTower: 1
+  toDisable: {fileID: 1881864420}
+  toEnable: {fileID: 132341365}
 --- !u!1 &1842715403
 GameObject:
   m_ObjectHideFlags: 0
@@ -20783,11 +20803,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 9.6229925, y: 4.9318113, z: 12.005631}
   m_Children:
-  - {fileID: 2046043073}
   - {fileID: 1842395508}
-  - {fileID: 1944773998}
   m_Father: {fileID: 1671613538}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1897026850 stripped
 GameObject:
@@ -21244,6 +21262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1944773998}
   - component: {fileID: 1944773999}
+  - component: {fileID: 1944774000}
   m_Layer: 0
   m_Name: TowerTrigger
   m_TagString: Untagged
@@ -21259,11 +21278,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1944773997}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.10563505, y: 0.5652349, z: -0.24071048}
-  m_LocalScale: {x: 0.10391778, y: 0.20276526, z: 0.08329425}
+  m_LocalPosition: {x: 1.0165253, y: 2.787632, z: -2.8898811}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1881864425}
-  m_RootOrder: 2
+  m_Father: {fileID: 1671613538}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1944773999
 MonoBehaviour:
@@ -21281,6 +21300,22 @@ MonoBehaviour:
   towerBase: {fileID: 2898394801949764579}
   RightDoor: {fileID: 5328442483089560533}
   leftDoor: {fileID: 645056542476984062}
+--- !u!114 &1944774000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944773997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25474bf66974d5c4c902c89f57bcbd5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToEnable:
+  - {fileID: 132341365}
+  objectsToDisable:
+  - {fileID: 1881864420}
 --- !u!1 &1945926036
 GameObject:
   m_ObjectHideFlags: 0
@@ -22569,12 +22604,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046043072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08242654, y: 1.8607675, z: -1.5744283}
-  m_LocalScale: {x: 0.10391778, y: 0.20276526, z: 0.08329425}
+  m_LocalPosition: {x: 0.79319, y: 9.176954, z: -18.902008}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1087305095}
-  m_Father: {fileID: 1881864425}
-  m_RootOrder: 0
+  m_Father: {fileID: 1671613538}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2046043074
 MonoBehaviour:
