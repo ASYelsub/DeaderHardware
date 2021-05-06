@@ -5,12 +5,14 @@ using UnityEngine;
 public class DoorScript : SceneChangeManager
 {
     public int SceneToLoad;
-
+    public static int staticSceneToLoad;
     private void OnTriggerEnter(Collider col)
     {
         if(col.gameObject.tag == "Player")
         {
-            ChangeScene(SceneToLoad);
+            staticSceneToLoad = SceneToLoad;
+            //ChangeScene(SceneToLoad);
+            ChangeSceneS("SceneLoadUp");
         }
     }
 }
