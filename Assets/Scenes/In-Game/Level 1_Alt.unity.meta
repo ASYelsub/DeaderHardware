@@ -1,5 +1,10 @@
 fileFormatVersion: 2
-guid: f27aef71bf777e84fb6d1af3591a6aaa
+<<<<<<< HEAD:Assets/Scenes/Paris_Scene/Level_01.unity.meta
+guid: ba2f3c41997bba74bbf9048d068254d7
+=======
+guid: 68914f801107eb548974c06e019b1fd6
+folderAsset: yes
+>>>>>>> origin/Finn_Branch:Assets/Prefabs/Finn.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
