@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/In-Game/Level 1_Alt.unity
     guid: f27aef71bf777e84fb6d1af3591a6aaa
+  - enabled: 1
+    path: Assets/Andrew/LoadingScreen/SceneLoadUp.unity
+    guid: ccd8b75c36780914da7c2a52289cd11d
   m_configObjects: {}
