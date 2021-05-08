@@ -7,7 +7,7 @@ using UnityEngine;
 //can interact with that they don't want to add to the inventory.
 public class TriggerSystem_ParticleEffect : MonoBehaviour, ITriggerable
 {
-    public ParticleSystem ps;
+   // public ParticleSystem ps;
 
     [SerializeField]
     Material offMat;
@@ -35,7 +35,7 @@ public class TriggerSystem_ParticleEffect : MonoBehaviour, ITriggerable
             }
 
 
-            ps.Play();
+     //       ps.Play();
 
         
 
@@ -53,7 +53,7 @@ public class TriggerSystem_ParticleEffect : MonoBehaviour, ITriggerable
         {
             matBody[i].GetComponent<MeshRenderer>().material = offMat;
         }
-        ps.Stop();
+     //   ps.Stop();
         
     }
 
