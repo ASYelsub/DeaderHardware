@@ -9914,8 +9914,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volChange: {fileID: 8300000, guid: 7c21aaf753e31764b8487c6ff7cca85e, type: 3}
-  openSettings: {fileID: 8300000, guid: 838e457e93258f1439beb13242186cf6, type: 3}
-  closeSettings: {fileID: 8300000, guid: 838e457e93258f1439beb13242186cf6, type: 3}
+  openSettings: {fileID: 8300000, guid: 02b4e5c19dcdf4236a85a9707263db45, type: 3}
+  closeSettings: {fileID: 8300000, guid: 7a59c876b9d96487ba959e7689382617, type: 3}
   buttonSettings: {fileID: 8300000, guid: 51783bb37b2c9fc4e9e8443c47111d40, type: 3}
   openInv: {fileID: 8300000, guid: cf9a2b29e437e0b44b0408dd8f54d4b7, type: 3}
   closeInv: {fileID: 8300000, guid: cf9a2b29e437e0b44b0408dd8f54d4b7, type: 3}

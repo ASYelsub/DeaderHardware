@@ -10,4 +10,9 @@ public class SceneChangeManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneToLoad);
     }
+
+    public void ChangeSceneS(string sceneToLoad)
+    {
+        SceneManager.LoadScene(sceneToLoad);
+    }
 }

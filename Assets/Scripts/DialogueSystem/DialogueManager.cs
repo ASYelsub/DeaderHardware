@@ -111,7 +111,7 @@ public class DialogueManager : MonoBehaviour
     public IEnumerator DisplayText (string current) 
     {
         
-        Debug.Log("Display Text is happening");
+//        Debug.Log("Display Text is happening");
         isTyping = true;
         lineNum++;
 

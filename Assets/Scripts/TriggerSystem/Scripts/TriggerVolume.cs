@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class TriggerVolume : MonoBehaviour, IInteractable
 {
     public bool OtherTarget;
@@ -34,17 +34,34 @@ public class TriggerVolume : MonoBehaviour, IInteractable
         }
 
         //Execute On Awake?
-        if (ExecuteOnAwake) OnTriggerEnter(this.GetComponent<Collider>());
+      //  if (ExecuteOnAwake) OnTriggerEnter(this.GetComponent<Collider>());
     }
-
+    bool firstExecute = true;
+    public bool startSpawnedObj;
     public void OnTriggerEnter(Collider other) {
 
         if (!ExecuteOnAwake && other.gameObject != _triggerTarget) return;
 
-//        Debug.Log("Executing Trigger Functions...");
 
-        foreach (ITriggerable n in _triggerableArray) {
-            n.ExecuteTriggerFunction();
+        //If an object starts on
+        if (startSpawnedObj)
+        {
+            if (firstExecute) { firstExecute = false; }
+            else
+            {
+                foreach (ITriggerable n in _triggerableArray)
+                {
+                    n.ExecuteTriggerFunction();
+                }
+            }
+
+        }
+        else //if an object gets spawned in
+        {
+            foreach (ITriggerable n in _triggerableArray)
+            {
+                n.ExecuteTriggerFunction();
+            }
         }
     }
     public void OnTriggerExit(Collider other)

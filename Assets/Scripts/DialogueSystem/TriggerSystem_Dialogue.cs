@@ -58,17 +58,22 @@ public class TriggerSystem_Dialogue : MonoBehaviour, ITriggerable, IInteractable
 
     public void ExecuteInteraction()
     {
-        print("This happened");
-
+        print("Execute interaction");
+        print("is showing? " + ServicesLocator.GameManager.diaMan.isShowing);
         if (!grabPlayer)
         {
+            print("!grab Player");
             List<IDialogueCommand> dialogueCommands = new List<IDialogueCommand>();
             foreach (IDialogueCommand d in GetComponentsInChildren<IDialogueCommand>())
             {
                 dialogueCommands.Add(d);
             }
-            if (ServicesLocator.DialogueManager.canEngage)
+            if (!ServicesLocator.GameManager.diaMan.isShowing)
+            {
+                print("Dialogue is not showing.");
                 ServicesLocator.DialogueManager.SplitFile(file, dialogueCommands.ToArray());
+                StartCoroutine(ServicesLocator.DialogueManager.DisplayText(ServicesLocator.DialogueManager.lines[ServicesLocator.DialogueManager.lineNum]));
+            }
         }
     }
 
