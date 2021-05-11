@@ -4,4 +4,9 @@ Checking BackUpDataSlot...
 **FAILURE** BackUp data not inserted!
 Raising BackUpDataSlot for manual insertion... <CMD>
 BackUp data detected in Console/FarPlatform/Library
-**/Straight > ahead // Avatar../** 
+[INITIATING RECOVERY PROTOCOL]
+. . . . . . . . . . . . . . . .
+Hello! I'm "blake family game room"! You've booted me into RECOVERY MODE! 
+It looks like my LIBRARY has become CORRUPTED.
+Enter the library to complete diagnostic protocols and retrieve the sector's BACKUP DATA.
+The library is behind me! Please return with the BACKUP DATA to continue RECOVERY operations. 
