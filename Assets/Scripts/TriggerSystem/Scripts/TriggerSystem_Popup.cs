@@ -31,7 +31,7 @@ public class TriggerSystem_Popup : MonoBehaviour, ITriggerable
 
         if (itemPickup.pickedUp == false || itemPickup == null)
         {
-            particleObject.Play();
+          //  particleObject.Play();
 
         }
 
@@ -40,13 +40,13 @@ public class TriggerSystem_Popup : MonoBehaviour, ITriggerable
 
     public void ExecuteLeaveTriggerFunction()
     {
-        //print("WE STOPPED");
+      /*  //print("WE STOPPED");
         if (GameObject.FindGameObjectWithTag("POPUP"))
         {
             GameObject.FindGameObjectWithTag("POPUP").GetComponent<PopupTextScript>().Stop();
         }
 
-        particleObject.Stop();
+        particleObject.Stop();*/
         matObj.GetComponent<MeshRenderer>().material = offMat;
     }
 }
