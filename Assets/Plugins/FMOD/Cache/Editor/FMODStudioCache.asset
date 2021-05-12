@@ -15,10 +15,30 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Ruins.bank
   Name: Ruins
   StudioPath: bank:/Ruins
-  lastModified: 637553811650000000
+  lastModified: 637560829437174500
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-9032668774148065905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music Slider
+  m_EditorClassIdentifier: 
+  Name: Music Slider
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1712288478
+    data2: 1321706971
+  Exists: 0
 --- !u!114 &-8901000762061887117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +159,46 @@ MonoBehaviour:
     data1: 1807816628
     data2: 242975379
   Exists: 0
+--- !u!114 &-8089105057676976732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 0
+--- !u!114 &-7333391883312520652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFX Slider
+  m_EditorClassIdentifier: 
+  Name: SFX Slider
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 3622919467
+    data2: 185449052
+  Exists: 0
 --- !u!114 &-7240479432948957273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +241,26 @@ MonoBehaviour:
   ID:
     data1: 1712288478
     data2: 1321706971
+  Exists: 0
+--- !u!114 &-6956645886293344170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlayerVelocity
+  m_EditorClassIdentifier: 
+  Name: PlayerVelocity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1807816628
+    data2: 242975379
   Exists: 0
 --- !u!114 &-6716948134877979011
 MonoBehaviour:
@@ -548,6 +628,26 @@ MonoBehaviour:
     data1: 1807816628
     data2: 242975379
   Exists: 0
+--- !u!114 &-4214677742870380711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFX Slider
+  m_EditorClassIdentifier: 
+  Name: SFX Slider
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 3622919467
+    data2: 185449052
+  Exists: 0
 --- !u!114 &-4161112407459900020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,10 +772,30 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Library.bank
   Name: Library
   StudioPath: bank:/Library
-  lastModified: 637560725280000000
+  lastModified: 637560829436695786
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-3801955722318446567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music Slider
+  m_EditorClassIdentifier: 
+  Name: Music Slider
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1712288478
+    data2: 1321706971
+  Exists: 0
 --- !u!114 &-3639193901144695178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,6 +819,46 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 8000
   Length: 217025
+--- !u!114 &-3554857472678780582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlayerVelocity
+  m_EditorClassIdentifier: 
+  Name: PlayerVelocity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1807816628
+    data2: 242975379
+  Exists: 0
+--- !u!114 &-3379215450251249495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlayerVelocity
+  m_EditorClassIdentifier: 
+  Name: PlayerVelocity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1807816628
+    data2: 242975379
+  Exists: 0
 --- !u!114 &-3207874133628744678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,7 +874,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Hub.bank
   Name: Hub
   StudioPath: bank:/Hub
-  lastModified: 637553967460000000
+  lastModified: 637560829436256958
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -985,7 +1145,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637560725280000000
+  lastModified: 637560829436985009
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1014,6 +1174,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 250
   Length: 87745
+--- !u!114 &-480323967219414588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 0
 --- !u!114 &-191454214415260135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1033,6 +1213,26 @@ MonoBehaviour:
   ID:
     data1: 1712288478
     data2: 1321706971
+  Exists: 0
+--- !u!114 &-129427418181287331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
   Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -1071,8 +1271,28 @@ MonoBehaviour:
   - {fileID: 656153253155419798}
   StringsBanks:
   - {fileID: -499783936321590070}
-  stringsBankWriteTime: 637560725280000000
+  stringsBankWriteTime: 637560829436985009
   cacheVersion: 6
+--- !u!114 &86524080086765453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFX Slider
+  m_EditorClassIdentifier: 
+  Name: SFX Slider
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 3622919467
+    data2: 185449052
+  Exists: 0
 --- !u!114 &247294273927729835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,6 +1313,26 @@ MonoBehaviour:
     data1: 3622919467
     data2: 185449052
   Exists: 1
+--- !u!114 &604562377523594231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFX Slider
+  m_EditorClassIdentifier: 
+  Name: SFX Slider
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 3622919467
+    data2: 185449052
+  Exists: 0
 --- !u!114 &656153253155419798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,7 +1348,7 @@ MonoBehaviour:
   Path: FMOD/DeaderHardware_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637553967470000000
+  lastModified: 637560829436965166
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1191,6 +1431,26 @@ MonoBehaviour:
   ID:
     data1: 1712288478
     data2: 1321706971
+  Exists: 0
+--- !u!114 &1494103388550580304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
   Exists: 0
 --- !u!114 &1502548498389421593
 MonoBehaviour:
@@ -1352,6 +1612,26 @@ MonoBehaviour:
     data1: 1712288478
     data2: 1321706971
   Exists: 0
+--- !u!114 &2412735376009957446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LibRange
+  m_EditorClassIdentifier: 
+  Name: LibRange
+  Min: 0
+  Max: 50
+  Default: 0
+  ID:
+    data1: 1985215825
+    data2: 1795238556
+  Exists: 0
 --- !u!114 &2576564281286864918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,6 +1712,26 @@ MonoBehaviour:
     data1: 1712288478
     data2: 1321706971
   Exists: 0
+--- !u!114 &2872064636757068629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlayerVelocity
+  m_EditorClassIdentifier: 
+  Name: PlayerVelocity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1807816628
+    data2: 242975379
+  Exists: 0
 --- !u!114 &2953667078245847997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1491,6 +1791,26 @@ MonoBehaviour:
   ID:
     data1: 3622919467
     data2: 185449052
+  Exists: 0
+--- !u!114 &3532874103860398718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music Slider
+  m_EditorClassIdentifier: 
+  Name: Music Slider
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1712288478
+    data2: 1321706971
   Exists: 0
 --- !u!114 &3598965317804915638
 MonoBehaviour:
@@ -1572,6 +1892,26 @@ MonoBehaviour:
     data1: 1985215825
     data2: 1795238556
   Exists: 0
+--- !u!114 &4430022836006863763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music Slider
+  m_EditorClassIdentifier: 
+  Name: Music Slider
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1712288478
+    data2: 1321706971
+  Exists: 0
 --- !u!114 &5026586012890482680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1635,6 +1975,26 @@ MonoBehaviour:
   MinDistance: 9200
   MaxDistance: 10000
   Length: 999
+--- !u!114 &5306903792449874730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFX Slider
+  m_EditorClassIdentifier: 
+  Name: SFX Slider
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 3622919467
+    data2: 185449052
+  Exists: 0
 --- !u!114 &5307577490555950232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1855,6 +2215,26 @@ MonoBehaviour:
     data1: 1712288478
     data2: 1321706971
   Exists: 0
+--- !u!114 &6839054586466073636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlayerVelocity
+  m_EditorClassIdentifier: 
+  Name: PlayerVelocity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1807816628
+    data2: 242975379
+  Exists: 0
 --- !u!114 &6853070078328433894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2034,6 +2414,26 @@ MonoBehaviour:
   ID:
     data1: 1807816628
     data2: 242975379
+  Exists: 0
+--- !u!114 &7831968063420448976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music Slider
+  m_EditorClassIdentifier: 
+  Name: Music Slider
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1712288478
+    data2: 1321706971
   Exists: 0
 --- !u!114 &7871969861805794754
 MonoBehaviour:

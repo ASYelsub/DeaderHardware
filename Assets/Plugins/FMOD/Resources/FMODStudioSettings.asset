@@ -283,13 +283,13 @@ MonoBehaviour:
   active: 1
   Properties:
     LiveUpdate:
-      Value: 1
+      Value: 0
       HasValue: 1
     LiveUpdatePort:
       Value: 0
       HasValue: 0
     Overlay:
-      Value: 1
+      Value: 0
       HasValue: 1
     Logging:
       Value: 0
@@ -473,7 +473,7 @@ MonoBehaviour:
   HasSourceProject: 1
   HasPlatforms: 1
   sourceProjectPath: FMOD/DeaderHardware_FMOD/DeaderHardware_FMOD.fspro
-  sourceBankPath: FMOD/DeaderHardware_FMOD/Build
+  sourceBankPath: FMOD\DeaderHardware_FMOD\Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
