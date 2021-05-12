@@ -1,5 +1,5 @@
-The library's closed, but if you return during business hours––oh. It's you.
-Look. You can't go upstairs. The answer is the same no matter how many times you come back.
+The library's closed, but if you return during business hours––oh. Great. Another one.
+Look. You can't go upstairs. The answer is the same no matter how many requests you send.
 Every time someone goes upstairs, the console has to load all the books up there.
 You can only go up there if you're reshelving or loaning something. It's library policy. 
 We haven't loaned a book in years. We just don't have the equipment anymore.

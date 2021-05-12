@@ -1,3 +1,3 @@
 This chandelier is directly above the Librarian. 
 Attached to it is a glittering key. 
-This must be the RECOVERY KEY the console requested.<CMD>
+This must be the BACKUP DATA the console requested.<CMD>
